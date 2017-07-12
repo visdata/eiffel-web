@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="dependency/d3.v4.js"></script>
+    <script src="dependency/d3.multi.selection.js"></script>
+    <style>
+        .test{
+            width:1000px;
+            height:500px;
+        }
+        svg{
+            width: 100%;
+            height: 100%;
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<div class="test">
+    <svg class="board">
+
+    </svg>
+</div>
+<script>
+
+    function P(x,y){
+        this.x=x;
+        this.y=y;
+    }
+    var d="M151.63991892712713,312.5957012963787C166.6371097052771,312.5957012963787,181.6343004834271,310.8897271846174,196.63149126157708,307.4777789610948C196.63149126157708,307.4777789610948";
+
+    var svg=d3.select('svg');
+    svg.append('path')
+            .attr('d',d)
+            .styles({
+                fill:'none',
+                stroke:'blue',
+                'stroke-width':'3px'
+            })
+
+
+</script>
+</body>
+</html>

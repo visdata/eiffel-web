@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+    h1 {
+        font: 400 120px/500px "Helvetica Neue";
+        text-align: center;
+        width: 960px;
+        height: 500px;
+        margin: 0;
+    }
+
+    text {
+        alignment-baseline: middle;
+        text-anchor: middle;
+    }
+
+</style>
+
+<script src="../dependency/d3.v4.js"></script>
+<script src="../dependency/d3.multi.selection.js"></script>
+
+<body>
+<svg></svg>
+</body>
+<script>
+
+    var format = d3.format(",d");
+    var svg = d3.select('svg')
+            .styles({
+                width: 1000,
+                height: 1000
+            });
+    var strokes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var i = 0;
+    var len;
+    var g = svg.append('g')
+    var path1 = svg.append('path')
+            .attrs({
+                d: 'M300,100L500,100'
+            })
+            .styles({
+                stroke: 'steelblue',
+                'stroke-width': 3,
+                'fill': 'none'
+            })
+            .transition()
+            .ease(d3.easeLinear)
+            .duration(1000)
+            .styleTween("stroke-width", function () {
+                return d3.interpolateNumber(3, 15);
+            })
+            .styleTween("stroke", function() {
+                return d3.interpolateRgb("red", "blue");
+            });
+    var path = svg.append('path')
+            .attrs({
+                d: 'M100,100C200,100,300,300,400,400',
+                class: 'testPath'
+            })
+            .styles({
+                stroke: 'steelblue',
+                'stroke-width': 1,
+                fill: 'none'
+            })
+            //            .style("stroke-dasharray", function () {
+            //                len=d3.select(this).node().getTotalLength();
+            //                return len;
+            //            })
+            //            .style("stroke-dashoffset", function () {
+            //                return len;
+            //            })
+            .transition()
+            .duration(1000)
+            .ease(d3.easeLinear)
+            .on('start', function repeat() {
+                console.log(1)
+                if (i >= strokes.length) {
+                    console.log(d3.select(path._groups[0][0]).attr('class'))
+                    d3.select(path._groups[0][0])
+                            .style('stroke-dashoffset', 0)
+                            .style('stroke-width', strokes[i - 1] * 5);
+//                    d3.selectAll('.assist').remove();
+                    return;
+                }
+                var pathD = d3.select(this).attr('d');
+//                svg.append('path')
+//                        .attr('d',pathD)
+//                        .attr('class','assist')
+//                        .styles({
+//                            stroke:'steelblue',
+//                            'stroke-width':1,
+//                            fill:'none'
+//                        })
+//                        .style("stroke-dasharray", function () {
+//                            return len;
+//                        })
+//                        .style("stroke-dashoffset", function () {
+//                            return len;
+//                        })
+//                        .transition()
+//                        .duration(1000)
+//                        .ease(d3.easeLinear)
+                d3.active(this)
+                        //                        .styleTween('stroke-dashoffset', function () {
+                        //                            return d3.interpolateNumber(len,0)
+                        //                        })
+                        .styleTween('stroke-width', function () {
+                            i += 1;
+                            return d3.interpolateRound((strokes[i - 1]) * 5, (strokes[i - 1]) * 5);
+                        })
+                        .transition()
+                        .duration(1000)
+                        .ease(d3.easeLinear)
+                        .on('start', repeat)
+            })
+
+</script>
+</html>

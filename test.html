@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+<div id="weibo"></div>
+<style>
+
+    svg{
+        border: 1px solid #000000;
+    }
+    body{
+        margin: 0;
+    }
+    #weibo{
+        /*transition:opacity 0.3s ease;*/
+        height: 300px;
+        width:300px;
+        background-color: blue;
+        opacity: 0;
+    }
+    /*#weibo:hover{*/
+        /*opacity: 0.8;*/
+    /*}*/
+.main{
+    background: #808080;
+    margin-right: 100px;
+    margin-bottom: 100px;
+}
+.left{
+    float: left;
+    background: blue;
+}
+.mid{
+    float: left;
+    background: red;
+}
+.right{
+    z-index: 100;
+    float: left;
+    background: blue;
+}
+.axis path,
+.axis line{
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+.test{
+    background: lightcyan;
+    /*background: -webkit-linear-gradient(right, rgb(25, 35, 45) 0%, rgb(50, 70, 90) 13.5135%, rgb(50, 70, 90) 13.5135%, rgb(50, 70, 90) 100%);*/
+    /*background: -webkit-linear-gradient(top, rgb(25, 35, 45) 0%, rgb(50, 70, 90) 50%, rgb(50, 70, 90) 50%, rgb(50, 70, 90) 100%);*/
+    height:1400px;
+    width:1400px;
+}
+</style>
+
+<link type="text/css" rel="stylesheet" href="css/jquery-ui.css"/>
+
+<script type="text/javascript" src="dependency/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="dependency/d3.js"></script>
+<script type="text/javascript" src="dependency/stringFunction.js"></script>
+<script type="text/javascript" src="dependency/jquery-ui.js"></script>
+<script type="text/javascript" src="class/directedGraph.js"></script>
+<script type="text/javascript" src="dependency/dijkstraGraph.js"></script>
+<script type="text/javascript" src="math/mathFunction.js"></script>
+<!--<svg class="svg1" id="svg1" width="500" height="500">-->
+    <!--<rect height="500" width="500" x="0" y="0" fill="rgb(15,40,60)" opacity="1"></rect>-->
+    <!--<circle r="30" cx="250" cy="250" fill="rgb(0,220,225)"></circle>-->
+    <!--<rect height="500" width="500" x="0" y="0" fill="rgb(15,40,60)" opacity="0.8"></rect>-->
+<!--</svg>-->
+<!--<svg class="svg2" id="svg2" width="500" height="500">-->
+    <!--<rect height="500" width="500" x="0" y="0" fill="rgb(15,40,60)" opacity="1"></rect>-->
+    <!--<rect height="500" width="500" x="0" y="0" fill="rgb(15,40,60)" opacity="0.5"></rect>-->
+    <!--<circle r="30" cx="250" cy="250" id="god" fill="rgb(0,220,225)"></circle>-->
+
+    <!--<circle r="30" cx="200" cy="200" fill="rgb(0,220,225)"></circle>-->
+
+    <!--<rect height="500" width="500" x="0" y="0" fill="rgb(15,40,60)" opacity="0.6"></rect>-->
+<!--</svg>-->
+
+<div class="checkBox">
+
+    <!--<label><input name="Fruit" type="checkbox" value="" />苹果 </label>-->
+    <!--<label><input name="Fruit" type="checkbox" value="" />桃子 </label>-->
+    <!--<label><input name="Fruit" type="checkbox" value="" />香蕉 </label>-->
+    <!--<label><input name="Fruit" type="checkbox" value="" />梨 </label>-->
+
+</div>
+
+<script>
+
+
+
+
+
+
+    var px='px'
+    var data={
+        height:100,
+        width:100,
+        background:'blue'
+    }
+    d3.select('body').append('div')
+            .datum(data)
+            .attr({
+                class:'testDiv hhh'
+            })
+            .style({
+                height:function(d){return d.height+px;},
+                width:function(d){return d.width+px;},
+                background:function(d){return d.background;}
+            })
+            .on('click',function(d){
+                console.log(d)
+                d3.select(this)
+                        .transition()
+                        .duration(1000)
+                        .style({
+                            transform:'scale(2,1)',
+                            'transform-origin':'left top'
+                        })
+//                d3.select(this)
+//                        .transition()
+//                        .duration(1000)
+//                        .style({
+//                            'margin-left': d.width+px,
+//                            width: d.width+px
+//                        })
+            })
+    var checkBox=d3.select('.checkBox');
+    var checkBoxData=[
+        {name:'test1',value:1},
+        {name:'test2',value:2},
+        {name:'test3',value:3}
+    ];
+    checkBox.selectAll('whatever')
+            .data(checkBoxData)
+            .enter()
+            .append('g')
+            .each(function(d,i){
+                d3.select(this)
+                        .append('input')
+                        .on('change',function(){
+                            console.log(1)
+                            var checked=d3.select(this).property("checked");
+                            console.log(checked);
+                        })
+                        .attr({
+                            value:'hhh',
+                            type:'checkbox',
+                            checked:'2',
+                            class:function(d){return d.name+' check'}
+                        });
+                d3.select(this)
+                        .append('text')
+                        .html(function(){return d.name;});
+            })
+
+
+
+    function ajax(url,data) {
+        console.log(url);
+        console.log(data);
+        $.ajax({
+            url: url,
+            data: data,
+            async: false,
+            success:function(d){
+                console.log(d);
+            }
+        })
+    }
+    var url='http://127.0.0.1:5002/InfluenceGraph';
+    var ajaxdata=[
+        {source:'aminerV8',id:99556,clusterCount:'20'},
+        {source:'citeseerx',id:4786031,clusterCount:'20'}
+    ];
+    var res=ajax(url,{data:ajaxdata});
+//    console.log(res)
+    var scale=d3.scale.linear().domain([0,0.25]).range([0,1]);
+
+    d3.select('.sort').append('g').datum({index:0}).attr('index',0).attr('class','mask');
+    d3.select('.sort').append('g').datum({index:2}).attr('index',2).attr('class','mask');
+    d3.select('.sort').append('g').datum({index:4}).attr('index',4).attr('class','mask');
+    d3.select('.sort').append('g').datum({index:3}).attr('index',3).attr('class','mask');
+    d3.select('.sort').append('g').datum({index:6}).attr('index',6).attr('class','mask');
+    d3.select('.sort').append('g').datum({index:1}).attr('index',1).attr('class','mask');
+    var sort=d3.select('.sort');
+    sort.selectAll('.mask')
+            .sort(function(a,b){
+                return d3.descending(a.index,b.index);
+            });
+
+    //    var a=d3.selectAll('.mask');
+//    a[0]
+//            .sort(function(a,b){
+//                var a_index=d3.select(a).attr('index');
+//                var b_index=d3.select(b).attr('index');
+//                return d3.ascending(a_index,b_index);
+//            })
+//    d3.selectAll('.mask').order();
+    data_g=[
+        {index:0},
+        {index:2},
+        {index:3},
+        {index:4},
+        {index:5},
+        {index:1},
+    ];
+    list1=[1]
+    sort1=d3.select('.sort1');
+    sort1.selectAll('whatever').data(data_g)
+            .enter()
+            .append('g')
+            .attr('class','mask1')
+            .attr('index',function(d){return d.index;});
+    sort1.selectAll('.mask1')
+            .sort(function(a,b){
+                return d3.descending(a.index,b.index);
+            });
+//    var format=d3.time.format('%Y/%m/%d %H:%M')
+//    console.log(format.parse(testDate))
+//    d3.csv('test.csv',function(data){
+//        console.log(data)
+//        for(var i=0;i<data.length;i++){
+//            date=data[i]['Date'];
+//            var format=d3.time.format('%Y/%m/%d %H:%M')
+//            console.log(format.parse(date))
+//        }
+//    })
+
+var f1=function(){
+    var i=0;
+    return function(){
+        return i++;
+    }};
+a=f1()();
+b=f1();
+console.log();
+console.log(b);
+
+
+
+
+
+
+
+
+
+
+String.prototype.toFloat=function(){
+    return parseFloat(this);
+}
+String.prototype.toInt=function(){
+    return parseInt(this);
+}
+
+
+
+
+pathSVG=d3.select('.test').append('svg')
+        .attr({
+            height:1400,
+            width:1400
+        });
+function clearD(d){
+    d= d.split('M')[1];
+    d= d.split('C');
+    d[0]=[d[0]];
+    d[1]=d[1].split('S');
+    d=d[0].concat(d[1]);
+//    console.log(d);
+    points=[];
+    for(var i=0;i<d.length;i++){
+        var part=d[i];
+        part = part.split(' ');
+        console.log(part)
+        console.log(part.length)
+        points=points.concat(part)
+    }
+//    console.log(points);
+    var newPoints=[]
+    for(var i=0;i<points.length;i+=2){
+        newPoints.push({x:points[i],y:points[i+1]})
+    }
+    pathSVG.selectAll('whatever')
+            .data(newPoints)
+            .enter()
+            .append('circle')
+            .each(function(d){
+                d3.select(this)
+                        .attr({
+                            cx: d.x,
+                            cy: d.y,
+                            r: 3
+                        })
+                        .style({
+                            fill:'red'
+                        })
+            })
+
+}
+//var d='M49.60000000000002,462.4516129032258C60.38109156319865,464.52541819362506,94.55029192140127,473.09734164578805,116.68,475.35483870967744S161.63029192140124,476.3231480974009,183.76,478.5806451612903S228.59574199033707,489.8793166073011,250.84,491.48387096774195S295.6757419903371,486.65351015568825,317.92,488.258064516129S363.25597975248706,497.5015258205755,385,501.1612903225806S430.7202569023961,506.21645584765326,452.08,510.8387096774193S496.79999999999995,530.1935483870968,519.16,530.1935483870968S563.88,530.1935483870968,586.24,530.1935483870968S630.9599999999999,523.741935483871,653.3199999999999,523.741935483871S720.4,468.9032258064516,720.4,468.9032258064516S720.4,456,720.4,456S675.68,488.258064516129,653.3199999999999,488.258064516129S608.587080333496,479.1179689233245,586.24,478.5806451612903S541.52,485.0322580645161,519.16,485.0322580645161S474.427080333496,478.0433213992561,452.08,478.5806451612903S407.347080333496,487.72074075409483,385,488.258064516129S340.26708033349604,481.26912785086904,317.92,481.80645161290323S273.14841075917906,492.55665891276567,250.84,491.48387096774195S206.12,475.35483870967744,183.76,475.35483870967744S139.04,475.35483870967744,116.68,475.35483870967744S60.38109156319865,464.52541819362506,49.60000000000002,462.4516129032258'
+//var d='M100,100C100,100,100,100,100,100S410,50,600,100';
+//var d='M426 192C426 192 426 192 426 192S457.75701393355735 189.64558635645426 489.51402786711463 187.29117271290852S546.2889960692647 151.31131754157025 606.3164571890411 130.5111856109571S457.75701393355735 189.64558635645426 489.51402786711463 187.29117271290852S546.2889960692647 151.31131754157025 606.3164571890411 130.5111856109571S639.8889509172608 118.87797164921271 673.4614446454805 107.24475768746831S764.640142148703 111.76864329344573 807 259M797.9718627929688 230.20208740234375M798.2946166992188 231.14857482910156'
+//clearD(d);
+var d='M100,100L200,200 300,400 400,400'
+//var d='M49.60000000000002,462.4516129032258C60.38109156319865,464.52541819362506,94.55029192140127,473.09734164578805,116.68,475.35483870967744S'
+//var d='M49.60000000000002,462.4516129032258C60.38109156319865,464.52541819362506,94.55029192140127,473.09734164578805,116.68,475.35483870967744S161.63029192140124,476.3231480974009,183.76,478.5806451612903S228.59574199033707,489.8793166073011,250.84,491.48387096774195S295.6757419903371,486.65351015568825,317.92,488.258064516129S363.43781687360274,497.0136797417821,385,501.1612903225806S431.4384441946514,508.1087322392092,452.08,514.0645161290322S498.7902303118727,533.5038229281922,519.16,539.8709677419355S563.9063939936055,555.2322285143872,586.24,556S630.9599999999999,549.5483870967741,653.3199999999999,549.5483870967741S720.4,475.35483870967744,720.4,475.35483870967744S720.4,472.1290322580645,720.4,472.1290322580645S675.68,526.9677419354839,653.3199999999999,526.9677419354839S608.6,536.6451612903226,586.24,536.6451612903226S541.52,536.6451612903226,519.16,536.6451612903226S472.97808420554674,519.5918336858497,452.08,514.0645161290322S406.56218312639726,505.30890090337914,385,501.1612903225806S340.16425800966294,489.8626188765698,317.92,488.258064516129S273.08425800966296,493.0884253281828,250.84,491.48387096774195S205.88970807859874,480.8381422251797,183.76,478.5806451612903S138.80970807859876,477.6123357735668,116.68,475.35483870967744S60.38109156319865,464.52541819362506,49.60000000000002,462.4516129032258'
+pathSVG.append('path')
+        .attr({
+            d:d
+        })
+        .style({
+            stroke:'blue',
+            'stroke-width':'2px',
+            fill:'none'
+        });
+//var d='M49,462C60,464,94,473,116,475S161,476,183,478S228,489,250,491S295,486,317,488S363,497,385,501S431,508,452,514S496,536,519,536S563,536,586,536S630,526,653,526S720,472,720,472S720.4,468.9032258064516,720.4,468.9032258064516S675.68,523.741935483871,653.3199999999999,523.741935483871S608.6,530.1935483870968,586.24,530.1935483870968S541.52,530.1935483870968,519.16,530.1935483870968S473.43974309760387,515.4609635071853,452.08,510.83870967741933S406.74402024751294,504.8210548245857,385,501.1612903225806S340.16425800966294,489.8626188765698,317.92,488.258064516129S273.08425800966296,493.0884253281828,250.84,491.48387096774195S205.88970807859874,480.8381422251797,183.76,478.5806451612903S138.80970807859876,477.6123357735668,116.68,475.35483870967744S60.38109156319865,464.52541819362506,49.60000000000002,462.4516129032258'
+//    var testC1=4;
+//    var testC2=function(d){
+//        if(testC1>1)return 4
+//        else return 0
+//    }();
+//    console.log(testC2)
+//    var body=d3.select('body')
+//    var svg1=body.append('svg')
+//            .attr({
+//                width:500,
+//                height:500
+//            })
+//    var data1=[
+//
+//        {
+//            index:1,
+//            type:'circle',
+//            r:30,
+//            bigR:35,
+//            cx:250,
+//            cy:250,
+//            fill:'rgb(70,190,210)',
+//            highlightFill:'white',
+//            opacity:1
+//        },
+//        {
+//            index:2,
+//            type:'circle',
+//            r:34,
+//            bigR:39,
+//            cx:250,
+//            cy:250,
+//            fill:'rgb(70,190,210)',
+//            highlightFill:'white',
+//            opacity:0.7
+//        },
+//        {
+//            index:3,
+//            type:'circle',
+//            r:38,
+//            bigR:43,
+//            cx:250,
+//            cy:250,
+//            fill:'rgb(70,190,210)',
+//            highlightFill:'white',
+//            opacity:0.5
+//        },
+////        {
+////            index:4,
+////            id:'board',
+////            type:'circle',
+////            r:38,
+////            cx:250,
+////            cy:250,
+////            fill:'rgb(15,40,60)',
+////            opacity_start:1,
+////            opacity_middle:0
+////        },
+//        {
+//            index:0,
+//            type:'rect',
+//            x:0,
+//            y:0,
+//            width:500,
+//            height:500,
+//            fill:'rgb(15,40,60)',
+//            opacity:1
+//        }
+//    ];
+//    function dense(part){
+//        while(part[0]&&part[0].flow==0){
+//            part = part.slice(1,part.length);
+//        }
+//        while(part[part.length-1]&&part[part.length-1].flow==0){
+//            part = part.slice(0,part.length-1);
+//        }
+//        return part;
+//    };
+//    var part=[{flow:0},{flow:0},{flow:1},{flow:0},{flow:3},{flow:0}]
+//    part = dense(part);
+//    console.log(part);
+//    svg1.selectAll('whatever')
+//            .data(data1)
+//            .enter()
+//
+//            .append('g')
+//            .attr('class','out')
+//            .attr('index',function(d){return d.index})
+//            .append('g')
+//            .attr('index',function(d){return d.index})
+//            .each(function(d){
+//                if(d.type=='circle'){
+//                    d3.select(this)
+//                            .append(d.type)
+//
+//                            .attr({
+//                                id: d.id,
+//                                cx:function(d){return d.cx},
+//                                cy:function(d){return d.cy},
+//                                r:function(d){return d.r},
+//                            })
+//                            .style({
+//                                fill:function(d){return d.fill},
+//                                opacity:function(d){return d.opacity}
+//                            });
+//                }
+//                else if(d.type=='rect'){
+//                    d3.select(this)
+//                            .append(d.type)
+//                            .attr({
+//                                x:function(d){return d.x},
+//                                y:function(d){return d.y},
+//                                width:function(d){return d.width},
+//                                height:function(d){return d.height}
+//                            })
+//                            .style({
+//                                opacity:function(d){return d.opacity},
+//                                fill:function(d){return d.fill}
+//                            })
+//                }
+//
+//            })
+//    svg1.selectAll('.out').sort(function(a,b){return d3.ascending(a.index,b.index)})
+//    svg1.selectAll('circle')
+//            .each(function(d){
+//                var thisCircle=d3.select(this);
+//                thisCircle
+//                        .attr({
+//                            id: d.id,
+//                            cx:function(d){return d.cx},
+//                            cy:function(d){return d.cy},
+//                            r:function(d){return d.r},
+//                        })
+//                        .style({
+//                            fill:function(d){return d.fill},
+//                            opacity:function(d){return d.opacity}
+//                        })
+//                        .transition()
+//                        .duration(500)
+//                        .ease('linear')
+//                        .attr({
+//                            r: d.bigR
+//                        })
+//                        .style({
+//                            fill: d.highlightFill
+//                        })
+//                        .each('end',function(d){
+//                            var thisCircle=d3.select(this);
+//                            thisCircle.transition()
+//                                    .duration(500)
+//                                    .ease('linear')
+//                                    .style({
+//                                        fill:d.fill
+//                                    })
+//                        })
+//            })
+//    svg1.select('#board')
+//            .style({
+//                opacity:function(d){return d.opacity_start}
+//            })
+//            .transition()
+//            .duration(1000)
+//            .ease('linear')
+//            .style({
+//                opacity:function(d){return d.opacity_middle;}
+//            })
+//    svg1.selectAll('g').sort(function(d){return d.index})
+//    cloneIngoreList=['parent','parents','child','children','parentNode'];
+//
+//    var data={
+//        node:[
+//            {id:0,focused:'true'},
+//            {id:1},
+//            {id:2},
+//            {id:3},
+//            {id:4},
+//            {id:5},
+//            {id:6}
+//        ],
+//        edge:[
+//            {source:0,target:1,flow:1},
+//            {source:0,target:2,flow:2},
+//            {source:0,target:4,flow:0.5},
+//            {source:1,target:2,flow:3},
+//            {source:1,target:3,flow:2},
+//            {source:1,target:4,flow:1},
+//            {source:2,target:4,flow:2},
+//            {source:2,target:5,flow:3},
+//            {source:2,target:6,flow:2},
+//            {source:4,target:2,flow:1},
+//
+//        ]};
+//    data={
+//        node:[
+//            {id:0,focused:'true'},
+//            {id:1},
+//            {id:2},
+//            {id:3}
+//        ],
+//        edge:[
+//            {source:0,target:1,yearFlow:1,yearWeight:1,flow:1},
+//            {source:1,target:2,yearFlow:2,yearWeight:1,flow:2},
+//            {source:2,target:1,yearFlow:2,yearWeight:1,flow:2},
+//            {source:2,target:3,yearFlow:1.5,yearWeight:1,flow:1.5},
+//            {source:3,target:2,yearFlow:1.5,yearWeight:1,flow:1.5}
+//        ]};
+//    var graph=new DirectedGraph(data);
+//    graph.init();
+//    console.log(graph.checkConnection('BFS'));
+//    graph.generateMaximalSpanningTree();
+//    var dijGraph=new dijkstraGraph();
+//    var nodes=data.node;
+//    var edges=data.edge;
+//    var dijNodes=[];
+//    for(var i=0;i<nodes.length;i++){
+//        var newNode=dijGraph.addNode(nodes[i].id);
+//        dijNodes.push(newNode);
+//    }
+//    for(var i=0;i<edges.length;i++){
+//        var source=edges[i].source;
+//        var target=edges[i].target;
+//        var sourceNode=dijNodes[source];
+//        var targetNode=dijNodes[target];
+//        sourceNode.addEdge(targetNode,edges[i].flow);
+//    }
+//    dijkstra(dijGraph,dijNodes[0],dijNodes[5]);
+
+//    var pathTarget = {id: 1, preEdge: [], currentIDList: [1], next: []};
+//    var paths=[]
+//    graph.findCircle(1,1,1,pathTarget,paths,false);
+//    console.log(paths);
+//    graph.generateMaximalSpanningTree()
+//    graph.edgeSourceDic=graph.getEdgeDic('source');
+//    graph.edgeTargetDic=graph.getEdgeDic('target');
+//    graph.generateSpanningTree()
+//    var p={id:3,preEdge:[],next:[]}
+//    var paths=[]
+//    graph.findAllPathBetween(2,3,p,paths);
+//    console.log(paths);
+
+    function in_array(stringToSearch, arrayToSearch) {
+        for (s = 0; s < arrayToSearch.length; s++) {
+            thisEntry = arrayToSearch[s].toString();
+            if (thisEntry == stringToSearch) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
+    function point(x,y){
+        this.x = x;
+        this.y = y;
+    }
+
+    var width =1600;
+    var height=1200;
+    var padding=30;
+    dataset=[[2001,4],[2002,7],[2003,1],[2004,9],[2005,12]];
+    var svg = d3.select("body")
+            .append("svg")
+            .attr("width",width)
+            .attr("height",height);
+    svg.append('circle')
+            .attr({
+                'cx':500,
+                'cy':500,
+                'r':30,
+                'class':'opacity'
+            })
+            .style({
+                'fill':'rgb(70,190,210)',
+                'fill-opacity':1,
+                'opacity':0.8
+            })
+    bindingData={
+        class:'bind',
+        type:'circle',
+        cx:100,
+        cy:100,
+        r:40
+    };
+    svg.append('circle')
+            .datum(bindingData)
+            .attr({
+                cx:function(d){return d.cx;},
+                cy:function(d){return d.cy;},
+                r: function (d) {
+//                    alert(1)
+                    return d.r;
+                }
+            })
+            .transition()
+            .duration(5000)
+            .attr({
+                cx:function(d){return d.cx;},
+                cy:function(d){return d.cy;},
+
+            });
+    var color = d3.scale.category20();
+    drag = d3.behavior.drag()
+            .origin(function(d) { return d; })
+            .on('drag', dragmove)
+            .on('dragstart',function(){console.log('dratstart')})
+    function dragmove(d){
+//        d.x=d3.event.x;
+//        console.log(d3.event);
+        var x=d3.select(this).attr('cx').toFloat();
+        var y=d3.select(this).attr('cy').toFloat();
+        var r=d3.select(this).attr('r').toFloat();
+        svg.append('circle')
+                .attr({
+                    cx:x,
+                    cy:y,
+                    r:r
+                })
+                .attr('fill',color(Math.floor((Math.random() * 20))))
+                .transition()
+                .duration(300)
+                .ease('linear')
+                .attr({
+                    r:0
+                })
+                .attr('fill',color(Math.floor((Math.random() * 20))))
+                .remove()
+        d3.select(this).attr('cx', d3.event.x);
+//        console.log(d3.event.x);
+    }
+    var data=[100,200,300,400];
+    var d;
+//     d='M195 244C474.0255946065505 245.15220526716053 513.8681540672056 245.25492579387662 553.7107135278607 245.35764632059266M314.6553567639303 244.7413231602963C354.4979162245853 244.84404368701234 394.34047568524045 244.94676421372844 434.1830351458955 245.04948474044448M195.12767838196507 244.43316158014812C234.97023784262012 244.53588210686416 274.81279730327526 244.63860263358026 553 245';
+//     d='M100 100C120 80 180 120 200 100M200 100C220 80 280 120 300 100';
+//     d='M195 244C810.7142988784037 122.29405307687689 886.2484752728834 161.70972731708773 932.3999999999996 122.06249999999999M671.7471672131696 345.980608306192C717.8314448087796 385.26623887079455 779.1454302331372 345.77624248486467 793.945425818651 241.0041819512632M553.7107135278607 245.35764632059266C605.4122339973794 245.49094115622927 632.4016826514 312.43962097765893 671.7471672131696 345.980608306192M434.1830351458955 245.04948474044448C474.0255946065505 245.15220526716053 513.8681540672056 245.25492579387662 553.7107135278607 245.35764632059266M314.6553567639303 244.7413231602963C354.4979162245853 244.84404368701234 394.34047568524045 244.94676421372844 434.1830351458955 245.04948474044448M195.12767838196507 244.43316158014812C234.97023784262012 244.53588210686416 274.81279730327526 244.63860263358026 932 122'
+//    d = "M195 244C234.97023784262012 244.53588210686416 274.81279730327526 244.63860263358026 314.6553567639303 244.7413231602963M314.6553567639303 244.7413231602963C354.4979162245853 244.84404368701234 394.34047568524045 244.94676421372844 434.1830351458955 245.04948474044448M434.1830351458955 245.04948474044448C474.0255946065505 245.15220526716053 513.8681540672056 245.25492579387662 553.7107135278607 245.35764632059266M553.7107135278607 245.35764632059266C605.4122339973794 245.49094115622927 632.4016826514 312.43962097765893 671.7471672131696 345.980608306192M671.7471672131696 345.980608306192C717.8314448087796 385.26623887079455 779.1454302331372 345.77624248486467 793.945425818651 241.0041819512632M793.945425818651 241.0041819512632C810.7142988784037 122.29405307687689 886.2484752728834 161.70972731708773 932 122"
+//    d = 'M100 100L150 50 200 100 300 300M300 300 L400 400M500 500 L600 600'
+//    d='M211 244C259 269 301 234 346 234M346 234C402 234 457 244 512 249M512 249C579 255 646 262 712 268M712 268C775 274 837 290 899 296'
+    d='M211 344C259 369 301 334 346 334L346 334C402 334 457 344 512 349'
+    d='M211 344C259 369 301 334 346 334M270 350M278 348'
+    var color = d3.scale.category20();
+    var marker=svg.append("svg:defs").selectAll("marker")
+            .data(["medium"])
+            .enter().append("svg:marker")
+            .attr("id", "markerArrow")
+            .attr('class','marker')
+            .attr("viewBox", "0 0 10 10")
+            .attr("refX", 0)
+            .attr("refY", 4)
+            .attr("markerWidth", 13)
+            .attr("markerHeight", 13)
+            .attr("orient", 'auto')
+            .append("svg:path")
+    //                .attr("d", "M0,3 L0,8 L8,3 L0,3")
+            .attr("d", "M0,0 L0,8 L8,4 L0,0")
+            .style("fill",'yellow');
+//    var testpath=SVGPathElement.createSVGPathSegCurvetoCubicSmoothRel(259,469,301,434,346,434)
+    var path=svg.append('g').append('path')
+            .attr('d',d)
+            .style('stroke','blue')
+            .style('fill','none')
+            .attr("marker-end",function(){return "url(#markerArrow)"})
+            .each(function(d){
+                var thisEdge=d3.select(this);
+                var totalLength=thisEdge.node().getTotalLength();
+                var asspoint=thisEdge.node().getPointAtLength(totalLength*11/25);
+                var point=thisEdge.node().getPointAtLength(totalLength/2);
+//                svg.append('circle')
+//                        .attr({
+//                            cx:point.x,
+//                            cy:point.y,
+//                            r:14
+//                        })
+//                        .style({
+//                            fill:'blue'
+//                        })
+//                console.log(asspoint)
+//                console.log(point);
+            })
+            .style("stroke-dasharray", function(d){
+                var thisEdge=d3.select(this);
+                var edgeLength=thisEdge.node().getTotalLength();
+                return edgeLength;
+            })
+            .style("stroke-dashoffset", function(d){
+                var thisEdge=d3.select(this);
+                var edgeLength=thisEdge.node().getTotalLength();
+                return edgeLength;
+            })
+            .transition()
+            .duration(3000)
+            .ease('linear')
+            .style("stroke-dasharray", function(d){
+                var thisEdge=d3.select(this);
+                var edgeLength=thisEdge.node().getTotalLength();
+                return edgeLength;
+            })
+            .style("stroke-dashoffset", function(d){
+//                console.log('setFinalOffset');
+
+                return 0;
+            })
+
+
+    var text=svg.append('text')
+            .attr({
+                x:300,
+                y:300
+            })
+    text.transition()
+            .duration(1000)
+            .ease('linear')
+            .tween("text", function() {
+                var i = d3.interpolateRound(1995, 2010);
+                return function(t) {
+                this.textContent = i(t);
+                 };
+            })
+            .each('end',function(d){
+                var thisText=d3.select(this);
+                thisText.transition()
+                        .duration(1000)
+                        .ease('linear')
+                        .tween('text',function(){
+                            var i=d3.interpolateRound(2010,2015);
+                            return function(t){
+                                this.textContent=i(t);
+                            };
+                        })
+
+            });
+//    var circle=svg.append('circle')
+//            .attr({
+//                cx:300,
+//                cy:300,
+//                r:50
+//            })
+//            .style('fill','blue')
+//            .style({
+//                stroke:'red',
+//                'stroke-width':'5px'
+//            })
+//            .on('click',function(){
+//                graph.build();
+//            });
+
+
+//    alert(path.node().getTotalLength());
+
+
+    var xScale = d3.scale.linear()
+            .domain([d3.min(dataset,function(d){return d[0]}),d3.max(dataset,function(d)
+            {
+                return d[0];
+            })
+            ])
+            .range([padding,width-padding*2]);
+
+    var yScale = d3.scale.linear()
+            .domain([0,d3.max(dataset,function(d)
+            {
+                return d[1];
+            })
+            ])
+            .range([height-padding,padding]);
+    var dateFormat=d3.format('date');
+    var xAxis = d3.svg.axis()
+            .scale(xScale)
+            .orient("bottom")
+            .ticks(5)
+//            .style('fill','red')
+            .tickFormat(dateFormat);
+    var gx=svg.append('g').attr('class','axis')
+            .call(xAxis)
+
+
+//    xAxis.selectAll('text').style('fill','red')
+    var yAxis = d3.svg.axis()
+            .scale(yScale)
+            .orient("left")
+            .ticks(3);
+    svg.append("g")
+            .attr("class","axis")
+            .call(xAxis)
+            .attr("transform","translate(0,"+(height-padding)+")")
+            .append("text")
+            .attr("transform","translate("+(height-padding)+",0)");//指定坐标轴说明的坐标
+
+    svg.append("g")
+            .attr("class","axis")
+            .attr("transform","translate("+padding+",0)")
+            .call(yAxis)
+            .append("text") //添加坐标轴说明
+            .attr("transform","translate(0,"+(padding)+")");
+    svg.append('linearGradient')
+            .attr({
+                id:'linear',
+                x1:'0%',
+                y1:'0%',
+                x2:'0%',
+                y2:'100%',
+                spreadMethod:'pad'
+            })
+    var circleD=[{
+        x:xScale(2002),
+        y:yScale(10),
+        r:55,
+        delay:2000,
+        duration:2000
+    },{
+        x:xScale(2004),
+        y:yScale(10),
+        r:55,
+        delay:2000,
+        duration:2000
+    }]
+    var circleE=[{
+        x:xScale(2001.5),
+        y:yScale(10),
+        r:55,
+        delay:2000,
+        duration:2000
+    },{
+        x:xScale(2002.5),
+        y:yScale(10),
+        r:55,
+        delay:2000,
+        duration:2000
+    },
+        {
+            x:xScale(2004.5),
+            y:yScale(10),
+            r:55,
+            delay:2000,
+            duration:2000
+        }];
+
+    svg.selectAll('t')
+            .data(circleD)
+            .enter()
+            .append('circle')
+//            .style('opacity',0.5)
+            .attr({
+                'class':'test',
+                cx:function(d){return d.x;},
+                cy:function(d){return d.y;},
+                r:function(d){return d.r;}
+            })
+
+//            .style('cursor','hand')
+//            .transition()
+//            .duration(function(d,i){console.log(i);return d.duration})
+//            .delay(1000)
+//            .ease('linear')
+//            .attr({
+//                'cx':function(d){return d.x*2}
+//            })
+//            .on('click',function(d){
+//                var clickX=d3.event.x;
+//                console.log(d3.event.x, d.cx);
+//                if(clickX> d.cx)alert('right')
+//                else alert('left')
+//            })
+//            .call(drag)
+//            .style('background','-webkit-linear-gradient(right,rgb(25,35,45) 0%,rgb(50,70,90) '+50+'%,rgb(50,70,90) '+50+'%,rgb(50,70,90) 100%)');
+
+    function typeofObj(obj) {
+        return Object.prototype.toString.call(obj);
+    }
+    function cloneArray(fromObj,toObj){
+        for(var j=0;j<fromObj.length;j++){
+            var type=typeofObj(fromObj[j]);
+            if(type == "[object Object]"){
+                toObj[j]={};
+                cloneObj(fromObj[j],toObj[j]);
+            }
+            else if(type == "[object Array]"){
+                toObj[j]=[];
+                cloneArray(fromObj[j],toObj[j])
+            }
+            else{
+                toObj[j]=fromObj[j];
+            }
+        }
+    }
+    function cloneObj(fromObj,toObj){
+        for(var i in fromObj){
+            if(!in_array(i, cloneIngoreList)){
+                if(typeofObj(fromObj[i])=="[object Object]"){
+                    toObj[i]={}
+                    cloneObj(fromObj[i],toObj[i]);
+                }
+                else if(typeofObj(fromObj[i])=="[object Array]"){
+                    toObj[i]=[];
+                    cloneArray(fromObj[i],toObj[i])
+                }
+                else{
+                    toObj[i]=fromObj[i];
+                }
+            }
+
+        }
+    }
+    function clone(fromObj,toObj){
+        if (typeofObj(fromObj)=="[object Object]")cloneObj(fromObj,toObj);
+        else if(typeofObj(fromObj)=="[object Array]")cloneArray(fromObj,toObj);
+        else toObj=fromObj;
+    }
+function cx(data){
+    return data.x;
+}
+    svg.selectAll('.test').data(circleE)
+            .enter()
+            .append('circle')
+            .attr({
+                'class':'test',
+                cx:cx,
+                cy:function(d){return d.y;},
+                r:function(d){return d.r;}
+            })
+    var p1=[xScale(2001),yScale(0)];
+    var p2=[xScale(2001),yScale(5)];
+    var p3=[xScale(2002),yScale(10)];
+    var p4=[xScale(2002),yScale(0)];
+
+    var p5=p1;
+    var p6=[xScale(2001),yScale(3)];
+    var p7=[xScale(2002),yScale(7)];
+    var p8=p4;
+//    var d='M455.49821570181615 21.780516817856647C504.1815675481266 21.259441016893273 534.6907837740632 20.75472050844664 537.7828385541097 20.44255547066488'
+    var d='M100 100 200 200 300 300';
+//    var d='M'+p1[0]+','+p1[1]+' L'+p2[0]+','+p2[1] +' '+p3[0]+','+p3[1]+' '+p4[0]+','+p4[1];
+//    var d1='M'+p5[0]+','+p5[1]+' L'+p6[0]+','+p6[1] +' '+p7[0]+','+p7[1]+' '+p8[0]+','+p8[1];
+//
+    svg.append('path')
+            .attr('d',d)
+            .style('fill','red')
+            .style('stroke-width','2px')
+            .style({
+                'fill':'red',
+                'stroke-width':'2px'
+            })
+            .on('click',function(d){
+//                console.log(1);
+            });
+    function testFunction(){
+        this.func1=function(){
+//            console.log(1);
+        }
+        this.func2=function(){
+//            console.log(2);
+        }
+    };
+    var test=new testFunction();
+
+//    svg.append('path')
+//            .attr('d',d1)
+//            .style('fill','red')
+//            .style('stroke','red');
+
+//function test(){
+//    console.log(1);
+
+//    function ajax(url,success,error) {
+//    $.ajax({
+//        url: url,
+//        context: document.body,
+//        async: false,
+//        success: success,
+//        error: error
+//    })
+//}
+//    var success=function (data) {
+//        var json=JSON.parse(data);
+////        console.log(json);
+//    }
+//    a={a:1};
+//    a.toString()
+
+//    var url = "http://52.34.227.247:5001/InfluenceGraph/?id=114_10";
+//    console.log(url);
+//    ajax(url, success)
+//$.getJSON('http://52.10.159.127:5001/GetTree/?callback=?',{target:'16653'},function(data){
+//    console.log(data);
+//    //
+//});
+//    $.getJSON('http://211.147.15.14:5001/GetNode/?callback=?',{target:'140_20_21_10_4286296'},function(data){
+//            console.log(data);
+//
+//        });
+//    $.getJSON('http://192.168.1.40:5001/GetCluster/?callback=?',{target:'140_20_21_10',page_size:'400'},function(data){
+//            console.log(data);
+//    //
+//        });
+//    $.getJSON('http://192.168.1.40:5003/SearchPapers/?callback=?',{target:'worldsfwfewe',page:'0'},function(data){
+//            console.log(data);
+//    //
+//        });
+    //    (function(){
+//        var element = document.getElementById("rotate");
+//        var r = 0;
+//        var i = 1;
+//        function rotate(){
+//            r += i;
+////            if( Math.abs(r) >= 25 ) i*=-1
+//            element.style.webkitTransform ="rotate(" + r + "deg)";
+//        }
+//
+//        var timer = setInterval(rotate,3);
+//
+//        element.onmouseover = function(){
+//            clearInterval(timer);
+//            timer = null;
+//        };
+//
+//        element.onmouseout = function(){
+//            if(timer)return;
+//            timer = setInterval(rotate,2);
+//        };
+//    }());
+
+</script>
+</body>
+</html>
