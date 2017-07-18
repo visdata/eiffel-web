@@ -82,6 +82,23 @@ function calculateFlowMap(d, relayout) {
         }
         edge.isForegroundEdge=true;
     });
+
+    var edgeCount = 0;
+    var flowCount = 0;
+    var selfEdgeCount = 0;
+    var selfFlowCount = 0;
+    edges.forEach(function (edge) {
+        flowCount += edge.flow;
+        for (var k in edge.weight) {
+            edgeCount += edge.weight[k];
+        }
+        if (edge.source === edge.target) {
+            selfFlowCount += edge.flow;
+            for (var k in edge.weight) {
+                selfEdgeCount += edge.weight[k];
+            }
+        }
+    });
     var foregroundSourceEdges=[];
     clone(edges,foregroundSourceEdges);
 

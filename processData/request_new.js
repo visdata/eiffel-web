@@ -1,6 +1,6 @@
 function ajax(url, success, data) {
-    //console.log(url);
-    //console.log(data);
+    console.log(url);
+    console.log(data);
     $.ajax({
         url: url,
         data: data,
@@ -13,6 +13,29 @@ function requestData() {
     if (twitterClusterCount) {
         d3.json('localData/twitter'+twitterClusterCount+'.json', function (data) {
             console.log(data);
+            var nodeCount = 0;
+            var edgeCount = 0;
+            var flowCount = 0;
+            var selfEdgeCount = 0;
+            var selfFlowCount = 0;
+            for (var key in data.cluster) {
+                for (var year in data.cluster[key].nodeYearInfo) {
+                    nodeCount += +data.cluster[key].nodeYearInfo[year];
+                }
+            }
+            data.edge.forEach(function (edge) {
+                flowCount += edge.flow;
+                for (var k in edge.weight) {
+                    edgeCount += edge.weight[k];
+                }
+                if (edge.source === edge.target) {
+                    selfFlowCount += edge.flow;
+                    for (var k in edge.weight) {
+                        selfEdgeCount += edge.weight[k];
+                    }
+                }
+            });
+
             data.clusterIDList = [5,10,20];
             for (var key in data.cluster) {
                 var nodeYearInfo = data.cluster[key].nodeYearInfo;
@@ -147,7 +170,7 @@ function search(ids) {
                 ajax(newUrl, success, errorData);
             }
             else {
-                //console.log(d);
+                console.log(d);
                 function clearCiteseerx(graph) {
                     var clusters = graph.cluster;
                     var edges = graph.edge;

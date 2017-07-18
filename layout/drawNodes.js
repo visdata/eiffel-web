@@ -53,9 +53,17 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
 
     var nonRootNodes = [];
     nodes.forEach(function (node) {
-        if(!node.focused) {
-            nonRootNodes.push(node);
+        if(getUrlParam('twitter') == '20') {
+            if(node.focused == 'false') {
+                nonRootNodes.push(node);
+            }
         }
+        else {
+            if(!node.focused) {
+                nonRootNodes.push(node);
+            }
+        }
+
     });
 
     var citationDomain = [d3.min(nonRootNodes, function (d) {
@@ -296,6 +304,11 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                     },
                     'stop-opacity': function () {
                         if (nodeOpacityOption == 'citation' || nodeOpacityOption == 'uniform') {
+                            console.log(citation);
+                            console.log(nodeOpacity[nodeOpacityOption](citation));
+                            console.log(nodeOpacity)
+                            console.log(nodeOpacityOption)
+                            console.log(nodeOpacity[nodeOpacityOption])
                             return nodeOpacity[nodeOpacityOption](citation);
                         }
                         else if (nodeOpacityOption == 'avgCitation') {

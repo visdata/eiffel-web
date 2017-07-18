@@ -129,5 +129,5 @@ gulp.task('venuepapers', ["venuepapersJS"],function() {
 });
 
 
-gulp.task('default', ['graph']);
-//gulp.task('default', ['graph','citation','result','venuepapers','venuelist']);
+//gulp.task('default', ['graph']);
+gulp.task('default', ['graph','citation','result','venuepapers','venuelist']);
