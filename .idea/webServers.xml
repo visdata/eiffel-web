@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e4baa8ff-b463-482b-a4ca-e6998fb51ad9" name="ali" url="http://139.129.203.9">
+        <fileTransfer host="139.129.203.9" port="22" rootFolder="/var/www/html/eiffel" accessType="SFTP" password="dfd9dfd3df9bdf9edf9bdf9edf98df9b" username="suy">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

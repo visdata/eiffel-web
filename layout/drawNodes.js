@@ -101,6 +101,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
         }
 
     };
+    console.log(avgCitationDomain);
     that.nodeOpacity = nodeOpacity;
     clone(dd.nodeYearData.data, dd.subNodeYearData);
     for (var i = 0; i < dd.subNodeYearData.length; i++) {
@@ -293,6 +294,10 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
             }, {offset: 0, color: color.nodeColor, opacity: 1}, {offset: 1, color: color.nodeColor, opacity: 1}];
             var citation = e.citation;
             var size = e.size;
+            console.log(citation)
+            console.log(size)
+            console.log(citation/size);
+            console.log(nodeOpacity[nodeOpacityOption](citation/size));
             thisLG.selectAll('stop').data(data).enter()
                 .append('stop')
                 .attrs({
@@ -304,14 +309,12 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                     },
                     'stop-opacity': function () {
                         if (nodeOpacityOption == 'citation' || nodeOpacityOption == 'uniform') {
-                            console.log(citation);
-                            console.log(nodeOpacity[nodeOpacityOption](citation));
-                            console.log(nodeOpacity)
-                            console.log(nodeOpacityOption)
-                            console.log(nodeOpacity[nodeOpacityOption])
+
                             return nodeOpacity[nodeOpacityOption](citation);
                         }
                         else if (nodeOpacityOption == 'avgCitation') {
+
+
                             return nodeOpacity[nodeOpacityOption](citation/size);
                         }
                     }

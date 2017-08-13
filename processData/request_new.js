@@ -19,9 +19,12 @@ function requestData() {
             var selfEdgeCount = 0;
             var selfFlowCount = 0;
             for (var key in data.cluster) {
+                var clusterNodeCount = 0;
                 for (var year in data.cluster[key].nodeYearInfo) {
                     nodeCount += +data.cluster[key].nodeYearInfo[year];
+                    clusterNodeCount += +data.cluster[key].nodeYearInfo[year];
                 }
+                data.cluster[key].citation *= clusterNodeCount;
             }
             data.edge.forEach(function (edge) {
                 flowCount += edge.flow;
