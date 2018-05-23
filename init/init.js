@@ -717,10 +717,10 @@ function initSetting(colorStyle) {
         {index: 2, text: 'Style : ', class: 'style', values: ['dark', 'light']},
         {index: 3, text: 'Node Label : ', class: 'nodeLabel', values: ['Bigram keywords', 'TF-IDF keywords']},
         {index: 4, text: 'Node Color : ', class: 'nodeColor', values: ['uniform', 'citation', 'average citation']},
-        {index: 7, text: 'Link Thickness : ', class: 'edgeThickness', values: ['flow rate', '#citation']}
+        {index: 7, text: 'Link Thickness : ', class: 'edgeThickness', values: ['flow rate', '#citation']},
 
-        //{index:1,text:'#Cluster : ',class:'cluster',values:[clusterCount]}
-        //{index:0,text:'Database : ',',class:':'database',values:['aminerV8','citeseerx']}
+        {index:1,text:'#Cluster : ',class:'cluster',values:[clusterCount]},
+        {index:0,text:'Database : ',',class:':'database',values:['aminerV8','citeseerx']}
     ].sort(function (a, b) {
         return a.index - b.index
     });

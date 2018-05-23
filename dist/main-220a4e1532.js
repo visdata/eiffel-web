@@ -3340,7 +3340,6 @@ function updateSvgBySourceCheckBox() {
 
 }
 function changeOption(d) {
-    console.log(d.fatherID);
     if (d.fatherID == 3) {
         optionNumber.nodeLabelOption = parseInt(d.selectID);
     }
@@ -3351,11 +3350,10 @@ function changeOption(d) {
 
         requestData();
     }
-    else if (d.fatherID == 7) {
+    else if (d.fatherID == 5) {
         if (d['selectID'] == 0)edgeThickNessOption = 'flowStrokeWidth';
         else if (d['selectID'] == 1) edgeThickNessOption = 'citationStrokeWidth';
         //requestData();
-        console.log(1);
         var edgeBrush = d3.brushX()
             .extent([[0, -5], [100, 5]])
             .on("end", currentLayer.edgeBrushed);

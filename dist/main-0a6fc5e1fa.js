@@ -3340,7 +3340,6 @@ function updateSvgBySourceCheckBox() {
 
 }
 function changeOption(d) {
-    console.log(d.fatherID);
     if (d.fatherID == 3) {
         optionNumber.nodeLabelOption = parseInt(d.selectID);
     }
@@ -3351,11 +3350,10 @@ function changeOption(d) {
 
         requestData();
     }
-    else if (d.fatherID == 7) {
+    else if (d.fatherID == 5) {
         if (d['selectID'] == 0)edgeThickNessOption = 'flowStrokeWidth';
         else if (d['selectID'] == 1) edgeThickNessOption = 'citationStrokeWidth';
         //requestData();
-        console.log(1);
         var edgeBrush = d3.brushX()
             .extent([[0, -5], [100, 5]])
             .on("end", currentLayer.edgeBrushed);
@@ -3372,9 +3370,6 @@ function changeOption(d) {
             colorStyle = 'light';
         }
         initSetting(colorStyle);
-        initFullScreenAndSizeBar();
-        gTranslation();
-        drawFullScreenIcon(gFullScreen, fullScreenButtonTranWidth, fullScreenButtonTranHeight);
         requestData();
     }
     else if (d.fatherID == 0) {
@@ -6169,6 +6164,9 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
         if(!node.focused) {
             nonRootNodes.push(node);
         }
+        else{
+            console.log(node.id);
+        }
     });
 
     var citationDomain = [d3.min(nonRootNodes, function (d) {
@@ -6398,6 +6396,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
             }, {offset: 0, color: color.nodeColor, opacity: 1}, {offset: 1, color: color.nodeColor, opacity: 1}];
             var citation = e.citation;
             var size = e.size;
+            console.log(e.id, e.citation, e.size, e.citation / e.size);
             thisLG.selectAll('stop').data(data).enter()
                 .append('stop')
                 .attrs({
@@ -6407,6 +6406,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                     'stop-color': function (d) {
                         return d.color
                     },
+                    //'stop-opacity':function(d){return d.opacity}
                     'stop-opacity': function () {
                         if (nodeOpacityOption == 'citation' || nodeOpacityOption == 'uniform') {
                             return nodeOpacity[nodeOpacityOption](citation);
@@ -9784,9 +9784,7 @@ function calculateFlowMap(d, relayout) {
         if (nodes[i].focused == 'true')root = nodes[i];
     }
     //change jigsaw 210 cluster 106 cluster position
-    root.y = this.svg.attr('height').toFloat() / 2;
-
-    if(getUrlParam('aminerV8_id') == 1182989 && leftLayer.clusterCount == '20') {
+    if(getUrlParam('aminerV8_id') == 1182989) {
         var tmp = {x: nodes[13].x, y: nodes[13].y};
         nodes[13].x = nodes[19].x;
         nodes[13].y = nodes[19].y;
@@ -9801,15 +9799,13 @@ function calculateFlowMap(d, relayout) {
         n2.x = tmp.x;
         n2.y = tmp.y;
     }
-    if(getUrlParam('twitter') == 20 && leftLayer.clusterCount == '20') {
+    if(getUrlParam('twitter') == 20) {
         changePosition(nodes[11], nodes[16]);
         changePosition(nodes[4], nodes[15]);
         changePosition(nodes[1], nodes[17]);
-        changePosition(nodes[11], nodes[1]);
-        nodes[13].y = this.svg.attr('height').toFloat() / 2-20;
-        nodes[4].y += 20;
-        root.y = nodes[11].y;
+        nodes[13].y = this.svg.attr('height').toFloat() / 2;
     }
+    root.y = this.svg.attr('height').toFloat() / 2;
 
     var cluster = {};
     generateCluster(root, cluster);
@@ -14874,7 +14870,7 @@ function initServer(){
     localServer='127.0.0.1';
     server42='192.168.1.42';
     ali='118.190.210.193';
-    server=ali;
+    server=server42;
     port='5002';
     errorPort='5003';
 
