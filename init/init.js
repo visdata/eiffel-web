@@ -1,7 +1,6 @@
 function LayoutSetting() {
-//    this.resolutionRatioList=[{'4:3':1024/643},{'16:10':1440/775},{'16:9':1600/775}];
-    this.resolutionRatioList = [
-        {
+    //    this.resolutionRatioList=[{'4:3':1024/643},{'16:10':1440/775},{'16:9':1600/775}];
+    this.resolutionRatioList = [{
             'resolution': '4:3',
             'realRatio': 1024 / 643
         },
@@ -14,12 +13,12 @@ function LayoutSetting() {
             'realRatio': 1600 / 775
         }
     ];
-    this.totalWidth = window.innerWidth
-        || document.body.clientWidth
-        || document.documentElement.clientWidth;
-    this.totalHeight = document.body.clientHeight
-        || document.documentElement.clientHeight
-        || window.innerHeight;
+    this.totalWidth = window.innerWidth ||
+        document.body.clientWidth ||
+        document.documentElement.clientWidth;
+    this.totalHeight = document.body.clientHeight ||
+        document.documentElement.clientHeight ||
+        window.innerHeight;
     this.settings = {
         '4:3': {},
         '16:10': {},
@@ -27,7 +26,7 @@ function LayoutSetting() {
     };
     this.setting = {}
     this.selectSetting = function () {
-//        console.log(this);
+        //        console.log(this);
         var ratio = this.totalWidth / this.totalHeight;
         var min = d3.min(this.resolutionRatioList, function (d) {
             return [Math.abs(ratio - d.realRatio), d];
@@ -37,42 +36,45 @@ function LayoutSetting() {
     };
 
 }
+
 function bodyEvent(e) {
     if (e == 38 || 40) {
         return false;
     }
 
 }
+
 function transitionBackground(transitionMethod, transitionDirection, ratio, darkTransition, lightTransition) {
     return transitionMethod + '(' + transitionDirection + ',' + darkTransition + ' 0%,' + lightTransition + ' ' + ratio + '%,' + lightTransition + ' ' + ratio + '%,' + lightTransition + ' 100%'
 }
+
 function initSetting(colorStyle) {
 
-    usefulWidth = window.innerWidth
-        || document.body.clientWidth
-        || document.documentElement.clientWidth;
-    usefulHeight = document.documentElement.clientHeight
-        || document.body.clientHeight
-        || window.innerHeight;
+    usefulWidth = window.innerWidth ||
+        document.body.clientWidth ||
+        document.documentElement.clientWidth;
+    usefulHeight = document.documentElement.clientHeight ||
+        document.body.clientHeight ||
+        window.innerHeight;
 
     pageStyle = colorStyle;
     color = initColor(colorStyle);
     //setServer();
     layoutSetting();
-//    var scrollLength=18;
-//    usefulWidth-=scrollLength;
+    //    var scrollLength=18;
+    //    usefulWidth-=scrollLength;
     var body = d3.select('body');
     body.attr('onkeydown', 'bodyEvent(event.keyCode||event.which);');
     body.selectAll('*').remove();
 
-//define the ratio of body part in Y-direction
+    //define the ratio of body part in Y-direction
     var titleRatio_Y = 0.1;
     var mainRatio_Y = 1 - titleRatio_Y;
     var bodyDiv = body.append('div').attr('class', 'bodyDiv')
         .styles({
-//            border:'1px solid rgb(50,70,90)',
+            //            border:'1px solid rgb(50,70,90)',
         });
-// draw title Div
+    // draw title Div
     var titleDiv = bodyDiv.append('div').attr('class', 'titleDiv')
         .styles({
             'width': usefulWidth + px,
@@ -80,8 +82,8 @@ function initSetting(colorStyle) {
             'line-height': usefulHeight * titleRatio_Y + px,
             background: color.titleDivColor
         });
-//    console.log(usefulWidth);
-//    console.log(usefulHeight);
+    //    console.log(usefulWidth);
+    //    console.log(usefulHeight);
 
     titleDiv.append('text').html('Eiffel: Evolutionary Flow Map for Influence Graph Visualization')
         .styles({
@@ -90,14 +92,14 @@ function initSetting(colorStyle) {
             'color': color.titleTextColor
         });
 
-//define the ration of body part in X-direction
+    //define the ration of body part in X-direction
     var leftRatio_X = 0.16;
     var rightRatio_X = leftRatio_X;
     var leftTransitionRatio_X = 0.025;
     var rightTransitionRatio_X = leftTransitionRatio_X;
     var middleRatio_X = 1 - leftRatio_X - leftTransitionRatio_X - rightTransitionRatio_X - rightRatio_X;
 
-// draw main Div
+    // draw main Div
     var mainHeight = usefulHeight * mainRatio_Y;
 
     var leftWidth = usefulWidth * leftRatio_X;
@@ -110,10 +112,10 @@ function initSetting(colorStyle) {
     var transitionMethod = '-webkit-linear-gradient';
     var ratio = rightTransitionRatio;
     var leftBackground = transitionBackground(transitionMethod, 'right', ratio, color.mainTransition1, color.mainTransition2);
-//    var rightWhiteBackground='-webkit-linear-gradient(left,rgb(127,127,127) 0%,rgb(255,255,255) '+rightTransitionRatio+'%,rgb(255,255,255) '+rightTransitionRatio+'%,rgb(255,255,255) 100%)';
+    //    var rightWhiteBackground='-webkit-linear-gradient(left,rgb(127,127,127) 0%,rgb(255,255,255) '+rightTransitionRatio+'%,rgb(255,255,255) '+rightTransitionRatio+'%,rgb(255,255,255) 100%)';
     var rightWhiteBackground = transitionBackground(transitionMethod, 'left', ratio, color.whiteBarTransition1, color.whiteBarTransition2);
     var leftWhiteBackground = transitionBackground(transitionMethod, 'right', ratio, color.whiteBarTransition1, color.whiteBarTransition2);
-//    var rightBodyBackground='-webkit-linear-gradient(left,rgb(25,35,45) 0%,rgb(50,70,90) '+rightTransitionRatio+'%,rgb(50,70,90) '+rightTransitionRatio+'%,rgb(50,70,90) 100%)';
+    //    var rightBodyBackground='-webkit-linear-gradient(left,rgb(25,35,45) 0%,rgb(50,70,90) '+rightTransitionRatio+'%,rgb(50,70,90) '+rightTransitionRatio+'%,rgb(50,70,90) 100%)';
     var rightBodyBackground = transitionBackground(transitionMethod, 'left', ratio, color.mainTransition1, color.mainTransition2);
     var leftBodyBackground = transitionBackground(transitionMethod, 'right', ratio, color.mainTransition1, color.mainTransition2);
 
@@ -126,19 +128,19 @@ function initSetting(colorStyle) {
             width: usefulWidth + px
         });
 
-//    var leftDiv=mainDiv.append('div').attr('class','leftDiv')
-//        .styles({
-//            float:'left',
-//            width:leftWidth+px,
-//            height:mainHeight+px
-//        });
-//    var leftTransitionDiv=mainDiv.append('div').attr('class','leftTransitionDiv')
-//        .styles({
-////            background:'rgb(42,55,71)',
-//            float:'left',
-//            width:leftTransitionWidth+px,
-//            height:mainHeight+px
-//        });
+    //    var leftDiv=mainDiv.append('div').attr('class','leftDiv')
+    //        .styles({
+    //            float:'left',
+    //            width:leftWidth+px,
+    //            height:mainHeight+px
+    //        });
+    //    var leftTransitionDiv=mainDiv.append('div').attr('class','leftTransitionDiv')
+    //        .styles({
+    ////            background:'rgb(42,55,71)',
+    //            float:'left',
+    //            width:leftTransitionWidth+px,
+    //            height:mainHeight+px
+    //        });
     var middleDiv = mainDiv.append('div').attr('class', 'middleDiv')
         .styles({
             float: 'left',
@@ -147,17 +149,17 @@ function initSetting(colorStyle) {
             //height:mainHeight+px
             height: mainHeight + px
         });
-//    var rightTransitionDiv=mainDiv.append('div').attr('class','rightTransitionDiv')
-//        .styles({
-////            background:'rgb(42,55,71)',
-//            float:'left',
-//            width:rightTransitionWidth+px,
-//            height:mainHeight+px
-//        });
+    //    var rightTransitionDiv=mainDiv.append('div').attr('class','rightTransitionDiv')
+    //        .styles({
+    ////            background:'rgb(42,55,71)',
+    //            float:'left',
+    //            width:rightTransitionWidth+px,
+    //            height:mainHeight+px
+    //        });
     var paperDiv = mainDiv
         .append('div')
         .styles({
-//            background:'rgb(50,70,90)',
+            //            background:'rgb(50,70,90)',
             overflow: 'hidden',
             float: 'left',
             width: 'auto',
@@ -167,7 +169,7 @@ function initSetting(colorStyle) {
         .append('div')
         .attr('class', 'paperDiv')
         .styles({
-//            background:'rgb(50,70,90)',
+            //            background:'rgb(50,70,90)',
             overflow: 'hidden',
             float: 'left',
             width: (rightWidth + rightTransitionWidth + leftWidth + leftTransitionWidth) + px,
@@ -176,7 +178,7 @@ function initSetting(colorStyle) {
         });
     var rightDiv = paperDiv.append('div').attr('class', 'rightDiv')
         .styles({
-//            background:'rgb(50,70,90)',
+            //            background:'rgb(50,70,90)',
             float: 'left',
             width: rightWidth + rightTransitionWidth + px,
             height: mainHeight + px,
@@ -188,8 +190,8 @@ function initSetting(colorStyle) {
             width: leftWidth + leftTransitionWidth + px,
             height: mainHeight + px
         });
-// define the ratio of three parts in left, right and transition div
-// the variable name of the total height of these parts is mainHeight
+    // define the ratio of three parts in left, right and transition div
+    // the variable name of the total height of these parts is mainHeight
     var topBarHeight = 0.003 * mainHeight;
     var secondBarHeight = 0.04 * mainHeight;
     var contentHeight = 0.925 * mainHeight;
@@ -214,7 +216,7 @@ function initSetting(colorStyle) {
         .attr('class', 'leftTransitionTopBarDiv')
         .styles({
             float: 'left',
-//            'background-image':'linear-gradient(left, rgb(255,255,255),rgb(127,127,127))',
+            //            'background-image':'linear-gradient(left, rgb(255,255,255),rgb(127,127,127))',
             width: leftTransitionWidth + px,
             height: topBarHeight + px
         });
@@ -237,7 +239,7 @@ function initSetting(colorStyle) {
         .styles({
             float: 'left',
             //'background-image':'-webkit-linear-gradient(left, rgb(50,70,90),rgb(25,35,45))',
-//            'background-image':'linear-gradient(left, rgb(255,255,255),rgb(127,127,127))',
+            //            'background-image':'linear-gradient(left, rgb(255,255,255),rgb(127,127,127))',
             width: leftTransitionWidth + px,
             height: secondBarHeight + px
         });
@@ -267,7 +269,7 @@ function initSetting(colorStyle) {
         .styles({
             float: 'left',
             //'background-image':'-webkit-linear-gradient(left, rgb(255,255,255),rgb(127,127,127))',
-//            'background-image':'linear-gradient(left, rgb(255,255,255),rgb(127,127,127))',
+            //            'background-image':'linear-gradient(left, rgb(255,255,255),rgb(127,127,127))',
             width: leftTransitionWidth + px,
             height: middleBarHeight + px
         });
@@ -290,7 +292,7 @@ function initSetting(colorStyle) {
         .styles({
             float: 'left',
             //'background-image':'-webkit-linear-gradient(left, rgb(141,162,167),rgb(70,81,83))',
-//            'background-image':'linear-gradient(left, rgb(141,162,167),rgb(70,81,83))',
+            //            'background-image':'linear-gradient(left, rgb(141,162,167),rgb(70,81,83))',
             width: leftTransitionWidth + px,
             height: bottomBarHeight + px
         });
@@ -323,20 +325,20 @@ function initSetting(colorStyle) {
             width: rightTransitionWidth + rightWidth + px,
             height: bottomBarHeight + px
         });
-// define the ratio of central part
-//topBarHeight=0.003*mainHeight;
+    // define the ratio of central part
+    //topBarHeight=0.003*mainHeight;
     var topControlHeight = 0.05 * mainHeight;
     var graphDivHeight = 0.70 * mainHeight;
     var bottomControlHeight = 0.05 * mainHeight;
     middleBarHeight = 0.006 * mainHeight;
     var bottomMiddleBarHeight = 0.006 * mainHeight;
     var authorDivHeight = mainHeight - topBarHeight - topControlHeight - graphDivHeight - bottomControlHeight - bottomMiddleBarHeight;
-//    var topControlHeight=0.05*mainHeight;
-//    var graphDivHeight=0.95*mainHeight;
-//    var bottomControlHeight=0.05*mainHeight;
-//    middleBarHeight=0;
-//    var bottomMiddleBarHeight=0;
-//    var authorDivHeight=mainHeight-topBarHeight-topControlHeight-graphDivHeight-bottomControlHeight-bottomMiddleBarHeight;
+    //    var topControlHeight=0.05*mainHeight;
+    //    var graphDivHeight=0.95*mainHeight;
+    //    var bottomControlHeight=0.05*mainHeight;
+    //    middleBarHeight=0;
+    //    var bottomMiddleBarHeight=0;
+    //    var authorDivHeight=mainHeight-topBarHeight-topControlHeight-graphDivHeight-bottomControlHeight-bottomMiddleBarHeight;
     graphDivHeight += bottomControlHeight;
     var animationPanelTop = usefulHeight * titleRatio_Y + topBarHeight + topControlHeight + graphDivHeight;
     var middleTopBarDiv = middleDiv.append('div')
@@ -379,10 +381,10 @@ function initSetting(colorStyle) {
     var bottomControlDiv = middleDiv.append('div').attr('class', 'bottomControlDiv')
         .styles({
             background: 'none',
-            width: middleWidth*0.2 + px,
+            width: middleWidth * 0.2 + px,
             height: bottomControlHeight + px,
             position: 'absolute',
-            left: middleWidth*0.4 +px,
+            left: middleWidth * 0.4 + px,
             top: animationPanelTop - bottomControlHeight + px
         });
     var middleMiddleBarDiv = middleDiv.append('div').attr('class', 'middleMiddleBarDiv')
@@ -422,7 +424,7 @@ function initSetting(colorStyle) {
             'font-size': '12px'
         });
 
-//draw top control div three options and search box on topControlDiv
+    //draw top control div three options and search box on topControlDiv
 
     var checkBoxDiv = topControlDiv.append('div').attr('class', 'checkBoxDiv').styles({
         float: 'left',
@@ -439,9 +441,20 @@ function initSetting(colorStyle) {
         'margin-top': 8 + px
     });
 
-    var databaseData = [
-        {type: 'source', source: 'aminerV8', checked: true, disabled: true, 'name': 'AMiner', position: 'left'},
-        {type: 'source', source: 'citeseerx', 'name': 'CiteseerX', position: 'right'}
+    var databaseData = [{
+            type: 'source',
+            source: 'aminerV8',
+            checked: true,
+            disabled: true,
+            'name': 'AMiner',
+            position: 'left'
+        },
+        {
+            type: 'source',
+            source: 'citeseerx',
+            'name': 'CiteseerX',
+            position: 'right'
+        }
     ];
 
     fontFamily = 'Microsoft YaHei';
@@ -459,24 +472,38 @@ function initSetting(colorStyle) {
         })
         .html('Database: ');
 
-    var dbData = [
-        {
+    var dbData = [{
             type: 'source',
             source: 'aminerV8',
             name: 'AMiner',
             class: 'dbOption',
-            sourceList: [
-                {
+            sourceList: [{
                     selectId: 0,
                     'source': 'aminerV8',
                     text: 'AMiner',
-                    data: [{cluster: '10'}, {cluster: '20'}, {cluster: '40'}, {cluster: '80'}]
+                    data: [{
+                        cluster: '10'
+                    }, {
+                        cluster: '20'
+                    }, {
+                        cluster: '40'
+                    }, {
+                        cluster: '80'
+                    }]
                 },
                 {
                     selectId: 1,
                     'source': 'citeseerx',
                     text: 'CiteseerX',
-                    data: [{cluster: '10'}, {cluster: '20'}, {cluster: '40'}, {cluster: '80'}]
+                    data: [{
+                        cluster: '10'
+                    }, {
+                        cluster: '20'
+                    }, {
+                        cluster: '40'
+                    }, {
+                        cluster: '80'
+                    }]
                 }
             ],
             checked: true,
@@ -490,18 +517,33 @@ function initSetting(colorStyle) {
             source: 'citeseerx',
             name: 'CiteseerX',
             class: 'dbOption',
-            sourceList: [
-                {
+            sourceList: [{
                     selectId: 0,
                     'source': 'aminerV8',
                     text: 'AMiner',
-                    data: [{cluster: '10'}, {cluster: '20'}, {cluster: '40'}, {cluster: '80'}]
+                    data: [{
+                        cluster: '10'
+                    }, {
+                        cluster: '20'
+                    }, {
+                        cluster: '40'
+                    }, {
+                        cluster: '80'
+                    }]
                 },
                 {
                     selectId: 1,
                     'source': 'citeseerx',
                     text: 'CiteseerX',
-                    data: [{cluster: '10'}, {cluster: '20'}, {cluster: '40'}, {cluster: '80'}]
+                    data: [{
+                        cluster: '10'
+                    }, {
+                        cluster: '20'
+                    }, {
+                        cluster: '40'
+                    }, {
+                        cluster: '80'
+                    }]
                 }
             ],
             position: 'right',
@@ -535,10 +577,10 @@ function initSetting(colorStyle) {
                 .attrs({
                     type: 'checkbox',
                     checked: function () {
-                        if (i == 0)return d.checked;
+                        if (i == 0) return d.checked;
                     },
                     disabled: function () {
-                        if (i == 0)return d.disabled;
+                        if (i == 0) return d.disabled;
                     },
                     class: d.type + 'CheckBox ' + d.type + 'CheckBox_' + d.position,
                     id: d.source
@@ -689,14 +731,14 @@ function initSetting(colorStyle) {
                             var sourceID = thisE.attr('selectId');
                             //var txt = old$(this).text();
                             d3.select("#cite" + id).html(function () {
-                                if (sourceID == 0)return 'AMiner' + '-' + clusterCount;
+                                if (sourceID == 0) return 'AMiner' + '-' + clusterCount;
                                 else return 'CiteseerX' + '-' + clusterCount;
                             });
 
                             console.log(layer.position);
                             layer.clusterCount = f.cluster;
-                            if (f.selectId == 0)layer.source = db1;
-                            else if (f.selectId == 1)layer.source = db2;
+                            if (f.selectId == 0) layer.source = db1;
+                            else if (f.selectId == 1) layer.source = db2;
                             layer.ifLayout = true;
                             layer.thatLayer.ifLayout = false;
                             requestData();
@@ -709,18 +751,47 @@ function initSetting(colorStyle) {
                 })
 
         });
-//    var searchDiv=topControlDiv.append('div').attr('class','searchDiv').styles({
-//        float:'left',
-//        'margin-left':80+px
-//    });
-    var optionData = [
-        {index: 2, text: 'Style : ', class: 'style', values: ['dark', 'light']},
-        {index: 3, text: 'Node Label : ', class: 'nodeLabel', values: ['Bigram keywords', 'TF-IDF keywords']},
-        {index: 4, text: 'Node Color : ', class: 'nodeColor', values: ['uniform', 'citation', 'average citation']},
-        {index: 7, text: 'Link Thickness : ', class: 'edgeThickness', values: ['flow rate', '#citation']},
+    //    var searchDiv=topControlDiv.append('div').attr('class','searchDiv').styles({
+    //        float:'left',
+    //        'margin-left':80+px
+    //    });
+    var optionData = [{
+            index: 2,
+            text: 'Style : ',
+            class: 'style',
+            values: ['dark', 'light']
+        },
+        {
+            index: 3,
+            text: 'Node Label : ',
+            class: 'nodeLabel',
+            values: ['Bigram keywords', 'TF-IDF keywords']
+        },
+        {
+            index: 4,
+            text: 'Node Color : ',
+            class: 'nodeColor',
+            values: ['uniform', 'citation', 'average citation']
+        },
+        {
+            index: 7,
+            text: 'Link Thickness : ',
+            class: 'edgeThickness',
+            values: ['flow rate', '#citation']
+        },
 
-        {index:1,text:'#Cluster : ',class:'cluster',values:[clusterCount]},
-        {index:0,text:'Database : ',',class:':'database',values:['aminerV8','citeseerx']}
+        {
+            index: 1,
+            text: '#Cluster : ',
+            class: 'cluster',
+            values: [clusterCount]
+        },
+        {
+            index: 0,
+            text: 'Database : ',
+            ',class:': 'database',
+            values: ['aminerV8', 'citeseerx']
+        }
     ].sort(function (a, b) {
         return a.index - b.index
     });
@@ -775,8 +846,7 @@ function initSetting(colorStyle) {
                     var ul_display = d3.select('#ul' + id).style('display');
                     if (ul.css("display") == "none") {
                         ul.slideDown("fast");
-                    }
-                    else {
+                    } else {
                         ul.slideUp("fast");
                     }
                 })
@@ -794,8 +864,8 @@ function initSetting(colorStyle) {
                 })
                 .html(function () {
                     //console.log(colorStyle)
-                    if (d.class == 'style')return colorStyle;
-                    if (d.class != 'database')return d.values[0];
+                    if (d.class == 'style') return colorStyle;
+                    if (d.class != 'database') return d.values[0];
                     else return getUrlParam('selected');
                 });
             var newUL = newLabelDiv.append('ul')
@@ -822,7 +892,7 @@ function initSetting(colorStyle) {
                         selectId: j,
                         father: d.index,
                         class: function (e, i) {
-                            if (e.index == 3)return 'hasSub';
+                            if (e.index == 3) return 'hasSub';
                         }
                     })
                     .on('mouseover', function (e, i) {
@@ -856,15 +926,17 @@ function initSetting(colorStyle) {
                             } else {
                                 ul.slideUp("fast");
                             }
-                        }
-                        else {
+                        } else {
                             var id = d3.select(this).attr('father');
                             var txt = old$(this).text();
                             old$("#cite" + id + ' a').html(txt);
                             var value = old$(this).attr("selectId");
-//                    inputselect.val(value);
+                            //                    inputselect.val(value);
                             old$("#ul" + id).hide();
-                            var d = {fatherID: id, selectID: value};
+                            var d = {
+                                fatherID: id,
+                                selectID: value
+                            };
                             changeOption(d);
                         }
 
@@ -874,11 +946,19 @@ function initSetting(colorStyle) {
             }
 
             if (d.index == 3) {
-                var subData = [{'value': 1, index: d.index, text: '1 keyword'}, {
+                var subData = [{
+                    'value': 1,
+                    index: d.index,
+                    text: '1 keyword'
+                }, {
                     'value': 2,
                     index: d.index,
                     text: '2 keywords'
-                }, {'value': 3, index: d.index, text: '3 keywords'}];
+                }, {
+                    'value': 3,
+                    index: d.index,
+                    text: '3 keywords'
+                }];
                 var textLength = '3 keywords'.visualLength(fontFamily, fontSize)
                 var subUL = newLabelDiv.append('ul')
                     .attrs({
@@ -890,11 +970,19 @@ function initSetting(colorStyle) {
                         width: textLength + 5 + px,
                         'display': 'none'
                     });
-                var subDataF = [{'value': 1, index: d.index, text: '1 keyword'}, {
+                var subDataF = [{
+                    'value': 1,
+                    index: d.index,
+                    text: '1 keyword'
+                }, {
                     'value': 2,
                     index: d.index,
                     text: '2 keywords'
-                }, {'value': 3, index: d.index, text: '3 keywords'}];
+                }, {
+                    'value': 3,
+                    index: d.index,
+                    text: '3 keywords'
+                }];
                 var subULF = newLabelDiv.append('ul')
                     .attrs({
                         class: 'subUL',
@@ -931,26 +1019,41 @@ function initSetting(colorStyle) {
                         old$("#cite" + id + ' a').html('Bigram keywords');
                         var value = old$(this).attr("selectId");
                         var level = parseInt(d3.select(this).attr('labelLevel'));
-//                    inputselect.val(value);
+                        //                    inputselect.val(value);
                         old$("#subUL" + id + '_0').hide();
                         old$(".ul").hide();
-                        var d = {fatherID: id, selectID: value};
-                        d3.selectAll('.labelLayer').selectAll('.tfidf').styles({'visibility': 'hidden'});
-                        d3.selectAll('.labelLayer').selectAll('.freq').styles({'visibility': null});
+                        var d = {
+                            fatherID: id,
+                            selectID: value
+                        };
+                        d3.selectAll('.labelLayer').selectAll('.tfidf').styles({
+                            'visibility': 'hidden'
+                        });
+                        d3.selectAll('.labelLayer').selectAll('.freq').styles({
+                            'visibility': null
+                        });
                         d3.select('.tfidfSummary').style('display', 'none');
                         d3.select('.freqSummary').style('display', 'block');
                         tfidfStatus = 'none';
                         freqStatus = 'block';
                         if (level == 0) {
-                            d3.selectAll('.labelLayer').selectAll('.FrequencyLevel1').styles({'visibility': 'hidden'});
-                            d3.selectAll('.labelLayer').selectAll('.FrequencyLevel2').styles({'visibility': 'hidden'});
-                        }
-                        else if (level == 1) {
-                            d3.selectAll('.labelLayer').selectAll('.FrequencyLevel1').styles({'visibility': null});
-                            d3.selectAll('.labelLayer').selectAll('.FrequencyLevel2').styles({'visibility': 'hidden'});
-                        }
-                        else if (level == 2) {
-                            d3.selectAll('.labelLayer').selectAll('.FrequencyLevel2  ').styles({'visibility': null});
+                            d3.selectAll('.labelLayer').selectAll('.FrequencyLevel1').styles({
+                                'visibility': 'hidden'
+                            });
+                            d3.selectAll('.labelLayer').selectAll('.FrequencyLevel2').styles({
+                                'visibility': 'hidden'
+                            });
+                        } else if (level == 1) {
+                            d3.selectAll('.labelLayer').selectAll('.FrequencyLevel1').styles({
+                                'visibility': null
+                            });
+                            d3.selectAll('.labelLayer').selectAll('.FrequencyLevel2').styles({
+                                'visibility': 'hidden'
+                            });
+                        } else if (level == 2) {
+                            d3.selectAll('.labelLayer').selectAll('.FrequencyLevel2  ').styles({
+                                'visibility': null
+                            });
 
                         }
 
@@ -989,27 +1092,42 @@ function initSetting(colorStyle) {
                         old$("#cite" + id + ' a').html('TF-IDF keywords');
                         var value = old$(this).attr("selectId");
                         var level = parseInt(d3.select(this).attr('labelLevel'));
-//                    inputselect.val(value);
+                        //                    inputselect.val(value);
                         old$("#subUL" + id + '_1').hide();
                         old$(".ul").hide();
-                        var d = {fatherID: id, selectID: value};
+                        var d = {
+                            fatherID: id,
+                            selectID: value
+                        };
 
-                        d3.selectAll('.labelLayer').selectAll('.freq').styles({'visibility': 'hidden'});
-                        d3.selectAll('.labelLayer').selectAll('.tfidf').styles({'visibility': null});
+                        d3.selectAll('.labelLayer').selectAll('.freq').styles({
+                            'visibility': 'hidden'
+                        });
+                        d3.selectAll('.labelLayer').selectAll('.tfidf').styles({
+                            'visibility': null
+                        });
                         d3.select('.tfidfSummary').style('display', 'block');
                         d3.select('.freqSummary').style('display', 'none');
                         tfidfStatus = 'block';
                         freqStatus = 'none';
                         if (level == 0) {
-                            d3.selectAll('.labelLayer').selectAll('.TFIDFLevel1').styles({'visibility': 'hidden'});
-                            d3.selectAll('.labelLayer').selectAll('.TFIDFLevel2').styles({'visibility': 'hidden'});
-                        }
-                        else if (level == 1) {
-                            d3.selectAll('.labelLayer').selectAll('.TFIDFLevel1').styles({'visibility': null});
-                            d3.selectAll('.labelLayer').selectAll('.TFIDFLevel2').styles({'visibility': 'hidden'});
-                        }
-                        else if (level == 2) {
-                            d3.selectAll('.labelLayer').selectAll('.TFIDFLevel2').styles({'visibility': null});
+                            d3.selectAll('.labelLayer').selectAll('.TFIDFLevel1').styles({
+                                'visibility': 'hidden'
+                            });
+                            d3.selectAll('.labelLayer').selectAll('.TFIDFLevel2').styles({
+                                'visibility': 'hidden'
+                            });
+                        } else if (level == 1) {
+                            d3.selectAll('.labelLayer').selectAll('.TFIDFLevel1').styles({
+                                'visibility': null
+                            });
+                            d3.selectAll('.labelLayer').selectAll('.TFIDFLevel2').styles({
+                                'visibility': 'hidden'
+                            });
+                        } else if (level == 2) {
+                            d3.selectAll('.labelLayer').selectAll('.TFIDFLevel2').styles({
+                                'visibility': null
+                            });
 
                         }
 
@@ -1035,7 +1153,7 @@ function initSetting(colorStyle) {
             });
         });
 
-//draw searchDiv
+    //draw searchDiv
     var buttonWidth = 20;
     var buttonHeight = 20;
     var inputWidth = 120;
@@ -1057,10 +1175,10 @@ function initSetting(colorStyle) {
     fontSize = 12;
     var directionText = ['Flip-book', 'Movie'];
     currentDirection = 'horizontal';
-//    var directionHeight=d3.max([directionText[0].visualHeight(fontFamily,fontSize),directionText[1].visualHeight(fontFamily,fontSize)]);
+    //    var directionHeight=d3.max([directionText[0].visualHeight(fontFamily,fontSize),directionText[1].visualHeight(fontFamily,fontSize)]);
     var directionHeight = bottomControlHeight * 0.7;
     var directionDivMiddleLineWidth = 1;
-//    var directionDivWidth=directionText[0].visualLength(fontFamily,fontSize)+0.04*middleWidth+directionText[1].visualLength(fontFamily,fontSize)+directionDivMiddleLineWidth+3;
+    //    var directionDivWidth=directionText[0].visualLength(fontFamily,fontSize)+0.04*middleWidth+directionText[1].visualLength(fontFamily,fontSize)+directionDivMiddleLineWidth+3;
     var directionDivWidth = middleWidth * 0.20;
     var bottomOptionDiv = bottomControlDiv.append('div').attr('class', 'bottomOptionDiv');
     var directionDiv = bottomOptionDiv.append('div')
@@ -1082,7 +1200,7 @@ function initSetting(colorStyle) {
         })
         .styles({
             float: 'left',
-//            width:directionText[0].visualLength(fontFamily,fontSize)+px,
+            //            width:directionText[0].visualLength(fontFamily,fontSize)+px,
             width: directionDivWidth / 2 + px,
             height: directionHeight + px,
             background: color.buttonStyle.on.div,
@@ -1111,7 +1229,7 @@ function initSetting(colorStyle) {
         .styles({
             float: 'left',
             height: directionHeight + px,
-//            width:directionText[1].visualLength(fontFamily,fontSize)+px,
+            //            width:directionText[1].visualLength(fontFamily,fontSize)+px,
             width: directionDivWidth / 2 + px,
             background: color.buttonStyle.off.div,
             'line-height': directionHeight + px
@@ -1194,7 +1312,7 @@ function initSetting(colorStyle) {
         .attr('class', 'svg svg_left')
         .on('click', function () {
             if (d3.select(d3.event.target).attr('class') && d3.select(d3.event.target).attr('class').split(' ')[0] == 'svg') {
-//                alert('svg')
+                //                alert('svg')
                 var data = leftLayer.data;
                 var currentEdgeSourceTargetDic = leftLayer.currentEdgeSourceTargetDic;
                 var focusedID = leftLayer.focusedID;
@@ -1215,8 +1333,8 @@ function initSetting(colorStyle) {
                 d3.select('.edgeField').selectAll('path')
                     .style('stroke', color.edgeColor)
                     .each(function (d) {
-                        if (d.marker)d.marker.style('fill', color.markerColor);
-                        if (d.highlightedByNodeDic)delete d.highlightedByNodeDic;
+                        if (d.marker) d.marker.style('fill', color.markerColor);
+                        if (d.highlightedByNodeDic) delete d.highlightedByNodeDic;
                     });
 
                 d3.selectAll('.label').style('fill', color.nodeLabelColor);
@@ -1241,7 +1359,7 @@ function initSetting(colorStyle) {
             var currentEdgeSourceTargetDic = rightLayer.currentEdgeSourceTargetDic;
             var focusedID = rightLayer.focusedID;
             if (d3.select(d3.event.target).attr('class') && d3.select(d3.event.target).attr('class').split(' ')[0] == 'svg') {
-//                alert('svg')
+                //                alert('svg')
                 d3.selectAll('.clicked')
                     .each(function (d) {
                         if (d.self) {
@@ -1259,8 +1377,8 @@ function initSetting(colorStyle) {
                 d3.select('.edgeField').selectAll('path')
                     .style('stroke', color.edgeColor)
                     .each(function (d) {
-                        if (d.marker)d.marker.style('fill', color.markerColor);
-                        if (d.highlightedByNodeDic)delete d.highlightedByNodeDic;
+                        if (d.marker) d.marker.style('fill', color.markerColor);
+                        if (d.highlightedByNodeDic) delete d.highlightedByNodeDic;
                     });
 
                 d3.selectAll('.label').style('fill', color.nodeLabelColor);
@@ -1324,8 +1442,8 @@ function initSetting(colorStyle) {
                 d3.select('.edgeField').selectAll('path')
                     .style('stroke', color.edgeColor)
                     .each(function (d) {
-                        if (d.marker)d.marker.style('fill', color.edgeColor);
-                        if (d.highlightedByNodeDic)delete d.highlightedByNodeDic;
+                        if (d.marker) d.marker.style('fill', color.edgeColor);
+                        if (d.highlightedByNodeDic) delete d.highlightedByNodeDic;
                     });
 
                 d3.selectAll('.label').style('fill', color.nodeLabelColor);
@@ -1385,23 +1503,23 @@ function initSetting(colorStyle) {
     CSDTitleDiv = clusterSummaryDiv.append('div').attr('class', 'CSDTitleDiv');
     CSDBodyDiv = clusterSummaryDiv.append('div').attr('class', 'CSDBodyDiv');
 
-//    CSDTitleDiv.append('text').html('<b>Selected Group</b>'+'<br>');
+    //    CSDTitleDiv.append('text').html('<b>Selected Group</b>'+'<br>');
 
     var nodeList = d3.select('.nodeListDiv');
     NLDTitleDiv = nodeList.append('div').attr('class', 'NLDTitleDiv');
     NLDBodyDiv = nodeList.append('div').attr('class', 'NLDBodyDiv');
 
-//    NLDTitleDiv.append('text').html('<b>Selected Papers</b>'+'<br>');
+    //    NLDTitleDiv.append('text').html('<b>Selected Papers</b>'+'<br>');
     var nodeValue = d3.select('.nodeValueDiv');
     var NVDTitleDiv = nodeValue.append('div').attr('class', 'NVDTitleDiv');
     var NVDBodyDiv = nodeValue.append('div').attr('class', 'NVDBodyDiv');
 
-//    NVDTitleDiv.append('text').html('<b>Details</b>');
+    //    NVDTitleDiv.append('text').html('<b>Details</b>');
 
 
     leftLayer.initFrameIndex(0);
     rightLayer.initFrameIndex(0);
-//    drawselfedges=svg_g.append('g').attr('class','selfEdgeG');
+    //    drawselfedges=svg_g.append('g').attr('class','selfEdgeG');
 
 
     initAuthorData();
@@ -1514,33 +1632,39 @@ function initFullScreenAndSizeBar() {
         }
     };
     var brush = d3.brushX()
-        .extent([[0, -5], [100, 5]])
+        .extent([
+            [0, -5],
+            [100, 5]
+        ])
         .on("brush", brushed);
 
     var edgeBrush = d3.brushX()
-        .extent([[0, -5], [100, 5]])
+        .extent([
+            [0, -5],
+            [100, 5]
+        ])
         .on("end", edgeBrushed);
     gSizeBar.call(xAxis);
     gEdgeSizeBar.call(xAxis1);
 
     gSizeBar.append('text')
         .attrs({
-            x:-'Node Size'.visualLength()/2-5,
-            y:5
+            x: -'Node Size'.visualLength() / 2 - 5,
+            y: 5
         })
         .styles({
-            fill:color.fullScreenButtonColor,
-            'font-size':12
+            fill: color.fullScreenButtonColor,
+            'font-size': 12
         })
         .html('Node Size');
     gEdgeSizeBar.append('text')
         .attrs({
-            x:-'Link Thickness'.visualLength()/2-5,
-            y:5
+            x: -'Link Thickness'.visualLength() / 2 - 5,
+            y: 5
         })
         .styles({
-            fill:color.fullScreenButtonColor,
-            'font-size':12
+            fill: color.fullScreenButtonColor,
+            'font-size': 12
         })
         .html('Link Thickness');
 
@@ -1556,11 +1680,9 @@ function initFullScreenAndSizeBar() {
 function fullScreen(obj) {
     if (obj.requestFullscreen) {
         obj.requestFullscreen();
-    }
-    else if (obj.mozRequestFullScreen) {
+    } else if (obj.mozRequestFullScreen) {
         obj.mozRequestFullScreen();
-    }
-    else if (obj.webkitRequestFullScreen) {
+    } else if (obj.webkitRequestFullScreen) {
         obj.webkitRequestFullScreen();
     }
     obj.style.backgroundColor = color.svgColor;
@@ -1569,11 +1691,9 @@ function fullScreen(obj) {
 function quitFullScreen() {
     if (document.exitFullscreen) {
         document.exitFullscreen();
-    }
-    else if (document.mozCancelFullScreen) {
+    } else if (document.mozCancelFullScreen) {
         document.mozCancelFullScreen();
-    }
-    else if (document.webkitCancelFullScreen) {
+    } else if (document.webkitCancelFullScreen) {
         document.webkitCancelFullScreen();
     }
 }
@@ -1670,7 +1790,9 @@ function drawFullScreenIcon(g, x, y) {
     var gBody = gButton.append('g')
         .attr('class', 'gBody');
     gBody.append('rect')
-        .datum({rotate: 0})
+        .datum({
+            rotate: 0
+        })
         .attrs({
             x: -w,
             y: -w,
@@ -1691,8 +1813,7 @@ function drawFullScreenIcon(g, x, y) {
                     width: width + px,
                     height: height + px
                 });
-            }
-            else {
+            } else {
                 quitFullScreen();
             }
             d.rotate = 1 - d.rotate;
@@ -1704,19 +1825,39 @@ function drawFullScreenIcon(g, x, y) {
             var dx = w / x;
             var dy = w / y;
             var gPart = gButton.append('g')
-                .datum({translate: {x: x, y: y}, rotate: {r: 0, x: l * dx * -1, y: l * dy * -1}})
+                .datum({
+                    translate: {
+                        x: x,
+                        y: y
+                    },
+                    rotate: {
+                        r: 0,
+                        x: l * dx * -1,
+                        y: l * dy * -1
+                    }
+                })
                 .attr('class', 'gPart')
                 .attr('transform', function (d) {
                     return 'translate(' + (d.translate.x) + ',' + (d.translate.y) + ') rotate(' + (d.rotate.r) + ',' + (d.rotate.x) + ',' + (d.rotate.y) + ')'
                 });
 
-            var p = {x: dx * l / 2 * -1, y: dy * l / 2 * -1};
-            var p1 = {}, p2 = {};
+            var p = {
+                x: dx * l / 2 * -1,
+                y: dy * l / 2 * -1
+            };
+            var p1 = {},
+                p2 = {};
             p1.y = p.y;
             p2.x = p.x;
             p1.x = p.x + l * dx * -1;
             p2.y = p.y + l * dy * -1;
-            var lines = [{p1: p, p2: p1}, {p1: p, p2: p2}];
+            var lines = [{
+                p1: p,
+                p2: p1
+            }, {
+                p1: p,
+                p2: p2
+            }];
             gPart.selectAll('whatever')
                 .data(lines)
                 .enter()
@@ -1734,8 +1875,7 @@ function drawFullScreenIcon(g, x, y) {
 
 function initFrameIndex(index) {
     var that = this;
-    var gData = [
-        {
+    var gData = [{
             class: 'outer edgeG',
             id: index,
             index: index
@@ -1775,6 +1915,7 @@ function ClassSVG(svgFather) {
         drawedges = svg_g.append('g').attr('class', 'edge');
     }
 }
+
 function in_array(stringToSearch, arrayToSearch) {
     for (s = 0; s < arrayToSearch.length; s++) {
         thisEntry = arrayToSearch[s].toString();
@@ -1784,22 +1925,27 @@ function in_array(stringToSearch, arrayToSearch) {
     }
     return false;
 }
+
 function Node(node, x, y) {
-    if (node.id)this.id = node.id;
-    if (node.keywords)this.keywords = node.keywords;
-    if (node.bigrams)this.bigrams = node.bigrams; else this.bigrams = node.keywords;
-    if (node.onegram)this.onegram = node.onegram; else this.onegram = node.keywords;
-    if (node.frequencyKeywords)this.frequencyKeywords = node.frequencyKeywords;
-    if (node.focus)this.focus = node.focus;
-    if (node.nodeidlist)this.nodeidlist = node.nodeidlist;
-    if (node.author)this.author = node.author;
-    if (node.focused)this.focused = node.focused;
-    if (node.summary)this.summary = node.summary;
-    if (node.title)this.title = node.title;
-    if (node.venue)this.venue = node.venue;
-    if (node.citation)this.citation = node.citation;
-    if (x)this.x = x; else this.x = node.x;
-    if (y)this.y = y; else this.y = node.y;
+    if (node.id) this.id = node.id;
+    if (node.keywords) this.keywords = node.keywords;
+    if (node.bigrams) this.bigrams = node.bigrams;
+    else this.bigrams = node.keywords;
+    if (node.onegram) this.onegram = node.onegram;
+    else this.onegram = node.keywords;
+    if (node.frequencyKeywords) this.frequencyKeywords = node.frequencyKeywords;
+    if (node.focus) this.focus = node.focus;
+    if (node.nodeidlist) this.nodeidlist = node.nodeidlist;
+    if (node.author) this.author = node.author;
+    if (node.focused) this.focused = node.focused;
+    if (node.summary) this.summary = node.summary;
+    if (node.title) this.title = node.title;
+    if (node.venue) this.venue = node.venue;
+    if (node.citation) this.citation = node.citation;
+    if (x) this.x = x;
+    else this.x = node.x;
+    if (y) this.y = y;
+    else this.y = node.y;
     this.topShift = 0;
     this.bottomShift = 0;
     this.topShiftIn = 0;
@@ -1811,6 +1957,7 @@ function Node(node, x, y) {
         return new Node(node, this.x - dx, this.y - dy);
     }
 }
+
 function Point(x, y) {
     this.x = x;
     this.y = y;
@@ -1818,8 +1965,13 @@ function Point(x, y) {
         return new Point(this.x - dx, this.y - dy);
     }
 }
+
 function layer() {
-    this.data = {sourceData: {}, postData: {}, timeData: {}};
+    this.data = {
+        sourceData: {},
+        postData: {},
+        timeData: {}
+    };
     this.preFocusedID = '';
     this.focusedID = '';
     this.maxYear = 1900;
@@ -1867,10 +2019,10 @@ function layer() {
     this.handleRadius = 8;
     this.curves = [];
     this.directionFlag = true;
-//    method='mst';
+    //    method='mst';
     this.method = 'recoveryWeight';
-//    method='filterFlow';
-//    method = 'origin';
+    //    method='filterFlow';
+    //    method = 'origin';
     this.requestMethod = 'ajax';
     this.ifDrag = false;
     this.ifInitLayout = true;
@@ -1938,6 +2090,7 @@ function layer() {
     this.zoomK = 1;
     console.time()
 }
+
 function initVariable() {
     sourceCheckedStatus = {
         left: true,
@@ -2004,7 +2157,7 @@ function initVariable() {
     tfidfStatus = 'none';
     freqStatus = 'block';
     var source = getUrlParam('source');
-    if(source) {
+    if (source) {
         var sources = source.split('_');
         sources.forEach(function (item, i) {
             if (item) {
@@ -2018,18 +2171,19 @@ function initVariable() {
 
 
 }
-function initLayout() {
-    initServer();
-    initVariable();
-    initVenueList();
-    initSetting(colorStyle);
-    initFullScreenAndSizeBar();
-    gTranslation();
-    drawFullScreenIcon(gFullScreen, fullScreenButtonTranWidth, fullScreenButtonTranHeight);
-//    initRightClickMenu();
 
-//    $(window).on('resize',initSetting);
-    requestData();
+function initLayout() {
+    initServer(); // 找不到
+    initVariable(); // 初始化参数？
+    initVenueList(); // 找不到
+    initSetting(colorStyle); // 貌似所有的界面绘制都在这？
+    initFullScreenAndSizeBar(); // ？
+    gTranslation(); // ？
+    drawFullScreenIcon(gFullScreen, fullScreenButtonTranWidth, fullScreenButtonTranHeight); // ？
+    //    initRightClickMenu();
+
+    //    $(window).on('resize',initSetting);
+    requestData(); // 找不到
 
 }
 initLayout();
