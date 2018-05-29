@@ -3340,7 +3340,6 @@ function updateSvgBySourceCheckBox() {
 
 }
 function changeOption(d) {
-    console.log(d.fatherID);
     if (d.fatherID == 3) {
         optionNumber.nodeLabelOption = parseInt(d.selectID);
     }
@@ -3351,11 +3350,10 @@ function changeOption(d) {
 
         requestData();
     }
-    else if (d.fatherID == 7) {
+    else if (d.fatherID == 5) {
         if (d['selectID'] == 0)edgeThickNessOption = 'flowStrokeWidth';
         else if (d['selectID'] == 1) edgeThickNessOption = 'citationStrokeWidth';
         //requestData();
-        console.log(1);
         var edgeBrush = d3.brushX()
             .extent([[0, -5], [100, 5]])
             .on("end", currentLayer.edgeBrushed);
@@ -9786,7 +9784,7 @@ function calculateFlowMap(d, relayout) {
     //change jigsaw 210 cluster 106 cluster position
     root.y = this.svg.attr('height').toFloat() / 2;
 
-    if(getUrlParam('aminerV8_id') == 1182989 && leftLayer.clusterCount == '20') {
+    if(getUrlParam('aminerV8_id') == 1182989) {
         var tmp = {x: nodes[13].x, y: nodes[13].y};
         nodes[13].x = nodes[19].x;
         nodes[13].y = nodes[19].y;
@@ -9801,7 +9799,7 @@ function calculateFlowMap(d, relayout) {
         n2.x = tmp.x;
         n2.y = tmp.y;
     }
-    if(getUrlParam('twitter') == 20 && leftLayer.clusterCount == '20') {
+    if(getUrlParam('twitter') == 20) {
         changePosition(nodes[11], nodes[16]);
         changePosition(nodes[4], nodes[15]);
         changePosition(nodes[1], nodes[17]);

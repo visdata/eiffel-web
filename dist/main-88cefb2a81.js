@@ -1365,7 +1365,6 @@ function changeToMovieMode() {
     var xScale = this.xScale;
     var yScale = this.yScale;
     var yearSliderDrag = this.yearSliderDrag;
-    axisSVG.select('.movieSlider').remove();
     d3.select('.movieModeDiv')
         .style('background', color.buttonStyle.on.div);
     d3.select('.movieModeText')
@@ -1981,22 +1980,13 @@ function temporalTimeLine(thisNode, that) {
 //    updateAnimation();
     var division;
     var temporal = that.temporal;
-    //division = temporal.maxDivision;
+    division = temporal.maxDivision;
     var maxDivision = division;
-    if(getUrlParam('twitter') == 20) {
-        maxDivision = [
-            [{year: '1', flow: 1}, {year: '4', flow: 1}],
-            [{year: '4', flow: 1}, {year: '8', flow: 1}]
-        ];
-    }
-    else if (getUrlParam('aminerV8_id') == 1182989) {
-        maxDivision = [
-            [{year: '2007', flow: 1}, {year: '2011', flow: 1}],
-            [{year: '2011', flow: 1}, {year: '2013', flow: 1}],
-            [{year: '2013', flow: 1}, {year: '2016', flow: 1}]
-        ];
-    }
-
+    maxDivision = [
+        [{year: '2007', flow: 1}, {year: '2010', flow: 1}],
+        [{year: '2011', flow: 1}, {year: '2012', flow: 1}],
+        [{year: '2013', flow: 1}, {year: '2016', flow: 1}]
+    ];
     temporal.maxDivision = maxDivision;
     var firstPart = maxDivision[0];
     var yearFilter = that.yearFilter;
@@ -3216,101 +3206,100 @@ function DirectedGraph(data) {
         }
     }
 }
-function updateCheckBox(d) {
-    var status = sourceCheckedStatus;
-    if (status.left && status.right) {
-        d3.selectAll('.' + d.type + 'CheckBox').attrs({
-            disabled: function () {
-                return null;
-            }
+
+function updateCheckBox(d){
+    var status=sourceCheckedStatus;
+    if(status.left&&status.right){
+        d3.selectAll('.'+ d.type+'CheckBox').attrs({
+            disabled:function(){return null;}
         })
     }
-    else if (status.left) {
-        d3.select('.' + d.type + 'CheckBox_left')
+    else if(status.left){
+        d3.select('.'+ d.type+'CheckBox_left')
             .attrs({
-                disabled: true
+                disabled:true
             })
     }
-    else if (status.right) {
-        d3.select('.' + d.type + 'CheckBox_right')
+    else if(status.right){
+        d3.select('.'+ d.type+'CheckBox_right')
             .attrs({
-                disabled: true
+                disabled:true
             })
     }
 }
-function updateSvgBySourceCheckBox() {
-    var status = sourceCheckedStatus;
-    var ratio = {};
-    var totalWidth = usefulWidth;
+function updateSvgBySourceCheckBox(){
+    var status=sourceCheckedStatus;
+    var ratio={};
+    var totalWidth=usefulWidth;
 
-    if (status.left && status.right) {
-        ratio.left = 0.5;
-        ratio.mid = 0.5;
-        ratio.right = 0;
-        ratio.control = 1;
-        leftLayer.dataSourceVisibility = 'visible';
-        rightLayer.dataSourceVisibility = 'visible';
-        leftLayer.ifLayout = true;
-        rightLayer.ifLayout = true;
-        currentLayer = null;
+    if(status.left&&status.right){
+        ratio.left=0.5;
+        ratio.mid=0.5;
+        ratio.right=0;
+        ratio.control=1;
+        leftLayer.dataSourceVisibility='visible';
+        rightLayer.dataSourceVisibility='visible';
+        leftLayer.ifLayout=true;
+        rightLayer.ifLayout=true;
+        currentLayer=null;
     }
-    else if (status.left) {
-        ratio.left = 0.63;
-        ratio.mid = 0;
-        ratio.right = 0.37;
-        ratio.control = 0.63;
-        leftLayer.dataSourceVisibility = 'hidden';
-        rightLayer.dataSourceVisibility = 'hidden';
-        currentLayer = leftLayer;
-        leftLayer.ifLayout = true;
-        rightLayer.ifLayout = false;
+    else if(status.left){
+        ratio.left=0.63;
+        ratio.mid=0;
+        ratio.right=0.37;
+        ratio.control=0.63;
+        leftLayer.dataSourceVisibility='hidden';
+        rightLayer.dataSourceVisibility='hidden';
+        currentLayer=leftLayer;
+        leftLayer.ifLayout=true;
+        rightLayer.ifLayout=false;
     }
-    else if (status.right) {
-        ratio.left = 0;
-        ratio.mid = 0.63;
-        ratio.right = 0.37;
-        ratio.control = 0.63;
-        leftLayer.dataSourceVisibility = 'hidden';
-        rightLayer.dataSourceVisibility = 'hidden';
-        currentLayer = rightLayer;
-        leftLayer.ifLayout = false;
-        rightLayer.ifLayout = true;
+    else if(status.right){
+        ratio.left=0;
+        ratio.mid=0.63;
+        ratio.right=0.37;
+        ratio.control=0.63;
+        leftLayer.dataSourceVisibility='hidden';
+        rightLayer.dataSourceVisibility='hidden';
+        currentLayer=rightLayer;
+        leftLayer.ifLayout=false;
+        rightLayer.ifLayout=true;
     }
-    var newWidth = {};
-    newWidth.left = totalWidth * ratio.left;
-    newWidth.right = totalWidth * ratio.right;
-    newWidth.mid = totalWidth * ratio.mid;
-    newWidth.control = totalWidth * ratio.control;
+    var newWidth={};
+    newWidth.left=totalWidth*ratio.left;
+    newWidth.right=totalWidth*ratio.right;
+    newWidth.mid=totalWidth*ratio.mid;
+    newWidth.control=totalWidth*ratio.control;
     //console.log(newWidth);
-    var transitionData = [
-        {class: '.graphDiv_left', ease: 'linear', duration: 1000, width: newWidth.left, layer: leftLayer},
-        {class: '.authorDiv_left', ease: 'linear', duration: 1000, width: newWidth.left, layer: leftLayer},
-        {class: '.graphDiv_right', ease: 'linear', duration: 1000, width: newWidth.mid, layer: rightLayer},
-        {class: '.authorDiv_right', ease: 'linear', duration: 1000, width: newWidth.mid, layer: rightLayer},
-        {class: '.paperDiv', ease: 'linear', duration: 1000, width: newWidth.right},
-        {class: '.topControlDiv', ease: 'linear', duration: 1000, width: newWidth.control},
-        {class: '.bottomControlDiv', ease: 'linear', duration: 1000, width: newWidth.control},
+    var transitionData=[
+        {class:'.graphDiv_left',ease:'linear',duration:1000,width:newWidth.left,layer:leftLayer},
+        {class:'.authorDiv_left',ease:'linear',duration:1000,width:newWidth.left,layer:leftLayer},
+        {class:'.graphDiv_right',ease:'linear',duration:1000,width:newWidth.mid,layer:rightLayer},
+        {class:'.authorDiv_right',ease:'linear',duration:1000,width:newWidth.mid,layer:rightLayer},
+        {class:'.paperDiv',ease:'linear',duration:1000,width:newWidth.right},
+        {class:'.topControlDiv',ease:'linear',duration:1000,width:newWidth.control},
+        {class:'.bottomControlDiv',ease:'linear',duration:1000,width:newWidth.control},
     ];
-    transitionData.forEach(function (item) {
+    transitionData.forEach(function(item){
         d3.select(item.class)
             //.transition()
             //.ease(item.ease)
             //.duration(item.duration)
             .styles({
-                width: item.width + px
+                width:item.width+px
             });
-        if (item.class == '.graphDiv_left' || item.class == '.graphDiv_right' || item.class == '.authorDiv_left' || item.class == '.authorDiv_right') {
+        if(item.class=='.graphDiv_left'||item.class=='.graphDiv_right'||item.class=='.authorDiv_left'||item.class=='.authorDiv_right'){
             item.layer.svg
                 .attrs({
-                    width: item.width
+                    width:item.width
                 });
             item.layer.axisSVG
                 .attrs({
-                    width: item.width
+                    width:item.width
                 });
-            item.layer.size = {
-                width: item.layer.svg.attr("width") * 0.9,
-                height: item.layer.svg.attr("height") * 1
+            item.layer.size={
+                width: item.layer.svg.attr("width")*0.9,
+                height:item.layer.svg.attr("height")*1
             };
 
         }
@@ -3329,33 +3318,24 @@ function updateSvgBySourceCheckBox() {
     //        layer.preLayout(layer.data.postData[layer.focusedID]);
     //    }
     //});
-    var animationModeDiv = d3.select('.directionDiv');
-    var bottomDiv = d3.select('.bottomControlDiv');
-    var bottomLength = bottomDiv.style('width').split('px')[0];
-    var animaLength = animationModeDiv.style('width').split('px')[0];
-    var leftDistance = (bottomLength - animaLength) / 2;
+    var animationModeDiv=d3.select('.directionDiv');
+    var bottomDiv=d3.select('.bottomControlDiv');
+    var bottomLength=bottomDiv.style('width').split('px')[0];
+    var animaLength=animationModeDiv.style('width').split('px')[0];
+    var leftDistance=(bottomLength-animaLength)/2;
     animationModeDiv.styles({
-        'margin-left': leftDistance + px
+        'margin-left':leftDistance+px
     });
 
 }
-function changeOption(d) {
-    console.log(d.fatherID);
-    if (d.fatherID == 3) {
-        optionNumber.nodeLabelOption = parseInt(d.selectID);
+function changeOption(d){
+    if(d.fatherID==3){
+        optionNumber.nodeLabelOption=parseInt(d.selectID);
     }
-    else if (d.fatherID == 4) {
-        if (d['selectID'] == 0) nodeOpacityOption = 'uniform';
-        else if (d['selectID'] == 1) nodeOpacityOption = 'citation';
-        else if (d['selectID'] == 2) nodeOpacityOption = 'avgCitation';
-
-        requestData();
-    }
-    else if (d.fatherID == 7) {
-        if (d['selectID'] == 0)edgeThickNessOption = 'flowStrokeWidth';
-        else if (d['selectID'] == 1) edgeThickNessOption = 'citationStrokeWidth';
+    else if(d.fatherID==4){
+        if(d['selectID']==0)edgeThickNessOption='flowStrokeWidth';
+        else if(d['selectID']==1) edgeThickNessOption='citationStrokeWidth';
         //requestData();
-        console.log(1);
         var edgeBrush = d3.brushX()
             .extent([[0, -5], [100, 5]])
             .on("end", currentLayer.edgeBrushed);
@@ -3363,49 +3343,46 @@ function changeOption(d) {
         gEdgeSizeBarBrush.call(edgeBrush).call(edgeBrush.move, [currentLayer.edgeAxisX(eMin[edgeThickNessOption]), currentLayer.edgeAxisX(eMax[edgeThickNessOption])]);
 
     }
-    else if (d.fatherID == 2) {
-        optionNumber.style = d.selectID.toInt();
-        if (d.selectID == 0) {
-            colorStyle = 'dark';
+    else if(d.fatherID==2){
+        optionNumber.style= d.selectID.toInt();
+        if(d.selectID==0){
+            colorStyle='dark';
         }
-        else if (d.selectID == 1) {
-            colorStyle = 'light';
+        else if(d.selectID==1){
+            colorStyle='light';
         }
         initSetting(colorStyle);
-        initFullScreenAndSizeBar();
-        gTranslation();
-        drawFullScreenIcon(gFullScreen, fullScreenButtonTranWidth, fullScreenButtonTranHeight);
         requestData();
     }
-    else if (d.fatherID == 0) {
-        var aminerV8ID = getUrlParam('aminerV8_id');
-        var citeseerxID = getUrlParam('citeseerx_id');
-        if (d.selectID == 0) {
-            if (source != 'aminerV8') {
-                var url = 'graph.html?'
-                if (aminerV8ID)url += 'aminerV8_id=' + aminerV8ID + '&';
-                if (citeseerxID)url += 'citeseerx_id=' + citeseerxID + '&';
-                url += 'selected=aminerV8';
+    else if(d.fatherID==0){
+        var aminerV8ID=getUrlParam('aminerV8_id');
+        var citeseerxID=getUrlParam('citeseerx_id');
+        if(d.selectID==0){
+            if (source!='aminerV8'){
+                var url='graph.html?'
+                if(aminerV8ID)url+='aminerV8_id='+aminerV8ID+'&';
+                if(citeseerxID)url+='citeseerx_id='+citeseerxID+'&';
+                url+='selected=aminerV8';
                 window.open(url);
 
             }
 
         }
-        else if (d.selectID == 1) {
-            if (source != 'citeseerx') {
-                var url = 'graph.html?'
-                if (aminerV8ID)url += 'aminerV8_id=' + aminerV8ID + '&';
-                if (citeseerxID)url += 'citeseerx_id=' + citeseerxID + '&';
-                url += 'selected=citeseerx';
+        else if(d.selectID==1){
+            if (source!='citeseerx'){
+                var url='graph.html?'
+                if(aminerV8ID)url+='aminerV8_id='+aminerV8ID+'&';
+                if(citeseerxID)url+='citeseerx_id='+citeseerxID+'&';
+                url+='selected=citeseerx';
                 window.open(url);
 
             }
 
         }
     }
-    else if (d.fatherID == 1) {
+    else if(d.fatherID==1){
         //optionNumber.clusterNum=parseInt(d.cluster);
-        clusterCount = String(d.cluster);
+        clusterCount=String(d.cluster);
         requestData();
     }
 }
@@ -4890,17 +4867,16 @@ function drawBackgroundYear(transition){
 
                 })
                 .tween("text", function() {
-                    var that = d3.select(this);
                     if(yearFilter[1]==maxYear&&yearFilter[0]==minYear){
                         var i = d3.interpolateRound(minYear, maxYear);
                         return function(t) {
-                            that.text(i(t));
+                            this.textContent = i(t);
                         };
                     }
                     else{
                         var i = d3.interpolateRound(yearFilter[0], maxYear);
                         return function(t) {
-                            that.text(i(t));
+                            this.textContent = i(t);
                         };
                     }
                 })
@@ -5539,13 +5515,8 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
     var edges = d.edge;
     var fontSize = dMax/2;
     var fontFamily = 'Microsoft YaHei';
-    var pre;
-    if (this.preLabelLayer) {
-        pre = this.preNodeLayer;
-    }
     var g = drawnodes.append('g')
         .attr('class', 'labelLayer');
-    this.preLabelLayer = g;
 //    d3.select('.ruler')
 //        .styles({
 //            'font-size':fontSize+'px',
@@ -5577,9 +5548,6 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
         g.selectAll('node_label')
             .data(nodes).enter()
             .append('g')
-            .attr('id', function (d) {
-                return 'g'+ d.id + '_' + i;
-            })
             .each(function () {
                 var thisLabelG = d3.select(this);
                 thisLabelG.append('text')
@@ -5843,9 +5811,6 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
                     return color.nodeLabelColor;
                 })
                 .on('start', function (d) {
-                    console.log('#g'+ d.id + '_' +i);
-                    pre.select('#g'+ d.id + '_' +i).remove();
-                    console.log(pre.select('#g'+ d.id + '_' +i));
                     var thisNode = d3.select(this);
                     thisNode.attrs({
                         transitionStatus: function (d) {
@@ -6163,50 +6128,6 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
 //    clone(dd.node,nodes);
 //    clone(dd.edge,edges);
     dd.subNodeYearData = [];
-
-    var nonRootNodes = [];
-    nodes.forEach(function (node) {
-        if(!node.focused) {
-            nonRootNodes.push(node);
-        }
-    });
-
-    var citationDomain = [d3.min(nonRootNodes, function (d) {
-        return d.citation;
-    }), d3.max(nonRootNodes, function (d) {
-        return d.citation;
-    })];
-    var avgCitationDomain = [d3.min(nonRootNodes, function (d) {
-        return d.citation / d.size;
-    }), d3.max(nonRootNodes, function (d) {
-        return d.citation / d.size;
-    })];
-    if(parseFloat(getUrlParam('nodeOpacityMin')) >= 0 && parseFloat(getUrlParam('nodeOpacityMin')) <= 1) {
-        nodeOpacityMin = parseFloat(getUrlParam('nodeOpacityMin'));
-    }
-    if(parseFloat(getUrlParam('nodeOpacityMax')) >= 0 && parseFloat(getUrlParam('nodeOpacityMax')) <= 1) {
-        nodeOpacityMax = parseFloat(getUrlParam('nodeOpacityMax'));
-    }
-    var nodeOpacity = {
-        uniform: function (citation) {
-            //do something with citation
-            return 0.8;
-        },
-        citation: function (citation) {
-            var scale = d3.scaleLinear()
-                .domain(citationDomain)
-                .range([nodeOpacityMin, nodeOpacityMax]);
-            return scale(citation);
-        },
-        avgCitation: function (avgCitation) {
-            var scale = d3.scaleLinear()
-                .domain(avgCitationDomain)
-                .range([nodeOpacityMin, nodeOpacityMax]);
-            return scale(avgCitation);
-        }
-
-    };
-    that.nodeOpacity = nodeOpacity;
     clone(dd.nodeYearData.data, dd.subNodeYearData);
     for (var i = 0; i < dd.subNodeYearData.length; i++) {
         dd.subNodeYearData[i][1] = 0;
@@ -6389,15 +6310,13 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
             x2: 0,
             y2: 1
         })
-        .each(function (e) {
+        .each(function () {
             var thisLG = d3.select(this);
             var data = [{offset: 0, color: color.nodeGreyColor, opacity: 1}, {
                 offset: 0,
                 color: color.nodeGreyColor,
                 opacity: 1
-            }, {offset: 0, color: color.nodeColor, opacity: 1}, {offset: 1, color: color.nodeColor, opacity: 1}];
-            var citation = e.citation;
-            var size = e.size;
+            }, {offset: 0, color: color.nodeColor, opacity: 1}, {offset: 1, color: color.nodeColor, opacity: 1}]
             thisLG.selectAll('stop').data(data).enter()
                 .append('stop')
                 .attrs({
@@ -6407,13 +6326,9 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                     'stop-color': function (d) {
                         return d.color
                     },
-                    'stop-opacity': function () {
-                        if (nodeOpacityOption == 'citation' || nodeOpacityOption == 'uniform') {
-                            return nodeOpacity[nodeOpacityOption](citation);
-                        }
-                        else if (nodeOpacityOption == 'avgCitation') {
-                            return nodeOpacity[nodeOpacityOption](citation/size);
-                        }
+                    //'stop-opacity':function(d){return d.opacity}
+                    'stop-opacity': function (d) {
+                        return 0.8
                     }
                 })
         });
@@ -6711,7 +6626,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                     'cursor': 'hand'
                 })
                 .on('start', function (d) {
-                    pre.select('#g' + d.id).remove();
+                    pre.select('#g'+ d.id).remove();
                     var thisNode = d3.select(this);
                     thisNode.attrs({
                         transitionStatus: function (d) {
@@ -6813,9 +6728,6 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
 //    clone(d.edge,edges);
     var data = this.data;
     var that = this;
-
-    var nodeOpacity = that.nodeOpacity;
-
     var k=this.zoomK||1;
     var drawnodes = this.drawnodes;
     var nodeClick = this.nodeClick;
@@ -6909,14 +6821,7 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
             }
             idElem[d.id] = d3.select(this);
         })
-        .style("opacity", function (d) {
-            if (nodeOpacityOption == 'citation' || nodeOpacityOption == 'uniform') {
-                return nodeOpacity[nodeOpacityOption](d.citation);
-            }
-            else if (nodeOpacityOption == 'avgCitation') {
-                return nodeOpacity[nodeOpacityOption](d.citation/ d.size);
-            }
-        })
+        .style("opacity", 1)
         .style("cursor", "hand")
         .styles({
             'font-size': function (d) {
@@ -9784,9 +9689,7 @@ function calculateFlowMap(d, relayout) {
         if (nodes[i].focused == 'true')root = nodes[i];
     }
     //change jigsaw 210 cluster 106 cluster position
-    root.y = this.svg.attr('height').toFloat() / 2;
-
-    if(getUrlParam('aminerV8_id') == 1182989 && leftLayer.clusterCount == '20') {
+    if(getUrlParam('aminerV8_id') == 1182989) {
         var tmp = {x: nodes[13].x, y: nodes[13].y};
         nodes[13].x = nodes[19].x;
         nodes[13].y = nodes[19].y;
@@ -9801,15 +9704,13 @@ function calculateFlowMap(d, relayout) {
         n2.x = tmp.x;
         n2.y = tmp.y;
     }
-    if(getUrlParam('twitter') == 20 && leftLayer.clusterCount == '20') {
+    if(getUrlParam('twitter') == 20) {
         changePosition(nodes[11], nodes[16]);
         changePosition(nodes[4], nodes[15]);
         changePosition(nodes[1], nodes[17]);
-        changePosition(nodes[11], nodes[1]);
-        nodes[13].y = this.svg.attr('height').toFloat() / 2-20;
-        nodes[4].y += 20;
-        root.y = nodes[11].y;
+        nodes[13].y = this.svg.attr('height').toFloat() / 2;
     }
+    root.y = this.svg.attr('height').toFloat() / 2;
 
     var cluster = {};
     generateCluster(root, cluster);
