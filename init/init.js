@@ -48,6 +48,8 @@ function transitionBackground(transitionMethod, transitionDirection, ratio, dark
     return transitionMethod + '(' + transitionDirection + ',' + darkTransition + ' 0%,' + lightTransition + ' ' + ratio + '%,' + lightTransition + ' ' + ratio + '%,' + lightTransition + ' 100%'
 }
 
+
+// L51-L1500
 function initSetting(colorStyle) {
 
     usefulWidth = window.innerWidth ||
