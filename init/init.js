@@ -363,6 +363,8 @@ function initSetting(colorStyle) {
             width: 'auto',
             height: graphDivHeight + px
         })
+
+    // 左图绘制容器
     var graphDiv_left = graphDiv.append('div')
         .attr('class', 'graphDiv graphDiv_left')
         .styles({
@@ -1310,6 +1312,8 @@ function initSetting(colorStyle) {
         "clusterNum": 20,
         "edgeFilter": 0
     };
+
+    // 左图画布添加部分
     leftLayer.svg = graphDiv_left.append('svg')
         .attr('class', 'svg svg_left')
         .on('click', function () {
