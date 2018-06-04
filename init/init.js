@@ -428,6 +428,9 @@ function initSetting(colorStyle) {
             'font-size': '12px'
         });
 
+    // sy（此行向上）对界面做初始化布局
+    // sy option下拉菜单功能[开始]
+
     //draw top control div three options and search box on topControlDiv
 
     var checkBoxDiv = topControlDiv.append('div').attr('class', 'checkBoxDiv').styles({
@@ -1157,6 +1160,9 @@ function initSetting(colorStyle) {
             });
         });
 
+    // sy option下拉菜单功能[结束]
+
+
     //draw searchDiv
     var buttonWidth = 20;
     var buttonHeight = 20;
@@ -1226,6 +1232,8 @@ function initSetting(colorStyle) {
 
         })
         .html(directionText[0]);
+
+    // movie效果按钮
     var verticalDiv = directionDiv.append('div')
         .attrs({
             class: 'movieModeDiv'
@@ -2079,6 +2087,8 @@ function layer() {
     this.updateAnimation = updateAnimation;
     this.cloneIngoreList = cloneIngoreList;
     this.yearAxisTransition = yearAxisTransition;
+
+    // changeAnimateMode函数和changeToMovieMode函数定义在哪里？
     this.changeAnimateMode = changeAnimateMode;
     this.changeToMovieMode = changeToMovieMode;
     this.changeToFlipBookMode = changeToFlipBookMode;
@@ -2142,6 +2152,7 @@ function initVariable() {
     db2 = 'citeseerx';
     //sizeScale=new SizeScale();
     initCluster = '20';
+    // sy 页面主视图的layer
     leftLayer = new layer();
     rightLayer = new layer();
     timer = 'timer';
@@ -2177,6 +2188,14 @@ function initVariable() {
 
 
 }
+
+/**
+ * 三处待修改工作
+ * 
+ * 1. 根据 reference 过滤节点
+ * 2. 根据 cluster 个数过滤节点
+ * 3. 右栏详情页调整（没记清具体内容）
+ */
 
 function initLayout() {
     initServer(); // 找不到

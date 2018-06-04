@@ -1,383 +1,388 @@
-function initColor(colorStyle){
-    var color={};
-    if(colorStyle=='dark'){
+function initColor(colorStyle) {
+    var color = {};
+    if (colorStyle == 'dark') {
 
-        color.fullScreenButtonColor='white';
-        color.sizeBarColor='white';
+        color.fullScreenButtonColor = 'white';
+        color.sizeBarColor = 'white';
 
-        color.titleTextColor='rgb(26,48,72)';
-        color.titleDivColor='rgb(140,160,170)';
+        color.titleTextColor = 'rgb(26,48,72)';
+        color.titleDivColor = 'rgb(140,160,170)';
 
-//        color.authorDivColor='rgb(50,70,90)';
-//        color.authorDivColor='rgb(15,40,60)';
-        color.authorDivColor='rgb(140,160,170)';
+        //        color.authorDivColor='rgb(50,70,90)';
+        //        color.authorDivColor='rgb(15,40,60)';
+        color.authorDivColor = 'rgb(140,160,170)';
 
-        color.mainTransition1='rgb(25,35,45)';
-        color.mainTransition2='rgb(50,70,90)';
+        color.mainTransition1 = 'rgb(25,35,45)';
+        color.mainTransition2 = 'rgb(50,70,90)';
 
-        color.whiteBarTransition1='rgb(127,127,127)';
-        color.whiteBarTransition2='rgb(255,255,255)';
+        color.whiteBarTransition1 = 'rgb(127,127,127)';
+        color.whiteBarTransition2 = 'rgb(255,255,255)';
 
-        color.greyBarTransition1='rgb(74, 90, 103)';
-        color.greyBarTransition2='rgb(140, 160, 170)';
+        color.greyBarTransition1 = 'rgb(74, 90, 103)';
+        color.greyBarTransition2 = 'rgb(140, 160, 170)';
 
-        color.optionTextColor='white';
-        color.screenTextColor='white';
-        color.nodeLabelColor='white';
-        color.panelTitleColor='white';
-        color.nodeLabelHighlightColor='red';
-        color.nodeLabelHighlightStroke='red';
+        color.optionTextColor = 'white';
+        color.screenTextColor = 'white';
+        color.nodeLabelColor = 'white';
+        color.panelTitleColor = 'white';
+        color.nodeLabelHighlightColor = 'red';
+        color.nodeLabelHighlightStroke = 'red';
 
-        color.svgColor='rgb(15,40,60)';
-//        color.axisSVGColor='rgb(140,160,170)';
-        color.nodeColor ='rgb(70,190,210)';
-        color.markerColor='yellow';
-        color.nodeHighlightColor='white';
-        color.nodeGreyColor ='rgb(190,200,200)';
-        color.nodeHighlightStroke='red';
-        color.edgeColor='yellow';
-        color.edgeHightLightColor='red';
+        color.svgColor = 'rgb(15,40,60)';
+        //        color.axisSVGColor='rgb(140,160,170)';
+        color.nodeColor = 'rgb(70,190,210)';
+        color.markerColor = 'yellow';
+        color.nodeHighlightColor = 'white';
+        color.nodeGreyColor = 'rgb(190,200,200)';
+        color.nodeHighlightStroke = 'red';
+        color.edgeColor = 'yellow';
+        color.edgeHightLightColor = 'red';
 
-        color.sizeLabelColor='black';
+        color.sizeLabelColor = 'black';
 
-        color.yearSliderHighlightColor='red';
-        color.yearSliderColor='rgb(40,120,200)';
-        color.axisTickColor='rgb(15,40,60)';
-        color.axisColor='rgb(15,40,60)';
-        color.yearPathColor='rgb(15,40,60)';
-        color.yearPathHighlightColor='white';
-        color.yearPathHighLightStroke='red';
+        color.yearSliderHighlightColor = 'red';
+        color.yearSliderColor = 'rgb(40,120,200)';
+        color.axisTickColor = 'rgb(15,40,60)';
+        color.axisColor = 'rgb(15,40,60)';
+        color.yearPathColor = 'rgb(15,40,60)';
+        color.yearPathHighlightColor = 'white';
+        color.yearPathHighLightStroke = 'red';
 
-        color.textDisableColor='grey';
+        color.textDisableColor = 'grey';
 
-        color.buttonStyle={
-            on:{
-                div:'rgb(185,200,200)',
-                text:'rgb(10,40,60)'
+        color.buttonStyle = {
+            on: {
+                div: 'rgb(185,200,200)',
+                text: 'rgb(10,40,60)'
             },
-            off:{
-                div:'rgb(50,70,90)',
-                text:'rgb(135,155,165)'
+            off: {
+                div: 'rgb(50,70,90)',
+                text: 'rgb(135,155,165)'
             }
         };
 
 
-        color.divRender={};
-        color.divRender.highlight={
-            textColor:'rgb(16,38,51)',
-            bodyDivBackground:color.greyBarTransition2,
-            titleDivBackground:color.greyBarTransition2,
-            transitionDivBackground:'-webkit-linear-gradient(right, '+color.greyBarTransition2+','+color.greyBarTransition1+')',
-            lineBackground:color.greyBarTransition2,
-            leftLineBackground:color.greyBarTransition2,
-            transitionLineBackground:'-webkit-linear-gradient(right, '+color.greyBarTransition2+','+color.greyBarTransition1+')'
+        color.divRender = {};
+        color.divRender.highlight = {
+            textColor: 'rgb(16,38,51)',
+            bodyDivBackground: color.greyBarTransition2,
+            titleDivBackground: color.greyBarTransition2,
+            transitionDivBackground: '-webkit-linear-gradient(right, ' + color.greyBarTransition2 + ',' + color.greyBarTransition1 + ')',
+            lineBackground: color.greyBarTransition2,
+            leftLineBackground: color.greyBarTransition2,
+            transitionLineBackground: '-webkit-linear-gradient(right, ' + color.greyBarTransition2 + ',' + color.greyBarTransition1 + ')'
         };
-        color.divRender.recovery={
-            textColor:'white',
-            bodyDivBackground:color.mainTransition2,
-            titleDivBackground:color.mainTransition2,
-            transitionDivBackground:'-webkit-linear-gradient(right, '+color.mainTransition2+','+color.mainTransition1+')',
-            lineBackground:color.mainTransition2,
-            leftLineBackground:color.greyBarTransition2,
-            transitionLineBackground:'-webkit-linear-gradient(right, '+color.mainTransition2+','+color.mainTransition1+')'
+        color.divRender.recovery = {
+            textColor: 'white',
+            bodyDivBackground: color.mainTransition2,
+            titleDivBackground: color.mainTransition2,
+            transitionDivBackground: '-webkit-linear-gradient(right, ' + color.mainTransition2 + ',' + color.mainTransition1 + ')',
+            lineBackground: color.mainTransition2,
+            leftLineBackground: color.greyBarTransition2,
+            transitionLineBackground: '-webkit-linear-gradient(right, ' + color.mainTransition2 + ',' + color.mainTransition1 + ')'
         };
-    }
-    else if(colorStyle=='light'){
+    } else if (colorStyle == 'light') {
 
-        color.fullScreenButtonColor='black';
-        color.sizeBarColor='black';
+        color.fullScreenButtonColor = 'black';
+        color.sizeBarColor = 'black';
 
-        color.titleTextColor='rgb(26,48,72)';
-        color.titleDivColor='rgb(170,190,200)';
+        color.titleTextColor = 'rgb(26,48,72)';
+        color.titleDivColor = 'rgb(170,190,200)';
 
         //color.authorDivColor='rgb(50,70,90)';
-        color.authorDivColor='rgb(216,235,241)';
-        color.svgColor='rgb(255,255,255)';
-//        color.axisSVGColor='rgb(140,160,170)'
+        color.authorDivColor = 'rgb(216,235,241)';
+        color.svgColor = 'rgb(255,255,255)';
+        //        color.axisSVGColor='rgb(140,160,170)'
 
 
-        color.mainTransition1='rgb(160,170,180)';
-        color.mainTransition2='rgb(216,235,240)';
+        color.mainTransition1 = 'rgb(160,170,180)';
+        color.mainTransition2 = 'rgb(216,235,240)';
 
-        color.whiteBarTransition1='rgb(180,180,180)';
-        color.whiteBarTransition2='rgb(255,255,255)';
+        color.whiteBarTransition1 = 'rgb(180,180,180)';
+        color.whiteBarTransition2 = 'rgb(255,255,255)';
 
-        color.greyBarTransition1='rgb(140, 155, 160)';
-        color.greyBarTransition2='rgb(200, 220, 225)';
+        color.greyBarTransition1 = 'rgb(140, 155, 160)';
+        color.greyBarTransition2 = 'rgb(200, 220, 225)';
 
-        color.optionTextColor='rgb(15,40,60)';
-        color.screenTextColor='rgb(15,40,60)';
-        color.nodeLabelColor='black';
-        color.panelTitleColor='rgb(15,40,60)';
-        color.nodeLabelHighlightColor='red';
-        color.nodeLabelHighlightStroke='red';
+        color.optionTextColor = 'rgb(15,40,60)';
+        color.screenTextColor = 'rgb(15,40,60)';
+        color.nodeLabelColor = 'black';
+        color.panelTitleColor = 'rgb(15,40,60)';
+        color.nodeLabelHighlightColor = 'red';
+        color.nodeLabelHighlightStroke = 'red';
 
 
-        color.nodeColor ='rgb(70,190,210)';
-        color.nodeHighlightColor='rgb(50,70,90)';
-        color.nodeGreyColor ='rgb(150,240,250)';
+        color.nodeColor = 'rgb(70,190,210)';
+        color.nodeHighlightColor = 'rgb(50,70,90)';
+        color.nodeGreyColor = 'rgb(150,240,250)';
 
-        color.nodeHighlightStroke='red';
-//        color.edgeColor='yellow';
-//        color.edgeColor='rgb(102,194,165)';
-//        color.edgeColor='rgb(252,141,98)';
-//        color.edgeColor='rgb(31,120,180)';
-        color.edgeColor='rgb(190,186,218)';
-//        color.edgeColor='rgb(255,255,179)';
-        color.edgeHightLightColor='red';
+        color.nodeHighlightStroke = 'red';
+        //        color.edgeColor='yellow';
+        //        color.edgeColor='rgb(102,194,165)';
+        //        color.edgeColor='rgb(252,141,98)';
+        //        color.edgeColor='rgb(31,120,180)';
+        color.edgeColor = 'rgb(190,186,218)';
+        //        color.edgeColor='rgb(255,255,179)';
+        color.edgeHightLightColor = 'red';
 
-        color.sizeLabelColor='white';
+        color.sizeLabelColor = 'white';
 
-        color.yearSliderHighlightColor='red';
-        color.yearSliderColor='rgb(40,120,200)';
-        color.axisTickColor='rgb(15,40,60)';
-        color.yearPathColor='rgb(140,160,160)';
-        color.yearPathHighlightColor='white';
-        color.yearPathHighLightStroke='red';
+        color.yearSliderHighlightColor = 'red';
+        color.yearSliderColor = 'rgb(40,120,200)';
+        color.axisTickColor = 'rgb(15,40,60)';
+        color.yearPathColor = 'rgb(140,160,160)';
+        color.yearPathHighlightColor = 'white';
+        color.yearPathHighLightStroke = 'red';
 
-        color.textDisableColor='grey';
+        color.textDisableColor = 'grey';
 
-        color.buttonStyle={
-            on:{
-                div:'rgb(60,100,120)',
-                text:'rgb(255,255,255)'
+        color.buttonStyle = {
+            on: {
+                div: 'rgb(60,100,120)',
+                text: 'rgb(255,255,255)'
             },
-            off:{
-                div:'rgb(140,160,170)',
-                text:'rgb(60,90,110)'
+            off: {
+                div: 'rgb(140,160,170)',
+                text: 'rgb(60,90,110)'
             }
         }
 
 
-        color.divRender={};
-        color.divRender.highlight={
-            textColor:'rgb(16,38,51)',
-            bodyDivBackground:color.greyBarTransition2,
-            titleDivBackground:color.greyBarTransition2,
-            transitionDivBackground:'-webkit-linear-gradient(left, '+color.greyBarTransition2+','+color.greyBarTransition1+')',
-            lineBackground:color.greyBarTransition2,
-            leftLineBackground:color.greyBarTransition2,
-            transitionLineBackground:'-webkit-linear-gradient(left, '+color.greyBarTransition2+','+color.greyBarTransition1+')'
+        color.divRender = {};
+        color.divRender.highlight = {
+            textColor: 'rgb(16,38,51)',
+            bodyDivBackground: color.greyBarTransition2,
+            titleDivBackground: color.greyBarTransition2,
+            transitionDivBackground: '-webkit-linear-gradient(left, ' + color.greyBarTransition2 + ',' + color.greyBarTransition1 + ')',
+            lineBackground: color.greyBarTransition2,
+            leftLineBackground: color.greyBarTransition2,
+            transitionLineBackground: '-webkit-linear-gradient(left, ' + color.greyBarTransition2 + ',' + color.greyBarTransition1 + ')'
         };
-        color.divRender.recovery={
-            textColor:'black',
-            bodyDivBackground:color.mainTransition2,
-            titleDivBackground:color.mainTransition2,
-            transitionDivBackground:'-webkit-linear-gradient(left, '+color.mainTransition2+','+color.mainTransition1+')',
-            lineBackground:color.mainTransition2,
-            leftLineBackground:color.greyBarTransition2,
-            transitionLineBackground:'-webkit-linear-gradient(left, '+color.mainTransition2+','+color.mainTransition1+')'
+        color.divRender.recovery = {
+            textColor: 'black',
+            bodyDivBackground: color.mainTransition2,
+            titleDivBackground: color.mainTransition2,
+            transitionDivBackground: '-webkit-linear-gradient(left, ' + color.mainTransition2 + ',' + color.mainTransition1 + ')',
+            lineBackground: color.mainTransition2,
+            leftLineBackground: color.greyBarTransition2,
+            transitionLineBackground: '-webkit-linear-gradient(left, ' + color.mainTransition2 + ',' + color.mainTransition1 + ')'
         };
     }
     return color;
 }
-function initAuthorData(){
-    authorData ={
 
-        "281604":[
-            {
-                "title":"The Skyline Operator",
-                "image":'image/Stephan.jpg',
-                "author":"Stephan Borzsonyi",
-                "apartment":'Universitat Passau',
-                "location":"D-94030 Passau, Germany D-81667 ",
-                'email':'Email:borzsonyi@db.fmi.uni-passau.de'
+function initAuthorData() {
+    authorData = {
+
+        "281604": [{
+                "title": "The Skyline Operator",
+                "image": 'image/Stephan.jpg',
+                "author": "Stephan Borzsonyi",
+                "apartment": 'Universitat Passau',
+                "location": "D-94030 Passau, Germany D-81667 ",
+                'email': 'Email:borzsonyi@db.fmi.uni-passau.de'
             },
             {
-                "title":"The Skyline Operator",
-                "image":'image/Donald.jpg',
-                "author":"Donald Kossmann",
-                "apartment":'Technische Universitat Munchen',
-                "location":"D-81667 M¨unchen, Germany",
-                'email':'Email:kossmann@in.tue.de'
+                "title": "The Skyline Operator",
+                "image": 'image/Donald.jpg',
+                "author": "Donald Kossmann",
+                "apartment": 'Technische Universitat Munchen',
+                "location": "D-81667 M¨unchen, Germany",
+                'email': 'Email:kossmann@in.tue.de'
             }
 
         ],
 
 
 
-        "1140731":[//1141410
+        "1140731": [ //1141410
             {
-                "title":"LANDMARC: Indoor Location Sensing Using Active RFID.",
-                "author":"Lionel M. Ni",
-                "image":"image/1141410_L.jpg",
-                "basicInfo":"Chair Professor and Head Department of Computer Science and Engineering The Hong Kong University of Science and Technology",
-                "papers":294,
-                "citations":18010,
-                "Hindex":57,
-                "field":'High-speed Networks'
+                "title": "LANDMARC: Indoor Location Sensing Using Active RFID.",
+                "author": "Lionel M. Ni",
+                "image": "image/1141410_L.jpg",
+                "basicInfo": "Chair Professor and Head Department of Computer Science and Engineering The Hong Kong University of Science and Technology",
+                "papers": 294,
+                "citations": 18010,
+                "Hindex": 57,
+                "field": 'High-speed Networks'
             },
             {
-                "title":"LANDMARC: Indoor Location Sensing Using Active RFID.",
-                "author":"Yunhao Liu",
-                "image":"image/1141410_Y.jpg",
-                "basicInfo":"Chang Jiang Professor and Dean of School of Software, Tsinghua University",
-                "papers":319,
-                "citations":10680,
-                "Hindex":48,
-                "field":"Wireless Sensor Networks/RFID"
-            }],
-        "1140582":[//1141261
-            {
-                "title":"Analysis of a hybrid cutoff priority scheme for multiple classes of traffic in multimedia wireless networks",
-                "author":"Bo Li",
-                "image":"image/default.jpg",
-                "basicInfo":"Hong Kong University of Science and Technology, Hong Kong",
-                "papers":107,
-                "citations":2084,
-                "Hindex":24
-            },
-            {
-                "title":"Analysis of a hybrid cutoff priority scheme for multiple classes of traffic in multimedia wireless networks",
-
-                "author":"Samuel T. Chanson",
-                "image":"image/chanson.jpg",
-                "basicInfo":"Univ. of British Columbia, Vancouver, B.C., Canada",
-                "papers":147,
-                "citations":2028,
-                "Hindex":20
-            }],
-        "501699":[//1141410
-            {
-                "title":"Manifold-ranking based image retrieval",
-                "author":"Hongjiang Zhang",
-                "image":"image/502309_1.jpg",
-                "basicInfo":"Managing Director,Microsoft Research Asia Advanced Technology Center 5/F, Beijing Sigma Center",
-                "papers":304,
-                "citations":29948,
-                "Hindex":87,
-                "field":'Large-scale video retrieval'
-            },
-            {
-                "title":"Manifold-ranking based image retrieval",
-                "author":"Changshui Zhang",
-                "image":"image/502309_2.jpg",
-                "basicInfo":"Professor Dept of Automation Tsinghua University",
-                "papers":276,
-                "citations":5501,
-                "Hindex":38,
-                'field':"Face recognition / Image analysis"
-            }],
-        "default":[//1141410
-            {
-                "title":"null",
-                "author":"null",
-                "image":"image/default.jpg",
-                "papers":'null',
-            },
-            {
-                "title":"null",
-                "author":"null",
-                "image":"image/default.jpg",
-                "papers":'null',
+                "title": "LANDMARC: Indoor Location Sensing Using Active RFID.",
+                "author": "Yunhao Liu",
+                "image": "image/1141410_Y.jpg",
+                "basicInfo": "Chang Jiang Professor and Dean of School of Software, Tsinghua University",
+                "papers": 319,
+                "citations": 10680,
+                "Hindex": 48,
+                "field": "Wireless Sensor Networks/RFID"
             }
-            ]
+        ],
+        "1140582": [ //1141261
+            {
+                "title": "Analysis of a hybrid cutoff priority scheme for multiple classes of traffic in multimedia wireless networks",
+                "author": "Bo Li",
+                "image": "image/default.jpg",
+                "basicInfo": "Hong Kong University of Science and Technology, Hong Kong",
+                "papers": 107,
+                "citations": 2084,
+                "Hindex": 24
+            },
+            {
+                "title": "Analysis of a hybrid cutoff priority scheme for multiple classes of traffic in multimedia wireless networks",
+
+                "author": "Samuel T. Chanson",
+                "image": "image/chanson.jpg",
+                "basicInfo": "Univ. of British Columbia, Vancouver, B.C., Canada",
+                "papers": 147,
+                "citations": 2028,
+                "Hindex": 20
+            }
+        ],
+        "501699": [ //1141410
+            {
+                "title": "Manifold-ranking based image retrieval",
+                "author": "Hongjiang Zhang",
+                "image": "image/502309_1.jpg",
+                "basicInfo": "Managing Director,Microsoft Research Asia Advanced Technology Center 5/F, Beijing Sigma Center",
+                "papers": 304,
+                "citations": 29948,
+                "Hindex": 87,
+                "field": 'Large-scale video retrieval'
+            },
+            {
+                "title": "Manifold-ranking based image retrieval",
+                "author": "Changshui Zhang",
+                "image": "image/502309_2.jpg",
+                "basicInfo": "Professor Dept of Automation Tsinghua University",
+                "papers": 276,
+                "citations": 5501,
+                "Hindex": 38,
+                'field': "Face recognition / Image analysis"
+            }
+        ],
+        "default": [ //1141410
+            {
+                "title": "null",
+                "author": "null",
+                "image": "image/default.jpg",
+                "papers": 'null',
+            },
+            {
+                "title": "null",
+                "author": "null",
+                "image": "image/default.jpg",
+                "papers": 'null',
+            }
+        ]
 
     }
 }
-function initRightClickMenu(){
-    var clear=function(){
+
+function initRightClickMenu() {
+    var clear = function () {
         d3.select('.rightClickMenu')
             .styles({
-                visibility:'hidden'
+                visibility: 'hidden'
             });
         d3.selectAll('.clicked')
-            .each(function(d){
-                if(d.self){
-                    d.self.style('fill',function(d){return "url(#linearGradient"+ d.id+")"});
-                    d.self.style('stroke',color.nodeHighlightStroke);
-                    d.self.style('stroke-width','0px');
-                    d.self.attr('class','node');
-                    d.clicked=false;
+            .each(function (d) {
+                if (d.self) {
+                    d.self.style('fill', function (d) {
+                        return "url(#linearGradient" + d.id + ")"
+                    });
+                    d.self.style('stroke', color.nodeHighlightStroke);
+                    d.self.style('stroke-width', '0px');
+                    d.self.attr('class', 'node');
+                    d.clicked = false;
                 }
 
             })
         d3.selectAll('.subYearPath').remove();
-        if(data.postData[focusedID].subNodeYearData){
-            var subNodeYearData=data.postData[focusedID].subNodeYearData;
-            for (var i=0;i<subNodeYearData.length;i++){
-                subNodeYearData[i][1]=0;
+        if (data.postData[focusedID].subNodeYearData) {
+            var subNodeYearData = data.postData[focusedID].subNodeYearData;
+            for (var i = 0; i < subNodeYearData.length; i++) {
+                subNodeYearData[i][1] = 0;
             }
         }
     }
-    var commonMenuList=[
-        {
-            text:'clear all highlight effects',
-            id:0,
-            click:clear
+    var commonMenuList = [{
+            text: 'clear all highlight effects',
+            id: 0,
+            click: clear
         }
 
     ];
-    var menuDiv=d3.select('body')
+    var menuDiv = d3.select('body')
         .append('div')
-        .attr('class','rightClickMenu')
+        .attr('class', 'rightClickMenu')
         .styles({
-            position:'fixed',
-            visibility:'hidden',
-            width:'auto',
-            height:'auto'
-//            left:'500px',
-//            top:'500px'
+            position: 'fixed',
+            visibility: 'hidden',
+            width: 'auto',
+            height: 'auto'
+            //            left:'500px',
+            //            top:'500px'
         });
     menuDiv.selectAll('whatever')
         .data(commonMenuList)
         .enter()
         .append('div')
-        .on('mouseover',function(d){
+        .on('mouseover', function (d) {
             d3.select(this)
                 .styles({
-                    background:'blue'
+                    background: 'blue'
                 })
             d3.select(this)
                 .select('text')
                 .styles({
-                    color:'white'
+                    color: 'white'
                 })
         })
-        .on('mouseout',function(d){
+        .on('mouseout', function (d) {
             d3.select(this)
                 .styles({
-                    background:'white'
+                    background: 'white'
                 })
             d3.select(this)
                 .select('text')
                 .styles({
-                    color:'black'
+                    color: 'black'
                 })
         })
-        .attr('style','cursor: pointer; fill: rgb(0, 0, 0);')
+        .attr('style', 'cursor: pointer; fill: rgb(0, 0, 0);')
         .styles({
-            background:'white'
+            background: 'white'
         })
         .attrs({
-            class:'menuOption'
+            class: 'menuOption'
         })
         .append('text')
         .styles({
-            'font-family':'Arial',
-            'color':'black'
+            'font-family': 'Arial',
+            'color': 'black'
         })
-        .html(function(d){
+        .html(function (d) {
             return d.text;
         })
-        .on('click',function(d){
+        .on('click', function (d) {
             return d.click();
         })
 
-    document.oncontextmenu = function(e){
-        if(window.event) e = window.event;
-        console.log(e.clientX,e.clientY);
+    document.oncontextmenu = function (e) {
+        if (window.event) e = window.event;
+        console.log(e.clientX, e.clientY);
         d3.select('.rightClickMenu')
             .styles({
-                visibility:'visible',
-                top:e.clientY+px,
-                left:e.clientX+2+px
+                visibility: 'visible',
+                top: e.clientY + px,
+                left: e.clientX + 2 + px
             });
         return false;
     }
 }
-function initVenueList(){
-    venueList={
+
+function initVenueList() {
+    venueList = {
         "13067568": {
             "oldVenue": "",
             "venue": "CU"
@@ -1344,17 +1349,19 @@ function initVenueList(){
         }
     }
 }
+
 function changeAnimateMode() {
     var animateMode = this.animateMode;
     //console.log(this);
     if (animateMode == flipBook) {
         this.changeToMovieMode();
 
-    }
-    else if (animateMode == movie) {
+    } else if (animateMode == movie) {
         this.changeToFlipBookMode();
     }
 }
+
+// movie效果代码函数所在之处
 function changeToMovieMode() {
     this.animateMode = movie;
     var that = this;
@@ -1487,6 +1494,7 @@ function changeToFlipBookMode() {
     axisSVG.selectAll('.axisCircle')
         .style('filter', 'url(#leftOrRight_filter)');
 }
+
 function drawAnimateControlPanel() {
     var that = this;
     var axisSVG = this.axisSVG;
@@ -1513,15 +1521,14 @@ function drawAnimateControlPanel() {
         var layer = d.layer;
         //var thisNode=d3.select(this);
         var thisID = thisNode.attr('id');
-        if (thisID == 'play')nameFunDic.play(thisNode, layer);
-        else if (thisID == 'playBack')nameFunDic.playBack(thisNode, layer);
-        else if (thisID == 'pause')nameFunDic.pause(thisNode, layer);
-        else if (thisID == 'stop')nameFunDic.stop(thisNode, layer);
-        else if (thisID == 'temporalTimeLine')nameFunDic.general(thisNode, layer);
-        else if (thisID == 'generalTimeLine')nameFunDic.temporal(thisNode, layer);
+        if (thisID == 'play') nameFunDic.play(thisNode, layer);
+        else if (thisID == 'playBack') nameFunDic.playBack(thisNode, layer);
+        else if (thisID == 'pause') nameFunDic.pause(thisNode, layer);
+        else if (thisID == 'stop') nameFunDic.stop(thisNode, layer);
+        else if (thisID == 'temporalTimeLine') nameFunDic.general(thisNode, layer);
+        else if (thisID == 'generalTimeLine') nameFunDic.temporal(thisNode, layer);
     };
-    var controlPanelButtonsData = [
-        {
+    var controlPanelButtonsData = [{
             name: 'play',
             fun: play,
             fun1: pause
@@ -1533,8 +1540,7 @@ function drawAnimateControlPanel() {
         },
         {
             name: 'pause',
-            fun: function () {
-            }
+            fun: function () {}
         },
         {
             name: 'stop',
@@ -1542,38 +1548,31 @@ function drawAnimateControlPanel() {
         },
         {
             name: 'moveToLeft',
-            fun: function () {
-            }
+            fun: function () {}
         },
         {
             name: 'moveToRight',
-            fun: function () {
-            }
+            fun: function () {}
         },
         {
             name: 'leftOrRight',
-            fun: function () {
-            }
+            fun: function () {}
         },
         {
             name: 'speedUp',
-            fun: function () {
-            }
+            fun: function () {}
         },
         {
             name: 'speedUp',
-            fun: function () {
-            }
+            fun: function () {}
         },
         {
             name: 'speedDown',
-            fun: function () {
-            }
+            fun: function () {}
         },
         {
             name: 'lock',
-            fun: function () {
-            }
+            fun: function () {}
         },
         {
             name: 'temporalTimeLine',
@@ -1632,7 +1631,7 @@ function drawAnimateControlPanel() {
     var controlPanelLength = (midNum - 1) * (midButtonRadius * 2 + midButtonDistance) + midButtonDistance + temporalButtonLength;
     var width = parseFloat(axisSVG.style('width'));
     var initX = (width - controlPanelLength) / 2;
-//    var initX=35;
+    //    var initX=35;
 
     axisSVG.selectAll('controlButton')
         .data(midControlPanelButtonData)
@@ -1708,6 +1707,7 @@ function drawAnimateControlPanel() {
         })
 
 }
+
 function updateAnimation(flag, that) {
     var animateMode = that.animateMode;
     var minYear = that.minYear;
@@ -1718,8 +1718,7 @@ function updateAnimation(flag, that) {
     if (animateMode == flipBook && !flag) {
         if (that.yearFilter[0] == minYear && that.yearFilter[1] == maxYear) {
             that.yearFilter = [minYear, maxYear];
-        }
-        else {
+        } else {
             that.yearFilter = [that.yearFilter[1], maxYear];
         }
     }
@@ -1732,46 +1731,46 @@ function updateAnimation(flag, that) {
     that.preYear = yearFilter[0];
     var preYear = that.preYear;
     if (yearFilter[0] != minYear || yearFilter[1] != maxYear) {
-        if (animateMode == flipBook && !flag)newD.keepAll = true;
+        if (animateMode == flipBook && !flag) newD.keepAll = true;
     }
 
     if (animateMode == flipBook) {
         if (!flag) {
             that.layout(optionNumber, true, 'flowMap', newD);
-        }
-        else {
+        } else {
             that.layout(optionNumber, false, false, newD);
         }
     }
     if (animateMode == movie) {
-//        yearFilter=[minYear,minYear+3];
+        //        yearFilter=[minYear,minYear+3];
         that.layout(optionNumber, false, false, newD);
     }
     svg.selectAll('.node')
         .each(function (d) {
             var thisNode = d3.select(this);
-            if (thisNode.attr('transitionStatus') == 'start')thisNode.remove();
+            if (thisNode.attr('transitionStatus') == 'start') thisNode.remove();
         });
 }
+
 function playBack(thisNode) {
     changeFilter(thisNode, 'pause');
     if (animateMode == flipBook) {
         //updateAnimation();
         //yearAxisTransition(yearFilter[0],yearFilter[1]);
-    }
-    else {
+    } else {
         var remainYear = yearFilter[0] - minYear;
         var animationNum = remainYear;
         var currentYearDuration = yearFilter[1] - yearFilter[0];
         yearFilters = [];
         for (var i = 0; i < animationNum - 1; i++) {
-//            yearFilters.push([yearFilter[0]+(i+1)*currentYearDuration,yearFilter[1]+(i+1)*currentYearDuration])
+            //            yearFilters.push([yearFilter[0]+(i+1)*currentYearDuration,yearFilter[1]+(i+1)*currentYearDuration])
             yearFilters.push([yearFilter[0] - (i + 1), yearFilter[1] - (i + 1)])
         }
         yearFilters.push([minYear, minYear + currentYearDuration]);
         recurMovieTransition(yearFilters);
     }
 }
+
 function play(thisNode, that) {
     changeFilter(thisNode, 'pause');
     var animateMode = that.animateMode;
@@ -1787,11 +1786,10 @@ function play(thisNode, that) {
         var yearFilter = that.yearFilter;
         console.log(yearFilter);
         that.yearAxisTransition(yearFilter[0], yearFilter[1], that);
-    }
-    else {
+    } else {
         var remainYear = maxYear - that.yearFilter[1];
         var currentYearDuration = that.yearFilter[1] - that.yearFilter[0];
-//        var animationNum=Math.ceil(remainYear/currentYearDuration);
+        //        var animationNum=Math.ceil(remainYear/currentYearDuration);
         var animationNum = remainYear;
         var division = temporal.maxDivision;
 
@@ -1802,10 +1800,9 @@ function play(thisNode, that) {
                 var len = division[i].length;
                 yearFilters.push([division[i][0].year.toInt(), division[i][len - 1].year.toInt()]);
             }
-        }
-        else {
+        } else {
             for (var i = 0; i < animationNum - 1; i++) {
-//            yearFilters.push([yearFilter[0]+(i+1)*currentYearDuration,yearFilter[1]+(i+1)*currentYearDuration])
+                //            yearFilters.push([yearFilter[0]+(i+1)*currentYearDuration,yearFilter[1]+(i+1)*currentYearDuration])
                 yearFilters.push([that.yearFilter[0] + (i + 1), that.yearFilter[1] + (i + 1)])
             }
             yearFilters.push([maxYear - currentYearDuration, maxYear]);
@@ -1814,12 +1811,13 @@ function play(thisNode, that) {
 
         //console.log(yearFilters);
         //console.log(yearFilters);
-//        var sliderDuration=yearDelay*currentYearDuration;
+        //        var sliderDuration=yearDelay*currentYearDuration;
         recurMovieTransition(yearFilters, that);
 
 
     }
 }
+
 function recurMovieTransition(yearFilters, that) {
     var yearDelay = that.yearDelay;
     var axisSVG = that.axisSVG;
@@ -1872,8 +1870,7 @@ function recurMovieTransition(yearFilters, that) {
                     return yearSliderPathData(d);
                 }
             })
-    }
-    else {
+    } else {
         axisSVG.selectAll('.controlButton')
             .each(function (d) {
                 if (d.name == 'pause') {
@@ -1894,6 +1891,7 @@ function recurMovieTransition(yearFilters, that) {
 
     }
 }
+
 function pause(thisNode, that) {
     var name = thisNode.attr('name');
     changeFilter(thisNode, name);
@@ -1903,12 +1901,13 @@ function pause(thisNode, that) {
     d3.selectAll('*').interrupt();
     updateAnimation(true, that);
 
-//        addNodes(adjustYear);
-//    }
-//    that.removeAnimation();
+    //        addNodes(adjustYear);
+    //    }
+    //    that.removeAnimation();
     //console.log(that.yearFilter)
-//    console.log('pause');
+    //    console.log('pause');
 }
+
 function stop(thisNode, that) {
     var axisSVG = that.axisSVG;
     var svg_g = that.svg_g;
@@ -1940,17 +1939,15 @@ function stop(thisNode, that) {
         drawnodes.selectAll('*').remove();
         drawedges.selectAll('*').remove();
         that.preLayout(data.postData[focusedID]);
-    }
-    else {
+    } else {
         d3.selectAll('*').interrupt();
         var adjustData = adjustSliderPosition('stop', that);
         var adjustDirection = adjustData.direction;
         var adjustYear = adjustData.year;
         if (adjustDirection == 'left') {
             that.removeEdges();
-        }
-        else {
-//        addNodes(adjustYear);
+        } else {
+            //        addNodes(adjustYear);
         }
         svg_g.select('#nodeG2').remove();
         svg_g.select('#edgeG2').remove();
@@ -1963,6 +1960,7 @@ function stop(thisNode, that) {
     }
 
 }
+
 function temporalTimeLine(thisNode, that) {
     thisNode
         .attrs({
@@ -1978,22 +1976,51 @@ function temporalTimeLine(thisNode, that) {
         });
     that.ifTemporal = true;
     that.changeToMovieMode();
-//    updateAnimation();
+    //    updateAnimation();
     var division;
     var temporal = that.temporal;
     //division = temporal.maxDivision;
     var maxDivision = division;
-    if(getUrlParam('twitter') == 20) {
+    if (getUrlParam('twitter') == 20) {
         maxDivision = [
-            [{year: '1', flow: 1}, {year: '4', flow: 1}],
-            [{year: '4', flow: 1}, {year: '8', flow: 1}]
+            [{
+                year: '1',
+                flow: 1
+            }, {
+                year: '4',
+                flow: 1
+            }],
+            [{
+                year: '4',
+                flow: 1
+            }, {
+                year: '8',
+                flow: 1
+            }]
         ];
-    }
-    else if (getUrlParam('aminerV8_id') == 1182989) {
+    } else if (getUrlParam('aminerV8_id') == 1182989) {
         maxDivision = [
-            [{year: '2007', flow: 1}, {year: '2011', flow: 1}],
-            [{year: '2011', flow: 1}, {year: '2013', flow: 1}],
-            [{year: '2013', flow: 1}, {year: '2016', flow: 1}]
+            [{
+                year: '2007',
+                flow: 1
+            }, {
+                year: '2011',
+                flow: 1
+            }],
+            [{
+                year: '2011',
+                flow: 1
+            }, {
+                year: '2013',
+                flow: 1
+            }],
+            [{
+                year: '2013',
+                flow: 1
+            }, {
+                year: '2016',
+                flow: 1
+            }]
         ];
     }
 
@@ -2065,6 +2092,7 @@ function temporalTimeLine(thisNode, that) {
 
 
 }
+
 function generalTimeLine(thisNode, that) {
 
     thisNode
@@ -2081,6 +2109,7 @@ function generalTimeLine(thisNode, that) {
         });
     that.ifTemporal = false;
 }
+
 function removeEdges() {
     var svg = this.svg;
     svg.selectAll('path')
@@ -2092,6 +2121,7 @@ function removeEdges() {
             }
         })
 }
+
 function removeAnimation() {
     var animateMode = this.animateMode;
     var svg = this.svg;
@@ -2101,7 +2131,7 @@ function removeAnimation() {
         for (var i = 0; i < types.length; i++) {
             var type = types[i];
             var selector = svg;
-            if (type == 'path')selector = selector.select('.edgeField');
+            if (type == 'path') selector = selector.select('.edgeField');
             selector.selectAll(type)
                 .each(function (e, i) {
                     var thisObj = d3.select(this);
@@ -2125,13 +2155,13 @@ function removeAnimation() {
             };
         })
     svg.selectAll('.backgroundNode').remove()
-//        .each(function(d){
-//            var thisNode=d3.select(this);
-//            var r=thisNode.attr('r').toFloat();
-//            thisNode.transition()
-//                .duration(100)
-//                .attr('r',r)
-//        });
+    //        .each(function(d){
+    //            var thisNode=d3.select(this);
+    //            var r=thisNode.attr('r').toFloat();
+    //            thisNode.transition()
+    //                .duration(100)
+    //                .attr('r',r)
+    //        });
     svg.selectAll('.node')
         .each(function (d) {
             var thisNode = d3.select(this);
@@ -2163,6 +2193,7 @@ function removeAnimation() {
                 })
         });
 }
+
 function changeFilter(thisNode, id) {
     thisNode
         .style('filter', 'url(#' + id + '_filter)');
@@ -2179,13 +2210,13 @@ function DirectedGraph(data) {
     this.edges = data.edge;
     this.graph = {};
     this.edgeSourceTargetDic = {};
-    this.initEdgeSourceTargetDic={};
+    this.initEdgeSourceTargetDic = {};
     this.edgeSourceDic = {};
     this.edgeTargetDic = {};
     this.minYear = 10000;
     this.maxYear = 0;
-    this.deletedEdges=[];
-    this.maximalSpanningTree={};
+    this.deletedEdges = [];
+    this.maximalSpanningTree = {};
     this.spanningTree = {
         nodes: [],
         edges: [],
@@ -2193,33 +2224,33 @@ function DirectedGraph(data) {
         deletedNonTreeEdges: [],
         deletedEdges: []
     };
-    this.ifGetBFSTree=false;
-    this.BFSTree='';
-    this.getEdgeDic = function (keyType,filter) {
-        if(arguments.length==1)filter='flow';
+    this.ifGetBFSTree = false;
+    this.BFSTree = '';
+    this.getEdgeDic = function (keyType, filter) {
+        if (arguments.length == 1) filter = 'flow';
         var dic = {};
         for (var i = 0; i < this.edges.length; i++) {
-            if(this.edges[i][filter]>0&&!this.edges[i].disable){
+            if (this.edges[i][filter] > 0 && !this.edges[i].disable) {
                 var key = this.edges[i][keyType];
-                if (dic[key])dic[key].push(this.edges[i]);
+                if (dic[key]) dic[key].push(this.edges[i]);
                 else dic[key] = [this.edges[i]];
             }
 
         }
         return dic;
     };
-//    this.getEdgeSourceTargetDic=function (){
-//        var dic={};
-//        for(var i=0;i<this.edges.length;i++){
-//            var source=this.edges[i].source;
-//            var target=this.edges[i].target;
-//            var key=String(source)+'_'+String(target);
-//            dic[key]=this.edges[i];
-//        }
-//        this.edgeSourceTargetDic=dic;
-//    };
+    //    this.getEdgeSourceTargetDic=function (){
+    //        var dic={};
+    //        for(var i=0;i<this.edges.length;i++){
+    //            var source=this.edges[i].source;
+    //            var target=this.edges[i].target;
+    //            var key=String(source)+'_'+String(target);
+    //            dic[key]=this.edges[i];
+    //        }
+    //        this.edgeSourceTargetDic=dic;
+    //    };
     this.init = function () {
-//        this.getEdgeSourceTargetDic();
+        //        this.getEdgeSourceTargetDic();
         this.initNodeRelation();
         this.getYearDuration();
         this.initEdgeYearWeight();
@@ -2233,51 +2264,51 @@ function DirectedGraph(data) {
             node.parents = [];
         }
     };
-    this.storeInitEdgeSourceTargetDic=function(){
-        var dic={};
-        for(var i=0;i<this.edges.length;i++){
-            var source=this.edges[i].source;
-            var target=this.edges[i].target;
-            var key=source+'_'+target;
-            var newEdge={};
-            clone(this.edges[i],newEdge);
-            dic[key]=newEdge;
+    this.storeInitEdgeSourceTargetDic = function () {
+        var dic = {};
+        for (var i = 0; i < this.edges.length; i++) {
+            var source = this.edges[i].source;
+            var target = this.edges[i].target;
+            var key = source + '_' + target;
+            var newEdge = {};
+            clone(this.edges[i], newEdge);
+            dic[key] = newEdge;
         }
-        this.initEdgeSourceTargetDic=dic;
+        this.initEdgeSourceTargetDic = dic;
     };
     this.getYearDuration = function () {
         for (var i = 0; i < this.edges.length; i++) {
             for (var key in this.edges[i].weight) {
                 var year = parseInt(key);
-                if (year > this.maxYear)this.maxYear = year;
-                if (year < this.minYear)this.minYear = year;
+                if (year > this.maxYear) this.maxYear = year;
+                if (year < this.minYear) this.minYear = year;
             }
         }
     };
     this.initEdgeYearWeight = function () {
         for (var i = 0; i < this.edges.length; i++) {
             var edge = this.edges[i];
-            if(!edge.yearWeight){
+            if (!edge.yearWeight) {
                 var sum = 0;
                 for (var year in edge.weight) {
                     sum += edge.weight[year];
                 }
                 var yearWeight = 0;
                 for (var year in edge.weight) {
-//                yearWeight += Math.sqrt(this.maxYear - year.toInt() + 1) * edge.weight[year];
+                    //                yearWeight += Math.sqrt(this.maxYear - year.toInt() + 1) * edge.weight[year];
                     yearWeight += this.maxYear - year.toInt() + 1 * edge.weight[year];
                 }
                 yearWeight /= sum;
                 edge.yearWeight = yearWeight;
-                edge.yearFlow = yearWeight*edge.flow;
+                edge.yearFlow = yearWeight * edge.flow;
             }
 
         }
     };
-    this.resetYearFlow=function(){
-        for(var i=0;i<this.edges.length;i++){
-            var edge=this.edges[i];
-            edge.yearFlow=edge.flow*edge.yearWeight;
+    this.resetYearFlow = function () {
+        for (var i = 0; i < this.edges.length; i++) {
+            var edge = this.edges[i];
+            edge.yearFlow = edge.flow * edge.yearWeight;
         }
     };
     this.addEdge = function (edge) {
@@ -2285,9 +2316,8 @@ function DirectedGraph(data) {
         var target = edge.target;
         var key = source + '_' + target;
         if (this.edgeSourceTargetDic[key]) {
-//            console.log('edge already exists in current graph');
-        }
-        else {
+            //            console.log('edge already exists in current graph');
+        } else {
             this.edges.push(edge);
             this.edgeSourceTargetDic[key] = edge;
             var sourceNode = this.nodes[source];
@@ -2302,11 +2332,10 @@ function DirectedGraph(data) {
         var key = source + '_' + target;
         if (!this.edgeSourceTargetDic[key]) {
             console.log('this edge not exists in current graph');
-        }
-        else {
+        } else {
             //delete dic
-//            delete this.edgeSourceTargetDic[key];
-            this.edgeSourceTargetDic[key]=null;
+            //            delete this.edgeSourceTargetDic[key];
+            this.edgeSourceTargetDic[key] = null;
             var newEdges = [];
             for (var i = 0; i < this.edges.length; i++) {
                 var thisEdge = this.edges[i];
@@ -2316,7 +2345,7 @@ function DirectedGraph(data) {
                 }
             }
             //delete edge
-//            this.edges = newEdges;
+            //            this.edges = newEdges;
             this.edges = newEdges;
             //delete node in children and parents
             var sourceNode = this.nodes[source];
@@ -2348,10 +2377,10 @@ function DirectedGraph(data) {
 
     };
     this.build = function () {
-//        console.log(this.nodes);
+        //        console.log(this.nodes);
         this.nodes = this.nodes;
         this.root = '';
-        var tmpEdges=[];
+        var tmpEdges = [];
         clone(this.edges, tmpEdges);
         this.edges = []
         for (var i = 0; i < tmpEdges.length; i++) {
@@ -2376,15 +2405,14 @@ function DirectedGraph(data) {
                 visitedNodes = [];
                 this.BFS(this.root, visitedNodes);
             }
-            var disableList=[];
-            for(var i=0;i<this.nodes.length;i++){
-                if(this.nodes[i].disable)disableList.push(this.nodes[i].id);
+            var disableList = [];
+            for (var i = 0; i < this.nodes.length; i++) {
+                if (this.nodes[i].disable) disableList.push(this.nodes[i].id);
             }
-            if ((visitedNodes.length == this.nodes.length-disableList.length)) {
+            if ((visitedNodes.length == this.nodes.length - disableList.length)) {
 
                 return true;
-            }
-            else {
+            } else {
                 return false;
             }
         }
@@ -2398,26 +2426,26 @@ function DirectedGraph(data) {
         var level = 0;
         var k = 0.5;
         nodeStep.push(root);
-        var BFSEdge=[];
-        var bfsNodes=[];
+        var BFSEdge = [];
+        var bfsNodes = [];
         while (nodeStep[0]) {
             var newStep = [];
             for (var i = 0; i < nodeStep.length; i++) {
                 var step = nodeStep[i];
-                if ((!step.disable)&&(!in_array(step.id, visitedNodes))) {
+                if ((!step.disable) && (!in_array(step.id, visitedNodes))) {
                     visitedNodes.push(step.id);
-                    if (!step.BFSWeight)step.BFSWeight = rootWeight * Math.pow(k, level);
+                    if (!step.BFSWeight) step.BFSWeight = rootWeight * Math.pow(k, level);
                     if (step.children) {
                         for (var j = 0; j < step.children.length; j++) {
-                            if(!step.children[j].disable){
+                            if (!step.children[j].disable) {
                                 var source = step.id;
                                 var target = step.children[j].id;
                                 var key = source + '_' + target;
                                 var edge = this.edgeSourceTargetDic[key];
-                                if (!edge.BFSWeight)edge.BFSWeight = rootWeight * Math.pow(k, level);
+                                if (!edge.BFSWeight) edge.BFSWeight = rootWeight * Math.pow(k, level);
 
                                 if (!in_array(step.children[j].id, visitedNodes)) {
-                                    if(!in_array(target, bfsNodes)){
+                                    if (!in_array(target, bfsNodes)) {
                                         bfsNodes.push(target);
                                         BFSEdge.push(edge);
                                     }
@@ -2433,25 +2461,28 @@ function DirectedGraph(data) {
             level += 1;
             nodeStep = newStep;
         }
-        if(this.ifGetBFSTree){
-            var newNodes=[];
-            var newEdges=[];
-            clone(this.nodes,newNodes);
-            clone(BFSEdge,newEdges)
-            var BFSTreeData={node:newNodes,edge:newEdges};
-            var BFSTree=new DirectedGraph(BFSTreeData);
+        if (this.ifGetBFSTree) {
+            var newNodes = [];
+            var newEdges = [];
+            clone(this.nodes, newNodes);
+            clone(BFSEdge, newEdges)
+            var BFSTreeData = {
+                node: newNodes,
+                edge: newEdges
+            };
+            var BFSTree = new DirectedGraph(BFSTreeData);
             BFSTree.init();
-            this.BFSTree=BFSTree;
+            this.BFSTree = BFSTree;
         }
 
 
     };
     this.DFS = function (node, visitedNodes) {
-//        console.log('nodeID:'+node.id);
+        //        console.log('nodeID:'+node.id);
         if (node.children.length > 0) {
             var children = node.children;
             for (var i = 0; i < children.length; i++) {
-                if (!in_array(children[i].id, visitedNodes)&&(!children[i].disable)) {
+                if (!in_array(children[i].id, visitedNodes) && (!children[i].disable)) {
                     visitedNodes.push(children[i].id);
                     this.DFS(children[i], visitedNodes);
                 }
@@ -2459,7 +2490,7 @@ function DirectedGraph(data) {
         }
     };
     this.sortEdge = function (attr, order) {
-//        var weightKey='BFSWeight';
+        //        var weightKey='BFSWeight';
         var weightKey = 'yearWeight';
         if (arguments.length == 0) {
             attr = 'flow';
@@ -2469,14 +2500,14 @@ function DirectedGraph(data) {
             order = 'decrease';
         }
         this.edges.sort(function (a, b) {
-            if (order == 'increase')return a[attr] * a[weightKey] - b[attr] * b[weightKey];
-            else if (order == 'decrease')return b[attr] * b[weightKey] - a[attr] * a[weightKey];
+            if (order == 'increase') return a[attr] * a[weightKey] - b[attr] * b[weightKey];
+            else if (order == 'decrease') return b[attr] * b[weightKey] - a[attr] * a[weightKey];
 
         });
     };
-    this.filterTopFlow=function(k){
-        this.sortEdge('flow','increase');
-        while(this.checkConnection()&&this.edges.length>this.nodes.length*k){
+    this.filterTopFlow = function (k) {
+        this.sortEdge('flow', 'increase');
+        while (this.checkConnection() && this.edges.length > this.nodes.length * k) {
             var edge;
             for (var i = 0; i < this.edges.length; i++) {
                 if (!this.edges[i].deleteTimes) {
@@ -2492,84 +2523,81 @@ function DirectedGraph(data) {
             }
         }
     };
-    this.recurRemoveEdge=function(edge){
+    this.recurRemoveEdge = function (edge) {
         this.removeEdge(edge);
-        if(edge.originEdge){
+        if (edge.originEdge) {
             this.recurRemoveEdge(edge.originEdge);
         }
     };
-    this.openCircle=function(node){
-        if(node.children){
-            var newChildren=[];
-            for(var i=0;i<node.children.length;i++){
-                var child=node.children[i];
-                if(child.pseudoNode){
-                    if(!child.disable)newChildren.push(child);
-                }
-                else{
+    this.openCircle = function (node) {
+        if (node.children) {
+            var newChildren = [];
+            for (var i = 0; i < node.children.length; i++) {
+                var child = node.children[i];
+                if (child.pseudoNode) {
+                    if (!child.disable) newChildren.push(child);
+                } else {
                     newChildren.push(child);
                 }
             }
             node.children = newChildren;
-            for(var i=0;i<node.children.length;i++){
-                var child=node.children[i];
-                if(!child.disable){
-                    if(!child.pseudoNode){
-                        var source=node.id;
-                        var target=child.id;
-                        var key=source+'_'+target;
-                        var edge=this.edgeSourceTargetDic[key];
-                        if(edge.disable)edge.disable=false;
+            for (var i = 0; i < node.children.length; i++) {
+                var child = node.children[i];
+                if (!child.disable) {
+                    if (!child.pseudoNode) {
+                        var source = node.id;
+                        var target = child.id;
+                        var key = source + '_' + target;
+                        var edge = this.edgeSourceTargetDic[key];
+                        if (edge.disable) edge.disable = false;
                         this.openCircle(child);
-                    }
-                    else{
+                    } else {
                         child.disable = true;
-                        if(child.children){
-                            for(var j=0;j<child.children.length;j++){
-                                var source=child.id;
-                                var target=child.children[j].id;
-                                var key=source+'_'+target;
-                                var edge=this.edgeSourceTargetDic[key];
-                                edge.disable=true;
-                                edge.originEdge.disable=false;
+                        if (child.children) {
+                            for (var j = 0; j < child.children.length; j++) {
+                                var source = child.id;
+                                var target = child.children[j].id;
+                                var key = source + '_' + target;
+                                var edge = this.edgeSourceTargetDic[key];
+                                edge.disable = true;
+                                edge.originEdge.disable = false;
                             }
                         }
-                        var tmpChildren=[];
-                        for(var j=0;j<node.children;j++){
-                            if(!node.children[j].pseudoNode){
-                                if(!node.children[j].disable)tmpChildren.push(node.children[j]);
+                        var tmpChildren = [];
+                        for (var j = 0; j < node.children; j++) {
+                            if (!node.children[j].pseudoNode) {
+                                if (!node.children[j].disable) tmpChildren.push(node.children[j]);
                             }
                         }
-                        if(child.circleEdges){
-                            var source=node.id;
-                            var target=child.id;
-                            var key=source+'_'+target;
-                            var originEdge=this.edgeSourceTargetDic[key].originEdge;
-                            var newChild=this.nodes[originEdge.target];
-                            newChild.disable=false;
+                        if (child.circleEdges) {
+                            var source = node.id;
+                            var target = child.id;
+                            var key = source + '_' + target;
+                            var originEdge = this.edgeSourceTargetDic[key].originEdge;
+                            var newChild = this.nodes[originEdge.target];
+                            newChild.disable = false;
                             tmpChildren.push(newChild);
-                            for(var j=0;j<child.circleEdges.length;j++){
-                                var edge=child.circleEdges[j];
-                                if(edge.target!=originEdge.target)edge.disable=false;
-                                else{
+                            for (var j = 0; j < child.circleEdges.length; j++) {
+                                var edge = child.circleEdges[j];
+                                if (edge.target != originEdge.target) edge.disable = false;
+                                else {
 
                                     this.recurRemoveEdge(edge);
                                 }
                             }
                         }
 
-                        if(child.innerNodesIDList){
-                            for(var j=0;j<child.innerNodesIDList.length;j++){
-                                var id=child.innerNodesIDList[j];
-                                var innerNode=this.nodes[id];
-                                innerNode.disable=false;
+                        if (child.innerNodesIDList) {
+                            for (var j = 0; j < child.innerNodesIDList.length; j++) {
+                                var id = child.innerNodesIDList[j];
+                                var innerNode = this.nodes[id];
+                                innerNode.disable = false;
                             }
                         }
-                        node.children=tmpChildren;
-                        if(!this.checkConnection()){
+                        node.children = tmpChildren;
+                        if (!this.checkConnection()) {
                             console.log('does not connected');
-                        }
-                        else{
+                        } else {
                             this.openCircle(this.root);
                         }
                     }
@@ -2578,51 +2606,51 @@ function DirectedGraph(data) {
         }
     };
     this.contractCircle = function (circle) {
-        var edgeSourceDic=this.getEdgeDic('source');
-        var edgeTargetDic=this.getEdgeDic('target');
-        var len=this.nodes.length;
-        var newNode={
-            id:len,
-            children:[],
-            parents:[],
-            innerNodesIDList:[],
-            intoThisNodeEdges:[],
-            outThisNodeEdges:[],
-            circleEdges:[],
-            pseudoNode:true
+        var edgeSourceDic = this.getEdgeDic('source');
+        var edgeTargetDic = this.getEdgeDic('target');
+        var len = this.nodes.length;
+        var newNode = {
+            id: len,
+            children: [],
+            parents: [],
+            innerNodesIDList: [],
+            intoThisNodeEdges: [],
+            outThisNodeEdges: [],
+            circleEdges: [],
+            pseudoNode: true
         };
         this.nodes.push(newNode);
-        var circleIDList=[];
-        for(var i=0;i<circle.edges.length;i++){
-            var edge=circle.edges[i];
-            var source=edge.source;
-            var target=edge.target;
+        var circleIDList = [];
+        for (var i = 0; i < circle.edges.length; i++) {
+            var edge = circle.edges[i];
+            var source = edge.source;
+            var target = edge.target;
             this.nodes[source].disable = true;
             this.nodes[target].disable = true;
-            if(!in_array(source, circleIDList))circleIDList.push(source);
-            if(!in_array(target, circleIDList))circleIDList.push(target);
+            if (!in_array(source, circleIDList)) circleIDList.push(source);
+            if (!in_array(target, circleIDList)) circleIDList.push(target);
             newNode.circleEdges.push(edge);
         }
-        newNode.innerNodesIDList=circleIDList;
-        for(var i=0;i<circleIDList.length;i++){
-            if(edgeSourceDic[circleIDList[i]]){
-                for(var j=0;j<edgeSourceDic[circleIDList[i]].length;j++){
-                    var edge=edgeSourceDic[circleIDList[i]][j];
+        newNode.innerNodesIDList = circleIDList;
+        for (var i = 0; i < circleIDList.length; i++) {
+            if (edgeSourceDic[circleIDList[i]]) {
+                for (var j = 0; j < edgeSourceDic[circleIDList[i]].length; j++) {
+                    var edge = edgeSourceDic[circleIDList[i]][j];
                     edge.disable = true;
-                    if(!in_array(edge.target,circleIDList)){
-                        if(this.directedTree){
-                            var directedTreeEdgeTargetDic=this.directedTree.getEdgeDic('target');
-                            var tmpEdge=directedTreeEdgeTargetDic[edge.target];
-                            if(tmpEdge.originEdge){
-                                var key=tmpEdge[0].originEdge.source+'_'+tmpEdge[0].originEdge.target;
+                    if (!in_array(edge.target, circleIDList)) {
+                        if (this.directedTree) {
+                            var directedTreeEdgeTargetDic = this.directedTree.getEdgeDic('target');
+                            var tmpEdge = directedTreeEdgeTargetDic[edge.target];
+                            if (tmpEdge.originEdge) {
+                                var key = tmpEdge[0].originEdge.source + '_' + tmpEdge[0].originEdge.target;
                                 edge = this.edgeSourceTargetDic[key];
                             }
                         }
-                        var newEdge={};
+                        var newEdge = {};
                         clone(edge, newEdge);
-                        newEdge.disable=false;
-                        newEdge.pseudoEdge=true;
-                        newEdge.originEdge=edge;
+                        newEdge.disable = false;
+                        newEdge.pseudoEdge = true;
+                        newEdge.originEdge = edge;
                         newEdge.source = newNode.id;
 
                         this.addEdge(newEdge);
@@ -2630,39 +2658,41 @@ function DirectedGraph(data) {
                         newNode.outThisNodeEdges.push(edge);
                     }
                 }
-                for(var j=0;j<edgeTargetDic[circleIDList[i]].length;j++){
-                    var edge=edgeTargetDic[circleIDList[i]][j];
+                for (var j = 0; j < edgeTargetDic[circleIDList[i]].length; j++) {
+                    var edge = edgeTargetDic[circleIDList[i]][j];
                     edge.disable = true;
-                    if(!in_array(edge.source,circleIDList)){
-                        if(this.directedTree){
-                            var directedTreeEdgeSourceDic=this.directedTree.getEdgeDic('source');
+                    if (!in_array(edge.source, circleIDList)) {
+                        if (this.directedTree) {
+                            var directedTreeEdgeSourceDic = this.directedTree.getEdgeDic('source');
                             var tmpEdge;
-//                            if(directedTreeEdgeSourceDic[edge.source]){
-//                                tmpEdge=directedTreeEdgeSourceDic[edge.source][0];
-//                                edge = {};
-//                                key = tmpEdge.source+'_'+tmpEdge.target;
-//                                edge = this.edgeSourceTargetDic[key];
-//                            }
-//                            else{
-                                var maxEdge={circleFlow:-100000000};
-                                for(var k=0;k<edgeSourceDic[edge.source].length;k++){
-                                    if(in_array(edgeSourceDic[edge.source][k].target,circleIDList)){
-                                        tmpEdge=edgeSourceDic[edge.source][k];
-                                        if(tmpEdge.circleFlow>maxEdge.circleFlow)maxEdge=tmpEdge;
-                                    }
-
+                            //                            if(directedTreeEdgeSourceDic[edge.source]){
+                            //                                tmpEdge=directedTreeEdgeSourceDic[edge.source][0];
+                            //                                edge = {};
+                            //                                key = tmpEdge.source+'_'+tmpEdge.target;
+                            //                                edge = this.edgeSourceTargetDic[key];
+                            //                            }
+                            //                            else{
+                            var maxEdge = {
+                                circleFlow: -100000000
+                            };
+                            for (var k = 0; k < edgeSourceDic[edge.source].length; k++) {
+                                if (in_array(edgeSourceDic[edge.source][k].target, circleIDList)) {
+                                    tmpEdge = edgeSourceDic[edge.source][k];
+                                    if (tmpEdge.circleFlow > maxEdge.circleFlow) maxEdge = tmpEdge;
                                 }
-                                key = maxEdge.source+'_'+maxEdge.target;
-                                edge = this.edgeSourceTargetDic[key];
-//                            }
+
+                            }
+                            key = maxEdge.source + '_' + maxEdge.target;
+                            edge = this.edgeSourceTargetDic[key];
+                            //                            }
 
                         }
 
-                        var newEdge={};
+                        var newEdge = {};
                         clone(edge, newEdge);
-                        newEdge.disable=false;
-                        newEdge.pseudoEdge=true;
-                        newEdge.originEdge=edge;
+                        newEdge.disable = false;
+                        newEdge.pseudoEdge = true;
+                        newEdge.originEdge = edge;
                         newEdge.target = newNode.id;
 
                         this.addEdge(newEdge);
@@ -2689,136 +2719,149 @@ function DirectedGraph(data) {
         //the below code is written by Yue Su
         //in our data there should not exist a path that target to the root
         //select the entering arc with the highest cost
-        var treeNodes=[];
-        var treeEdges=[];
-        var tmpEdges=[];
+        var treeNodes = [];
+        var treeEdges = [];
+        var tmpEdges = [];
         clone(this.nodes, treeNodes);
-        for(var i=0;i<treeNodes.length;i++){
-            if(!(treeNodes[i].focused=='true')){
-                var id=parseInt(treeNodes[i].id);
-                var nodeEdge=[];
-                var maxEdge={yearFlow:0};
-                for(var j=0;j<this.edges.length;j++){
-                    if(this.edges[j].target==id){
-                        if(this.edges[j].yearFlow>maxEdge.yearFlow)maxEdge=this.edges[j];
+        for (var i = 0; i < treeNodes.length; i++) {
+            if (!(treeNodes[i].focused == 'true')) {
+                var id = parseInt(treeNodes[i].id);
+                var nodeEdge = [];
+                var maxEdge = {
+                    yearFlow: 0
+                };
+                for (var j = 0; j < this.edges.length; j++) {
+                    if (this.edges[j].target == id) {
+                        if (this.edges[j].yearFlow > maxEdge.yearFlow) maxEdge = this.edges[j];
                     }
                 }
                 tmpEdges.push(maxEdge);
             }
         }
-        clone(tmpEdges,treeEdges);
-        var treeData={node:treeNodes,edge:treeEdges};
-//        for(var i=0;i<treeEdges.length;i++){
-//            console.log(edge[])
-//        }
-        var directedTree=new DirectedGraph(treeData);
-        this.directedTree=directedTree;
+        clone(tmpEdges, treeEdges);
+        var treeData = {
+            node: treeNodes,
+            edge: treeEdges
+        };
+        //        for(var i=0;i<treeEdges.length;i++){
+        //            console.log(edge[])
+        //        }
+        var directedTree = new DirectedGraph(treeData);
+        this.directedTree = directedTree;
         directedTree.init();
-        directedTree.sortEdge('source','increase');
+        directedTree.sortEdge('source', 'increase');
 
-        for(var i=0;i<this.edges.length;i++){
-            this.edges[i].circleFlow=this.edges[i].yearFlow;
+        for (var i = 0; i < this.edges.length; i++) {
+            this.edges[i].circleFlow = this.edges[i].yearFlow;
         }
-        for(var i=0;i<directedTree.edges.length;i++){
-            directedTree.edges[i].circleFlow=directedTree.edges[i].yearFlow;
+        for (var i = 0; i < directedTree.edges.length; i++) {
+            directedTree.edges[i].circleFlow = directedTree.edges[i].yearFlow;
         }
 
         //detect circle
-        while(!directedTree.checkConnection()){
+        while (!directedTree.checkConnection()) {
 
             //find circle for each node
-            for(var i=0;i<directedTree.nodes.length;i++){
+            for (var i = 0; i < directedTree.nodes.length; i++) {
 
-                var node=directedTree.nodes[i];
-                if(!node.disable){
-                    var id=node.id;
-                    var pathTarget = {id: id, preEdge: [], currentIDList: [id], next: []};
-                    var paths=[];
-                    directedTree.findCircle(id, id, id, pathTarget,paths,false);
-                    if(paths[0]){
+                var node = directedTree.nodes[i];
+                if (!node.disable) {
+                    var id = node.id;
+                    var pathTarget = {
+                        id: id,
+                        preEdge: [],
+                        currentIDList: [id],
+                        next: []
+                    };
+                    var paths = [];
+                    directedTree.findCircle(id, id, id, pathTarget, paths, false);
+                    if (paths[0]) {
                         //circle find
                         //contract the nodes in the cycle into a pseudo-node (k)
-                        var len=this.nodes.length;
+                        var len = this.nodes.length;
 
-                        var circleIDList=[];
-                        for(var j=0;j<paths[0].edges.length;j++){
+                        var circleIDList = [];
+                        for (var j = 0; j < paths[0].edges.length; j++) {
 
-                            var edge=paths[0].edges[j];
-                            var source=edge.source;
-                            var target=edge.target;
-                            if(!in_array(source, circleIDList))circleIDList.push(source);
-                            if(!in_array(target, circleIDList))circleIDList.push(target);
+                            var edge = paths[0].edges[j];
+                            var source = edge.source;
+                            var target = edge.target;
+                            if (!in_array(source, circleIDList)) circleIDList.push(source);
+                            if (!in_array(target, circleIDList)) circleIDList.push(target);
 
-                            if(!directedTree.nodes[source].circleTarget)directedTree.nodes[source].circleTarget=target;
-                            if(!directedTree.nodes[target].circleSource)directedTree.nodes[target].circleSource=source;
+                            if (!directedTree.nodes[source].circleTarget) directedTree.nodes[source].circleTarget = target;
+                            if (!directedTree.nodes[target].circleSource) directedTree.nodes[target].circleSource = source;
                         }
-                        var edgeTargetToCircle=[];
-                        var circleEdgeDic={};
-                        for(var j=0;j<circleIDList.length;j++){
-                            var circleNodeID=circleIDList[j];
-                            var parents=this.nodes[circleNodeID].parents;
-                            var len=0;
-                            for(var x=0;x<parents.length;x++){
-                                if(!parents[x].disable)len+=1;
+                        var edgeTargetToCircle = [];
+                        var circleEdgeDic = {};
+                        for (var j = 0; j < circleIDList.length; j++) {
+                            var circleNodeID = circleIDList[j];
+                            var parents = this.nodes[circleNodeID].parents;
+                            var len = 0;
+                            for (var x = 0; x < parents.length; x++) {
+                                if (!parents[x].disable) len += 1;
                             }
-                            if(len>1){
-                                var circleSource=directedTree.nodes[circleNodeID].circleSource;
-                                var circleEdgeKey=circleSource+'_'+circleNodeID;
-                                var circleEdge=this.edgeSourceTargetDic[circleEdgeKey];
-                                circleEdgeDic[circleNodeID]=circleEdge;
-                                for(var k=0;k<parents.length;k++){
-                                    if(!in_array(parents[k].id,circleIDList)&&!parents[k].disable){
-//                                    if(parents[k].id!=circleSource&&!parents[k].disable){
-                                        var edgeKey=parents[k].id+'_'+circleNodeID;
-                                        var edge=this.edgeSourceTargetDic[edgeKey];
-                                        edge.circleFlow-=circleEdge.circleFlow;
+                            if (len > 1) {
+                                var circleSource = directedTree.nodes[circleNodeID].circleSource;
+                                var circleEdgeKey = circleSource + '_' + circleNodeID;
+                                var circleEdge = this.edgeSourceTargetDic[circleEdgeKey];
+                                circleEdgeDic[circleNodeID] = circleEdge;
+                                for (var k = 0; k < parents.length; k++) {
+                                    if (!in_array(parents[k].id, circleIDList) && !parents[k].disable) {
+                                        //                                    if(parents[k].id!=circleSource&&!parents[k].disable){
+                                        var edgeKey = parents[k].id + '_' + circleNodeID;
+                                        var edge = this.edgeSourceTargetDic[edgeKey];
+                                        edge.circleFlow -= circleEdge.circleFlow;
                                         edgeTargetToCircle.push(edge);
                                     }
                                 }
                             }
                         }
-//                    console.log(edgeTargetToCircle);
-                        var maxCircleFlowEdge={circleFlow:-100000000};
-                        for(var j=0;j<edgeTargetToCircle.length;j++){
-                            if(edgeTargetToCircle[j].circleFlow>maxCircleFlowEdge.circleFlow){
-                                maxCircleFlowEdge=edgeTargetToCircle[j];
+                        //                    console.log(edgeTargetToCircle);
+                        var maxCircleFlowEdge = {
+                            circleFlow: -100000000
+                        };
+                        for (var j = 0; j < edgeTargetToCircle.length; j++) {
+                            if (edgeTargetToCircle[j].circleFlow > maxCircleFlowEdge.circleFlow) {
+                                maxCircleFlowEdge = edgeTargetToCircle[j];
                             }
                         }
-                        var circleTarget=maxCircleFlowEdge.target;
-                        var targetCircleEdge=circleEdgeDic[circleTarget];
-//                        console.log('try remove:  '+targetCircleEdge.source+'->'+targetCircleEdge.target)
-//                        recurRemove(targetCircleEdge);
-                        function recurRemove(targetCircleEdge){
-                            if(targetCircleEdge.originEdge){
+                        var circleTarget = maxCircleFlowEdge.target;
+                        var targetCircleEdge = circleEdgeDic[circleTarget];
+                        //                        console.log('try remove:  '+targetCircleEdge.source+'->'+targetCircleEdge.target)
+                        //                        recurRemove(targetCircleEdge);
+                        function recurRemove(targetCircleEdge) {
+                            if (targetCircleEdge.originEdge) {
                                 directedTree.removeEdge(targetCircleEdge);
 
-//                                console.log('try remove:  '+targetCircleEdge.originEdge.source+'->'+targetCircleEdge.originEdge.target);
+                                //                                console.log('try remove:  '+targetCircleEdge.originEdge.source+'->'+targetCircleEdge.originEdge.target);
                                 recurRemove(targetCircleEdge.originEdge)
                             }
                         }
 
-                        var tmpEdge={};
-                        clone(maxCircleFlowEdge,tmpEdge);
-                        maxCircleFlowEdge=tmpEdge;
-                        function recurAdd(maxCircleFlowEdge){
+                        var tmpEdge = {};
+                        clone(maxCircleFlowEdge, tmpEdge);
+                        maxCircleFlowEdge = tmpEdge;
+
+                        function recurAdd(maxCircleFlowEdge) {
                             directedTree.addEdge(maxCircleFlowEdge);
-                            if(maxCircleFlowEdge.originEdge){
-//                                console.log('try add:  '+maxCircleFlowEdge.originEdge.source+'->'+maxCircleFlowEdge.originEdge.target)
+                            if (maxCircleFlowEdge.originEdge) {
+                                //                                console.log('try add:  '+maxCircleFlowEdge.originEdge.source+'->'+maxCircleFlowEdge.originEdge.target)
                                 recurAdd(maxCircleFlowEdge.originEdge)
                             }
                         }
-//                        console.log('try add:  '+maxCircleFlowEdge.source+'->'+maxCircleFlowEdge.target)
+                        //                        console.log('try add:  '+maxCircleFlowEdge.source+'->'+maxCircleFlowEdge.target)
                         recurAdd(maxCircleFlowEdge);
 
                         directedTree.contractCircle(paths[0]);
                         this.contractCircle(paths[0]);
-//                        console.log(directedTree.edgeSourceTargetDic)
-//                        console.log('merge ',circleIDList,'as node');
-                        for(var j=0;j<directedTree.nodes.length;j++){
-//                            delete directedTree.nodes[j].circleSource;
-                            directedTree.nodes[j].circleSource=null;
-//                            delete directedTree.nodes[j].circleTarget;
-                            directedTree.nodes[j].circleTarget=null;
+                        //                        console.log(directedTree.edgeSourceTargetDic)
+                        //                        console.log('merge ',circleIDList,'as node');
+                        for (var j = 0; j < directedTree.nodes.length; j++) {
+                            //                            delete directedTree.nodes[j].circleSource;
+                            directedTree.nodes[j].circleSource = null;
+                            //                            delete directedTree.nodes[j].circleTarget;
+                            directedTree.nodes[j].circleTarget = null;
                         }
                         break;
 
@@ -2830,91 +2873,96 @@ function DirectedGraph(data) {
 
             }
         }
-        var tmpcurrentEdges=[];
-        var tmpcurrentNodes=[];
-        for(var tmpkey in directedTree.edgeSourceTargetDic){
-            var tmpsource=parseInt(tmpkey.split('_')[0]);
-            var tmptarget=parseInt(tmpkey.split('_')[1]);
-            if(!directedTree.edgeSourceTargetDic[tmpkey].pseudoEdge){
-//                console.log(tmpkey);
-                var tmpedge={};
-                clone(directedTree.edgeSourceTargetDic[tmpkey],tmpedge);
-                if(tmpedge.disable)delete tmpedge.disable;
+        var tmpcurrentEdges = [];
+        var tmpcurrentNodes = [];
+        for (var tmpkey in directedTree.edgeSourceTargetDic) {
+            var tmpsource = parseInt(tmpkey.split('_')[0]);
+            var tmptarget = parseInt(tmpkey.split('_')[1]);
+            if (!directedTree.edgeSourceTargetDic[tmpkey].pseudoEdge) {
+                //                console.log(tmpkey);
+                var tmpedge = {};
+                clone(directedTree.edgeSourceTargetDic[tmpkey], tmpedge);
+                if (tmpedge.disable) delete tmpedge.disable;
                 tmpcurrentEdges.push(tmpedge)
             }
         }
-        for(var i=0;i<directedTree.nodes.length;i++){
-            var node=directedTree.nodes[i];
-            if(!node.pseudoNode){
-                var newNode={};
+        for (var i = 0; i < directedTree.nodes.length; i++) {
+            var node = directedTree.nodes[i];
+            if (!node.pseudoNode) {
+                var newNode = {};
                 clone(node, newNode);
-                if(newNode.children)delete newNode.children;
-                if(newNode.parents)delete newNode.parents;
-                if(newNode.disable)delete newNode.disable;
+                if (newNode.children) delete newNode.children;
+                if (newNode.parents) delete newNode.parents;
+                if (newNode.disable) delete newNode.disable;
                 tmpcurrentNodes.push(newNode);
             }
         }
-        var tmpGraphData={node:tmpcurrentNodes,edge:tmpcurrentEdges};
-        var tmpGraph=new DirectedGraph(tmpGraphData);
+        var tmpGraphData = {
+            node: tmpcurrentNodes,
+            edge: tmpcurrentEdges
+        };
+        var tmpGraph = new DirectedGraph(tmpGraphData);
 
         tmpGraph.init();
-        tmpGraph.ifGetBFSTree=true;
+        tmpGraph.ifGetBFSTree = true;
         tmpGraph.checkConnection();
-//        tmpcurrentEdges.sort(function(a,b){return d3.ascending(a.target, b.target)});
-//
-//        tmpcurrentEdges.sort(function(a,b){return d3.ascending(a.source, b.source)});
-//        for(var i=0;i<tmpcurrentEdges.length;i++){
-//            console.log(tmpcurrentEdges[i].source+'->'+tmpcurrentEdges[i].target);
-//        }
-//        console.log(tmpcurrentEdges);
-//        directedTree.openCircle(directedTree.root);
-//        var newTreeEdges=[];
-//        var newTreeNodes=[];
-//        for(var i=0;i<directedTree.edges.length;i++){
-//            var edge=directedTree.edges[i];
-//            var source=edge.source;
-//            var target=edge.target;
-//            var edgeStr=source+'->'+target;
-//
-//            if(!edge.disable&&!edge.pseudoEdge){
-////                console.log(edgeStr);
-//                newTreeEdges.push(edge);
-//            }
-//        }
-//        for(var i=0;i<directedTree.nodes.length;i++){
-//            var node=directedTree.nodes[i];
-//            if(!node.disable)newTreeNodes.push(node);
-//        }
-//        var spanningTreeData={node:newTreeNodes,edge:newTreeEdges};
-//        var spanningTree=new DirectedGraph(spanningTreeData);
-//        spanningTree.init();
-        var spanningTree=tmpGraph.BFSTree;
-        this.maximalSpanningTree=spanningTree;
-        spanningTree.deletedTreeEdges=[];
-        spanningTree.deletedNonTreeEdges=[];
-        var originEdgeDic=this.initEdgeSourceTargetDic;
-        var mstEdgeDic=spanningTree.edgeSourceTargetDic;
-        for(var key in originEdgeDic){
-            if(!mstEdgeDic[key]){
-                var deletedEdge=originEdgeDic[key];
+        //        tmpcurrentEdges.sort(function(a,b){return d3.ascending(a.target, b.target)});
+        //
+        //        tmpcurrentEdges.sort(function(a,b){return d3.ascending(a.source, b.source)});
+        //        for(var i=0;i<tmpcurrentEdges.length;i++){
+        //            console.log(tmpcurrentEdges[i].source+'->'+tmpcurrentEdges[i].target);
+        //        }
+        //        console.log(tmpcurrentEdges);
+        //        directedTree.openCircle(directedTree.root);
+        //        var newTreeEdges=[];
+        //        var newTreeNodes=[];
+        //        for(var i=0;i<directedTree.edges.length;i++){
+        //            var edge=directedTree.edges[i];
+        //            var source=edge.source;
+        //            var target=edge.target;
+        //            var edgeStr=source+'->'+target;
+        //
+        //            if(!edge.disable&&!edge.pseudoEdge){
+        ////                console.log(edgeStr);
+        //                newTreeEdges.push(edge);
+        //            }
+        //        }
+        //        for(var i=0;i<directedTree.nodes.length;i++){
+        //            var node=directedTree.nodes[i];
+        //            if(!node.disable)newTreeNodes.push(node);
+        //        }
+        //        var spanningTreeData={node:newTreeNodes,edge:newTreeEdges};
+        //        var spanningTree=new DirectedGraph(spanningTreeData);
+        //        spanningTree.init();
+        var spanningTree = tmpGraph.BFSTree;
+        this.maximalSpanningTree = spanningTree;
+        spanningTree.deletedTreeEdges = [];
+        spanningTree.deletedNonTreeEdges = [];
+        var originEdgeDic = this.initEdgeSourceTargetDic;
+        var mstEdgeDic = spanningTree.edgeSourceTargetDic;
+        for (var key in originEdgeDic) {
+            if (!mstEdgeDic[key]) {
+                var deletedEdge = originEdgeDic[key];
                 this.maximalSpanningTree.deletedTreeEdges.push(deletedEdge);
             }
         }
-//        if(!directedTree.checkConnection()){
-//            //can not traverse all nodes from the root, means that there exist one or more cycle in the current graph
-//            for(var i=0;i<this.nodes.length;i++){
-//
-//            }
-//        }
-//        else{
-//
-//        }
+        //        if(!directedTree.checkConnection()){
+        //            //can not traverse all nodes from the root, means that there exist one or more cycle in the current graph
+        //            for(var i=0;i<this.nodes.length;i++){
+        //
+        //            }
+        //        }
+        //        else{
+        //
+        //        }
 
     };
     this.generateSpanningTree = function () {
         this.resetYearFlow();
         while (!this.checkIfSpanningTree()) {
-            this.edges=this.edges.sort(function(a,b){return a.source- b.source});
+            this.edges = this.edges.sort(function (a, b) {
+                return a.source - b.source
+            });
             this.sortEdge('flow', 'increase');
             var edge;
             for (var i = 0; i < this.edges.length; i++) {
@@ -2928,114 +2976,121 @@ function DirectedGraph(data) {
                 edge.deleteTimes = 1;
                 this.addEdge(edge);
 
-            }
-            else {
+            } else {
                 this.spanningTree.deletedEdges.push(edge);
                 var source = edge.source;
                 var target = edge.target;
                 var originTarget = edge.target;
-                var pathTarget = {id: target, preEdge: [], currentIDList: [target], next: []};
+                var pathTarget = {
+                    id: target,
+                    preEdge: [],
+                    currentIDList: [target],
+                    next: []
+                };
                 var paths = [];
 
-//                this.findAllPathBetween(source, target, originTarget, pathTarget, paths);
-//                this.findMaxPathBetween(source, target, originTarget, pathTarget, paths);
+                //                this.findAllPathBetween(source, target, originTarget, pathTarget, paths);
+                //                this.findMaxPathBetween(source, target, originTarget, pathTarget, paths);
                 paths = this.findMaxPathBetween(source, target);
                 //console.log(paths.length);
                 if (paths.length > 0) {
-                    var maxAvgFlowPath={avgFlow:0};
-                    for(var i=0;i<paths.length;i++){
-                        paths[i].avgFlow=paths[i].totalFlow/paths[i].edges.length;
-                        if(paths[i].avgFlow>maxAvgFlowPath.avgFlow)maxAvgFlowPath=paths[i];
+                    var maxAvgFlowPath = {
+                        avgFlow: 0
+                    };
+                    for (var i = 0; i < paths.length; i++) {
+                        paths[i].avgFlow = paths[i].totalFlow / paths[i].edges.length;
+                        if (paths[i].avgFlow > maxAvgFlowPath.avgFlow) maxAvgFlowPath = paths[i];
                     }
 
                     for (var i = 0; i < maxAvgFlowPath.edges.length; i++) {
                         maxAvgFlowPath.edges[i].yearFlow += edge.yearFlow;
                         maxAvgFlowPath.totalFlow += edge.yearFlow;
                     }
-//                    paths.sort(function (a, b) {
-//                        return b.totalFlow - a.totalFlow;
-//                    });
-//                    paths.sort(function (a, b) {
-//                        return a.length - b.length;
-//                    });
+                    //                    paths.sort(function (a, b) {
+                    //                        return b.totalFlow - a.totalFlow;
+                    //                    });
+                    //                    paths.sort(function (a, b) {
+                    //                        return a.length - b.length;
+                    //                    });
                     this.spanningTree.deletedTreeEdges.push({
                         originEdge: edge,
                         newPath: maxAvgFlowPath
                     })
-                }
-                else {
+                } else {
                     this.spanningTree.deletedNonTreeEdges.push(edge);
                 }
 
 
             }
         }
-//        for(var i=0;i<this.spanningTree.deletedEdges.length;i++){
-//            var edge=this.spanningTree.deletedEdges[i];
-//            var source=edge.source;
-//            var target=edge.target;
-//            var originTarget=edge.target;
-//            var pathTarget={id:target, preEdge:[],currentIDList:[target],next:[]};
-//            var paths=[];
-//            this.findAllPathBetween(source,target,originTarget,pathTarget,paths);
-////            console.log(paths.length);
-//            if(paths.length>0){
-//                for(var j=0;j<paths[0].edges.length;j++){
-//                    paths[0].edges[j].flow+=edge.flow;
-//                    paths[0].totalFlow+=edge.flow;
-//                }
-//                paths.sort(function(a,b){
-//                    return b.totalFlow-a.totalFlow;
-//                });
-//                paths.sort(function(a,b){
-//                    return a.length-b.length;
-//                });
-//                this.spanningTree.deletedTreeEdges.push({
-//                    originEdge:edge,
-//                    newPath:paths[0]
-//                })
-//            }
-//            else{
-//                this.spanningTree.deletedNonTreeEdges.push(edge);
-//            }
-//        }
+        //        for(var i=0;i<this.spanningTree.deletedEdges.length;i++){
+        //            var edge=this.spanningTree.deletedEdges[i];
+        //            var source=edge.source;
+        //            var target=edge.target;
+        //            var originTarget=edge.target;
+        //            var pathTarget={id:target, preEdge:[],currentIDList:[target],next:[]};
+        //            var paths=[];
+        //            this.findAllPathBetween(source,target,originTarget,pathTarget,paths);
+        ////            console.log(paths.length);
+        //            if(paths.length>0){
+        //                for(var j=0;j<paths[0].edges.length;j++){
+        //                    paths[0].edges[j].flow+=edge.flow;
+        //                    paths[0].totalFlow+=edge.flow;
+        //                }
+        //                paths.sort(function(a,b){
+        //                    return b.totalFlow-a.totalFlow;
+        //                });
+        //                paths.sort(function(a,b){
+        //                    return a.length-b.length;
+        //                });
+        //                this.spanningTree.deletedTreeEdges.push({
+        //                    originEdge:edge,
+        //                    newPath:paths[0]
+        //                })
+        //            }
+        //            else{
+        //                this.spanningTree.deletedNonTreeEdges.push(edge);
+        //            }
+        //        }
 
     };
     this.checkIfSpanningTree = function () {
         if (this.checkConnection("DFS") && (this.nodes.length - this.edges.length == 1)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     };
-    this.findCircle=function(source, target, originTarget, pathTarget, paths,circleFlag){
-        this.edgeTargetDic = this.getEdgeDic('target','flow');
+    this.findCircle = function (source, target, originTarget, pathTarget, paths, circleFlag) {
+        this.edgeTargetDic = this.getEdgeDic('target', 'flow');
         var targetParents = this.edgeTargetDic[target];
         pathTarget.next = [];
         if (targetParents) {
             for (var i = 0; i < targetParents.length; i++) {
                 var newSource = targetParents[i].source;
                 if (!circleFlag) {
-                    if(newSource == source){
-                        circleFlag=true;
+                    if (newSource == source) {
+                        circleFlag = true;
                     }
                     var newPreEdge = [];
                     var key = newSource + '_' + target;
                     var newCurrentIDList = [];
                     var reverseKey = target + '_' + newSource;
-                    if ((newSource!=originTarget&&(!in_array(newSource, pathTarget.currentIDList)))||newSource==originTarget) {
+                    if ((newSource != originTarget && (!in_array(newSource, pathTarget.currentIDList))) || newSource == originTarget) {
                         clone(pathTarget.preEdge, newPreEdge);
                         clone(pathTarget.currentIDList, newCurrentIDList);
                         newPreEdge.push(key);
                         newCurrentIDList.push(newSource);
-                        var newPathTarget = {id: newSource, preEdge: newPreEdge, currentIDList: newCurrentIDList, next: []};
+                        var newPathTarget = {
+                            id: newSource,
+                            preEdge: newPreEdge,
+                            currentIDList: newCurrentIDList,
+                            next: []
+                        };
                         pathTarget.next.push(newPathTarget);
                         if (!circleFlag) {
-                            this.findCircle(source, newSource, originTarget, newPathTarget, paths,circleFlag)
-                        }
-
-                        else {
+                            this.findCircle(source, newSource, originTarget, newPathTarget, paths, circleFlag)
+                        } else {
                             var circle = {};
                             circle.edges = [];
                             circle.length = newPathTarget.preEdge.length;
@@ -3059,7 +3114,7 @@ function DirectedGraph(data) {
     }
     this.findAllPathBetween = function (source, target, originTarget, pathTarget, paths) {
 
-        this.edgeTargetDic = this.getEdgeDic('target','flow');
+        this.edgeTargetDic = this.getEdgeDic('target', 'flow');
         var targetParents = this.edgeTargetDic[target];
         pathTarget.next = [];
         if (targetParents) {
@@ -3075,12 +3130,16 @@ function DirectedGraph(data) {
                         clone(pathTarget.currentIDList, newCurrentIDList);
                         newPreEdge.push(key);
                         newCurrentIDList.push(newSource);
-                        var newPathTarget = {id: newSource, preEdge: newPreEdge, currentIDList: newCurrentIDList, next: []};
+                        var newPathTarget = {
+                            id: newSource,
+                            preEdge: newPreEdge,
+                            currentIDList: newCurrentIDList,
+                            next: []
+                        };
                         pathTarget.next.push(newPathTarget);
                         if (newSource != source) {
                             this.findAllPathBetween(source, newSource, originTarget, newPathTarget, paths)
-                        }
-                        else {
+                        } else {
                             var newPath = {};
                             newPath.edges = [];
                             newPath.length = newPathTarget.preEdge.length;
@@ -3094,13 +3153,13 @@ function DirectedGraph(data) {
 
                             paths.push(newPath);
 
-    //                            var pathStr='';
-    //                            for(var j=0;j<newPath.edges.length;j++){
-    //                                pathStr+=newPath.edges[j].target;
-    //                                pathStr+='<-'
-    //                            }
-    //                            pathStr+=newPath.edges[newPath.edges.length-1].source;
-    //                            console.log(pathStr);
+                            //                            var pathStr='';
+                            //                            for(var j=0;j<newPath.edges.length;j++){
+                            //                                pathStr+=newPath.edges[j].target;
+                            //                                pathStr+='<-'
+                            //                            }
+                            //                            pathStr+=newPath.edges[newPath.edges.length-1].source;
+                            //                            console.log(pathStr);
 
                         }
 
@@ -3112,52 +3171,54 @@ function DirectedGraph(data) {
         }
 
     };
-    this.dijkstra=function(source,target){
-        var dijGraph=new dijkstraGraph();
-        var nodes=this.nodes;
-        var edges=this.edges;
-        var dijNodes=[];
-        for(var i=0;i<nodes.length;i++){
-            var newNode=dijGraph.addNode(nodes[i].id);
+    this.dijkstra = function (source, target) {
+        var dijGraph = new dijkstraGraph();
+        var nodes = this.nodes;
+        var edges = this.edges;
+        var dijNodes = [];
+        for (var i = 0; i < nodes.length; i++) {
+            var newNode = dijGraph.addNode(nodes[i].id);
             dijNodes.push(newNode);
         }
-        var maxYearFlow=d3.max(edges,function(d){return d.yearFlow})+1;
-        for(var i=0;i<edges.length;i++){
-            var edgeSource=edges[i].source;
-            var edgeTarget=edges[i].target;
-            var sourceNode=dijNodes[edgeSource];
-            var targetNode=dijNodes[edgeTarget];
-            sourceNode.addEdge(targetNode,maxYearFlow-edges[i].yearFlow);
+        var maxYearFlow = d3.max(edges, function (d) {
+            return d.yearFlow
+        }) + 1;
+        for (var i = 0; i < edges.length; i++) {
+            var edgeSource = edges[i].source;
+            var edgeTarget = edges[i].target;
+            var sourceNode = dijNodes[edgeSource];
+            var targetNode = dijNodes[edgeTarget];
+            sourceNode.addEdge(targetNode, maxYearFlow - edges[i].yearFlow);
         }
-        return dijkstra(dijGraph,dijNodes[source],dijNodes[target]);
+        return dijkstra(dijGraph, dijNodes[source], dijNodes[target]);
     };
-    this.findMaxPathBetween=function(source,target){
-        var paths=[];
-//        while(1){
-        var shortestPathEdges=this.dijkstra(source, target);
+    this.findMaxPathBetween = function (source, target) {
+        var paths = [];
+        //        while(1){
+        var shortestPathEdges = this.dijkstra(source, target);
 
-//            var minEdge={yearFlow:Number.POSITIVE_INFINITY};
-        var newPath={};
+        //            var minEdge={yearFlow:Number.POSITIVE_INFINITY};
+        var newPath = {};
         newPath.edges = [];
         newPath.totalFlow = 0;
         newPath.length = 0;
-        for(var i=0;i<shortestPathEdges.length;i++){
-            var edge=this.edgeSourceTargetDic[shortestPathEdges[i]];
+        for (var i = 0; i < shortestPathEdges.length; i++) {
+            var edge = this.edgeSourceTargetDic[shortestPathEdges[i]];
             newPath.edges.push(edge);
-            newPath.totalFlow+=edge.yearFlow;
-            newPath.length=newPath.edges.length;
-//                if(edge.yearFlow<minEdge.yearFlow)minEdge=edge;
+            newPath.totalFlow += edge.yearFlow;
+            newPath.length = newPath.edges.length;
+            //                if(edge.yearFlow<minEdge.yearFlow)minEdge=edge;
         }
-        if(newPath.length>0)paths.push(newPath);
-//            minEdge.ignoreInDijkstra=true;
-//        }
+        if (newPath.length > 0) paths.push(newPath);
+        //            minEdge.ignoreInDijkstra=true;
+        //        }
         return paths;
     };
-    this.findMaxPathBetweenOld=function(source, target, originTarget, pathTarget, paths){
-        if(paths.length>=50){
+    this.findMaxPathBetweenOld = function (source, target, originTarget, pathTarget, paths) {
+        if (paths.length >= 50) {
             return
         }
-        this.edgeTargetDic = this.getEdgeDic('target','yearFlow');
+        this.edgeTargetDic = this.getEdgeDic('target', 'yearFlow');
         var targetParents = this.edgeTargetDic[target];
         pathTarget.next = [];
         if (targetParents) {
@@ -3173,12 +3234,16 @@ function DirectedGraph(data) {
                         clone(pathTarget.currentIDList, newCurrentIDList);
                         newPreEdge.push(key);
                         newCurrentIDList.push(newSource);
-                        var newPathTarget = {id: newSource, preEdge: newPreEdge, currentIDList: newCurrentIDList, next: []};
+                        var newPathTarget = {
+                            id: newSource,
+                            preEdge: newPreEdge,
+                            currentIDList: newCurrentIDList,
+                            next: []
+                        };
                         pathTarget.next.push(newPathTarget);
                         if (newSource != source) {
                             this.findMaxPathBetween(source, newSource, originTarget, newPathTarget, paths)
-                        }
-                        else {
+                        } else {
                             var newPath = {};
                             newPath.edges = [];
                             newPath.length = newPathTarget.preEdge.length;
@@ -3188,23 +3253,23 @@ function DirectedGraph(data) {
                                 newPath.edges.push(edge);
                                 newPath.totalFlow += edge.yearFlow;
                             }
-                            var minEdge=d3.min(newPath.edges,function(d){
+                            var minEdge = d3.min(newPath.edges, function (d) {
                                 return d.yearFlow;
                             });
-                            for(var j=0;j<this.edges.length;j++){
-                                this.edges[j].yearFlow-=minEdge;
+                            for (var j = 0; j < this.edges.length; j++) {
+                                this.edges[j].yearFlow -= minEdge;
                             }
-                            if(paths.length>=50){
+                            if (paths.length >= 50) {
                                 return
                             }
                             paths.push(newPath);
-    //                            var pathStr='';
-    //                            for(var j=0;j<newPath.edges.length;j++){
-    //                                pathStr+=newPath.edges[j].target;
-    //                                pathStr+='<-'
-    //                            }
-    //                            pathStr+=newPath.edges[newPath.edges.length-1].source;
-    //                            console.log(pathStr);
+                            //                            var pathStr='';
+                            //                            for(var j=0;j<newPath.edges.length;j++){
+                            //                                pathStr+=newPath.edges[j].target;
+                            //                                pathStr+='<-'
+                            //                            }
+                            //                            pathStr+=newPath.edges[newPath.edges.length-1].source;
+                            //                            console.log(pathStr);
 
                         }
 
@@ -3216,6 +3281,7 @@ function DirectedGraph(data) {
         }
     }
 }
+
 function updateCheckBox(d) {
     var status = sourceCheckedStatus;
     if (status.left && status.right) {
@@ -3224,20 +3290,19 @@ function updateCheckBox(d) {
                 return null;
             }
         })
-    }
-    else if (status.left) {
+    } else if (status.left) {
         d3.select('.' + d.type + 'CheckBox_left')
             .attrs({
                 disabled: true
             })
-    }
-    else if (status.right) {
+    } else if (status.right) {
         d3.select('.' + d.type + 'CheckBox_right')
             .attrs({
                 disabled: true
             })
     }
 }
+
 function updateSvgBySourceCheckBox() {
     var status = sourceCheckedStatus;
     var ratio = {};
@@ -3253,8 +3318,7 @@ function updateSvgBySourceCheckBox() {
         leftLayer.ifLayout = true;
         rightLayer.ifLayout = true;
         currentLayer = null;
-    }
-    else if (status.left) {
+    } else if (status.left) {
         ratio.left = 0.63;
         ratio.mid = 0;
         ratio.right = 0.37;
@@ -3264,8 +3328,7 @@ function updateSvgBySourceCheckBox() {
         currentLayer = leftLayer;
         leftLayer.ifLayout = true;
         rightLayer.ifLayout = false;
-    }
-    else if (status.right) {
+    } else if (status.right) {
         ratio.left = 0;
         ratio.mid = 0.63;
         ratio.right = 0.37;
@@ -3282,14 +3345,52 @@ function updateSvgBySourceCheckBox() {
     newWidth.mid = totalWidth * ratio.mid;
     newWidth.control = totalWidth * ratio.control;
     //console.log(newWidth);
-    var transitionData = [
-        {class: '.graphDiv_left', ease: 'linear', duration: 1000, width: newWidth.left, layer: leftLayer},
-        {class: '.authorDiv_left', ease: 'linear', duration: 1000, width: newWidth.left, layer: leftLayer},
-        {class: '.graphDiv_right', ease: 'linear', duration: 1000, width: newWidth.mid, layer: rightLayer},
-        {class: '.authorDiv_right', ease: 'linear', duration: 1000, width: newWidth.mid, layer: rightLayer},
-        {class: '.paperDiv', ease: 'linear', duration: 1000, width: newWidth.right},
-        {class: '.topControlDiv', ease: 'linear', duration: 1000, width: newWidth.control},
-        {class: '.bottomControlDiv', ease: 'linear', duration: 1000, width: newWidth.control},
+    var transitionData = [{
+            class: '.graphDiv_left',
+            ease: 'linear',
+            duration: 1000,
+            width: newWidth.left,
+            layer: leftLayer
+        },
+        {
+            class: '.authorDiv_left',
+            ease: 'linear',
+            duration: 1000,
+            width: newWidth.left,
+            layer: leftLayer
+        },
+        {
+            class: '.graphDiv_right',
+            ease: 'linear',
+            duration: 1000,
+            width: newWidth.mid,
+            layer: rightLayer
+        },
+        {
+            class: '.authorDiv_right',
+            ease: 'linear',
+            duration: 1000,
+            width: newWidth.mid,
+            layer: rightLayer
+        },
+        {
+            class: '.paperDiv',
+            ease: 'linear',
+            duration: 1000,
+            width: newWidth.right
+        },
+        {
+            class: '.topControlDiv',
+            ease: 'linear',
+            duration: 1000,
+            width: newWidth.control
+        },
+        {
+            class: '.bottomControlDiv',
+            ease: 'linear',
+            duration: 1000,
+            width: newWidth.control
+        },
     ];
     transitionData.forEach(function (item) {
         d3.select(item.class)
@@ -3339,36 +3440,36 @@ function updateSvgBySourceCheckBox() {
     });
 
 }
+
 function changeOption(d) {
     console.log(d.fatherID);
     if (d.fatherID == 3) {
         optionNumber.nodeLabelOption = parseInt(d.selectID);
-    }
-    else if (d.fatherID == 4) {
+    } else if (d.fatherID == 4) {
         if (d['selectID'] == 0) nodeOpacityOption = 'uniform';
         else if (d['selectID'] == 1) nodeOpacityOption = 'citation';
         else if (d['selectID'] == 2) nodeOpacityOption = 'avgCitation';
 
         requestData();
-    }
-    else if (d.fatherID == 7) {
-        if (d['selectID'] == 0)edgeThickNessOption = 'flowStrokeWidth';
+    } else if (d.fatherID == 7) {
+        if (d['selectID'] == 0) edgeThickNessOption = 'flowStrokeWidth';
         else if (d['selectID'] == 1) edgeThickNessOption = 'citationStrokeWidth';
         //requestData();
         console.log(1);
         var edgeBrush = d3.brushX()
-            .extent([[0, -5], [100, 5]])
+            .extent([
+                [0, -5],
+                [100, 5]
+            ])
             .on("end", currentLayer.edgeBrushed);
         currentLayer.edgeAxisX.domain(eDomain[edgeThickNessOption]);
         gEdgeSizeBarBrush.call(edgeBrush).call(edgeBrush.move, [currentLayer.edgeAxisX(eMin[edgeThickNessOption]), currentLayer.edgeAxisX(eMax[edgeThickNessOption])]);
 
-    }
-    else if (d.fatherID == 2) {
+    } else if (d.fatherID == 2) {
         optionNumber.style = d.selectID.toInt();
         if (d.selectID == 0) {
             colorStyle = 'dark';
-        }
-        else if (d.selectID == 1) {
+        } else if (d.selectID == 1) {
             colorStyle = 'light';
         }
         initSetting(colorStyle);
@@ -3376,49 +3477,48 @@ function changeOption(d) {
         gTranslation();
         drawFullScreenIcon(gFullScreen, fullScreenButtonTranWidth, fullScreenButtonTranHeight);
         requestData();
-    }
-    else if (d.fatherID == 0) {
+    } else if (d.fatherID == 0) {
         var aminerV8ID = getUrlParam('aminerV8_id');
         var citeseerxID = getUrlParam('citeseerx_id');
         if (d.selectID == 0) {
             if (source != 'aminerV8') {
                 var url = 'graph.html?'
-                if (aminerV8ID)url += 'aminerV8_id=' + aminerV8ID + '&';
-                if (citeseerxID)url += 'citeseerx_id=' + citeseerxID + '&';
+                if (aminerV8ID) url += 'aminerV8_id=' + aminerV8ID + '&';
+                if (citeseerxID) url += 'citeseerx_id=' + citeseerxID + '&';
                 url += 'selected=aminerV8';
                 window.open(url);
 
             }
 
-        }
-        else if (d.selectID == 1) {
+        } else if (d.selectID == 1) {
             if (source != 'citeseerx') {
                 var url = 'graph.html?'
-                if (aminerV8ID)url += 'aminerV8_id=' + aminerV8ID + '&';
-                if (citeseerxID)url += 'citeseerx_id=' + citeseerxID + '&';
+                if (aminerV8ID) url += 'aminerV8_id=' + aminerV8ID + '&';
+                if (citeseerxID) url += 'citeseerx_id=' + citeseerxID + '&';
                 url += 'selected=citeseerx';
                 window.open(url);
 
             }
 
         }
-    }
-    else if (d.fatherID == 1) {
+    } else if (d.fatherID == 1) {
         //optionNumber.clusterNum=parseInt(d.cluster);
         clusterCount = String(d.cluster);
         requestData();
     }
 }
-function doubleClick(d){
-//    console.log(d);
-//    var oldKey=d.oldKey;
-//    $.getJSON('http://'+server+':5001/GetTree/?callback=?',{target:paperID},function(tree){
-//        incrementalTree=tree;
-////        console.log(incrementalTree);
-//        processData(data);
-//
-//    })
+
+function doubleClick(d) {
+    //    console.log(d);
+    //    var oldKey=d.oldKey;
+    //    $.getJSON('http://'+server+':5001/GetTree/?callback=?',{target:paperID},function(tree){
+    //        incrementalTree=tree;
+    ////        console.log(incrementalTree);
+    //        processData(data);
+    //
+    //    })
 }
+
 function dragmove(d) {
     var that = d.that;
     that.ifDrag = true;
@@ -3452,16 +3552,15 @@ function dragmove(d) {
         }
         var dx = 0;
         var dy = 0;
-        if (edges[i].dx)dx = edges[i].dx;
-        if (edges[i].dy)dy = edges[i].dy;
+        if (edges[i].dx) dx = edges[i].dx;
+        if (edges[i].dy) dy = edges[i].dy;
         var points = edges[relation[d.id].edges[i]].points;
         var length = edges[relation[d.id].edges[i]].points.length;
 
         if (j == 1) {
             points[length - 1].x += d3.event.dx + dx;
             points[length - 1].y += d3.event.dy + dy;
-        }
-        else {
+        } else {
             points[j].x += d3.event.dx + dx;
             points[j].y += d3.event.dy + dy;
 
@@ -3477,8 +3576,15 @@ function dragmove(d) {
 
     }
 
-    if (d.focused == 'true')d.self.attrs({x: d.x + d.imageShift / k, y: d.y + d.imageShift / k});
-    else d.self.attrs({cx: d.x, cy: d.y});
+    if (d.focused == 'true') d.self.attrs({
+        x: d.x + d.imageShift / k,
+        y: d.y + d.imageShift / k
+    });
+    else d.self.attrs({
+        cx: d.x,
+        cy: d.y
+    });
+
     function updatePaths(paths) {
         paths.forEach(function (path) {
             path.attr('d', function (d) {
@@ -3501,22 +3607,23 @@ function dragmove(d) {
     if (d.relatedEdges) {
         updatePaths(d.relatedEdges);
     }
-    if (d.textElem)for (var i = 0; i < d.textElem.textElem.length; i++) {
-//        console.log(d.textElem.textElem[i].attr("delta_x"),d.textElem.textElem[i].attr("delta_y"));
+    if (d.textElem)
+        for (var i = 0; i < d.textElem.textElem.length; i++) {
+            //        console.log(d.textElem.textElem[i].attr("delta_x"),d.textElem.textElem[i].attr("delta_y"));
 
-        var thisLabel = d.textElem.textElem[i];
-        var indexStr = thisLabel.attr('index');
-        var prefix = indexStr.split('_')[0];
-        var index = indexStr.split('_')[1];
-        thisLabel.attrs({
-            x: x,
-            y: y + d[prefix + 'Y'][index] / initDMax * (dMax+dMin-8) / k
-        });
-        //d.textElem.textElem[i].attrs({
-        //    x:function(d){return x-delta_x;},
-        //    y:function(d){return y-delta_y;}
-        //})
-    }
+            var thisLabel = d.textElem.textElem[i];
+            var indexStr = thisLabel.attr('index');
+            var prefix = indexStr.split('_')[0];
+            var index = indexStr.split('_')[1];
+            thisLabel.attrs({
+                x: x,
+                y: y + d[prefix + 'Y'][index] / initDMax * (dMax + dMin - 8) / k
+            });
+            //d.textElem.textElem[i].attrs({
+            //    x:function(d){return x-delta_x;},
+            //    y:function(d){return y-delta_y;}
+            //})
+        }
     if (d.idElem) {
         //delta_x= d.idElem.attr("delta_x");
         //delta_y= d.idElem.attr("delta_y");
@@ -3547,9 +3654,9 @@ function dragmove(d) {
     //}
 
     //var str_size= d.size.toString();
-//    console.log(d.size, str_size.length);
-//    console.log(d.idElem);
-//    console.log(d.textElem.textElem[0].attr("x"));
+    //    console.log(d.size, str_size.length);
+    //    console.log(d.idElem);
+    //    console.log(d.textElem.textElem[0].attr("x"));
     ifDrag = false;
 
 }
@@ -3583,6 +3690,7 @@ function requestTitleList(d, clusterId) {
     };
     ajax(url, success, requestData);
 }
+
 function processVenue(d) {
     d.venueList = []
     var venueDic = {};
@@ -3591,13 +3699,12 @@ function processVenue(d) {
         if (venueList[id]) {
             if (venueList[id].venue) {
                 var venue = venueList[id]['venue'];
-                if (venueDic[venue])venueDic[venue] += 1;
+                if (venueDic[venue]) venueDic[venue] += 1;
                 else venueDic[venue] = 1
             }
 
 
-        }
-        else {
+        } else {
             for (var key in venueDic) {
                 venueDic[key] += 1;
                 break;
@@ -3605,25 +3712,29 @@ function processVenue(d) {
         }
     }
     for (var venue in venueDic) {
-        d.venueList.push({venue: venue, count: venueDic[venue]});
+        d.venueList.push({
+            venue: venue,
+            count: venueDic[venue]
+        });
     }
     d.venueList.sort(function (a, b) {
         return d3.descending(a.count, b.count)
     })
-//    console.log(d.venueList);
+    //    console.log(d.venueList);
 }
+
 function clusterSummary(d) {
     var rightContent = d3.select('.rightContentDiv');
     var rightWidth = rightContent.style('width').split('px')[0];
     var rightHeight = rightContent.style('height').split('px')[0];
     //console.log('current right content height'+rightHeight)
     //console.log('current right content width'+rightWidth)
-//    var clusterSummaryHeight=rightHeight*0.13;
-//    var clusterSummaryWidth=rightWidth;
-//    var topMargin=rightWidth*0.05;
+    //    var clusterSummaryHeight=rightHeight*0.13;
+    //    var clusterSummaryWidth=rightWidth;
+    //    var topMargin=rightWidth*0.05;
     //processVenue
-//    processVenue(d)
-//    var venueList=d.venueList;
+    //    processVenue(d)
+    //    var venueList=d.venueList;
 
     d3.select('.CSDTitleDiv').remove();
     d3.select('.CSDBodyDiv').remove();
@@ -3685,15 +3796,15 @@ function clusterSummary(d) {
                 .style('display', tfidfStatus)
                 .attr('class', 'tfidfSummary')
                 .html(function () {
-//            if(d.focused=='true'){
-////                if(authorData[focusedID]){
-////                    return '<b>Paper Title: </b>'+authorData[focusedID][0].field+','+authorData[focusedID][1].field;
-////                }
-////                else{
-////                    return '<b>Paper Title: </b>'+authorData['default'][0].field+','+authorData['default'][1].field;
-////                }
-//            }
-//            else{
+                    //            if(d.focused=='true'){
+                    ////                if(authorData[focusedID]){
+                    ////                    return '<b>Paper Title: </b>'+authorData[focusedID][0].field+','+authorData[focusedID][1].field;
+                    ////                }
+                    ////                else{
+                    ////                    return '<b>Paper Title: </b>'+authorData['default'][0].field+','+authorData['default'][1].field;
+                    ////                }
+                    //            }
+                    //            else{
                     var str = '';
                     var keywords = d.keywords;
                     for (var i = 0, len = keywords.length; i < len; i++) {
@@ -3702,14 +3813,12 @@ function clusterSummary(d) {
                                 if (i >= 3 && (i + 1) % 4 == 0) {
                                     str += keywords[i];
                                     str += ' ';
-                                }
-                                else {
+                                } else {
                                     str += keywords[i];
                                     str += ' ';
                                 }
 
-                            }
-                            else if (i == len - 1) {
+                            } else if (i == len - 1) {
                                 str += keywords[i];
                             }
                         }
@@ -3722,15 +3831,15 @@ function clusterSummary(d) {
                 .style('display', freqStatus)
                 //.style('visibility','hidden')
                 .html(function () {
-//            if(d.focused=='true'){
-////                if(authorData[focusedID]){
-////                    return '<b>Paper Title: </b>'+authorData[focusedID][0].field+','+authorData[focusedID][1].field;
-////                }
-////                else{
-////                    return '<b>Paper Title: </b>'+authorData['default'][0].field+','+authorData['default'][1].field;
-////                }
-//            }
-//            else{
+                    //            if(d.focused=='true'){
+                    ////                if(authorData[focusedID]){
+                    ////                    return '<b>Paper Title: </b>'+authorData[focusedID][0].field+','+authorData[focusedID][1].field;
+                    ////                }
+                    ////                else{
+                    ////                    return '<b>Paper Title: </b>'+authorData['default'][0].field+','+authorData['default'][1].field;
+                    ////                }
+                    //            }
+                    //            else{
                     var str = '';
                     var keywords = d.bigrams;
                     for (var i = 0, len = keywords.length; i < len; i++) {
@@ -3739,14 +3848,12 @@ function clusterSummary(d) {
                                 if (i >= 3 && (i + 1) % 4 == 0) {
                                     str += keywords[i];
                                     str += ' ';
-                                }
-                                else {
+                                } else {
                                     str += keywords[i];
                                     str += ' ';
                                 }
 
-                            }
-                            else if (i == len - 1) {
+                            } else if (i == len - 1) {
                                 str += keywords[i];
                             }
                         }
@@ -3757,66 +3864,67 @@ function clusterSummary(d) {
         })
 
 
-//    if(venueList.length>=3){
-//        CSDBodyDiv.append('div').attr('class','clusterInfoDiv').append('div')
-//            .styles({
-//                'margin-left':rightMarginLeft+px,
-//                'margin-top':rightWidth*0.05+px,
-//                'font-family':'Arial ',
-//                'font-size':'14px',
-//                'color':color.panelTitleColor
-//            })
-//            .html(function(d){
-//
-//                var venueStr=''
-//                for(var i=0;i<3;i++){
-//                    venueStr+=venueList[i].venue+'('+venueList[i].count+')'+' ';
-//                }
-//                return '<b>Venue: </b>'+venueStr
-//            })
-//    }
+    //    if(venueList.length>=3){
+    //        CSDBodyDiv.append('div').attr('class','clusterInfoDiv').append('div')
+    //            .styles({
+    //                'margin-left':rightMarginLeft+px,
+    //                'margin-top':rightWidth*0.05+px,
+    //                'font-family':'Arial ',
+    //                'font-size':'14px',
+    //                'color':color.panelTitleColor
+    //            })
+    //            .html(function(d){
+    //
+    //                var venueStr=''
+    //                for(var i=0;i<3;i++){
+    //                    venueStr+=venueList[i].venue+'('+venueList[i].count+')'+' ';
+    //                }
+    //                return '<b>Venue: </b>'+venueStr
+    //            })
+    //    }
 
-//    CSDBodyDiv.append('div').attr('class','clusterInfoDiv').append('div')
-//        .styles({
-//            'margin-left':rightMarginLeft+px,
-//            'margin-top':rightWidth*0.05+px,
-//            'font-family':'Arial ',
-//            'font-size':'14px',
-//            'color':'white'
-//        })
-//        .html(
-//        function(){
-//            return '<b>Max Citation: </b>'+d.nodes[0].citation_count;
-//        }
-//    )
-//    CSDBodyDiv.append('div').attr('class','clusterInfoDiv').append('div')
-//        .styles({
-//            'margin-left':rightMarginLeft+px,
-//            'margin-top':rightWidth*0.05+px,
-//            'font-family':'Arial ',
-//            'font-size':'14px',
-//            'color':'white'
-//        })
-//        .html(
-//        function(){
-//            var len=d.nodes.length;
-//            var sum=0;
-//            var avg;
-//            for(var i= 0;i<len;i++){
-//                if(parseInt(d.nodes[i].citation_count)>0){
-//                   sum+=parseInt(d.nodes[i].citation_count);
-//                }
-//            }
-//            avg = sum/len;
-//            return '<b>Average Citation: </b>'+avg.toFixed(2);
-//        }
-//    )
+    //    CSDBodyDiv.append('div').attr('class','clusterInfoDiv').append('div')
+    //        .styles({
+    //            'margin-left':rightMarginLeft+px,
+    //            'margin-top':rightWidth*0.05+px,
+    //            'font-family':'Arial ',
+    //            'font-size':'14px',
+    //            'color':'white'
+    //        })
+    //        .html(
+    //        function(){
+    //            return '<b>Max Citation: </b>'+d.nodes[0].citation_count;
+    //        }
+    //    )
+    //    CSDBodyDiv.append('div').attr('class','clusterInfoDiv').append('div')
+    //        .styles({
+    //            'margin-left':rightMarginLeft+px,
+    //            'margin-top':rightWidth*0.05+px,
+    //            'font-family':'Arial ',
+    //            'font-size':'14px',
+    //            'color':'white'
+    //        })
+    //        .html(
+    //        function(){
+    //            var len=d.nodes.length;
+    //            var sum=0;
+    //            var avg;
+    //            for(var i= 0;i<len;i++){
+    //                if(parseInt(d.nodes[i].citation_count)>0){
+    //                   sum+=parseInt(d.nodes[i].citation_count);
+    //                }
+    //            }
+    //            avg = sum/len;
+    //            return '<b>Average Citation: </b>'+avg.toFixed(2);
+    //        }
+    //    )
 }
+
 function nodeList(d) {
     var that = this;
     var nodeValue = that.nodeValue;
-//    console.log(d.id);
-//    nodeValue(d);
+    //    console.log(d.id);
+    //    nodeValue(d);
     selectedNode = d.id;
     var CSDHeight = d3.select('.clusterSummaryDiv')._groups[0][0].offsetHeight;
 
@@ -3826,15 +3934,15 @@ function nodeList(d) {
 
     var leftContentWidth = d3.select('.leftTopBarDiv').style('width').split('px')[0];
     var leftTransitionWidth = leftWidth - leftContentWidth;
-//    var leftTransitionWidth=d3.select('.leftTransitionTopBarDiv').style('width').split('px')[0];
-//    var ruler=d3.select('.ruler');
-//    console.log(leftWidth,leftContentWidth,leftTransitionWidth);
+    //    var leftTransitionWidth=d3.select('.leftTransitionTopBarDiv').style('width').split('px')[0];
+    //    var ruler=d3.select('.ruler');
+    //    console.log(leftWidth,leftContentWidth,leftTransitionWidth);
     var fontFamily = 'Arial Black';
     var fontSize = 16;
-//    ruler.styles({
-//        'font-family':'Arial Black',
-//        'font-size':'16px'
-//    });
+    //    ruler.styles({
+    //        'font-family':'Arial Black',
+    //        'font-size':'16px'
+    //    });
     var title = 'Selected Papers';
 
     var titleHeight = title.visualHeight(fontFamily, fontSize);
@@ -3854,8 +3962,8 @@ function nodeList(d) {
     //.styles({
     //    'margin-top':50+px
     //})
-//        .attr('onkeydown','keyboardEvent(event.keyCode||event.which);')
-//        .attr('tabindex',1);
+    //        .attr('onkeydown','keyboardEvent(event.keyCode||event.which);')
+    //        .attr('tabindex',1);
     var leftRatio = (leftContentWidth / leftWidth) * 100;
     var transitionRatio = 100 - leftRatio;
     var transitionMethod = '-webkit-linear-gradient';
@@ -3863,51 +3971,51 @@ function nodeList(d) {
     //console.log(NLDBodyBackground);
     //NLDBodyBackground='-webkit-linear-gradient(left,rgb(50,70,90) 0%,rgb(50,70,90) '+leftRatio+'%,rgb(50,70,90) '+leftRatio+'%,rgb(25,35,45) 100%)'
 
-//  var NLDBodyBackground1='-webkit-linear-gradient(left,rgb(50,70,90) 0%,rgb(50,70,90) '+leftRatio+'%,rgb(143, 162, 168) '+leftRatio+'%,rgb(74, 90, 103) 100%)'
+    //  var NLDBodyBackground1='-webkit-linear-gradient(left,rgb(50,70,90) 0%,rgb(50,70,90) '+leftRatio+'%,rgb(143, 162, 168) '+leftRatio+'%,rgb(74, 90, 103) 100%)'
 
     var NLDTitleDiv = nodeList.append('div').attr('class', 'NLDTitleDiv')
         .styles({
-//            float:'left',
+            //            float:'left',
             background: NLDBodyBackground,
-//            position:'absolute',
+            //            position:'absolute',
             width: leftWidth + px,
             height: titleHeight + px
-//            left:leftWidth*LeftRatio+px,
-//            top:leftWidth*titleTopRatio+px
+            //            left:leftWidth*LeftRatio+px,
+            //            top:leftWidth*titleTopRatio+px
         });
 
     var NLDBodyDiv = nodeList.append('div').attr('class', 'NLDBodyDiv')
         .on('mouseover', function () {
             var thisDiv = d3.select(this);
             thisDiv.styles({
-//                background:NLDBodyBackground1,
+                //                background:NLDBodyBackground1,
                 'overflow-y': 'scroll'
             });
-//            console.log(thisDiv);
-//            console.log(this);
+            //            console.log(thisDiv);
+            //            console.log(this);
         })
         .on('mouseout', function () {
             var thisDiv = d3.select(this);
             thisDiv.styles({
-//                background:NLDBodyBackground,
+                //                background:NLDBodyBackground,
                 'overflow-y': 'hidden'
             })
         })
         .styles({
-//            position:'absolute',
+            //            position:'absolute',
             'overflow-y': 'hidden',
             'overflow-x': 'hidden',
             background: NLDBodyBackground,
             width: leftWidth + px,
             //height:leftHeight-titleHeight-CSDHeight+px
             height: '100%'
-//            'margin-left':leftWidth*LeftRatio+px
-//            top:leftWidth*titleTopRatio+leftWidth*0.1+px
+            //            'margin-left':leftWidth*LeftRatio+px
+            //            top:leftWidth*titleTopRatio+leftWidth*0.1+px
         });
 
     var listData = [];
     var pageSize = 50;
-    if (d.nodes.length < pageSize)pageSize = d.nodes.length;
+    if (d.nodes.length < pageSize) pageSize = d.nodes.length;
     for (var i = 0; i < pageSize; i++) {
         listData[i] = {};
         listData[i].paperID = d.nodes[i].id;
@@ -3935,22 +4043,22 @@ function nodeList(d) {
                 width: leftWidth + px,
                 height: 'auto',
                 background: color.mainTransition2
-//                'margin-bottom':bodyMargin+px
+                //                'margin-bottom':bodyMargin+px
             })
             .on('click', nodeValue);
 
-//        .each(function(d,i){
-//            if(i==0){
-//                var thisDiv=d3.select(this);
-//                thisDiv.attr('id','firstPaper');
-//            }
-//        })
-//        NLDTitleDiv.append('div')
-//            .styles({
-//                float:'left',
-//                background:'rgb(50,70,90)',
-//                width:
-//            })
+        //        .each(function(d,i){
+        //            if(i==0){
+        //                var thisDiv=d3.select(this);
+        //                thisDiv.attr('id','firstPaper');
+        //            }
+        //        })
+        //        NLDTitleDiv.append('div')
+        //            .styles({
+        //                float:'left',
+        //                background:'rgb(50,70,90)',
+        //                width:
+        //            })
         var textDiv = TitleDiv.append('div')
             .attr('class', 'leftTextDiv')
             .styles({
@@ -3971,7 +4079,7 @@ function nodeList(d) {
                 'color': color.panelTitleColor
             })
             .html(listData[i].paperTitle);
-//        console.log(textDiv[0][0].offsetHeight);
+        //        console.log(textDiv[0][0].offsetHeight);
         var transitionHeight = textDiv._groups[0][0].offsetHeight;
         TitleDiv.styles({
             height: transitionHeight + bodyMargin + px
@@ -4001,7 +4109,7 @@ function nodeList(d) {
                     height: 1 + px,
                     background: color.greyBarTransition2,
                     'margin-right': leftTransitionWidth + px
-//                    'margin-bottom':bodyMargin+px
+                    //                    'margin-bottom':bodyMargin+px
                 });
             var leftTransitionLineDiv = leftAndTransitionLineDiv.append('div')
                 .attr('class', 'leftTransitionLineDiv')
@@ -4017,16 +4125,17 @@ function nodeList(d) {
     }
 
     var firstPaper = document.getElementById('listID0');
-//    console.log(firstPaper.id);
+    //    console.log(firstPaper.id);
     selectedID = 0;
-//    var firstPaper=d3.select("#firstPaper");
+    //    var firstPaper=d3.select("#firstPaper");
     firstPaper.click();
-//        .on('click',nodeValue);
+    //        .on('click',nodeValue);
 
 
 }
+
 function nodeValue(d) {
-///*
+    ///*
     var rightContent = d3.select('.leftAndTransitionContentDiv');
     var rightWidth = rightContent.style('width').split('px')[0];
     var rightHeight = rightContent.style('height').split('px')[0];
@@ -4040,8 +4149,7 @@ function nodeValue(d) {
             var styleData;
             if (this.manner == 'highLight') {
                 styleData = this.highLight;
-            }
-            else if (this.manner == 'recovery') {
+            } else if (this.manner == 'recovery') {
                 styleData = this.recovery;
             }
             var titleDiv = div.select('.leftTextDiv');
@@ -4086,7 +4194,7 @@ function nodeValue(d) {
     render.manner = 'recovery';
     render.render(selectedDiv, selectedLine);
 
-//        .style('background','rgb(50,70,90)')
+    //        .style('background','rgb(50,70,90)')
     var thisDiv = d3.select(this);
     var paperID = thisDiv.attr('paperid');
     var url = 'http://' + server + ':' + port + '/GetNode/';
@@ -4101,16 +4209,16 @@ function nodeValue(d) {
 
         selectedID = id;
 
-//    thisDiv.style('background','#34b9f7');
+        //    thisDiv.style('background','#34b9f7');
 
 
-//    }
-//    console.log(nodes[selectedNode].nodes[thisDiv.attr('listId')]);
-//    console.log(thisDiv.attr('listId'));
+        //    }
+        //    console.log(nodes[selectedNode].nodes[thisDiv.attr('listId')]);
+        //    console.log(thisDiv.attr('listId'));
         d3.select('.NVDTitleDiv').remove();
         d3.select('.NVDBodyDiv').remove();
-//    console.log(thisDiv);
-//    var text=thisDiv.select('text');
+        //    console.log(thisDiv);
+        //    var text=thisDiv.select('text');
         var title = paper.title;
         var abstract = paper.abstract;
         var authors = paper.authors;
@@ -4118,7 +4226,7 @@ function nodeValue(d) {
         var citation = paper.citation;
         var field = paper.field;
         var venue = paper.venue;
-//    console.log(title);
+        //    console.log(title);
 
         var nodeValue = d3.select('.nodeValueDiv')
             .styles({
@@ -4128,7 +4236,7 @@ function nodeValue(d) {
                 height: '100%',
                 'margin-top': 0 + px
             });
-//    var NVDTitleDiv=nodeValue.append('div').attr('class','NVDTitleDiv');
+        //    var NVDTitleDiv=nodeValue.append('div').attr('class','NVDTitleDiv');
         var NVDTitleDiv = nodeValue.append('div').attr('class', 'NVDTitleDiv');
         NVDTitleDiv.append('text')
             .styles({
@@ -4180,170 +4288,173 @@ function nodeValue(d) {
         }
     }
     var source = currentLayer.source;
-    ajax(url, success, {id: paperID, source: source});
+    ajax(url, success, {
+        id: paperID,
+        source: source
+    });
 
-//*/
+    //*/
 }
-function reverseData(){
-//    if(dataType=='multiple'){
-//        for (var j=0;j<json_edges_list.length;j++){
-//            reverseXY(json_nodes_list[j],json_edges_list[j]);
-//        }
-//    }
-//    else{
-//        reverseXY(nodes,edges);
-//    }
+
+function reverseData() {
+    //    if(dataType=='multiple'){
+    //        for (var j=0;j<json_edges_list.length;j++){
+    //            reverseXY(json_nodes_list[j],json_edges_list[j]);
+    //        }
+    //    }
+    //    else{
+    //        reverseXY(nodes,edges);
+    //    }
 
     reverseXY(data.postData[focusedID]);
 }
-function changeColor(text,thisDivClass){
-    var anotherText;
-    if (thisDivClass=='horizontal'){
-        anotherText=d3.select('.verticalText');
-    }
-    else{
-        anotherText=d3.select('.horizontalText');
-    }
-    var color=text.style('color');
-    if(color=='rgb(128, 128, 128)'){
-        text.style('color','rgb(255, 255, 255)');
-        anotherText.style('color','rgb(128, 128, 128)');
 
-//            .each(function(d){
-//                if(d.style('color')=='rgb(128, 128, 128)')d.style('color','rgb(255, 255, 255)');
-//                else if(d.style('color')=='rgb(255, 255, 255)')d.style('color','rgb(128, 128, 128)');
-//            })
+function changeColor(text, thisDivClass) {
+    var anotherText;
+    if (thisDivClass == 'horizontal') {
+        anotherText = d3.select('.verticalText');
+    } else {
+        anotherText = d3.select('.horizontalText');
+    }
+    var color = text.style('color');
+    if (color == 'rgb(128, 128, 128)') {
+        text.style('color', 'rgb(255, 255, 255)');
+        anotherText.style('color', 'rgb(128, 128, 128)');
+
+        //            .each(function(d){
+        //                if(d.style('color')=='rgb(128, 128, 128)')d.style('color','rgb(255, 255, 255)');
+        //                else if(d.style('color')=='rgb(255, 255, 255)')d.style('color','rgb(128, 128, 128)');
+        //            })
     }
 
 
 }
+
 function reverse() {
-    var thisDiv=d3.select(this);
-    var thisDivClass=thisDiv.attr('class');
-    var text=thisDiv.select('text');
-    if(thisDivClass=='horizontal'&currentDirection=='vertical'){
-        currentDirection='horizontal';
-        selectedReverse=1;
+    var thisDiv = d3.select(this);
+    var thisDivClass = thisDiv.attr('class');
+    var text = thisDiv.select('text');
+    if (thisDivClass == 'horizontal' & currentDirection == 'vertical') {
+        currentDirection = 'horizontal';
+        selectedReverse = 1;
 
+
+    } else if (thisDivClass == 'vertical' & currentDirection == 'horizontal') {
+        selectedReverse = 0;
+        currentDirection = 'vertical';
 
     }
-    else if(thisDivClass=='vertical'&currentDirection=='horizontal'){
-        selectedReverse=0;
-        currentDirection='vertical';
-
-    }
-    changeColor(text,thisDivClass);
+    changeColor(text, thisDivClass);
     reverseData()
     coordinateOffset(data.postData[focusedID]);
 
     getCurves(data.postData[focusedID]);
     clear();
-    layout(optionNumber,true,'flowMap',data.postData[focusedID]);
+    layout(optionNumber, true, 'flowMap', data.postData[focusedID]);
 }
-function reverseXY(d){
-    var nodes=d.node;
-    var edges=d.edge;
-    for (var i=0;i<nodes.length;i++){
-        var t=nodes[i].x;
-        nodes[i].x=nodes[i].y;
-        nodes[i].y=t;
+
+function reverseXY(d) {
+    var nodes = d.node;
+    var edges = d.edge;
+    for (var i = 0; i < nodes.length; i++) {
+        var t = nodes[i].x;
+        nodes[i].x = nodes[i].y;
+        nodes[i].y = t;
     }
-//    for (var i=0;i<curves.length;i++){
-//        for (var j=0;j<curves[i].points.length;j++){
-//            var t=curves[i].points[j].x;
-//            curves[i].points[j].x=curves[i].points[j].y;
-//            curves[i].points[j].y=t;
-//        }
-//    }
-    for (var i=0;i<edges.length;i++){
-        for(var j=0;j<edges[i].assists.length;j++){
-            var t=edges[i].assists[j][0];
-            edges[i].assists[j][0]=edges[i].assists[j][1];
-            edges[i].assists[j][1]=t;
+    //    for (var i=0;i<curves.length;i++){
+    //        for (var j=0;j<curves[i].points.length;j++){
+    //            var t=curves[i].points[j].x;
+    //            curves[i].points[j].x=curves[i].points[j].y;
+    //            curves[i].points[j].y=t;
+    //        }
+    //    }
+    for (var i = 0; i < edges.length; i++) {
+        for (var j = 0; j < edges[i].assists.length; j++) {
+            var t = edges[i].assists[j][0];
+            edges[i].assists[j][0] = edges[i].assists[j][1];
+            edges[i].assists[j][1] = t;
         }
     }
 }
-function clear(){
+
+function clear() {
     svg.selectAll('.node').remove();
     svg.selectAll('path').remove();
     svg.selectAll('text').remove();
 
 }
-function yearSliderDragMove(d){
-    var that= d.that;
-    var data=that.data;
-    var animateMode=that.animateMode;
-    var xScale=that.xScale;
-    var yScale=that.yScale;
-    var axisSVG=that.axisSVG;
-    var focusedID=that.focusedID;
-    var nodeYearData=data.postData[focusedID].nodeYearData;
-    var maxYear=nodeYearData.maxYear;
-    var minYear=nodeYearData.minYear;
-    if(animateMode==flipBook){
-        d.x=d3.event.x;
-        var thisNode=d3.select(this);
-        if(thisNode.attr('id')=='leftAxisCircle'){
-            if(d.x>=xScale(minYear)&&d.x<=parseFloat(axisSVG.select('#rightAxisCircle').attr('cx'))){
-                thisNode.attr('cx',d.x);
+
+function yearSliderDragMove(d) {
+    var that = d.that;
+    var data = that.data;
+    var animateMode = that.animateMode;
+    var xScale = that.xScale;
+    var yScale = that.yScale;
+    var axisSVG = that.axisSVG;
+    var focusedID = that.focusedID;
+    var nodeYearData = data.postData[focusedID].nodeYearData;
+    var maxYear = nodeYearData.maxYear;
+    var minYear = nodeYearData.minYear;
+    if (animateMode == flipBook) {
+        d.x = d3.event.x;
+        var thisNode = d3.select(this);
+        if (thisNode.attr('id') == 'leftAxisCircle') {
+            if (d.x >= xScale(minYear) && d.x <= parseFloat(axisSVG.select('#rightAxisCircle').attr('cx'))) {
+                thisNode.attr('cx', d.x);
+            }
+        } else {
+            if (d.x >= parseFloat(axisSVG.select('#leftAxisCircle').attr('cx')) && d.x <= xScale(maxYear)) {
+                thisNode.attr('cx', d.x);
             }
         }
-        else{
-            if(d.x>=parseFloat(axisSVG.select('#leftAxisCircle').attr('cx'))&& d.x<=xScale(maxYear)){
-                thisNode.attr('cx',d.x);
-            }
-        }
-    }
-    else if(animateMode='movie'){
-        var thisObj=d3.select(this);
-        var rightAxisCircle=axisSVG.select('#rightAxisCircle');
-        var leftAxisCircle=axisSVG.select('#leftAxisCircle');
-        var movieSlider=axisSVG.select('.movieSlider');
-        var rx=parseFloat(rightAxisCircle.attr('cx'));
-        var lx=parseFloat(leftAxisCircle.attr('cx'));
-        var dx=d3.event.dx;
-        var id=thisObj.attr('id');
-        if((id == 'rightAxisCircle'&& rx<=xScale(maxYear)) && rx>=lx&&lx!=rx||(id == 'leftAxisCircle'&& lx>=xScale(minYear)&&lx<=rx&&lx!=rx)){
-            if(thisObj.attr('class')!='movieSlider'){
+    } else if (animateMode = 'movie') {
+        var thisObj = d3.select(this);
+        var rightAxisCircle = axisSVG.select('#rightAxisCircle');
+        var leftAxisCircle = axisSVG.select('#leftAxisCircle');
+        var movieSlider = axisSVG.select('.movieSlider');
+        var rx = parseFloat(rightAxisCircle.attr('cx'));
+        var lx = parseFloat(leftAxisCircle.attr('cx'));
+        var dx = d3.event.dx;
+        var id = thisObj.attr('id');
+        if ((id == 'rightAxisCircle' && rx <= xScale(maxYear)) && rx >= lx && lx != rx || (id == 'leftAxisCircle' && lx >= xScale(minYear) && lx <= rx && lx != rx)) {
+            if (thisObj.attr('class') != 'movieSlider') {
                 thisObj
                     .attrs({
-                        cx:function(d){
-                            d.x = d.x+dx;
+                        cx: function (d) {
+                            d.x = d.x + dx;
                             return d.x;
                         }
                     });
-                if(id == 'leftAxisCircle'){
+                if (id == 'leftAxisCircle') {
                     movieSlider.attrs({
-                        d:function(d){
-                            d.p1.x+=dx;
+                        d: function (d) {
+                            d.p1.x += dx;
                             return yearSliderPathData(d);
                         }
                     })
-                }
-                else{
+                } else {
                     movieSlider.attrs({
-                        d:function(d){
-                            d.p2.x+=dx;
+                        d: function (d) {
+                            d.p2.x += dx;
                             return yearSliderPathData(d);
                         }
                     })
                 }
 
             }
-        }
-        else if(id =='movieSlider'||lx == rx){
-            if(lx>=xScale(minYear)&&rx<=xScale(maxYear)){
-            axisSVG.selectAll('.axisCircle')
-                .attrs({
-                    cx:function(d){
-                        d.x = d.x+dx;
-                        return d.x;
-                    }
-                });
+        } else if (id == 'movieSlider' || lx == rx) {
+            if (lx >= xScale(minYear) && rx <= xScale(maxYear)) {
+                axisSVG.selectAll('.axisCircle')
+                    .attrs({
+                        cx: function (d) {
+                            d.x = d.x + dx;
+                            return d.x;
+                        }
+                    });
                 movieSlider.attrs({
-                    d:function(d){
-                        d.p1.x+=dx;
-                        d.p2.x+=dx;
+                    d: function (d) {
+                        d.p1.x += dx;
+                        d.p2.x += dx;
                         return yearSliderPathData(d);
                     }
                 })
@@ -4353,74 +4464,81 @@ function yearSliderDragMove(d){
 
     }
 }
-function yearSliderDragStart(d){
-//    var thisNode=d3.select(this);
-//    thisNode.style('fill',color.yearSliderHighlightColor);
+
+function yearSliderDragStart(d) {
+    //    var thisNode=d3.select(this);
+    //    thisNode.style('fill',color.yearSliderHighlightColor);
 }
-function yearSliderDragEnd(d){
-    var that= d.that;
-//    var thisNode=d3.select(this);
-//    thisNode.style('fill',color.yearSliderColor);
+
+function yearSliderDragEnd(d) {
+    var that = d.that;
+    //    var thisNode=d3.select(this);
+    //    thisNode.style('fill',color.yearSliderColor);
 
     adjustSliderPosition(false, that);
-//    if(animateMode=='movie'){
-        updateAnimation(true,that);
-//    }
-//    play()
+    //    if(animateMode=='movie'){
+    updateAnimation(true, that);
+    //    }
+    //    play()
 }
-function adjustSliderPosition(measure,that){
-    var direction='';
+
+function adjustSliderPosition(measure, that) {
+    var direction = '';
     var endYear;
-    var yearFilter=that.yearFilter;
-    var axisSVG=that.axisSVG;
-    var minYear=that.minYear;
-    var maxYear=that.maxYear;
-    var duration=yearFilter[1]-yearFilter[0];
-    var xScale=that.xScale;
-    var yScale=that.yScale;
-    var yearPosition=that.yearPosition;
+    var yearFilter = that.yearFilter;
+    var axisSVG = that.axisSVG;
+    var minYear = that.minYear;
+    var maxYear = that.maxYear;
+    var duration = yearFilter[1] - yearFilter[0];
+    var xScale = that.xScale;
+    var yScale = that.yScale;
+    var yearPosition = that.yearPosition;
     //var lx,rx;
     axisSVG.selectAll('.axisCircle')
-        .each(function(d){
-            var thisNode=d3.select(this);
-            var id= d.id;
-            var x=parseFloat(thisNode.attr('cx'));
-            if(measure=='stop'){
-                that.yearFilter=[minYear,minYear+duration];
-                if(id == 'leftAxisCircle'){
+        .each(function (d) {
+            var thisNode = d3.select(this);
+            var id = d.id;
+            var x = parseFloat(thisNode.attr('cx'));
+            if (measure == 'stop') {
+                that.yearFilter = [minYear, minYear + duration];
+                if (id == 'leftAxisCircle') {
                     thisNode.attrs({
-                            cx:function(d){d.x = xScale(that.yearFilter[0]);lx = d.x;return d.x;}
-                        })
-                }
-                else{
+                        cx: function (d) {
+                            d.x = xScale(that.yearFilter[0]);
+                            lx = d.x;
+                            return d.x;
+                        }
+                    })
+                } else {
                     thisNode.attrs({
-                            cx:function(d){d.x = xScale(that.yearFilter[1]);rx = d.x;return d.x;}
-                        })
+                        cx: function (d) {
+                            d.x = xScale(that.yearFilter[1]);
+                            rx = d.x;
+                            return d.x;
+                        }
+                    })
                 }
 
-            }
-            else{
-                for(var year in yearPosition){
-                    if(x>=yearPosition[year][0]&&x<yearPosition[year][1]){
-                        endYear=year;
-                        if(xScale(year)>x){
-                            direction='right';
+            } else {
+                for (var year in yearPosition) {
+                    if (x >= yearPosition[year][0] && x < yearPosition[year][1]) {
+                        endYear = year;
+                        if (xScale(year) > x) {
+                            direction = 'right';
+                        } else {
+                            direction = 'left';
                         }
-                        else{
-                            direction='left';
-                        }
-                        if(id == 'leftAxisCircle'){
-                            that.yearFilter[0]=year.toInt();
+                        if (id == 'leftAxisCircle') {
+                            that.yearFilter[0] = year.toInt();
                             lx = xScale(year);
-                        }
-                        else{
-                            that.yearFilter[1]=year.toInt();
+                        } else {
+                            that.yearFilter[1] = year.toInt();
                             rx = xScale(year);
                         }
-                        d.x=xScale(year);
+                        d.x = xScale(year);
                         thisNode.attrs({
-                                cx:d.x
-                            });
+                            cx: d.x
+                        });
 
                         break;
                     }
@@ -4431,166 +4549,174 @@ function adjustSliderPosition(measure,that){
     axisSVG.select('.movieSlider')
         .transition()
         .duration(100)
-        .attr('d',function(d){
+        .attr('d', function (d) {
             d.p1.x = lx;
             d.p2.x = rx;
             return yearSliderPathData(d);
         });
-    return {year:endYear,direction:direction};
+    return {
+        year: endYear,
+        direction: direction
+    };
 }
-function yearSliderPathData(d){
+
+function yearSliderPathData(d) {
     return 'M' + d.p1.x + ' ' + d.p1.y + 'L' + d.p2.x + ' ' + d.p2.y
 }
-function nodeClick(d,that){
-    console.log(d);
-    var axisSVG=that.axisSVG;
-    var svg=that.svg;
-    var data=that.data;
-    var nodeClass=d.self.attr('class');
-    var focusedID=that.focusedID;
-    if(nodeClass=='node') {
-        d.self.attr('class','node clicked');
-        d.self.style('stroke',color.nodeHighlightStroke);
-        d.self.style('stroke-width', function (d) {
-            d.strokeWidth=2;
-            return d.strokeWidth;
-        });
-        d.self.style('fill',color.nodeHighlightColor);
 
-        if(d.textElem)for(var i=0;i<d.textElem.textElem.length;i++){
-            d.textElem.textElem[i]
-                .styles({
-                    'fill':color.nodeLabelHighlightColor
-                });
-        }
-//
-    }
-    else if(nodeClass=='node clicked'){
-//                d.self.style('stroke','rgb(0,220,225)');
-        d.self.style('fill',function(d){return "url(#linearGradient"+ d.id+")"});
-        d.self.style('stroke',color.nodeHighlightStroke);
+function nodeClick(d, that) {
+    console.log(d);
+    var axisSVG = that.axisSVG;
+    var svg = that.svg;
+    var data = that.data;
+    var nodeClass = d.self.attr('class');
+    var focusedID = that.focusedID;
+    if (nodeClass == 'node') {
+        d.self.attr('class', 'node clicked');
+        d.self.style('stroke', color.nodeHighlightStroke);
         d.self.style('stroke-width', function (d) {
-            d.strokeWidth=0;
+            d.strokeWidth = 2;
             return d.strokeWidth;
         });
-        d.self.attr('class','node');
-        if(d.textElem)for(var i=0;i<d.textElem.textElem.length;i++){
-            d.textElem.textElem[i].styles({
-                'fill':color.nodeLabelColor,
-//                'stroke':'none',
-//                'stroke-width':0+px
-            });
-        }
-//
+        d.self.style('fill', color.nodeHighlightColor);
+
+        if (d.textElem)
+            for (var i = 0; i < d.textElem.textElem.length; i++) {
+                d.textElem.textElem[i]
+                    .styles({
+                        'fill': color.nodeLabelHighlightColor
+                    });
+            }
+        //
+    } else if (nodeClass == 'node clicked') {
+        //                d.self.style('stroke','rgb(0,220,225)');
+        d.self.style('fill', function (d) {
+            return "url(#linearGradient" + d.id + ")"
+        });
+        d.self.style('stroke', color.nodeHighlightStroke);
+        d.self.style('stroke-width', function (d) {
+            d.strokeWidth = 0;
+            return d.strokeWidth;
+        });
+        d.self.attr('class', 'node');
+        if (d.textElem)
+            for (var i = 0; i < d.textElem.textElem.length; i++) {
+                d.textElem.textElem[i].styles({
+                    'fill': color.nodeLabelColor,
+                    //                'stroke':'none',
+                    //                'stroke-width':0+px
+                });
+            }
+        //
     }
     svg.selectAll('.linearGradient')
-        .each(function(){
+        .each(function () {
             d3.select(this).selectAll('stop')
-                .each(function(d,i){
-                    var thisStop=d3.select(this);
-                    if(i == 1||i == 2)thisStop.attr('offset',0);
+                .each(function (d, i) {
+                    var thisStop = d3.select(this);
+                    if (i == 1 || i == 2) thisStop.attr('offset', 0);
                 })
         })
     axisSVG.selectAll('.yearPath')
-        .each(function(){
-            d3.select(this).style('fill',color.yearPathColor);
-//                    d3.select(this).style('stroke',color.);
-            d3.select(this).attr('class','yearPath');
+        .each(function () {
+            d3.select(this).style('fill', color.yearPathColor);
+            //                    d3.select(this).style('stroke',color.);
+            d3.select(this).attr('class', 'yearPath');
         })
-    var clusterID=d.oldKey;
-    var yearPath=d3.selectAll('.yearPath');
+    var clusterID = d.oldKey;
+    var yearPath = d3.selectAll('.yearPath');
 
-    var yearDic=d.newNodeYearInfo;
-    var subNodeYearData=[];
-    if(data.postData[focusedID].subNodeYearData){
-        subNodeYearData=data.postData[focusedID].subNodeYearData;
-    }
-    else{
-        clone(data.postData[focusedID].nodeYearData.data,subNodeYearData)
-        for (var i=0;i<subNodeYearData.length;i++){
-            subNodeYearData[i][1]=0;
+    var yearDic = d.newNodeYearInfo;
+    var subNodeYearData = [];
+    if (data.postData[focusedID].subNodeYearData) {
+        subNodeYearData = data.postData[focusedID].subNodeYearData;
+    } else {
+        clone(data.postData[focusedID].nodeYearData.data, subNodeYearData)
+        for (var i = 0; i < subNodeYearData.length; i++) {
+            subNodeYearData[i][1] = 0;
         }
     }
-    var subNodeYearDic={};
-    for(var i=0;i<subNodeYearData.length;i++){
-        var key=subNodeYearData[i][0];
-        var value=subNodeYearData[i][1];
-        subNodeYearDic[key]=value;
+    var subNodeYearDic = {};
+    for (var i = 0; i < subNodeYearData.length; i++) {
+        var key = subNodeYearData[i][0];
+        var value = subNodeYearData[i][1];
+        subNodeYearDic[key] = value;
     }
     axisSVG.selectAll('.subYearPath').remove();
-    if(d.clicked){
-        for(var key in yearDic){
-            subNodeYearDic[key]-=yearDic[key];
+    if (d.clicked) {
+        for (var key in yearDic) {
+            subNodeYearDic[key] -= yearDic[key];
         }
-        var tmpData=[]
-        for(var key in subNodeYearDic){
-            tmp=[key, subNodeYearDic[key]]
+        var tmpData = []
+        for (var key in subNodeYearDic) {
+            tmp = [key, subNodeYearDic[key]]
             tmpData.push(tmp);
         }
-        data.postData[focusedID].subNodeYearData=tmpData;
-        d.clicked=false;
-        that.drawNodeYearDataSet(data.postData[focusedID].subNodeYearData,'subYearPath')
+        data.postData[focusedID].subNodeYearData = tmpData;
+        d.clicked = false;
+        that.drawNodeYearDataSet(data.postData[focusedID].subNodeYearData, 'subYearPath')
         that.recoveryPath(d);
-    }
-    else{
-        for(var key in yearDic){
-            subNodeYearDic[key]+=yearDic[key];
+    } else {
+        for (var key in yearDic) {
+            subNodeYearDic[key] += yearDic[key];
         }
-        var tmpData=[]
-        for(var key in subNodeYearDic){
-            tmp=[key, subNodeYearDic[key]]
+        var tmpData = []
+        for (var key in subNodeYearDic) {
+            tmp = [key, subNodeYearDic[key]]
             tmpData.push(tmp);
         }
-        data.postData[focusedID].subNodeYearData=tmpData;
-        d.clicked=true;
-        that.drawNodeYearDataSet(data.postData[focusedID].subNodeYearData,'subYearPath')
+        data.postData[focusedID].subNodeYearData = tmpData;
+        d.clicked = true;
+        that.drawNodeYearDataSet(data.postData[focusedID].subNodeYearData, 'subYearPath')
         that.highlightPath(d);
     }
 
-//            console.log(d);
+    //            console.log(d);
 
     that.requestTitleList(d, clusterID);
 
 }
-function ifObjectHasProperty(obj){
-    var flag=false;
-    for(var key in obj){
-        flag=true;
+
+function ifObjectHasProperty(obj) {
+    var flag = false;
+    for (var key in obj) {
+        flag = true;
         break
     }
     return flag
 }
-function recoveryPath(d){
-    var directedGraph=this.directedGraph;
-    var currentEdgeSourceTargetDic=this.currentEdgeSourceTargetDic;
-    var thisID=parseInt(d.id)
-    var rootID=directedGraph.root.id.toInt();
-    var backPath=directedGraph.findMaxPathBetween(rootID,thisID);
-    if(backPath.length>0){
-        for(var i=0;i<backPath[0].edges.length;i++){
-            var edge=backPath[0].edges[i];
-            var source=edge.source;
-            var target=edge.target;
-            var key=source+'_'+target;
-            var currentEdges=[];
-            if(currentEdgeSourceTargetDic[key]){
-                currentEdges=currentEdgeSourceTargetDic[key];
-                for(var j=0;j<currentEdges.length;j++){
-                    if(currentEdges[j].highlightedByNodeDic[thisID]){
+
+function recoveryPath(d) {
+    var directedGraph = this.directedGraph;
+    var currentEdgeSourceTargetDic = this.currentEdgeSourceTargetDic;
+    var thisID = parseInt(d.id)
+    var rootID = directedGraph.root.id.toInt();
+    var backPath = directedGraph.findMaxPathBetween(rootID, thisID);
+    if (backPath.length > 0) {
+        for (var i = 0; i < backPath[0].edges.length; i++) {
+            var edge = backPath[0].edges[i];
+            var source = edge.source;
+            var target = edge.target;
+            var key = source + '_' + target;
+            var currentEdges = [];
+            if (currentEdgeSourceTargetDic[key]) {
+                currentEdges = currentEdgeSourceTargetDic[key];
+                for (var j = 0; j < currentEdges.length; j++) {
+                    if (currentEdges[j].highlightedByNodeDic[thisID]) {
                         delete currentEdges[j].highlightedByNodeDic[thisID];
                     }
-                    if(!ifObjectHasProperty(currentEdges[j].highlightedByNodeDic)){
-                        var pathClass='.'+currentEdges[j].class;
-                        var path=d3.select(pathClass)
-                            .each(function(d){
-                                d.levelIndex=0
+                    if (!ifObjectHasProperty(currentEdges[j].highlightedByNodeDic)) {
+                        var pathClass = '.' + currentEdges[j].class;
+                        var path = d3.select(pathClass)
+                            .each(function (d) {
+                                d.levelIndex = 0
                             })
                             .styles({
-                                stroke:color.edgeColor
+                                stroke: color.edgeColor
                             });
-                        var pathMarker=path.data()[0].marker;
+                        var pathMarker = path.data()[0].marker;
                         pathMarker.styles({
-                            fill:color.markerColor
+                            fill: color.markerColor
                         });
                     }
 
@@ -4600,167 +4726,170 @@ function recoveryPath(d){
         }
     }
 }
-function highlightPath(d){
-    var that=this;
-    var directedGraph=this.directedGraph;
-    var currentEdgeSourceTargetDic=this.currentEdgeSourceTargetDic;
-    var thisID=parseInt(d.id);
-    var rootID=directedGraph.root.id.toInt();
-    var backPath=directedGraph.findMaxPathBetween(rootID,thisID);
-    if(backPath.length>0){
-        for(var i=0;i<backPath[0].edges.length;i++){
-            var edge=backPath[0].edges[i];
-            var source=edge.source;
-            var target=edge.target;
-            var key=source+'_'+target;
-            var currentEdges=[];
-            if(currentEdgeSourceTargetDic[key]){
-                currentEdges=currentEdgeSourceTargetDic[key];
-                for(var j=0;j<currentEdges.length;j++){
-                    if(currentEdges[j].highlightedByNodeDic){
-                        currentEdges[j].highlightedByNodeDic[thisID]=1;
+
+function highlightPath(d) {
+    var that = this;
+    var directedGraph = this.directedGraph;
+    var currentEdgeSourceTargetDic = this.currentEdgeSourceTargetDic;
+    var thisID = parseInt(d.id);
+    var rootID = directedGraph.root.id.toInt();
+    var backPath = directedGraph.findMaxPathBetween(rootID, thisID);
+    if (backPath.length > 0) {
+        for (var i = 0; i < backPath[0].edges.length; i++) {
+            var edge = backPath[0].edges[i];
+            var source = edge.source;
+            var target = edge.target;
+            var key = source + '_' + target;
+            var currentEdges = [];
+            if (currentEdgeSourceTargetDic[key]) {
+                currentEdges = currentEdgeSourceTargetDic[key];
+                for (var j = 0; j < currentEdges.length; j++) {
+                    if (currentEdges[j].highlightedByNodeDic) {
+                        currentEdges[j].highlightedByNodeDic[thisID] = 1;
+                    } else {
+                        currentEdges[j].highlightedByNodeDic = {};
+                        currentEdges[j].highlightedByNodeDic[thisID] = 1;
                     }
-                    else{
-                        currentEdges[j].highlightedByNodeDic={};
-                        currentEdges[j].highlightedByNodeDic[thisID]=1;
-                    }
-                    var pathClass='.'+currentEdges[j].class;
-                    var path=d3.select(pathClass)
-                        .each(function(d){
-                            d.levelIndex=1
+                    var pathClass = '.' + currentEdges[j].class;
+                    var path = d3.select(pathClass)
+                        .each(function (d) {
+                            d.levelIndex = 1
                         })
                         .styles({
-                            stroke:color.edgeHightLightColor
+                            stroke: color.edgeHightLightColor
                         });
-                    if(path.data()[0].marker){
-                        var pathMarker=path.data()[0].marker;
+                    if (path.data()[0].marker) {
+                        var pathMarker = path.data()[0].marker;
                         pathMarker.styles({
-                            fill:color.edgeHightLightColor
+                            fill: color.edgeHightLightColor
                         });
                     }
                 }
             }
         }
         that.drawedges.select('.edgeField').selectAll('path')
-            .sort(function(a,b){
-                return d3.ascending(a.levelIndex,b.levelIndex);
+            .sort(function (a, b) {
+                return d3.ascending(a.levelIndex, b.levelIndex);
             });
     }
 
 }
-function mouseover(d,that){
-    var k=leftLayer.zoomK||1;
-    var transitionFlag=that.transitionFlag;
-    if(transitionFlag==false){
-        function changeNode(d,that,changePath){
-            if(d&&d.self){
-                d.self.style('stroke',color.nodeHighlightStroke);
+
+function mouseover(d, that) {
+    var k = leftLayer.zoomK || 1;
+    var transitionFlag = that.transitionFlag;
+    if (transitionFlag == false) {
+        function changeNode(d, that, changePath) {
+            if (d && d.self) {
+                d.self.style('stroke', color.nodeHighlightStroke);
                 d.self.style('stroke-width', function (d) {
-                    d.strokeWidth=2;
-                    return d.strokeWidth/k;
+                    d.strokeWidth = 2;
+                    return d.strokeWidth / k;
                 });
             }
-            if(d&&d.textElem){
-                for(var i=0;i<d.textElem.textElem.length;i++){
+            if (d && d.textElem) {
+                for (var i = 0; i < d.textElem.textElem.length; i++) {
                     d.textElem.textElem[i]
                         .styles({
-                            'fill':color.nodeLabelHighlightColor
+                            'fill': color.nodeLabelHighlightColor
                             //visibility: function () {
                             //    if(d.textElem.textElem[i]._groups[0][0].classList[2]=='tfidf'){
                             //        return 'hidden';
                             //    }
                             //    else return null;
                             //}
-//                'stroke':color.nodeLabelHighlightStroke,
-//                'stroke-width':1+px
+                            //                'stroke':color.nodeLabelHighlightStroke,
+                            //                'stroke-width':1+px
                         });
 
                     //.attr('x',function(e){return e.x+ e.fullLabelDeltaX/k;})
                     //.html(function(e){return e.nodeFullName;});
                 }
             }
-            if(d&&d.pathElem&&changePath){
-                for(var i=0;i<d.pathElem.length;i++){
+            if (d && d.pathElem && changePath) {
+                for (var i = 0; i < d.pathElem.length; i++) {
                     d.pathElem[i].each(function (p) {
-                        if(!p.isBackgroundEdge){
-                            var self=d3.select(this);
-                            self.style('stroke',color.edgeHightLightColor);
-                            self.style('visibility','visible');
-                            p.levelIndex=1;
-                            if(p.marker){
-                                p.marker.style('fill',color.edgeHightLightColor);
-                                p.marker.style('visibility','visible');
+                        if (!p.isBackgroundEdge) {
+                            var self = d3.select(this);
+                            self.style('stroke', color.edgeHightLightColor);
+                            self.style('visibility', 'visible');
+                            p.levelIndex = 1;
+                            if (p.marker) {
+                                p.marker.style('fill', color.edgeHightLightColor);
+                                p.marker.style('visibility', 'visible');
                             }
                         }
                     })
                 }
                 that.drawedges.select('.edgeField').selectAll('path')
-                    .sort(function(a,b){
-                        return d3.ascending(a.levelIndex,b.levelIndex);
+                    .sort(function (a, b) {
+                        return d3.ascending(a.levelIndex, b.levelIndex);
                     });
             }
-            if(d&&d.idElem)d.idElem.style('fill',color.sizeLabelColor);
+            if (d && d.idElem) d.idElem.style('fill', color.sizeLabelColor);
         }
-        changeNode(d,that,true);
+        changeNode(d, that, true);
         d.sourceNodes.forEach(function (node) {
-            changeNode(node,that);
+            changeNode(node, that);
         });
-        d.targetNodes.forEach(function(node){
-            changeNode(node,that);
+        d.targetNodes.forEach(function (node) {
+            changeNode(node, that);
         });
 
 
     }
 
 }
-function mouseout(d,that){
-    var k=leftLayer.zoomK||1;
-    var transitionFlag=that.transitionFlag;
-    if(transitionFlag==false){
-        function changeNode(d,that,changePath){
-            var thisnode=d3.select(this);
-            if(d&&d.self&&d.self.attr('class')=='node'){
-                d.self.style('stroke','none');
+
+function mouseout(d, that) {
+    var k = leftLayer.zoomK || 1;
+    var transitionFlag = that.transitionFlag;
+    if (transitionFlag == false) {
+        function changeNode(d, that, changePath) {
+            var thisnode = d3.select(this);
+            if (d && d.self && d.self.attr('class') == 'node') {
+                d.self.style('stroke', 'none');
                 d.self.style('stroke-width', function (d) {
-                    d.strokeWidth=0;
+                    d.strokeWidth = 0;
                     return d.strokeWidth;
                 });
-                if(d.idElem)d.idElem.style('fill',color.sizeLabelColor);
-                if(d.textElem)for(var i=0;i<d.textElem.textElem.length;i++){
-                    d.textElem.textElem[i]
-                        .styles({
-                            'fill':color.nodeLabelColor
-                            //visibility: function () {
-                            //    if(d.textElem.textElem[i]._groups[0][0].classList[2]=='tfidf'){
-                            //        return null;
-                            //    }
-                            //    else return 'hidden';
-                            //}
-                        })
+                if (d.idElem) d.idElem.style('fill', color.sizeLabelColor);
+                if (d.textElem)
+                    for (var i = 0; i < d.textElem.textElem.length; i++) {
+                        d.textElem.textElem[i]
+                            .styles({
+                                'fill': color.nodeLabelColor
+                                //visibility: function () {
+                                //    if(d.textElem.textElem[i]._groups[0][0].classList[2]=='tfidf'){
+                                //        return null;
+                                //    }
+                                //    else return 'hidden';
+                                //}
+                            })
                         //.attr('x',function(e){return e.x+ e.labelDeltaX/k;})
                         //.html(function(e){return e.nodeName;});
-                }
+                    }
+            } else {
+                if (d && d.textElem)
+                    for (var i = 0; i < d.textElem.textElem.length; i++) {
+                        //d.textElem.textElem[i]
+                        //    .attr('x',function(e){return e.x+ e.labelDeltaX/k;})
+                        //    .html(function(e){return e.nodeName;});
+                    }
             }
-            else{
-                if(d&&d.textElem)for(var i=0;i<d.textElem.textElem.length;i++){
-                    //d.textElem.textElem[i]
-                    //    .attr('x',function(e){return e.x+ e.labelDeltaX/k;})
-                    //    .html(function(e){return e.nodeName;});
-                }
-            }
-            if(d&&d.pathElem&&changePath){
-                for(var i=0;i<d.pathElem.length;i++){
+            if (d && d.pathElem && changePath) {
+                for (var i = 0; i < d.pathElem.length; i++) {
 
                     d.pathElem[i].each(function (p) {
-                        if(!p.isBackgroundEdge){
-                            var self=d3.select(this);
+                        if (!p.isBackgroundEdge) {
+                            var self = d3.select(this);
                             if (p.marker) {
                                 p.marker.style('fill', color.markerColor);
                                 p.marker.style('visibility', 'hidden');
                             }
                             if (!ifObjectHasProperty(self.data()[0].highlightedByNodeDic)) {
                                 self.style('stroke', color.edgeColor);
-                                self.style('visibility','hidden');
+                                self.style('visibility', 'hidden');
                             }
                         }
 
@@ -4769,183 +4898,177 @@ function mouseout(d,that){
                 }
             }
             that.drawedges.select('.edgeField').selectAll('path')
-                .each(function(d){
-                    d.levelIndex=0
+                .each(function (d) {
+                    d.levelIndex = 0
                 });
         }
-        changeNode(d,that,true);
+        changeNode(d, that, true);
         d.sourceNodes.forEach(function (node) {
-            changeNode(node,that);
+            changeNode(node, that);
         });
-        d.targetNodes.forEach(function(node){
-            changeNode(node,that);
+        d.targetNodes.forEach(function (node) {
+            changeNode(node, that);
         });
     }
 
 
 }
 
-function drawBackgroundYear(transition){
-//    var initX=300;
-//    var initY=250;
-    var dataSourceVisibility=this.dataSourceVisibility;
-    var focusedID=this.focusedID;
-    var time_g=this.time_g;
-    var yearFilter=this.yearFilter;
-    var animateMode=this.animateMode;
-    var minYear=this.minYear;
-    var maxYear=this.maxYear;
-    var initX=30;
-    var initY=30;
-    var family='Arial';
-    var size='30';
-    var weight='bold';
-    var color='grey';
+function drawBackgroundYear(transition) {
+    //    var initX=300;
+    //    var initY=250;
+    var dataSourceVisibility = this.dataSourceVisibility;
+    var focusedID = this.focusedID;
+    var time_g = this.time_g;
+    var yearFilter = this.yearFilter;
+    var animateMode = this.animateMode;
+    var minYear = this.minYear;
+    var maxYear = this.maxYear;
+    var initX = 30;
+    var initY = 30;
+    var family = 'Arial';
+    var size = '30';
+    var weight = 'bold';
+    var color = 'grey';
     var textValue;
-    if(focusedID.split('_')[0]=='twitter'){
-        var july='July';
-        var julyLen=july.visualLength(family,size);
+    if (focusedID.split('_')[0] == 'twitter') {
+        var july = 'July';
+        var julyLen = july.visualLength(family, size);
         time_g.append('text')
             .attrs({
-                class:'july',
-                x:initX,
-                y:initY
+                class: 'july',
+                x: initX,
+                y: initY
             })
             .styles({
-                'font-size':size,
+                'font-size': size,
                 'font-family': family,
-                'font-weight':weight,
-                'fill':color
+                'font-weight': weight,
+                'fill': color
             })
             .html(july)
-        initX+=julyLen+20;
+        initX += julyLen + 20;
 
-//        textValue=['July'+yearFilter[0]+' ',' - ',' July'+yearFilter[1]];
+        //        textValue=['July'+yearFilter[0]+' ',' - ',' July'+yearFilter[1]];
     }
-//    else{
-        textValue=[String(yearFilter[0]),' - ',String(yearFilter[1]-1)];
-//    }
-    var textData=[
-        {
-            type:'leftYear',
-            value:textValue[0],
-            x:initX,
-            y:initY,
-            size:size,
-            family:family,
-            weight:weight,
-            color:color
+    //    else{
+    textValue = [String(yearFilter[0]), ' - ', String(yearFilter[1] - 1)];
+    //    }
+    var textData = [{
+            type: 'leftYear',
+            value: textValue[0],
+            x: initX,
+            y: initY,
+            size: size,
+            family: family,
+            weight: weight,
+            color: color
         },
         {
-            type:'middleText',
-            value:textValue[1],
-            x:initX+textValue[0].visualLength(family,size),
-            y:initY,
-            size:size,
-            family:family,
-            weight:weight,
-            color:color
+            type: 'middleText',
+            value: textValue[1],
+            x: initX + textValue[0].visualLength(family, size),
+            y: initY,
+            size: size,
+            family: family,
+            weight: weight,
+            color: color
         },
         {
-            type:'rightYear',
-            value:textValue[2],
-            x:initX+textValue[0].visualLength(family,size)+textValue[1].visualLength(family,size),
-            y:initY,
-            size:size,
-            family:family,
-            weight:weight,
-            color:color
+            type: 'rightYear',
+            value: textValue[2],
+            x: initX + textValue[0].visualLength(family, size) + textValue[1].visualLength(family, size),
+            y: initY,
+            size: size,
+            family: family,
+            weight: weight,
+            color: color
         }
     ];
-    var yearLength='2000-2000'.visualLength(family,size);
-    var yearHeight='2000-2000'.visualHeight(family,size);
-    var sourceText=this.sourceTextDic[this.source];
-    var sourceLength=sourceText.visualLength(family,size);
-    var sourceX=initX+yearLength/2-sourceLength/2;
-    var sourceY=initY+yearHeight+5;
+    var yearLength = '2000-2000'.visualLength(family, size);
+    var yearHeight = '2000-2000'.visualHeight(family, size);
+    var sourceText = this.sourceTextDic[this.source];
+    var sourceLength = sourceText.visualLength(family, size);
+    var sourceX = initX + yearLength / 2 - sourceLength / 2;
+    var sourceY = initY + yearHeight + 5;
 
-    if(transition){
-        if(animateMode==flipBook){
+    if (transition) {
+        if (animateMode == flipBook) {
             time_g.select('.rightYear')
-                .html(function(d){
+                .html(function (d) {
 
-                    if(yearFilter[1]==maxYear&&yearFilter[0]==minYear){
-                        d.value=String(minYear);
-                    }
-                    else{
-                        d.value=String(yearFilter[0]-1);
+                    if (yearFilter[1] == maxYear && yearFilter[0] == minYear) {
+                        d.value = String(minYear);
+                    } else {
+                        d.value = String(yearFilter[0] - 1);
                     }
                     return d.value;
                 })
                 .transition()
                 .ease(d3.easeLinear)
                 .delay(1000)
-                .duration(function(d){
-                    if(yearFilter[1]==maxYear&&yearFilter[0]==minYear){
-                        return 2000*(maxYear- minYear)
-                    }
-                    else{
-                        return 2000*(maxYear- yearFilter[0])
+                .duration(function (d) {
+                    if (yearFilter[1] == maxYear && yearFilter[0] == minYear) {
+                        return 2000 * (maxYear - minYear)
+                    } else {
+                        return 2000 * (maxYear - yearFilter[0])
                     }
 
                 })
-                .tween("text", function() {
+                .tween("text", function () {
                     var that = d3.select(this);
-                    if(yearFilter[1]==maxYear&&yearFilter[0]==minYear){
+                    if (yearFilter[1] == maxYear && yearFilter[0] == minYear) {
                         var i = d3.interpolateRound(minYear, maxYear);
-                        return function(t) {
+                        return function (t) {
                             that.text(i(t));
                         };
-                    }
-                    else{
-                        var i = d3.interpolateRound(yearFilter[0]-1, maxYear);
-                        return function(t) {
+                    } else {
+                        var i = d3.interpolateRound(yearFilter[0] - 1, maxYear);
+                        return function (t) {
                             that.text(i(t));
                         };
                     }
                 })
-        }
-        else{
+        } else {
 
         }
-    }
-    else{
+    } else {
         time_g.selectAll('*')
-            .each(function(d){
-                if(d3.select(this).attr('class')!='july'){
+            .each(function (d) {
+                if (d3.select(this).attr('class') != 'july') {
                     d3.select(this).remove()
                 }
             });
         time_g.append('text')
             .styles({
-                'font-family':family,
-                'font-size':size,
-                'font-weight':weight,
-                fill:color,
-                visibility:dataSourceVisibility
+                'font-family': family,
+                'font-size': size,
+                'font-weight': weight,
+                fill: color,
+                visibility: dataSourceVisibility
             })
             .attrs({
-                class:'dataSource',
-                x:sourceX,
-                y:sourceY
+                class: 'dataSource',
+                x: sourceX,
+                y: sourceY
             })
             .html(sourceText);
         time_g.selectAll('whatever')
             .data(textData)
             .enter()
             .append('text')
-            .each(function(d){
+            .each(function (d) {
                 d3.select(this)
                     .attrs({
-                        class:d.type,
-                        x:d.x,
-                        y:d.y
+                        class: d.type,
+                        x: d.x,
+                        y: d.y
                     })
                     .styles({
-                        'font-size':d.size,
+                        'font-size': d.size,
                         'font-family': d.family,
-                        'font-weight':d.weight,
-                        'fill':d.color
+                        'font-weight': d.weight,
+                        'fill': d.color
                     })
                     .html(d.value)
             })
@@ -4953,6 +5076,7 @@ function drawBackgroundYear(transition){
     }
 
 }
+
 function getEdgeScale(edges, type) {
     var edgeFlowList = [];
     var edgeWeightList = [];
@@ -4984,6 +5108,7 @@ function getEdgeScale(edges, type) {
     };
     return scaleDic[type];
 }
+
 function drawEdges(optionNumber, doTransition, transitionType, d) {
     this.pathElem = [];
     this.tmpEdgeAssistCount = 0;
@@ -5088,7 +5213,9 @@ function drawEdges(optionNumber, doTransition, transitionType, d) {
             var stroke = d.ratio * d[edgeThickNessOption] || 1;
             var size = 13 / (stroke);
             var marker = markerG.append("svg:defs").selectAll("marker")
-                .data([{marker: 1}])
+                .data([{
+                    marker: 1
+                }])
                 .enter().append("svg:marker")
                 .attr("id", function (d) {
                     d.id = currentLevel + "markerArrow" + i + '_' + that.focusedID;
@@ -5128,13 +5255,13 @@ function drawEdges(optionNumber, doTransition, transitionType, d) {
                 //if(d.isBackgroundEdge) {
                 //    d3.select(this).style('visibility', 'hidden');
                 //}
-                if(d.isBackgroundEdge){
+                if (d.isBackgroundEdge) {
                     d.transitionCount = that.yearFilter[0] - d.flipBookStartYear;
-                    var thisPath=d3.select(this);
-                    var pathLength=thisPath.node().getTotalLength();
+                    var thisPath = d3.select(this);
+                    var pathLength = thisPath.node().getTotalLength();
                     var oldStrokeWidth;
-                    var newStrokeWidth=0;
-                    pathLength=parseInt(pathLength);
+                    var newStrokeWidth = 0;
+                    pathLength = parseInt(pathLength);
                     thisPath
                         .styles({
                             'stroke-dasharray': function () {
@@ -5151,30 +5278,30 @@ function drawEdges(optionNumber, doTransition, transitionType, d) {
                         .delay(1000)
                         .ease(d3.easeLinear)
                         .on('start', function repeat() {
-                            if(d.transitionCount+ d.flipBookStartYear> d.flipBookEndYear){
-                                thisPath.style('stroke-width',d[edgeThickNessOption])
-                                    .style('stroke-dashoffset',0);
+                            if (d.transitionCount + d.flipBookStartYear > d.flipBookEndYear) {
+                                thisPath.style('stroke-width', d[edgeThickNessOption])
+                                    .style('stroke-dashoffset', 0);
                                 d3.selectAll('.transitionPath').remove();
                                 currentLayer.svg.select('.edgeField').selectAll('path')
                                     .each(function (d) {
-                                        if(d.isBackgroundEdge) {
+                                        if (d.isBackgroundEdge) {
                                             d3.select(this)
-                                                .style('visibility','visible');
+                                                .style('visibility', 'visible');
                                         }
                                     });
                                 return;
                             }
-                            var yearKey= d.flipBookStartYear+'_'+(d.flipBookStartYear+ d.transitionCount);
-                            oldStrokeWidth=newStrokeWidth;
-                            newStrokeWidth= d.flipBookRatio[yearKey]* d[edgeThickNessOption];
+                            var yearKey = d.flipBookStartYear + '_' + (d.flipBookStartYear + d.transitionCount);
+                            oldStrokeWidth = newStrokeWidth;
+                            newStrokeWidth = d.flipBookRatio[yearKey] * d[edgeThickNessOption];
 
-                            d.transitionCount+=1;
+                            d.transitionCount += 1;
 
-                            var pathD=thisPath.attr('d');
-                            var newPath=g.append('path')
+                            var pathD = thisPath.attr('d');
+                            var newPath = g.append('path')
                                 .attrs({
-                                    d:pathD,
-                                    class:'transitionPath'
+                                    d: pathD,
+                                    class: 'transitionPath'
                                 })
                                 .styles({
                                     //'stroke-dasharray': function () {
@@ -5183,7 +5310,7 @@ function drawEdges(optionNumber, doTransition, transitionType, d) {
                                     //'stroke-dashoffset': function () {
                                     //    return pathLength;
                                     //},
-                                    'stroke-width':oldStrokeWidth,
+                                    'stroke-width': oldStrokeWidth,
                                     'fill': 'none',
                                     'stroke': color.edgeColor
                                 })
@@ -5193,8 +5320,8 @@ function drawEdges(optionNumber, doTransition, transitionType, d) {
                                 //.styleTween('stroke-dashoffset', function () {
                                 //    return d3.interpolateRound(pathLength,0)
                                 //})
-                                .styleTween('stroke-width',function(){
-                                    return d3.interpolateNumber(oldStrokeWidth,newStrokeWidth);
+                                .styleTween('stroke-width', function () {
+                                    return d3.interpolateNumber(oldStrokeWidth, newStrokeWidth);
                                 })
                                 //.on('end', function () {
                                 //    d3.select(this)
@@ -5230,7 +5357,7 @@ function drawEdges(optionNumber, doTransition, transitionType, d) {
                         //.delay(2000)
                         .ease(d3.easeLinear)
                         .on('start', function repeat() {
-                            if(d.source == 20 && d.target == 18) {
+                            if (d.source == 20 && d.target == 18) {
                                 console.log(d.flipBookRatio);
                             }
                             if (d.transitionCount + d.flipBookStartYear > d.flipBookEndYear) {
@@ -5269,8 +5396,7 @@ function drawEdges(optionNumber, doTransition, transitionType, d) {
                                     'stroke': function () {
                                         if (oldStrokeWidth < newStrokeWidth) {
                                             return color.edgeHightLightColor
-                                        }
-                                        else return color.edgeColor
+                                        } else return color.edgeColor
                                     }
                                 })
                                 .transition()
@@ -5338,8 +5464,7 @@ function drawEdges(optionNumber, doTransition, transitionType, d) {
         //        }
         //    })
         //})
-    }
-    else {
+    } else {
         svgEdges.data(edges)
             .attrs({
                 d: function (d) {
@@ -5365,6 +5490,7 @@ function drawEdges(optionNumber, doTransition, transitionType, d) {
     }
     this.getYearEdgeRelation();
 }
+
 function drawEdgeLabel(option, flow, citation, textX, textY, edgeClass, dx, dy) {
     var fontSize = 14;
     var drawedges = this.drawedges;
@@ -5383,8 +5509,7 @@ function drawEdgeLabel(option, flow, citation, textX, textY, edgeClass, dx, dy) 
                 fill: 'yellow'
             });
 
-    }
-    else if (option == 2) {
+    } else if (option == 2) {
         var txt = drawedges.append('text').attr('class', 'edgeLabel').attr('id', 'edgeLabel' + edgeClass)
             .attrs({
                 dx: dx,
@@ -5401,6 +5526,7 @@ function drawEdgeLabel(option, flow, citation, textX, textY, edgeClass, dx, dy) 
     }
     return txt;
 }
+
 function getYearEdgeRelation() {
     var yearEdgeDic = {};
     var edgeClassList = [];
@@ -5409,7 +5535,7 @@ function getYearEdgeRelation() {
             var thisEdge = d3.select(this);
             var id = thisEdge.attr('id');
             var edgeClass = thisEdge.attr('class');
-            if (edgeClass)edgeClassList.push(edgeClass);
+            if (edgeClass) edgeClassList.push(edgeClass);
             if (id) {
                 var yearID = id.split('_');
                 yearID.pop();
@@ -5417,8 +5543,7 @@ function getYearEdgeRelation() {
                     if (!yearEdgeDic[yearID[i]]) {
                         yearEdgeDic[yearID[i]] = [];
                         yearEdgeDic[yearID[i]].push(thisEdge)
-                    }
-                    else {
+                    } else {
                         yearEdgeDic[yearID[i]].push(thisEdge);
                     }
                 }
@@ -5426,6 +5551,7 @@ function getYearEdgeRelation() {
         });
     return yearEdgeDic;
 }
+
 function drawSelfEdgeLabel(option, flow, weight, textX, textY, edgeClass) {
     var fontSize = 14;
     var drawedges = this.drawedges;
@@ -5445,8 +5571,7 @@ function drawSelfEdgeLabel(option, flow, weight, textX, textY, edgeClass) {
                 fill: color.edgeColor
             });
 
-    }
-    else if (option == 2) {
+    } else if (option == 2) {
         d3.select('.ruler').style('font-size', fontSize + px);
 
         var dx = String(flow).visualLength() / 2;
@@ -5466,6 +5591,7 @@ function drawSelfEdgeLabel(option, flow, weight, textX, textY, edgeClass) {
     }
     return txt;
 }
+
 function drawSelfEdge(optionNumber, doTransition, transitionType, data) {
     var nodes = data.node;
     var edges = data.edge;
@@ -5514,8 +5640,8 @@ function drawSelfEdge(optionNumber, doTransition, transitionType, data) {
 
         });
     d3.selectAll('.node').each(function (d) {
-        if (selfEdgeElem[d.id])d.selfEdgeElem = selfEdgeElem[d.id];
-        if (selfEdgeLabelElem[d.id])d.selfEdgeLabelElem = selfEdgeLabelElem[d.id];
+        if (selfEdgeElem[d.id]) d.selfEdgeElem = selfEdgeElem[d.id];
+        if (selfEdgeLabelElem[d.id]) d.selfEdgeLabelElem = selfEdgeLabelElem[d.id];
     })
 }
 
@@ -5537,7 +5663,7 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
     var nodeList = this.nodeList;
     var nodes = d.node;
     var edges = d.edge;
-    var fontSize = dMax/2;
+    var fontSize = dMax / 2;
     var fontFamily = 'Microsoft YaHei';
     var pre;
     if (this.preLabelLayer) {
@@ -5546,18 +5672,17 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
     var g = drawnodes.append('g')
         .attr('class', 'labelLayer');
     this.preLabelLayer = g;
-//    d3.select('.ruler')
-//        .styles({
-//            'font-size':fontSize+'px',
-//            'font-family':'Microsoft YaHei'
-//
-//        });
+    //    d3.select('.ruler')
+    //        .styles({
+    //            'font-size':fontSize+'px',
+    //            'font-family':'Microsoft YaHei'
+    //
+    //        });
 
     var x;
     if (nodes.length > 20) {
         x = 2;
-    }
-    else {
+    } else {
         x = 2;
     }
     nodes.forEach(function (node) {
@@ -5565,8 +5690,9 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
             node.frequencyKeywords = node.keywords;
         }
     });
+
     function getAuthorVenue(d, i) {
-//        console.log(d);
+        //        console.log(d);
         var author = d.author_venue.author;
         var venue = d.author_venue.venue;
         var label = [author, venue];
@@ -5578,7 +5704,7 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
             .data(nodes).enter()
             .append('g')
             .attr('id', function (d) {
-                return 'g'+ d.id + '_' + i;
+                return 'g' + d.id + '_' + i;
             })
             .each(function () {
                 var thisLabelG = d3.select(this);
@@ -5593,16 +5719,15 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
                             return color.nodeLabelColor;
                         },
                         visibility: 'hidden',
-                        'text-anchor' : 'middle'
+                        'text-anchor': 'middle'
                     })
                     .html(function (d, j) {
                         if (optionNumber.nodeLabelOption < 2) {
                             if ((x == 2) || ((x == 1) && d.focused == 'true') || ((x == 1) && (i == 0))) {
                                 var keywords = d.keywords;
-                                if (keywords[i] && keywords[i].length > 2)return keywords[i].substring(0, 1).toUpperCase() + keywords[i].substring(1);
+                                if (keywords[i] && keywords[i].length > 2) return keywords[i].substring(0, 1).toUpperCase() + keywords[i].substring(1);
                             }
-                        }
-                        else if (optionNumber.nodeLabelOption == 2) {
+                        } else if (optionNumber.nodeLabelOption == 2) {
                             if ((x == 2) || ((x == 1) && d.focused == 'true' && d.id != 0) || ((x == 1) && i == 0 && d.id != 0)) {
                                 if (d.id != 0) {
                                     var label = getAuthorVenue(d, i);
@@ -5621,7 +5746,7 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
                             return d.x;
                         },
                         "y": function (d) {
-                            if (!d.nodeFirstLabelTextShiftY)d.nodeFirstLabelTextShiftY = [0, 0, 0];
+                            if (!d.nodeFirstLabelTextShiftY) d.nodeFirstLabelTextShiftY = [0, 0, 0];
                             d.nodeFirstLabelTextShiftY[i] = sizeScale.sizeScale(d.size) + (i + 1) * 'A'.visualHeight();
                             return d.y + d.nodeFirstLabelTextShiftY[i] / k;
                         },
@@ -5656,8 +5781,7 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
                                 id: d.id
                             };
                             textElem[d.id].textElem.push(d3.select(this));
-                        }
-                        else {
+                        } else {
                             textElem[d.id].textElem.push(d3.select(this));
                         }
 
@@ -5672,17 +5796,16 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
                         fill: function () {
                             return color.nodeLabelColor;
                         },
-                        'text-anchor' : 'middle'
+                        'text-anchor': 'middle'
                     })
                     .attr('index', 'nodeSecondLabelTextShift_' + i)
                     .html(function (d, j) {
                         if (optionNumber.nodeLabelOption == 0) {
                             if ((x == 2) || ((x == 1) && d.focused == 'true') || ((x == 1) && (i == 0))) {
                                 var keywords = d.onegram;
-                                if (keywords[i] && keywords[i].length > 2)return keywords[i].substring(0, 1).toUpperCase() + keywords[i].substring(1);
+                                if (keywords[i] && keywords[i].length > 2) return keywords[i].substring(0, 1).toUpperCase() + keywords[i].substring(1);
                             }
-                        }
-                        else if (optionNumber.nodeLabelOption == 1) {
+                        } else if (optionNumber.nodeLabelOption == 1) {
                             if ((x == 2) || ((x == 1) && d.focused == 'true' && d.id != 0) || ((x == 1) && i == 0 && d.id != 0)) {
                                 if (d.id != 0) {
                                     var label = getAuthorVenue(d, i);
@@ -5694,10 +5817,10 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
                     .attrs({
                         "x": function (d) {
 
-                            return d.x ;
+                            return d.x;
                         },
                         "y": function (d) {
-                            if (!d.nodeSecondLabelTextShiftY)d.nodeSecondLabelTextShiftY = [0, 0, 0];
+                            if (!d.nodeSecondLabelTextShiftY) d.nodeSecondLabelTextShiftY = [0, 0, 0];
                             d.nodeSecondLabelTextShiftY[i] = sizeScale.sizeScale(d.size) + (i + 1) * 'A'.visualHeight();
                             return d.y + d.nodeSecondLabelTextShiftY[i] / k;
                         },
@@ -5726,8 +5849,7 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
                         'visibility': function () {
                             if (i <= 1) {
                                 return 'visible';
-                            }
-                            else {
+                            } else {
                                 return 'hidden';
                             }
                         }
@@ -5742,8 +5864,7 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
                                 id: d.id
                             };
                             textElem[d.id].textElem.push(d3.select(this));
-                        }
-                        else {
+                        } else {
                             textElem[d.id].textElem.push(d3.select(this));
                         }
 
@@ -5843,9 +5964,9 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
                     return color.nodeLabelColor;
                 })
                 .on('start', function (d) {
-                    console.log('#g'+ d.id + '_' +i);
-                    pre.select('#g'+ d.id + '_' +i).remove();
-                    console.log(pre.select('#g'+ d.id + '_' +i));
+                    console.log('#g' + d.id + '_' + i);
+                    pre.select('#g' + d.id + '_' + i).remove();
+                    console.log(pre.select('#g' + d.id + '_' + i));
                     var thisNode = d3.select(this);
                     thisNode.attrs({
                         transitionStatus: function (d) {
@@ -5863,8 +5984,7 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
                         }
                     })
                 });
-        }
-        else {
+        } else {
             setLabelAttributes(nodes);
             g.selectAll('.label').attr('transitionStatus', 'end');
         }
@@ -5872,6 +5992,7 @@ function drawLabels(optionNumber, doTransition, transitionType, d) {
 
     }
 }
+
 function drawLegends() {
     var legend_g = this.legend_g;
 
@@ -5879,8 +6000,7 @@ function drawLegends() {
         var svgHeight = parseFloat(d3.select('.graphDiv').select('svg').attr('height'));
         var initY = 0;
         var initX = 0;
-        var legendData = [
-            {
+        var legendData = [{
                 class: 'legend',
                 id: 0,
                 type: 'image',
@@ -5943,8 +6063,8 @@ function drawLegends() {
                 });
                 switch (d.type) {
                     case 'image':
-                    {
-                        thisG.append('image')
+                        {
+                            thisG.append('image')
                             .attrs({
                                 x: d.x - 10,
                                 y: d.y - 10,
@@ -5952,7 +6072,7 @@ function drawLegends() {
                                 width: d.width,
                                 'xlink:href': d.link
                             });
-                        thisG.append('text')
+                            thisG.append('text')
                             .attrs({
                                 x: d.x + 20,
                                 y: d.y + 5
@@ -5962,11 +6082,11 @@ function drawLegends() {
                                 'font-family': 'Arial'
                             })
                             .html(d.text)
-                        return 1
-                    }
+                            return 1
+                        }
                     case 'circle':
-                    {
-                        thisG.append('circle')
+                        {
+                            thisG.append('circle')
                             .attrs({
                                 cx: d.x,
                                 cy: d.y,
@@ -5975,7 +6095,7 @@ function drawLegends() {
                             .styles({
                                 fill: d.fill
                             });
-                        thisG.append('text')
+                            thisG.append('text')
                             .attrs({
                                 x: d.x + 20,
                                 y: d.y + 5
@@ -5985,33 +6105,33 @@ function drawLegends() {
                                 'font-family': 'Arial'
                             })
                             .html(d.text)
-                        return 1
-                    }
+                            return 1
+                        }
                     case 'path':
-                    {
-                        thisG.append('path')
+                        {
+                            thisG.append('path')
                             .attrs({
                                 class: function (d) {
                                     return d.class;
                                 },
                                 id: function (d) {
-                                    if (d.dash)return 'nontreeLegend'; else return 'treeLegend'
+                                    if (d.dash) return 'nontreeLegend';
+                                    else return 'treeLegend'
                                 },
                                 d: d.d
                             })
                             .styles({
                                 stroke: d.stroke,
                                 'stroke-width': d.strokeWidth,
-//                                'stroke-dasharray':function(d){
-//                                    if(d.dash){
-//                                        return 5.5
-//                                    }
-//                                },
+                                //                                'stroke-dasharray':function(d){
+                                //                                    if(d.dash){
+                                //                                        return 5.5
+                                //                                    }
+                                //                                },
                                 opacity: function (d) {
                                     if (d.dash) {
                                         return d.disableOpacity
-                                    }
-                                    else {
+                                    } else {
                                         return d.opacity
                                     }
                                 },
@@ -6039,10 +6159,11 @@ function drawLegends() {
                                     .style("fill", color.edgeColor);
                                 thisEdge.attr('marker-end', 'url(#legendMarker)')
                             });
-                        thisG.append('text')
+                            thisG.append('text')
                             .attrs({
                                 id: function (d) {
-                                    if (d.dash)return 'nontreeLegendText'; else return 'treeLegendText'
+                                    if (d.dash) return 'nontreeLegendText';
+                                    else return 'treeLegendText'
                                 },
                                 x: d.textX,
                                 y: d.textY
@@ -6068,8 +6189,7 @@ function drawLegends() {
                                             if (d.textColor == color.textDisableColor) {
                                                 d.textColor = color.nodeLabelColor;
                                                 return d.textColor;
-                                            }
-                                            else {
+                                            } else {
                                                 d.textColor = color.textDisableColor;
                                                 return d.textColor;
                                             }
@@ -6078,13 +6198,14 @@ function drawLegends() {
                                 }
                             })
                             .html(d.text)
-                        return 1
-                    }
+                            return 1
+                        }
                 }
             })
     }
     //currentLayer.svg.select('.legendDrawer').attr('transform', 'translate(' + legendTranWidth + ',' + legendTranHeight + ')');
 }
+
 function changeNonTreeEdges() {
     if (optionNumber.edgeFilter == 0) {
         optionNumber.edgeFilter = 1;
@@ -6096,8 +6217,7 @@ function changeNonTreeEdges() {
                     })
                 }
             })
-    }
-    else {
+    } else {
         optionNumber.edgeFilter = 0;
         d3.select('.edgeField').selectAll('path')
             .each(function (d) {
@@ -6135,8 +6255,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                             return 'image/lightStar.png'
                     }
                 })
-        }
-        else thisNode.append('circle')
+        } else thisNode.append('circle')
             .attrs({
                 type: 'circle',
                 class: 'node',
@@ -6158,21 +6277,20 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
     var edges = dd.edge;
     var focusedID = this.focusedID;
     var drag = this.drag;
-//    var nodes= [];
-//    var edges=[];
-//    clone(dd.node,nodes);
-//    clone(dd.edge,edges);
+    //    var nodes= [];
+    //    var edges=[];
+    //    clone(dd.node,nodes);
+    //    clone(dd.edge,edges);
     dd.subNodeYearData = [];
 
     var nonRootNodes = [];
     nodes.forEach(function (node) {
-        if(getUrlParam('twitter') == '20') {
-            if(node.focused == 'false') {
+        if (getUrlParam('twitter') == '20') {
+            if (node.focused == 'false') {
                 nonRootNodes.push(node);
             }
-        }
-        else {
-            if(!node.focused) {
+        } else {
+            if (!node.focused) {
                 nonRootNodes.push(node);
             }
         }
@@ -6189,10 +6307,10 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
     }), d3.max(nonRootNodes, function (d) {
         return d.citation / d.size;
     })];
-    if(parseFloat(getUrlParam('nodeOpacityMin')) >= 0 && parseFloat(getUrlParam('nodeOpacityMin')) <= 1) {
+    if (parseFloat(getUrlParam('nodeOpacityMin')) >= 0 && parseFloat(getUrlParam('nodeOpacityMin')) <= 1) {
         nodeOpacityMin = parseFloat(getUrlParam('nodeOpacityMin'));
     }
-    if(parseFloat(getUrlParam('nodeOpacityMax')) >= 0 && parseFloat(getUrlParam('nodeOpacityMax')) <= 1) {
+    if (parseFloat(getUrlParam('nodeOpacityMax')) >= 0 && parseFloat(getUrlParam('nodeOpacityMax')) <= 1) {
         nodeOpacityMax = parseFloat(getUrlParam('nodeOpacityMax'));
     }
     var nodeOpacity = {
@@ -6239,7 +6357,9 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
         pre = this.preNodeLayer;
         pre.selectAll('.circle')
             .each(function (d) {
-                preNodes[d.id] = {nodeR: d.nodeR};
+                preNodes[d.id] = {
+                    nodeR: d.nodeR
+                };
             });
         //pre.remove();
     }
@@ -6271,7 +6391,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
         }
     });
 
-//    svg.select('.linearGradientDefs').remove();
+    //    svg.select('.linearGradientDefs').remove();
     if (doTransition) {
         g.selectAll('node').data(nodes)
             .enter()
@@ -6281,7 +6401,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
             })
             .each(function (d, i) {
                 var thisNode = d3.select(this);
-                if (d.focused == 'true')thisNode.append('image')
+                if (d.focused == 'true') thisNode.append('image')
                     .attrs({
                         type: 'image',
                         class: 'node',
@@ -6305,8 +6425,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                         r: sizeScale.sizeScale(d.size * d.ratio[0])
                     });
                 d.index = 3;
-                var backgroundData = [
-                    {
+                var backgroundData = [{
                         class: 'backgroundNode',
                         delay: d.delay,
                         id: d.id,
@@ -6361,8 +6480,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                     });
             });
 
-    }
-    else {
+    } else {
         g.selectAll('node').data(nodes)
             .enter()
             .append('g')
@@ -6400,17 +6518,29 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
         })
         .each(function (e) {
             var thisLG = d3.select(this);
-            var data = [{offset: 0, color: color.nodeGreyColor, opacity: 1}, {
+            var data = [{
                 offset: 0,
                 color: color.nodeGreyColor,
                 opacity: 1
-            }, {offset: 0, color: color.nodeColor, opacity: 1}, {offset: 1, color: color.nodeColor, opacity: 1}];
+            }, {
+                offset: 0,
+                color: color.nodeGreyColor,
+                opacity: 1
+            }, {
+                offset: 0,
+                color: color.nodeColor,
+                opacity: 1
+            }, {
+                offset: 1,
+                color: color.nodeColor,
+                opacity: 1
+            }];
             var citation = e.citation;
             var size = e.size;
             console.log(citation)
             console.log(size)
-            console.log(citation/size);
-            console.log(nodeOpacity[nodeOpacityOption](citation/size));
+            console.log(citation / size);
+            console.log(nodeOpacity[nodeOpacityOption](citation / size));
             thisLG.selectAll('stop').data(data).enter()
                 .append('stop')
                 .attrs({
@@ -6424,11 +6554,10 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                         if (nodeOpacityOption == 'citation' || nodeOpacityOption == 'uniform') {
 
                             return nodeOpacity[nodeOpacityOption](citation);
-                        }
-                        else if (nodeOpacityOption == 'avgCitation') {
+                        } else if (nodeOpacityOption == 'avgCitation') {
 
 
-                            return nodeOpacity[nodeOpacityOption](citation/size);
+                            return nodeOpacity[nodeOpacityOption](citation / size);
                         }
                     }
                 })
@@ -6480,7 +6609,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                 "fill": function (d) {
                     return color.nodeColor;
                 },
-//            'fill':'rgb(0,220,225)',
+                //            'fill':'rgb(0,220,225)',
                 "opacity": 1,
                 "cursor": "hand"
             })
@@ -6491,9 +6620,9 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                 d.clicked = false;
                 if (d.focused == 'true') {
 
-//                d3.select(this).attr('stroke','red');
-//                d3.select(this).attr('stroke-width','2px');
-//                d3.select(this).attr('class','node clicked');
+                    //                d3.select(this).attr('stroke','red');
+                    //                d3.select(this).attr('stroke-width','2px');
+                    //                d3.select(this).attr('class','node clicked');
                     focusedNodeData = d;
 
                 }
@@ -6508,7 +6637,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                 };
 
                 d.self = d3.select(this);
-                if (textElem[d.id])d.textElem.textElem = textElem[d.id].textElem;
+                if (textElem[d.id]) d.textElem.textElem = textElem[d.id].textElem;
                 for (var j = 0; j < relation[d.id].edges.length; j++) {
                     d.edgeLabelElem.push(edgeLabelElem[relation[d.id].edges[j]]);
                     //d.pathElem.push(pathElem[relation[d.id].edges[j]]);
@@ -6525,8 +6654,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                         if (e.routerClusters.indexOf(parseInt(d.id)) != -1) {
                             d.relatedEdges.push(e.self);
                         }
-                    }
-                    else {
+                    } else {
                         if (e.source == d.id || e.target == d.id) {
                             d.relatedEdges.push(e.self);
                         }
@@ -6535,8 +6663,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
 
                 })
             });
-    }
-    else {
+    } else {
         g.selectAll('.node')
             .data(nodes)
             .attr('year', function (d) {
@@ -6569,7 +6696,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                 "fill": function (d) {
                     return "url(#linearGradient" + d.id + ")"
                 },
-//            'fill':'rgb(0,220,225)',
+                //            'fill':'rgb(0,220,225)',
                 "opacity": 1,
                 "cursor": "hand"
             })
@@ -6577,16 +6704,14 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
             .duration(function (d) {
                 if (transitionType == 'flowMap') {
                     return d.duration;
-                }
-                else {
+                } else {
                     return 1;
                 }
             })
             .delay(function (d) {
                 if (transitionType == 'flowMap') {
                     return d.delay[0];
-                }
-                else {
+                } else {
                     return 1;
                 }
             })
@@ -6594,7 +6719,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                 "fill": function (d) {
                     return "url(#linearGradient" + d.id + ")"
                 },
-//            'fill':'rgb(0,220,225)',
+                //            'fill':'rgb(0,220,225)',
                 "opacity": 1,
                 "cursor": "hand"
             })
@@ -6605,9 +6730,9 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                 d.clicked = false;
                 if (d.focused == 'true') {
 
-//                d3.select(this).attr('stroke','red');
-//                d3.select(this).attr('stroke-width','2px');
-//                d3.select(this).attr('class','node clicked');
+                    //                d3.select(this).attr('stroke','red');
+                    //                d3.select(this).attr('stroke-width','2px');
+                    //                d3.select(this).attr('class','node clicked');
                     focusedNodeData = d;
 
                 }
@@ -6622,7 +6747,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                 };
 
                 d.self = d3.select(this);
-                if (textElem[d.id])d.textElem.textElem = textElem[d.id].textElem;
+                if (textElem[d.id]) d.textElem.textElem = textElem[d.id].textElem;
                 for (var j = 0; j < relation[d.id].edges.length; j++) {
                     d.edgeLabelElem.push(edgeLabelElem[relation[d.id].edges[j]]);
                     //d.pathElem.push(pathElem[relation[d.id].edges[j]]);
@@ -6638,8 +6763,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                         if (e.routerClusters.indexOf(parseInt(d.id)) != -1) {
                             d.relatedEdges.push(e.self);
                         }
-                    }
-                    else {
+                    } else {
                         if (e.source == d.id || e.target == d.id) {
                             d.relatedEdges.push(e.self);
                         }
@@ -6668,24 +6792,21 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
             clone(nodeData.ratio, tmpRatio);
             setTransition(node, tmpDelay, tmpRatio);
         }
-    }
-    else {
+    } else {
         g.selectAll('.node')
             .data(nodes)
             .transition()
             .duration(function (d) {
                 if (transitionType == 'flowMap') {
                     return d.duration;
-                }
-                else {
+                } else {
                     return 0;
                 }
             })
             .delay(function (d) {
                 if (transitionType == 'flowMap') {
                     return d.delay[0];
-                }
-                else {
+                } else {
                     return 0;
                 }
             })
@@ -6696,6 +6817,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                 'cursor': 'hand'
             })
     }
+
     function setTransition(node, delay, ratio) {
         var nodeData = node.data()[0];
         var nodeID = node.attr('id');
@@ -6720,7 +6842,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                     }
                 })
                 .styles({
-//                    "fill":function(d){return 'white'},
+                    //                    "fill":function(d){return 'white'},
                     "fill": function (d) {
                         return "url(#linearGradient" + d.id + ")"
                     },
@@ -6752,8 +6874,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                                             var bigR;
                                             if (e.index == 2) {
                                                 bigR = r + 4;
-                                            }
-                                            else if (e.index == 1) {
+                                            } else if (e.index == 1) {
                                                 bigR = r + 8;
                                             }
                                             e.bigR = bigR;
@@ -6806,8 +6927,7 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
                     setTransition(node, delay, ratio);
 
                 });
-        }
-        else {
+        } else {
             node.attr('transitionStatus', function (d) {
                 d.transitionStatus = 'end';
                 return d.transitionStatus;
@@ -6823,16 +6943,16 @@ function drawNodes(optionNumber, doTransition, transitionType, dd) {
 function drawSize(optionNumber, doTransition, transitionType, d) {
     var nodes = d.node;
     var edges = d.edge;
-//    var nodes= [];
-//    var edges=[];
-//    clone(d.node,nodes);
-//    clone(d.edge,edges);
+    //    var nodes= [];
+    //    var edges=[];
+    //    clone(d.node,nodes);
+    //    clone(d.edge,edges);
     var data = this.data;
     var that = this;
 
     var nodeOpacity = that.nodeOpacity;
 
-    var k=this.zoomK||1;
+    var k = this.zoomK || 1;
     var drawnodes = this.drawnodes;
     var nodeClick = this.nodeClick;
     var mouseover = this.mouseover;
@@ -6841,7 +6961,7 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
     var focusedID = this.focusedID;
     var svg = this.svg;
     var screenPreNodes = data.screenPreviousData[focusedID].node;
-    var fontSize = dMax/2;
+    var fontSize = dMax / 2;
     var fontFamily = 'Microsoft YaHei';
     var drag = this.drag;
     var pre;
@@ -6850,14 +6970,16 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
         pre = this.preSizeLayer;
         pre.selectAll('.circle')
             .each(function (d) {
-                preSizes[d.id] = {size: d.newSize};
+                preSizes[d.id] = {
+                    size: d.newSize
+                };
             });
         //pre.remove();
     }
     var g = drawnodes.append('g').attr('class', 'sizeLayer');
     this.preSizeLayer = g;
     nodes.forEach(function (node) {
-        node.fontSize=fontSize;
+        node.fontSize = fontSize;
     });
     if (doTransition) {
         g.selectAll('node_size')
@@ -6869,16 +6991,15 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
                     return d.x;
                 },
                 "y": function (d) {
-                    d.nodeSizeTextShiftY=7.5;
-                    return d.y + d.nodeSizeTextShiftY/k;
+                    d.nodeSizeTextShiftY = 7.5;
+                    return d.y + d.nodeSizeTextShiftY / k;
                 },
                 "id": function (d) {
-                    return 'size'+d.id
+                    return 'size' + d.id
                 },
                 "class": 'size'
             })
-    }
-    else {
+    } else {
         g.selectAll('node_size')
             .data(nodes)
             .enter()
@@ -6889,11 +7010,11 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
                     return d.x;
                 },
                 "y": function (d) {
-                    d.nodeSizeTextShiftY=7;
-                    return d.y + d.nodeSizeTextShiftY/k;
+                    d.nodeSizeTextShiftY = 7;
+                    return d.y + d.nodeSizeTextShiftY / k;
                 },
                 "id": function (d) {
-                    return 'size'+d.id
+                    return 'size' + d.id
                 },
                 'transitionStatus': 'end',
                 "class": function (d) {
@@ -6928,15 +7049,14 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
         .style("opacity", function (d) {
             if (nodeOpacityOption == 'citation' || nodeOpacityOption == 'uniform') {
                 return nodeOpacity[nodeOpacityOption](d.citation);
-            }
-            else if (nodeOpacityOption == 'avgCitation') {
-                return nodeOpacity[nodeOpacityOption](d.citation/ d.size);
+            } else if (nodeOpacityOption == 'avgCitation') {
+                return nodeOpacity[nodeOpacityOption](d.citation / d.size);
             }
         })
         .style("cursor", "hand")
         .styles({
             'font-size': function (d) {
-                return d.fontSize/k;
+                return d.fontSize / k;
             },
             'font-family': 'Microsoft YaHei',
             fill: color.sizeLabelColor,
@@ -6959,18 +7079,17 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
 
             clone(nodeData.sizeSeries, tmpSizeSeries);
             clone(nodeData.sizeDelay, tmpDelay);
-            setSizeTransition(size, 1 ,tmpDelay , tmpSizeSeries);
+            setSizeTransition(size, 1, tmpDelay, tmpSizeSeries);
             //size.attr('id', function (d) {
             //    d.sizeDelay = tmpDelay;
             //    d.sizeSeries = tmpSizeSeries;
             //    return d.id;
             //});
         }
-    }
-    else {
+    } else {
         g.selectAll('.size')
             .html(function (d) {
-                if(preSizes[d.id]) {
+                if (preSizes[d.id]) {
                     return preSizes[d.id].size;
                 }
                 //return d.id;
@@ -6979,7 +7098,8 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
                 //return d.newSize+'-'+ d.oldKey;
             });
     }
-    function setSizeTransition(size, preSize,sizeDelay, sizeSeries) {
+
+    function setSizeTransition(size, preSize, sizeDelay, sizeSeries) {
         var nodeData = size.data()[0];
         if (sizeSeries.length > 0) {
             size.transition()
@@ -6990,7 +7110,7 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
                     return sizeDelay[0];
                 })
                 .tween("text", function (d) {
-                    var that=d3.select(this);
+                    var that = d3.select(this);
                     var i = d3.interpolateRound(preSize, sizeSeries[0]);
                     preSize = sizeSeries[0];
                     return function (t) {
@@ -7001,15 +7121,15 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
                 .style("cursor", "hand")
                 .styles({
                     'font-size': function (d) {
-                        var size = dMax/2;
+                        var size = dMax / 2;
                         d.fontSize = size;
-                        return d.fontSize/k;
+                        return d.fontSize / k;
                     },
                     'font-family': 'Microsoft YaHei',
                     fill: color.sizeLabelColor
                 })
                 .on('start', function (d) {
-                    pre.select('#size'+ d.id).remove();
+                    pre.select('#size' + d.id).remove();
                     var thisNode = d3.select(this);
                     thisNode.attrs({
                         transitionStatus: function (d) {
@@ -7024,8 +7144,7 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
                     sizeSeries = sizeSeries.splice(1, sizeSeries.length - 1);
                     setSizeTransition(size, preSize, sizeDelay, sizeSeries);
                 })
-        }
-        else {
+        } else {
             size.attr('transitionStatus', function (d) {
                 d.transitionStatus = 'end';
                 return d.transitionStatus;
@@ -7039,220 +7158,230 @@ function drawSize(optionNumber, doTransition, transitionType, d) {
 
 
 }
-function drawYearAxis(d){
-    var axisSVG=this.axisSVG;
-    var that=this;
-    var svg=this.svg;
-    var width=parseFloat(axisSVG.style('width'));
-    var height=parseFloat(axisSVG.style('height'));
-    var nodeYearData=d;
-    var padding=30;
 
-    var dataSet=d.data;
-    var maxYear=d.maxYear;
-    var minYear=d.minYear;
-    var maxCount=d.maxCount;
-    var minCount=d.minCount;
-    var animateMode=this.animateMode;
+function drawYearAxis(d) {
+    var axisSVG = this.axisSVG;
+    var that = this;
+    var svg = this.svg;
+    var width = parseFloat(axisSVG.style('width'));
+    var height = parseFloat(axisSVG.style('height'));
+    var nodeYearData = d;
+    var padding = 30;
+
+    var dataSet = d.data;
+    var maxYear = d.maxYear;
+    var minYear = d.minYear;
+    var maxCount = d.maxCount;
+    var minCount = d.minCount;
+    var animateMode = this.animateMode;
     this.xScale = d3.scaleLinear()
-        .domain([minYear,maxYear])
-        .range([padding,width-padding]);
+        .domain([minYear, maxYear])
+        .range([padding, width - padding]);
 
     this.yScale = d3.scaleLinear()
-        .domain([0,maxCount])
-        .range([(height-padding),padding]);
-    var xScale=this.xScale;
-    var yScale=this.yScale;
-    this.xAxis=d3.axisBottom(xScale);
-    this.yAxis=d3.axisLeft(yScale).ticks(3);
+        .domain([0, maxCount])
+        .range([(height - padding), padding]);
+    var xScale = this.xScale;
+    var yScale = this.yScale;
+    this.xAxis = d3.axisBottom(xScale);
+    this.yAxis = d3.axisLeft(yScale).ticks(3);
 
-    var xAxis=this.xAxis;
-    var yAxis=this.yAxis;
-    var axisG=axisSVG.append("g")
-        .attr("class","axis")
+    var xAxis = this.xAxis;
+    var yAxis = this.yAxis;
+    var axisG = axisSVG.append("g")
+        .attr("class", "axis")
         .call(xAxis)
-        .attr("transform","translate(0,"+(height-padding)+")")
+        .attr("transform", "translate(0," + (height - padding) + ")")
         .append("text")
-        .attr("transform","translate("+(height-padding)+",0)");//指定坐标轴说明的坐标
-    var yearSliderDuration=(maxYear-minYear)*2000;
+        .attr("transform", "translate(" + (height - padding) + ",0)"); //指定坐标轴说明的坐标
+    var yearSliderDuration = (maxYear - minYear) * 2000;
 
-    var timeCircleData=[
-        {
-            x:xScale(minYear),
-            y:yScale(0),
-            r:7,
-            minYear:minYear,
-            maxYear:maxYear,
-            id:'leftAxisCircle',
-            transitionX:xScale(minYear),
-            duration:yearSliderDuration,
-            rBig:12,
-            filter:'url(#leftOrRight_filter)',
-            index:0
+    var timeCircleData = [{
+            x: xScale(minYear),
+            y: yScale(0),
+            r: 7,
+            minYear: minYear,
+            maxYear: maxYear,
+            id: 'leftAxisCircle',
+            transitionX: xScale(minYear),
+            duration: yearSliderDuration,
+            rBig: 12,
+            filter: 'url(#leftOrRight_filter)',
+            index: 0
         },
         {
-            x:xScale(maxYear),
-            y:yScale(0),
-            r:7,
-            minYear:minYear,
-            maxYear:maxYear,
-            id:'rightAxisCircle',
-            transitionX:xScale(maxYear),
-            duration:yearSliderDuration,
-            rBig:12,
-            filter:'url(#leftOrRight_filter)',
-            index:0
-        }];
+            x: xScale(maxYear),
+            y: yScale(0),
+            r: 7,
+            minYear: minYear,
+            maxYear: maxYear,
+            id: 'rightAxisCircle',
+            transitionX: xScale(maxYear),
+            duration: yearSliderDuration,
+            rBig: 12,
+            filter: 'url(#leftOrRight_filter)',
+            index: 0
+        }
+    ];
 
 
-    this.preYearPath=false;
-    this.drawNodeYearDataSet(dataSet,'yearPath');
+    this.preYearPath = false;
+    this.drawNodeYearDataSet(dataSet, 'yearPath');
     axisSVG.selectAll('text')
         .styles({
-            'fill':color.axisTickColor,
-            'font-family':'Arial',
-            'font-weight':'bold'
+            'fill': color.axisTickColor,
+            'font-family': 'Arial',
+            'font-weight': 'bold'
         })
     axisSVG.selectAll('line')
         .styles({
-            stroke:color.axisColor
+            stroke: color.axisColor
         });
     axisSVG.select('.axis').select('path')
         .styles({
-            fill:'none',
-            stroke:color.axisColor
+            fill: 'none',
+            stroke: color.axisColor
         });
 
     this.yearSliderDrag = d3.drag()
-        .subject(function(d) { return d; })
+        .subject(function (d) {
+            return d;
+        })
         .on('drag', yearSliderDragMove)
         .on('start', yearSliderDragStart)
         .on('end', yearSliderDragEnd);
     axisSVG.selectAll('axisCircle').data(timeCircleData).enter()
         .append('circle')
         .attrs({
-            id:function(d){return d.id;},
-            class:'axisCircle',
-            cx:function(d){return d.x},
-            cy:function(d){return d.y},
-            r:function(d){return d.r}
+            id: function (d) {
+                return d.id;
+            },
+            class: 'axisCircle',
+            cx: function (d) {
+                return d.x
+            },
+            cy: function (d) {
+                return d.y
+            },
+            r: function (d) {
+                return d.r
+            }
         })
-            .style('filter',function(d,i){
+        .style('filter', function (d, i) {
 
             return d.filter
         })
-        .style('visibility',function(d,i){
-            if(animateMode==flipBook){
-                if(i == 0){
+        .style('visibility', function (d, i) {
+            if (animateMode == flipBook) {
+                if (i == 0) {
                     return 'hidden'
-                }
-                else{
+                } else {
                     return 'visible';
                 }
             }
         })
-        .style('cursor','hand')
-        .each(function(d){
-            d.that=that;
+        .style('cursor', 'hand')
+        .each(function (d) {
+            d.that = that;
         })
         .call(this.yearSliderDrag)
-        .on('click',function(){
+        .on('click', function () {
             console.log('clicked')
-//            var thisNode=d3.select(this)
-//                .duration(100)
-//                .ease('linear')
-//                .attr('fill',)
+            //            var thisNode=d3.select(this)
+            //                .duration(100)
+            //                .ease('linear')
+            //                .attr('fill',)
         })
-        .on('dblclick',function(d){
-            var left=axisSVG.select('')
+        .on('dblclick', function (d) {
+            var left = axisSVG.select('')
         })
 
-        .on('mouseover',function(){
-            var thisNode=d3.select(this);
+        .on('mouseover', function () {
+            var thisNode = d3.select(this);
             thisNode.transition()
                 .duration(100)
                 .ease(d3.easeLinear)
-                .attr('r',function(d){return d.rBig})
-//                .style('filter','url(#leftOrRight');
+                .attr('r', function (d) {
+                    return d.rBig
+                })
+            //                .style('filter','url(#leftOrRight');
         })
-        .on('mouseout',function(){
-            var thisNode=d3.select(this);
-            var t=d3.transition().duration(100).ease(d3.easeLinear);
+        .on('mouseout', function () {
+            var thisNode = d3.select(this);
+            var t = d3.transition().duration(100).ease(d3.easeLinear);
             thisNode.transition(t)
-                .attr('r',function(d){return d.r})
-//                .style('filter','url(#pause');
+                .attr('r', function (d) {
+                    return d.r
+                })
+            //                .style('filter','url(#pause');
         })
 
 
 
-    this.yearPosition={};
-    for(var year=minYear;year<=maxYear;year++){
-        this.yearPosition[year]=[xScale(year-0.5),xScale(year+0.5)]
+    this.yearPosition = {};
+    for (var year = minYear; year <= maxYear; year++) {
+        this.yearPosition[year] = [xScale(year - 0.5), xScale(year + 0.5)]
     }
 
 }
 
-function yearAxisTransition(start,end,that){
+function yearAxisTransition(start, end, that) {
 
-    var axisSVG=that.axisSVG;
-    var animateMode=that.animateMode;
-    var xScale=that.xScale;
-    var yScale=that.yScale;
-    var minYear=that.minYear;
-    var maxYear=that.maxYear;
-    var transitionFlag=that.transitionFlag;
-    var yearFilter=that.yearFilter;
-//  var len=arguments.length;
+    var axisSVG = that.axisSVG;
+    var animateMode = that.animateMode;
+    var xScale = that.xScale;
+    var yScale = that.yScale;
+    var minYear = that.minYear;
+    var maxYear = that.maxYear;
+    var transitionFlag = that.transitionFlag;
+    var yearFilter = that.yearFilter;
+    //  var len=arguments.length;
     axisSVG.select('#leftAxisCircle')
         .attrs({
-            cx:function(d){
-                if(animateMode==flipBook){
-//                    if(len>0){
-                    d.x=xScale(minYear)
+            cx: function (d) {
+                if (animateMode == flipBook) {
+                    //                    if(len>0){
+                    d.x = xScale(minYear)
                     return xScale(minYear);
-//                    }
-//                    else return d.x;
-                }
-                else{
-                    d.x=xScale(start)
+                    //                    }
+                    //                    else return d.x;
+                } else {
+                    d.x = xScale(start)
                     return xScale(start)
                 }
             }
         })
         .transition()
         .ease(d3.easeLinear)
-        .duration(function(d){
-            if(animateMode==flipBook){
-//                if(len>0){
-                    return (end-start)*2000;
-//                }
-//                else return d.duration;
-            }
-            else{
-                return (end-start)*2000;
+        .duration(function (d) {
+            if (animateMode == flipBook) {
+                //                if(len>0){
+                return (end - start) * 2000;
+                //                }
+                //                else return d.duration;
+            } else {
+                return (end - start) * 2000;
             }
 
         })
         .attrs({
-            cx:function(d){
-                if(animateMode==flipBook){
-                    d.x=xScale(minYear)
+            cx: function (d) {
+                if (animateMode == flipBook) {
+                    d.x = xScale(minYear)
                     return xScale(minYear);
-                }
-                else{
-                    d.x=xScale(start)
+                } else {
+                    d.x = xScale(start)
                     return xScale(start)
                 }
             }
         });
     axisSVG.select('#rightAxisCircle')
         .attrs({
-            cx:function(d){
-                if(animateMode==flipBook){
+            cx: function (d) {
+                if (animateMode == flipBook) {
                     d.x = xScale(start);
                     return xScale(start);
-                }
-                else{
+                } else {
                     d.x = xScale(end);
                     return xScale(end)
                 }
@@ -7260,67 +7389,70 @@ function yearAxisTransition(start,end,that){
         })
         .transition()
         .ease(d3.easeLinear)
-        .duration(function(d){
-            return (end-start)*2000;
+        .duration(function (d) {
+            return (end - start) * 2000;
         })
         .attrs({
-            cx:function(d){
+            cx: function (d) {
                 d.x = xScale(end);
                 return xScale(end)
             }
         })
-        .on('end',function(){
+        .on('end', function () {
             console.log(1);
-            transitionFlag=false;
-            yearFilter=[minYear,maxYear];
-            var button=axisSVG.select('.controlButton');
-            if(button.attr('id')=='pause'){
-                var name=button.attr('name');
-                changeFilter(button,name);
+            transitionFlag = false;
+            yearFilter = [minYear, maxYear];
+            var button = axisSVG.select('.controlButton');
+            if (button.attr('id') == 'pause') {
+                var name = button.attr('name');
+                changeFilter(button, name);
             }
         });
 
 }
-function drawNodeYearDataSet(dataSet,pathClass){
-    var axisSVG=this.axisSVG;
-    var svg=this.svg;
-    var xScale=this.xScale;
-    var yScale=this.yScale;
-    function yearPathClick(d){
+
+function drawNodeYearDataSet(dataSet, pathClass) {
+    var axisSVG = this.axisSVG;
+    var svg = this.svg;
+    var xScale = this.xScale;
+    var yScale = this.yScale;
+
+    function yearPathClick(d) {
         axisSVG.selectAll('.subYearPath').remove();
-        var thisPath=d3.select(this);
-        var thisClass=thisPath.attr('class');
-        var year=thisPath.attr('year');
-        var nodes=d3.selectAll('.node');
+        var thisPath = d3.select(this);
+        var thisClass = thisPath.attr('class');
+        var year = thisPath.attr('year');
+        var nodes = d3.selectAll('.node');
 
-        if(thisClass=='yearPath clicked'){
+        if (thisClass == 'yearPath clicked') {
 
-            nodes.each(function(){
-                var thisNode=d3.select(this);
-                var years=thisNode.attr('year').split('_');
-                var yearsDic={};
-                var sum=0
-                for(var i=0;i<years.length;i++){
+            nodes.each(function () {
+                var thisNode = d3.select(this);
+                var years = thisNode.attr('year').split('_');
+                var yearsDic = {};
+                var sum = 0
+                for (var i = 0; i < years.length; i++) {
                     var nodeYear = years[i].split('-')[0];
-                    var num= parseInt(years[i].split('-')[1]);
-                    yearsDic[nodeYear]=num;
-                    if(num)sum+=num
+                    var num = parseInt(years[i].split('-')[1]);
+                    yearsDic[nodeYear] = num;
+                    if (num) sum += num
                 }
-                if(year in yearsDic){
-                    var ratio=yearsDic[year]/sum;
-                    var id=thisNode.attr('id').split('e')[1];
-                    thisNode.style('fill',function(d){return "url(#linearGradient"+ d.id+")"});
-                    var linearGradient=svg.select('#linearGradient'+id)
+                if (year in yearsDic) {
+                    var ratio = yearsDic[year] / sum;
+                    var id = thisNode.attr('id').split('e')[1];
+                    thisNode.style('fill', function (d) {
+                        return "url(#linearGradient" + d.id + ")"
+                    });
+                    var linearGradient = svg.select('#linearGradient' + id)
                     linearGradient.selectAll('stop')
-                        .each(function(d,i){
-                            var thisStop=d3.select(this);
-                            var curOffset=parseFloat(thisStop.attr('offset'));
-                            curOffset-=ratio;
-                            if(i==1){
-                                thisStop.attr('offset',curOffset);
-                            }
-                            else if(i==2){
-                                thisStop.attr('offset',curOffset);
+                        .each(function (d, i) {
+                            var thisStop = d3.select(this);
+                            var curOffset = parseFloat(thisStop.attr('offset'));
+                            curOffset -= ratio;
+                            if (i == 1) {
+                                thisStop.attr('offset', curOffset);
+                            } else if (i == 2) {
+                                thisStop.attr('offset', curOffset);
                             }
                         })
 
@@ -7329,38 +7461,36 @@ function drawNodeYearDataSet(dataSet,pathClass){
 
 
             });
-            thisPath.attr('class','yearPath');
-            thisPath.style('fill',color.yearPathColor);
-//                    thisPath.style('stroke','none');
+            thisPath.attr('class', 'yearPath');
+            thisPath.style('fill', color.yearPathColor);
+            //                    thisPath.style('stroke','none');
 
 
-        }
-        else if(thisClass=='yearPath'){
-            nodes.each(function(){
-                var thisNode=d3.select(this);
-                var years=thisNode.attr('year').split('_');
-                var yearsDic={};
-                var sum=0
-                for(var i=0;i<years.length;i++){
+        } else if (thisClass == 'yearPath') {
+            nodes.each(function () {
+                var thisNode = d3.select(this);
+                var years = thisNode.attr('year').split('_');
+                var yearsDic = {};
+                var sum = 0
+                for (var i = 0; i < years.length; i++) {
                     var nodeYear = years[i].split('-')[0];
-                    var num= parseInt(years[i].split('-')[1]);
-                    yearsDic[nodeYear]=num;
-                    if(num)sum+=num
+                    var num = parseInt(years[i].split('-')[1]);
+                    yearsDic[nodeYear] = num;
+                    if (num) sum += num
                 }
-                if(year in yearsDic){
-                    var ratio=yearsDic[year]/sum;
-                    var id=thisNode.attr('id').split('e')[1];
-                    var linearGradient=svg.select('#linearGradient'+id)
+                if (year in yearsDic) {
+                    var ratio = yearsDic[year] / sum;
+                    var id = thisNode.attr('id').split('e')[1];
+                    var linearGradient = svg.select('#linearGradient' + id)
                     linearGradient.selectAll('stop')
-                        .each(function(d,i){
-                            var thisStop=d3.select(this);
-                            var curOffset=parseFloat(thisStop.attr('offset'));
-                            curOffset+=ratio;
-                            if(i==1){
-                                thisStop.attr('offset',curOffset);
-                            }
-                            else if(i==2){
-                                thisStop.attr('offset',curOffset);
+                        .each(function (d, i) {
+                            var thisStop = d3.select(this);
+                            var curOffset = parseFloat(thisStop.attr('offset'));
+                            curOffset += ratio;
+                            if (i == 1) {
+                                thisStop.attr('offset', curOffset);
+                            } else if (i == 2) {
+                                thisStop.attr('offset', curOffset);
                             }
                         })
 
@@ -7369,32 +7499,35 @@ function drawNodeYearDataSet(dataSet,pathClass){
 
 
             });
-            thisPath.attr('class','yearPath clicked');
-            thisPath.style('fill',color.yearPathHighlightColor);
-//                    thisPath.style('stroke',color.yearPathHighLightStroke);
+            thisPath.attr('class', 'yearPath clicked');
+            thisPath.style('fill', color.yearPathHighlightColor);
+            //                    thisPath.style('stroke',color.yearPathHighLightStroke);
         }
     }
-    var subYearPathDataList=[[]];
-    var yearPathDataList=[];
-    var k=0;
-    for(var i=0;i<dataSet.length-1;i++){
-        var yearPathData={};
-        var p1=[xScale(dataSet[i][0])-1,yScale(0)];
-        var p2=[xScale(dataSet[i][0])-1,yScale(dataSet[i][1])];
-        var p3=[xScale(dataSet[i+1][0]),yScale(dataSet[i][1])];
-        var p4=[xScale(dataSet[i+1][0]),yScale(0)];
+    var subYearPathDataList = [
+        []
+    ];
+    var yearPathDataList = [];
+    var k = 0;
+    for (var i = 0; i < dataSet.length - 1; i++) {
+        var yearPathData = {};
+        var p1 = [xScale(dataSet[i][0]) - 1, yScale(0)];
+        var p2 = [xScale(dataSet[i][0]) - 1, yScale(dataSet[i][1])];
+        var p3 = [xScale(dataSet[i + 1][0]), yScale(dataSet[i][1])];
+        var p4 = [xScale(dataSet[i + 1][0]), yScale(0)];
 
-        if(pathClass=='subYearPath'){
-            if(dataSet[i][1]!=0){
-                subYearPathDataList[k].push({i:i, data:dataSet[i]});
+        if (pathClass == 'subYearPath') {
+            if (dataSet[i][1] != 0) {
+                subYearPathDataList[k].push({
+                    i: i,
+                    data: dataSet[i]
+                });
+            } else {
+                k += 1;
+                subYearPathDataList[k] = [];
             }
-            else{
-                k+=1;
-                subYearPathDataList[k]=[];
-            }
-        }
-        else{
-            yearPathData.d='M'+p1[0]+','+p1[1]+' L'+p2[0]+','+p2[1] +' '+p3[0]+','+p3[1]+' '+p4[0]+','+p4[1];
+        } else {
+            yearPathData.d = 'M' + p1[0] + ',' + p1[1] + ' L' + p2[0] + ',' + p2[1] + ' ' + p3[0] + ',' + p3[1] + ' ' + p4[0] + ',' + p4[1];
             yearPathData.year = dataSet[i][0];
             yearPathData.class = pathClass;
             yearPathData.fill = color.yearPathColor;
@@ -7405,119 +7538,130 @@ function drawNodeYearDataSet(dataSet,pathClass){
         var d;
 
     }
-//    console.log(subYearPathDataList);
-    var finalSubYearPathDataList=[];
-    for(var i=0;i<subYearPathDataList.length;i++){
-        var len=subYearPathDataList[i].length
-        if(len>0) {
+    //    console.log(subYearPathDataList);
+    var finalSubYearPathDataList = [];
+    for (var i = 0; i < subYearPathDataList.length; i++) {
+        var len = subYearPathDataList[i].length
+        if (len > 0) {
             var start = subYearPathDataList[i][0].i - 1;
             var end = subYearPathDataList[i][len - 1].i + 1;
-            if (dataSet[start])subYearPathDataList[i] = [{data:dataSet[start],i:start}].concat(subYearPathDataList[i]);
-            if (dataSet[end])subYearPathDataList[i] = subYearPathDataList[i].concat([{data:dataSet[end],i:end}]);
+            if (dataSet[start]) subYearPathDataList[i] = [{
+                data: dataSet[start],
+                i: start
+            }].concat(subYearPathDataList[i]);
+            if (dataSet[end]) subYearPathDataList[i] = subYearPathDataList[i].concat([{
+                data: dataSet[end],
+                i: end
+            }]);
             finalSubYearPathDataList.push(subYearPathDataList[i]);
         }
     }
-    for(var i=0;i<finalSubYearPathDataList.length;i++){
-        if(finalSubYearPathDataList[i][0].i==0){
-            finalSubYearPathDataList[i]=[{i:0,data:[finalSubYearPathDataList[i][0].data[0],0]}].concat(finalSubYearPathDataList[i])
+    for (var i = 0; i < finalSubYearPathDataList.length; i++) {
+        if (finalSubYearPathDataList[i][0].i == 0) {
+            finalSubYearPathDataList[i] = [{
+                i: 0,
+                data: [finalSubYearPathDataList[i][0].data[0], 0]
+            }].concat(finalSubYearPathDataList[i])
         }
-        if(finalSubYearPathDataList[i][finalSubYearPathDataList[i].length-1].i==dataSet.length-1){
-            finalSubYearPathDataList[i]=finalSubYearPathDataList[i].concat([{i:dataSet.length-1,data:[finalSubYearPathDataList[i][finalSubYearPathDataList[i].length-1].data[0],0]}])
+        if (finalSubYearPathDataList[i][finalSubYearPathDataList[i].length - 1].i == dataSet.length - 1) {
+            finalSubYearPathDataList[i] = finalSubYearPathDataList[i].concat([{
+                i: dataSet.length - 1,
+                data: [finalSubYearPathDataList[i][finalSubYearPathDataList[i].length - 1].data[0], 0]
+            }])
         }
     }
-    for(var i=0;i<finalSubYearPathDataList.length;i++){
-        for(var j=0;j<finalSubYearPathDataList[i].length;j++){
-            var p=[xScale(finalSubYearPathDataList[i][j].data[0].toInt()),yScale(finalSubYearPathDataList[i][j].data[1])]
-            finalSubYearPathDataList[i][j]=p;
+    for (var i = 0; i < finalSubYearPathDataList.length; i++) {
+        for (var j = 0; j < finalSubYearPathDataList[i].length; j++) {
+            var p = [xScale(finalSubYearPathDataList[i][j].data[0].toInt()), yScale(finalSubYearPathDataList[i][j].data[1])]
+            finalSubYearPathDataList[i][j] = p;
         }
     }
-    for(var i=0;i<finalSubYearPathDataList.length;i++){
-        var subYear={};
+    for (var i = 0; i < finalSubYearPathDataList.length; i++) {
+        var subYear = {};
         subYear.class = 'subYearPath';
         subYear.fill = color.yearPathHighlightColor;
         subYear.stroke = color.yearPathHighLightStroke;
-        subYear.strokeWidth=2+px;
+        subYear.strokeWidth = 2 + px;
         subYear.d = '';
-        if(finalSubYearPathDataList[i].length>=3){
-            var tmp=finalSubYearPathDataList[i];
-            subYear.d+='M'+tmp[0][0]+','+tmp[0][1]+'L'+tmp[1][0]+','+tmp[0][1]+','+tmp[1][0]+','+tmp[1][1];
-            for(var j=1;j<tmp.length-1;j++){
-                subYear.d+=','+tmp[j][0]+','+tmp[j][1]+','+tmp[j+1][0]+','+tmp[j][1]+','+tmp[j+1][0]+','+tmp[j+1][1];
+        if (finalSubYearPathDataList[i].length >= 3) {
+            var tmp = finalSubYearPathDataList[i];
+            subYear.d += 'M' + tmp[0][0] + ',' + tmp[0][1] + 'L' + tmp[1][0] + ',' + tmp[0][1] + ',' + tmp[1][0] + ',' + tmp[1][1];
+            for (var j = 1; j < tmp.length - 1; j++) {
+                subYear.d += ',' + tmp[j][0] + ',' + tmp[j][1] + ',' + tmp[j + 1][0] + ',' + tmp[j][1] + ',' + tmp[j + 1][0] + ',' + tmp[j + 1][1];
             }
         }
-        finalSubYearPathDataList[i]=subYear;
+        finalSubYearPathDataList[i] = subYear;
     }
-//    console.log(finalSubYearPathDataList)
+    //    console.log(finalSubYearPathDataList)
 
-    if(pathClass == 'subYearPath'){
+    if (pathClass == 'subYearPath') {
         axisSVG.selectAll('whatever')
             .data(finalSubYearPathDataList)
             .enter()
             .append('path')
-            .each(function(d){
+            .each(function (d) {
                 d3.select(this)
                     .attrs({
                         d: d.d,
                         class: d.class
                     })
                     .styles({
-                        fill:d.fill,
-                        stroke:d.stroke,
+                        fill: d.fill,
+                        stroke: d.stroke,
                         'stroke-width': d.strokeWidth
                     })
             })
-    }
-    else{
+    } else {
         axisSVG.selectAll('whatever')
             .data(yearPathDataList)
             .enter()
             .append('path')
-            .each(function(d){
+            .each(function (d) {
                 d3.select(this)
                     .attrs({
-                        d:d.d,
-                        year:d.year,
-                        class:d.class
+                        d: d.d,
+                        year: d.year,
+                        class: d.class
                     })
                     .styles({
                         fill: d.fill
                     })
-                    .on('click',yearPathClick)
+                    .on('click', yearPathClick)
             })
     }
-//    axisSVG.append('path')
-//        .attr('d',d)
-//        .attr('year',dataSet[i][0])
-//        .attr('class',pathClass)
-//        .style('fill',function(d){
-//            if(pathClass=='yearPath'){
-//                return color.yearPathColor;
-//            }
-//            else if(pathClass=='subYearPath'){
-//                return color.yearPathHighlightColor;
-//            }
-//        })
-//        .style('stroke',function(d){
-//            if(pathClass=='yearPath'){
-//                return 'none';
-//            }
-//            else if(pathClass=='subYearPath'){
-//                return color.yearPathHighLightStroke;
-//            }
-//        })
-//        .style('stroke-width','3px')
-//        .on('click',yearPathClick)
-    for(var i=0;i<dataSet.length;i++){
-        if(pathClass!='subYearPath'){
+    //    axisSVG.append('path')
+    //        .attr('d',d)
+    //        .attr('year',dataSet[i][0])
+    //        .attr('class',pathClass)
+    //        .style('fill',function(d){
+    //            if(pathClass=='yearPath'){
+    //                return color.yearPathColor;
+    //            }
+    //            else if(pathClass=='subYearPath'){
+    //                return color.yearPathHighlightColor;
+    //            }
+    //        })
+    //        .style('stroke',function(d){
+    //            if(pathClass=='yearPath'){
+    //                return 'none';
+    //            }
+    //            else if(pathClass=='subYearPath'){
+    //                return color.yearPathHighLightStroke;
+    //            }
+    //        })
+    //        .style('stroke-width','3px')
+    //        .on('click',yearPathClick)
+    for (var i = 0; i < dataSet.length; i++) {
+        if (pathClass != 'subYearPath') {
             axisSVG.append('text')
                 .attrs({
-                    x:(xScale(dataSet[i][0])+xScale(dataSet[i][0]+1))/2-String(dataSet[i][1]).visualLength()/2+3,
-                    y:yScale(dataSet[i][1])-2
+                    x: (xScale(dataSet[i][0]) + xScale(dataSet[i][0] + 1)) / 2 - String(dataSet[i][1]).visualLength() / 2 + 3,
+                    y: yScale(dataSet[i][1]) - 2
                 })
                 .styles({
-                    'font-size':9+px,
-                    'font-family':'Arial',
-                    'color':color.yearPathHighlightColor
+                    'font-size': 9 + px,
+                    'font-family': 'Arial',
+                    'color': color.yearPathHighlightColor
                 })
                 .html(dataSet[i][1]);
         }
@@ -7531,6 +7675,7 @@ function axisLayout(d) {
 
     this.drawYearAxis(d.nodeYearData);
 }
+
 function getMulEdgeSourceTargetDic(edges) {
     var dic = {};
     for (var i = 0; i < edges.length; i++) {
@@ -7540,19 +7685,18 @@ function getMulEdgeSourceTargetDic(edges) {
         var key = source + '_' + target;
         if (dic[key]) {
             dic[key].push(edge);
-        }
-        else {
+        } else {
             dic[key] = [edge];
         }
     }
     return dic;
 }
 
-function adjustLayer(k,t) {
+function adjustLayer(k, t) {
     currentLayer.background.style('cursor', '-webkit-grabbing');
     var svg = currentLayer.svg;
     var layer = svg.select('.svgDrawer');
-    t=t||'translate('+0+','+0+')scale('+width/svgWidth+')';
+    t = t || 'translate(' + 0 + ',' + 0 + ')scale(' + width / svgWidth + ')';
     layer.attr("transform", t);
     currentLayer.zoomK = k;
 
@@ -7588,7 +7732,7 @@ function adjustLayer(k,t) {
             var prefix = indexStr.split('_')[0];
             var index = indexStr.split('_')[1];
             thisLabel.attrs({
-                y: d.y + d[prefix + 'Y'][index] / initDMax * (dMax+dMin-8) / k
+                y: d.y + d[prefix + 'Y'][index] / initDMax * (dMax + dMin - 8) / k
             });
         });
     layer.selectAll('image')
@@ -7619,8 +7763,9 @@ function adjustLayer(k,t) {
 
 function graphZoom() {
     var t = d3.event.transform;
-    adjustLayer(t.k,t);
+    adjustLayer(t.k, t);
 }
+
 function layout(optionNumber, doTransition, transitionType, d) {
     var that = this;
     var zoom = d3.zoom()
@@ -7645,16 +7790,17 @@ function layout(optionNumber, doTransition, transitionType, d) {
     this.currentData = d;
     this.currentEdgeSourceTargetDic = getMulEdgeSourceTargetDic(d.edge);
     this.getRelation(d);
-    if (!d.keepAll)this.removeSVGElements();
+    if (!d.keepAll) this.removeSVGElements();
     this.drawBackgroundYear(doTransition);
     this.drawEdges(optionNumber, doTransition, transitionType, d);
     this.drawLabels(optionNumber, doTransition, transitionType, d);
     this.drawNodes(optionNumber, doTransition, transitionType, d);
-//    drawSelfEdge(optionNumber,doTransition,doIncremental,d);
+    //    drawSelfEdge(optionNumber,doTransition,doIncremental,d);
     this.drawSize(optionNumber, doTransition, transitionType, d);
-//    removeDuplicationLabels(d.node);
+    //    removeDuplicationLabels(d.node);
     this.drawLegends();
 }
+
 function nodePositionToInt(d) {
     var nodes = d.node;
     var edges = d.edge;
@@ -7672,6 +7818,7 @@ function nodePositionToInt(d) {
     //})
 
 }
+
 function pathData(d, that, zoomK) {
     var zoom = zoomK || 1;
     var sizeScale = that.sizeScale;
@@ -7687,212 +7834,207 @@ function pathData(d, that, zoomK) {
     var method = that.method;
     if (d.isNontreeEdge) {
         d.type = 'L';
-    }
-    else {
+    } else {
         d.type = 'curveMonotoneX';
     }
     var flow = d.flow;
     switch (d.type) {
         case 'L':
-        {
-            var x1, y1, x2, y2, r1, r2, dis;
-            var len = p.length;
-            len = len - 1;
-            dis = distance(p[0].x, p[0].y, p[len].x, p[len].y);
-            r1 = sizeScale.sizeScale(p[0].size);
-            r2 = sizeScale.sizeScale(p[len].size);
+            {
+                var x1, y1, x2, y2, r1, r2, dis;
+                var len = p.length;
+                len = len - 1;
+                dis = distance(p[0].x, p[0].y, p[len].x, p[len].y);
+                r1 = sizeScale.sizeScale(p[0].size);
+                r2 = sizeScale.sizeScale(p[len].size);
 
-            x1 = getstart(p[0].x, p[len].x, r1, dis);
-            y1 = getstart(p[0].y, p[len].y, r1, dis);
-            x2 = getend(p[len].x, p[0].x, r2, dis);
-            y2 = getend(p[len].y, p[0].y, r2, dis);
-            return [
-                'M', p[0].x, ' ', p[0].y,
-                //' ', (p[0].x+ p[len].x)/2, ' ', (p[0].y+ p[len].y)/2,
-                'L', p[len].x, ' ', p[len].y
-            ].join('');
-            //return [
-            //    'M', x1, ' ', y1,
-            //    'L', x2, ' ', y2
-            //].join('');
-        }
+                x1 = getstart(p[0].x, p[len].x, r1, dis);
+                y1 = getstart(p[0].y, p[len].y, r1, dis);
+                x2 = getend(p[len].x, p[0].x, r2, dis);
+                y2 = getend(p[len].y, p[0].y, r2, dis);
+                return [
+                    'M', p[0].x, ' ', p[0].y,
+                    //' ', (p[0].x+ p[len].x)/2, ' ', (p[0].y+ p[len].y)/2,
+                    'L', p[len].x, ' ', p[len].y
+                ].join('');
+                //return [
+                //    'M', x1, ' ', y1,
+                //    'L', x2, ' ', y2
+                //].join('');
+            }
         case 'curveMonotoneX':
-        {
-            var pathD = 'M';
-            var target = nodes[d.target];
-            var targetRadius = sizeScale.sizeScale(target.size);
-            var newPathNodeList = [];
-            var regStr;
+            {
+                var pathD = 'M';
+                var target = nodes[d.target];
+                var targetRadius = sizeScale.sizeScale(target.size);
+                var newPathNodeList = [];
+                var regStr;
 
-            function drawTreeEdge() {
-                var nodeSet = d3.set();
-                var key = d.source + '_' + d.target + '_background';
-                nodeSet.add(d.source);
-                nodeSet.add(d.target);
-                d.pathNodeList.forEach(function (nodeId) {
-                    var node = nodes[nodeId]
-                    if (node.id == d.source) {
-                        //newPathNodeList.push(node.move(node,0, node.edgeShiftDic[key].shiftIn));
-                        newPathNodeList.push(node.move(node, 0, node.edgeShiftDic[key].shift / zoom));
-                        if (node.cp1) {
-                            var cp = new Point(node.cp1.x, node.cp1.y);
-                            newPathNodeList.push(cp.move(0, node.edgeShiftDic[key].shift / zoom));
-                            newPathNodeList.push(cp.move(-1 / zoom, node.edgeShiftDic[key].shift / zoom));
+                function drawTreeEdge() {
+                    var nodeSet = d3.set();
+                    var key = d.source + '_' + d.target + '_background';
+                    nodeSet.add(d.source);
+                    nodeSet.add(d.target);
+                    d.pathNodeList.forEach(function (nodeId) {
+                        var node = nodes[nodeId]
+                        if (node.id == d.source) {
+                            //newPathNodeList.push(node.move(node,0, node.edgeShiftDic[key].shiftIn));
+                            newPathNodeList.push(node.move(node, 0, node.edgeShiftDic[key].shift / zoom));
+                            if (node.cp1) {
+                                var cp = new Point(node.cp1.x, node.cp1.y);
+                                newPathNodeList.push(cp.move(0, node.edgeShiftDic[key].shift / zoom));
+                                newPathNodeList.push(cp.move(-1 / zoom, node.edgeShiftDic[key].shift / zoom));
+                            }
+                        } else {
+                            newPathNodeList.push(node);
+                            if (node.cp1) {
+                                var cp = new Point(node.cp1.x, node.cp1.y);
+                                newPathNodeList.push(cp);
+                                newPathNodeList.push(cp.move(-1 / zoom, 0));
+                            }
                         }
-                    }
-                    else {
-                        newPathNodeList.push(node);
-                        if (node.cp1) {
-                            var cp = new Point(node.cp1.x, node.cp1.y);
-                            newPathNodeList.push(cp);
-                            newPathNodeList.push(cp.move(-1 / zoom, 0));
-                        }
-                    }
-                });
-                var source = nodes[d.pathNodeDic[d.source]];
-                var target = nodes[d.pathNodeDic[d.target]];
-                if (nodeSet.has(d.source)) {
-                    source = source.move(source, 0, source.edgeShiftDic[key].shift / zoom);
-                }
-                if (nodeSet.has(d.target)) {
-                    target = target.move(target, 0, target.edgeShiftDic[key].shift / zoom);
-                }
-                return regStr = source.x + "," + source.y + "(.*)" + target.x + "," + target.y;
-
-            }
-
-            function drawRecoveredTreeEdge() {
-                var nodeSet = d3.set();
-                var key = d.source + '_' + d.target;
-                d.pathNodeList.forEach(function (node) {
-                    nodeSet.add(node.id);
-                });
-                d.longPathNodes.forEach(function (node) {
-                    if (nodeSet.has(node.id)) {
-                        newPathNodeList.push(node.move(node, 0, node.edgeShiftDic[key].shiftOut));
-                        if (node.cp1) {
-                            var cp = new Point(node.cp1.x, node.cp1.y);
-                            newPathNodeList.push(cp.move(0, node.edgeShiftDic[key].shiftOut));
-                            newPathNodeList.push(cp.move(-1, node.edgeShiftDic[key].shiftOut));
-                        }
-                    }
-                    else {
-                        newPathNodeList.push(node);
-                        if (node.cp1) {
-                            var cp = new Point(node.cp1.x, node.cp1.y);
-                            newPathNodeList.push(cp);
-                            newPathNodeList.push(cp.move(-1, 0));
-                        }
-                    }
-                });
-                var source = d.pathNodeDic[d.source];
-                var target = d.pathNodeDic[d.target];
-                if (nodeSet.has(d.source)) {
-                    source = source.move(source, 0, source.edgeShiftDic[key].shiftOut);
-                }
-                if (nodeSet.has(d.target)) {
-                    target = target.move(target, 0, target.edgeShiftDic[key].shiftOut);
-                }
-                return regStr = source.x + "," + source.y + "(.*)" + target.x + "," + target.y;
-
-            }
-
-            function drawForegroundEdges() {
-                var shift;
-                var sourceShift = 0;
-                var targetShift = 0;
-                for (var i = 0; i < d.longPathNodes.length; i++) {
-                    var p = nodes[d.longPathNodes[i]];
-                    if (p.id in d.nodeShiftDic) {
-                        shift = d.nodeShiftDic[p.id];
-                    }
-                    else {
-                        shift = 0;
-                    }
-                    newPathNodeList.push(p.move(p, 0, shift / zoom));
-                    if (p.cp1) {
-                        var cp = new Point(p.cp1.x, p.cp1.y);
-                        newPathNodeList.push(cp.move(0, shift / zoom));
-                        newPathNodeList.push(cp.move(-1, shift / zoom));
-                    }
-                }
-
-
-                var len = d.pathNodeList.length;
-                //var sourcePartKey = d.pathNodeList[0].id + '_' + d.pathNodeList[1].id;
-                //var targetPartKey = d.pathNodeList[len - 2].id + '_' + d.pathNodeList[len - 1].id;
-                var sourcePartKey = d.pathNodeList[0] + '_' + d.pathNodeList[1];
-                var targetPartKey = d.pathNodeList[len - 2] + '_' + d.pathNodeList[len - 1];
-
-                var source = nodes[d.pathNodeDic[d.source]];
-                var target = nodes[d.pathNodeDic[d.target]];
-
-                //if (sourcePartKey in d.shiftDic) {
-                source = source.move(source, 0, d.nodeShiftDic[d.source] / zoom);
-                //}
-                //if (targetPartKey in d.shiftDic) {
-                target = target.move(target, 0, d.nodeShiftDic[d.target] / zoom);
-                //}
-                return regStr = source.x + "," + source.y + "(.*)" + target.x + "," + target.y;
-
-            }
-
-            if (d.isBackgroundEdge) {
-                regStr = drawTreeEdge();
-            }
-            else if (d.isForegroundTargetEdge) {
-                regStr = drawForegroundEdges();
-            }
-            else if (d.isForegroundSourceEdge) {
-                regStr = drawForegroundEdges();
-            }
-            //else if(d.isForegroundEdge){
-            //    console.log(d);
-            //    regStr=drawForegroundEdges();
-            //}
-            if (newPathNodeList.length > 0) {
-                var reg = new RegExp(regStr);
-                var res;
-
-                svg.append('path')
-                    .attr('class', 'monotoneX')
-                    .datum(newPathNodeList)
-                    .attr('d', d3.line()
-                        .curve(d3.curveMonotoneX)
-                        .x(function (d) {
-                            return d.x;
-                        })
-                        .y(function (d) {
-                            return d.y;
-                        })
-                    )
-                    .styles({
-                        'stroke': 'yellow',
-                        'stroke-width': '2px',
-                        'fill': 'none'
-                    })
-                    .each(function () {
-                        res = reg.exec(d3.select(this).attr('d'))[0];
-                    })
-                    .remove();
-                pathD += res;
-                var tmpPath = svg.append('path')
-                    .attr('d', pathD)
-                    .style('stroke', 'none')
-                    .style('fill', 'none')
-                    .each(function () {
-                        var thisEdge = d3.select(this);
-                        var totalLength = thisEdge.node().getTotalLength();
-                        var asspoint = thisEdge.node().getPointAtLength((totalLength * (1 - targetRadius / totalLength) - 11));
-                        var point = thisEdge.node().getPointAtLength((totalLength * (1 - targetRadius / totalLength) - 10));
-                        pathD += 'M' + asspoint.x + ' ' + asspoint.y + 'M' + point.x + ' ' + point.y
                     });
-                tmpPath.remove();
+                    var source = nodes[d.pathNodeDic[d.source]];
+                    var target = nodes[d.pathNodeDic[d.target]];
+                    if (nodeSet.has(d.source)) {
+                        source = source.move(source, 0, source.edgeShiftDic[key].shift / zoom);
+                    }
+                    if (nodeSet.has(d.target)) {
+                        target = target.move(target, 0, target.edgeShiftDic[key].shift / zoom);
+                    }
+                    return regStr = source.x + "," + source.y + "(.*)" + target.x + "," + target.y;
+
+                }
+
+                function drawRecoveredTreeEdge() {
+                    var nodeSet = d3.set();
+                    var key = d.source + '_' + d.target;
+                    d.pathNodeList.forEach(function (node) {
+                        nodeSet.add(node.id);
+                    });
+                    d.longPathNodes.forEach(function (node) {
+                        if (nodeSet.has(node.id)) {
+                            newPathNodeList.push(node.move(node, 0, node.edgeShiftDic[key].shiftOut));
+                            if (node.cp1) {
+                                var cp = new Point(node.cp1.x, node.cp1.y);
+                                newPathNodeList.push(cp.move(0, node.edgeShiftDic[key].shiftOut));
+                                newPathNodeList.push(cp.move(-1, node.edgeShiftDic[key].shiftOut));
+                            }
+                        } else {
+                            newPathNodeList.push(node);
+                            if (node.cp1) {
+                                var cp = new Point(node.cp1.x, node.cp1.y);
+                                newPathNodeList.push(cp);
+                                newPathNodeList.push(cp.move(-1, 0));
+                            }
+                        }
+                    });
+                    var source = d.pathNodeDic[d.source];
+                    var target = d.pathNodeDic[d.target];
+                    if (nodeSet.has(d.source)) {
+                        source = source.move(source, 0, source.edgeShiftDic[key].shiftOut);
+                    }
+                    if (nodeSet.has(d.target)) {
+                        target = target.move(target, 0, target.edgeShiftDic[key].shiftOut);
+                    }
+                    return regStr = source.x + "," + source.y + "(.*)" + target.x + "," + target.y;
+
+                }
+
+                function drawForegroundEdges() {
+                    var shift;
+                    var sourceShift = 0;
+                    var targetShift = 0;
+                    for (var i = 0; i < d.longPathNodes.length; i++) {
+                        var p = nodes[d.longPathNodes[i]];
+                        if (p.id in d.nodeShiftDic) {
+                            shift = d.nodeShiftDic[p.id];
+                        } else {
+                            shift = 0;
+                        }
+                        newPathNodeList.push(p.move(p, 0, shift / zoom));
+                        if (p.cp1) {
+                            var cp = new Point(p.cp1.x, p.cp1.y);
+                            newPathNodeList.push(cp.move(0, shift / zoom));
+                            newPathNodeList.push(cp.move(-1, shift / zoom));
+                        }
+                    }
+
+
+                    var len = d.pathNodeList.length;
+                    //var sourcePartKey = d.pathNodeList[0].id + '_' + d.pathNodeList[1].id;
+                    //var targetPartKey = d.pathNodeList[len - 2].id + '_' + d.pathNodeList[len - 1].id;
+                    var sourcePartKey = d.pathNodeList[0] + '_' + d.pathNodeList[1];
+                    var targetPartKey = d.pathNodeList[len - 2] + '_' + d.pathNodeList[len - 1];
+
+                    var source = nodes[d.pathNodeDic[d.source]];
+                    var target = nodes[d.pathNodeDic[d.target]];
+
+                    //if (sourcePartKey in d.shiftDic) {
+                    source = source.move(source, 0, d.nodeShiftDic[d.source] / zoom);
+                    //}
+                    //if (targetPartKey in d.shiftDic) {
+                    target = target.move(target, 0, d.nodeShiftDic[d.target] / zoom);
+                    //}
+                    return regStr = source.x + "," + source.y + "(.*)" + target.x + "," + target.y;
+
+                }
+
+                if (d.isBackgroundEdge) {
+                    regStr = drawTreeEdge();
+                } else if (d.isForegroundTargetEdge) {
+                    regStr = drawForegroundEdges();
+                } else if (d.isForegroundSourceEdge) {
+                    regStr = drawForegroundEdges();
+                }
+                //else if(d.isForegroundEdge){
+                //    console.log(d);
+                //    regStr=drawForegroundEdges();
+                //}
+                if (newPathNodeList.length > 0) {
+                    var reg = new RegExp(regStr);
+                    var res;
+
+                    svg.append('path')
+                        .attr('class', 'monotoneX')
+                        .datum(newPathNodeList)
+                        .attr('d', d3.line()
+                            .curve(d3.curveMonotoneX)
+                            .x(function (d) {
+                                return d.x;
+                            })
+                            .y(function (d) {
+                                return d.y;
+                            })
+                        )
+                        .styles({
+                            'stroke': 'yellow',
+                            'stroke-width': '2px',
+                            'fill': 'none'
+                        })
+                        .each(function () {
+                            res = reg.exec(d3.select(this).attr('d'))[0];
+                        })
+                        .remove();
+                    pathD += res;
+                    var tmpPath = svg.append('path')
+                        .attr('d', pathD)
+                        .style('stroke', 'none')
+                        .style('fill', 'none')
+                        .each(function () {
+                            var thisEdge = d3.select(this);
+                            var totalLength = thisEdge.node().getTotalLength();
+                            var asspoint = thisEdge.node().getPointAtLength((totalLength * (1 - targetRadius / totalLength) - 11));
+                            var point = thisEdge.node().getPointAtLength((totalLength * (1 - targetRadius / totalLength) - 10));
+                            pathD += 'M' + asspoint.x + ' ' + asspoint.y + 'M' + point.x + ' ' + point.y
+                        });
+                    tmpPath.remove();
+                }
+                return pathD;
             }
-            return pathD;
-        }
     }
 }
+
 function removeDuplicationLabels(nodes) {
     for (var i = 0; i < nodes.length; i++) {
         var id = '#label' + nodes[i].id;
@@ -7905,17 +8047,17 @@ function removeDuplicationLabels(nodes) {
             });
     }
 }
+
 function greyBackground() {
     var svg = this.svg;
     var svg_g = this.svg_g;
-//    drawnodes.selectAll('.node')
-//        .style('fill','lightgrey');
+    //    drawnodes.selectAll('.node')
+    //        .style('fill','lightgrey');
     svg.select('.rectBackground').remove();
     var width = svg.attr('width');
     var height = svg.attr('height');
     //mask设定这么大是因为设置小了在缩放时可能会把后面的漏出来
-    var maskingOutData = [
-        {
+    var maskingOutData = [{
             class: 'outer mask0',
             index: 1,
             x: -5 * width,
@@ -7979,18 +8121,18 @@ function greyBackground() {
                     }
                 })
         });
-//    svg_g.append('rect')
-//        .attrs({
-//            class:'rectBackground',
-//            x:0,
-//            y:0,
-//            width:width,
-//            height:height
-//        })
-//        .styles({
-//            'fill':'rgb(15,40,60)',
-//            'opacity':0.85
-//        });
+    //    svg_g.append('rect')
+    //        .attrs({
+    //            class:'rectBackground',
+    //            x:0,
+    //            y:0,
+    //            width:width,
+    //            height:height
+    //        })
+    //        .styles({
+    //            'fill':'rgb(15,40,60)',
+    //            'opacity':0.85
+    //        });
     svg.selectAll('path').attr('isBackground', 1);
     svg.selectAll('.node').attr('isBackground', 1);
     svg.selectAll('.size').remove();
@@ -7999,20 +8141,20 @@ function greyBackground() {
 
 
 }
+
 function removeSVGElements() {
     var animateMode = this.animateMode;
     var svg_g = this.svg_g;
     if (animateMode == flipBook) {
         svg_g.selectAll('g')
             .each(function (d) {
-                if (d.index > 0)d3.select(this).remove();
+                if (d.index > 0) d3.select(this).remove();
             });
         this.drawnodes = svg_g.select('#nodeG0');
         this.drawedges = svg_g.select('#edgeG0');
         this.drawnodes.selectAll('*').remove();
         this.drawedges.selectAll('*').remove();
-    }
-    else {
+    } else {
         svg_g.select('#nodeG2').remove();
         svg_g.select('#edgeG2').remove();
         this.drawnodes
@@ -8063,11 +8205,10 @@ function removeSVGElements() {
 function drawAuthorInfo() {
     var authorDiv = d3.select('.authorDiv');
     authorDiv.selectAll('div').remove();
-    if (focusedID.split('_').length == 2)var tmpID = focusedID.split('_')[0];
+    if (focusedID.split('_').length == 2) var tmpID = focusedID.split('_')[0];
     if (authorData[tmpID]) {
         var authorInfo = authorData[tmpID];
-    }
-    else {
+    } else {
         var authorInfo = authorData['default'];
     }
     for (var i = 0; i < 2; i++) {
@@ -8127,27 +8268,29 @@ function drawAuthorInfo() {
         for (var key in authorInfo[i]) {
             if (key != 'author' && key != 'title' && key != 'image')
                 authorTextDiv.append('div').attr('class', 'authorNameDiv').append('text')
-                    .styles({
-                        'font-family': 'Microsoft YaHei',
-                        'font-size': function (d) {
-                            return 11 + px;
-                        }
-                    })
-                    .html(function (d) {
-                        return authorInfo[i][key];
-                    })
+                .styles({
+                    'font-family': 'Microsoft YaHei',
+                    'font-size': function (d) {
+                        return 11 + px;
+                    }
+                })
+                .html(function (d) {
+                    return authorInfo[i][key];
+                })
         }
 
     }
 
 }
+
 function getstart(origin1, origin2, r, d) {
     if (d != 0) return origin1 + (r / d) * (origin2 - origin1);
     else return origin1;
 }
+
 function getend(origin1, origin2, r, d) {
     var ratio = r + 13 / d;
-//    if(d!=0) return origin1*ratio+origin2*(1-ratio);
+    //    if(d!=0) return origin1*ratio+origin2*(1-ratio);
     if (d != 0) return origin1 + ((r + 13) / d) * (origin2 - origin1);
     else return origin1;
 }
@@ -8173,6 +8316,7 @@ function findBoxOfPoints(points) {
         height: maxY - minY
     }
 }
+
 function getStrokeWidth(d) {
     var stroke_width;
     var that = d.that;
@@ -8180,8 +8324,7 @@ function getStrokeWidth(d) {
     var weightScale = that.weightScale;
     if (optionNumber.edgeThicknessOption == 1) {
         stroke_width = flowScale(d.flow);
-    }
-    else if (optionNumber.edgeThicknessOption == 0) {
+    } else if (optionNumber.edgeThicknessOption == 0) {
         var weightSum = 0;
         for (var key in d.weight) {
             weightSum += d.weight[key];
@@ -8190,6 +8333,7 @@ function getStrokeWidth(d) {
     }
     return stroke_width;
 }
+
 function drawTitle() {
     d3.selectAll('.title').remove();
 
@@ -8223,6 +8367,7 @@ function SizeScale(maxSize) {
         return r;
     };
 }
+
 function getSelfData(nodes) {
     for (var i = 0; i < nodes.length; i++) {
         if (nodes[i].selfEdge) {
@@ -8240,6 +8385,7 @@ function getSelfData(nodes) {
         }
     }
 }
+
 function selfPathData(x, y, size) {
     var r = sizeScale.sizeScale(size);
     var d = 2;
@@ -8253,19 +8399,19 @@ function selfPathData(x, y, size) {
     var ry = r / 3;
     return 'M' + x1 + ' ' + y1 + 'A' + rx + ' ' + ry + ' ' + 0 + ' ' + 1 + ' ' + 1 + ' ' + x2 + ' ' + y2;
 }
+
 function getSelfEdgeStrokeWidth(d) {
     var stroke_width;
     if (optionNumber.edgeThicknessOption == 1) {
         stroke_width = flowScale(d.selfEdge);
-    }
-    else if (optionNumber.edgeThicknessOption == 0) {
+    } else if (optionNumber.edgeThicknessOption == 0) {
         var weight = parseInt(d.selfEdge * d.size);
         stroke_width = weightScale(weight);
     }
     return stroke_width;
 }
 
-function setTransition(div, location, marginLeft, marginTop, isVertical) {//location should be the final place after transition
+function setTransition(div, location, marginLeft, marginTop, isVertical) { //location should be the final place after transition
     var duration = 500;
     if (isVertical) {
         div.transition()
@@ -8275,8 +8421,7 @@ function setTransition(div, location, marginLeft, marginTop, isVertical) {//loca
                 'margin-left': marginLeft + px,
                 'margin-top': marginTop + px
             })
-    }
-    else {
+    } else {
         div.transition()
             .duration(duration)
             .styles({
@@ -8287,6 +8432,7 @@ function setTransition(div, location, marginLeft, marginTop, isVertical) {//loca
     }
 
 }
+
 function recoverScreen() {
     var duration = 500;
     var bodyDiv = d3.select('.bodyDiv');
@@ -8304,14 +8450,11 @@ function recoverScreen() {
             var originHeight = thisDiv.attr('oldHeight').split('px')[0];
             if (key == 'top') {
                 setTransition(thisDiv, originHeight, 0, 0, true);
-            }
-            else if (key == 'bottom') {
+            } else if (key == 'bottom') {
                 setTransition(thisDiv, originHeight, 0, 0, true);
-            }
-            else if (key = 'left') {
+            } else if (key = 'left') {
                 setTransition(thisDiv, originWidth, 0, 0, false);
-            }
-            else if (key == 'right') {
+            } else if (key == 'right') {
                 setTransition(thisDiv, originWidth, 0, 0, false);
             }
             for (var j = 0, len1 = hiddenElementList.length; j < len1; j++) {
@@ -8335,14 +8478,14 @@ function recoverScreen() {
     var top = middleDiv.select('.topControlDiv');
     top.transition()
         .duration(duration).styles({
-        width: top.attr('oldWidth')
-    });
-//
+            width: top.attr('oldWidth')
+        });
+    //
     var bottom = middleDiv.select('.bottomControlDiv');
     bottom.transition()
         .duration(duration).styles({
-        width: bottom.attr('oldWidth')
-    });
+            width: bottom.attr('oldWidth')
+        });
     var svgHeight = usefulHeight - parseFloat(top.style('height').split('px')[0]) - parseFloat(bottom.style('height').split('px')[0]);
     var graphDiv = middleDiv.select('.graphDiv');
     graphDiv.transition()
@@ -8365,11 +8508,12 @@ function recoverScreen() {
             };
             coordinateOffset(data.postData[focusedID]);
             getCurves(data.postData[focusedID]);
-//
+            //
             layout(optionNumber, true, 'flowMap', data.postData[focusedID]);
         });
 
 }
+
 function getLength(divClass, type) {
     return parseFloat(d3.select('.' + divClass).style(type).split('px')[0]);
 }
@@ -8377,6 +8521,7 @@ function getLength(divClass, type) {
 function fullScreen() {
     var duration = 500
     changeDivList = ['titleDiv', 'middleTopBarDiv', 'authorDiv', 'leftAndTransitionDiv', 'rightDiv', 'middleDiv', 'topControlDiv', 'bottomControlDiv', 'graphDiv'];
+
     function storeOldDivData(div) {
         div.attr('oldWidth', div.style('width'));
         div.attr('oldHeight', div.style('height'));
@@ -8388,7 +8533,7 @@ function fullScreen() {
     svg.attr('oldWidth', svg.attr('width'));
     svg.attr('oldHeight', svg.attr('height'));
 
-//    layout(optionNumber);
+    //    layout(optionNumber);
     var bodyDiv = d3.select('.bodyDiv');
     var hiddenDivList = {
         top: ['titleDiv', 'middleTopBarDiv'],
@@ -8409,14 +8554,11 @@ function fullScreen() {
             var thisDiv = bodyDiv.select('.' + hiddenDivList[key][i]);
             if (key == 'top') {
                 setTransition(thisDiv, 0, 0, 0, true);
-            }
-            else if (key == 'bottom') {
+            } else if (key == 'bottom') {
                 setTransition(thisDiv, 0, leftWidth, topHeight + bottomHeight, true);
-            }
-            else if (key = 'left') {
+            } else if (key = 'left') {
                 setTransition(thisDiv, 0, 0, 0, false);
-            }
-            else if (key == 'right') {
+            } else if (key == 'right') {
                 setTransition(thisDiv, 0, leftWidth + rightWidth, 0, false);
             }
             for (var j = 0, len1 = hiddenElementList.length; j < len1; j++) {
@@ -8441,14 +8583,14 @@ function fullScreen() {
     var top = middleDiv.select('.topControlDiv');
     top.transition()
         .duration(duration).styles({
-        width: usefulWidth + px
-    });
-//
+            width: usefulWidth + px
+        });
+    //
     var bottom = middleDiv.select('.bottomControlDiv');
     bottom.transition()
         .duration(duration).styles({
-        width: usefulWidth + px
-    });
+            width: usefulWidth + px
+        });
     var svgHeight = usefulHeight - parseFloat(top.style('height').split('px')[0]) - parseFloat(bottom.style('height').split('px')[0]);
     middleDiv.select('.graphDiv')
         .transition()
@@ -8471,190 +8613,196 @@ function fullScreen() {
             };
             coordinateOffset(data.postData[focusedID]);
             getCurves(data.postData[focusedID]);
-//
+            //
             layout(optionNumber, true, 'flowMap', data.postData[focusedID]);
         });
 
 }
 
 
-function reLayoutFlowMap(){
-    var focusedID=this.focusedID;
-    var data=this.data;
-    var newEdges=[];
-    var edges=data.postData[focusedID].edge;
-    var treeEdges= data.postData[focusedID].deletedTreeEdges;
-    var nonTreeEdges=data.postData[focusedID].deletedNonTreeEdges;
+function reLayoutFlowMap() {
+    var focusedID = this.focusedID;
+    var data = this.data;
+    var newEdges = [];
+    var edges = data.postData[focusedID].edge;
+    var treeEdges = data.postData[focusedID].deletedTreeEdges;
+    var nonTreeEdges = data.postData[focusedID].deletedNonTreeEdges;
 
 
-    for(var i=0;i<edges.length;i++){
-        if(edges[i].structureType=='originEdge'&&edges[i].ratio==1){
+    for (var i = 0; i < edges.length; i++) {
+        if (edges[i].structureType == 'originEdge' && edges[i].ratio == 1) {
             newEdges.push(edges[i]);
         }
-//        else if(edges[i].structureType=='treeEdge'){
-//            nonTreeEdges.push(edges[i]);
-//        }
-//        else if(edges[i].structureType=='nontreeEdge'){
-//            nonTreeEdges.push(edges[i]);
-//        }
+        //        else if(edges[i].structureType=='treeEdge'){
+        //            nonTreeEdges.push(edges[i]);
+        //        }
+        //        else if(edges[i].structureType=='nontreeEdge'){
+        //            nonTreeEdges.push(edges[i]);
+        //        }
     }
-    data.postData[focusedID].edge=newEdges;
-    this.calculateFlowMap(data.postData[focusedID],true);
+    data.postData[focusedID].edge = newEdges;
+    this.calculateFlowMap(data.postData[focusedID], true);
     this.setInitNodeTransition(data.postData[focusedID]);
     this.setInitEdgeTransition(data.postData[focusedID]);
     this.getRelation(data.postData[focusedID]);
     getCurves(data.postData[focusedID]);
-    if(data.postData[focusedID].subNodeYearData){
-        var subNodeYearData=data.postData[focusedID].subNodeYearData;
-        for (var i=0;i<subNodeYearData.length;i++){
-            subNodeYearData[i][1]=0;
+    if (data.postData[focusedID].subNodeYearData) {
+        var subNodeYearData = data.postData[focusedID].subNodeYearData;
+        for (var i = 0; i < subNodeYearData.length; i++) {
+            subNodeYearData[i][1] = 0;
         }
     }
     this.preLayout(data.postData[focusedID]);
     d3.select('.edgeField').selectAll('path')
-        .each(function(){
-            var thisEdge=d3.select(this);
-            var edgeClass=thisEdge.attr('class');
-            if(parseInt(edgeClass.split('path')[1])>151){
+        .each(function () {
+            var thisEdge = d3.select(this);
+            var edgeClass = thisEdge.attr('class');
+            if (parseInt(edgeClass.split('path')[1]) > 151) {
                 thisEdge.remove()
             }
         });
 }
-function clusterSlider(){
-    var minID=parseInt(focusedID.split('_')[1]);
-    var min=minID/5-1;
-    var max=7;
-    var k=5;
-    $(function(){
+
+function clusterSlider() {
+    var minID = parseInt(focusedID.split('_')[1]);
+    var min = minID / 5 - 1;
+    var max = 7;
+    var k = 5;
+    $(function () {
         $(".clusterSlider").slider({
-            range:'min',
-            max:max,
-            value:min,
-            slide:function(event,ui){
-//                console.log(ui.value);
+            range: 'min',
+            max: max,
+            value: min,
+            slide: function (event, ui) {
+                //                console.log(ui.value);
                 reLayoutByCluster(event, ui);
             }
         });
-        $( ".clusterText" ).html( 5*(parseInt($( ".clusterSlider" ).slider("value"))+1));
+        $(".clusterText").html(5 * (parseInt($(".clusterSlider").slider("value")) + 1));
 
     })
 }
-function reLayoutByCluster(event,ui){
-    var cluster=5*(ui.value+1);
-    selectedCluster=cluster;
-    var urlID=getUrlParam('id');
-    var paperID=parseInt(urlID.split('_')[0]);
-    $( ".clusterText" ).html(cluster);
-    var searchID=String(paperID)+'_'+String(cluster);
+
+function reLayoutByCluster(event, ui) {
+    var cluster = 5 * (ui.value + 1);
+    selectedCluster = cluster;
+    var urlID = getUrlParam('id');
+    var paperID = parseInt(urlID.split('_')[0]);
+    $(".clusterText").html(cluster);
+    var searchID = String(paperID) + '_' + String(cluster);
 
     search(searchID);
 
 }
-function yearSlider(){
-    yearEdgeDic=getYearEdgeRelation();
-    var min=10000;
-    var max=0;
-    for(var key in yearEdgeDic){
-        var year=parseInt(key);
-        if(year>max)max = year;
-        if(year<min)min = year;
+
+function yearSlider() {
+    yearEdgeDic = getYearEdgeRelation();
+    var min = 10000;
+    var max = 0;
+    for (var key in yearEdgeDic) {
+        var year = parseInt(key);
+        if (year > max) max = year;
+        if (year < min) min = year;
     }
-    yearDataHistory={};
-    var key=String(min)+'-'+String(max);
-    yearDataHistory[key]={
-        nodes:copy(nodes),
-        edges:copy(edges)
+    yearDataHistory = {};
+    var key = String(min) + '-' + String(max);
+    yearDataHistory[key] = {
+        nodes: copy(nodes),
+        edges: copy(edges)
     };
-    $(function() {
-        $( "#yearSlider" ).slider({
+    $(function () {
+        $("#yearSlider").slider({
             range: true,
             min: min,
             max: max,
-            values: [ min, max ],
-            slide: function( event, ui ) {
-                reLayoutByYear(event,ui);
+            values: [min, max],
+            slide: function (event, ui) {
+                reLayoutByYear(event, ui);
 
             }
         });
 
-        $( ".yearText" ).html( $( "#yearSlider" ).slider( "values", 0 ) +
-            " - " + $( "#yearSlider" ).slider( "values", 1 ) );
+        $(".yearText").html($("#yearSlider").slider("values", 0) +
+            " - " + $("#yearSlider").slider("values", 1));
     });
 }
-function reLayoutByYear(event, ui){
-    $( ".yearText" ).html(ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-    var yearRange={
-        min:ui.values[0],
-        max:ui.values[1]
+
+function reLayoutByYear(event, ui) {
+    $(".yearText").html(ui.values[0] + " - " + ui.values[1]);
+    var yearRange = {
+        min: ui.values[0],
+        max: ui.values[1]
     };
     dataFilter(yearRange);
 }
-function copy(data){
-    var result=[];
-    for(var i= 0,len=data.length;i<len;i++){
-        var ob={};
-        for(var key in data[i]){
-            ob[key]=data[i][key];
+
+function copy(data) {
+    var result = [];
+    for (var i = 0, len = data.length; i < len; i++) {
+        var ob = {};
+        for (var key in data[i]) {
+            ob[key] = data[i][key];
         }
         result.push(ob);
     }
     return result;
 }
-function dataFilter(yearRange){
-    var yearEdgeDic=getYearEdgeRelation();
+
+function dataFilter(yearRange) {
+    var yearEdgeDic = getYearEdgeRelation();
 
 
 
-    var currentData=data.postData[focusedID];
-    var nodes=currentData.node;
-    var edges=currentData.edge;
+    var currentData = data.postData[focusedID];
+    var nodes = currentData.node;
+    var edges = currentData.edge;
 
 
-//    oldEdges_yearFilter=[];
-//    var newEdges_yearFilter=[];
-//    oldNodes_yearFilter=[];
-//    var newNodes_yearFilter=[];
-//    var nodesArray=[];
-    var min=yearRange.min;
-    var max=yearRange.max;
-    var newEdges=[];
-    var newNodeList=[];
-    var newNodes=[];
-    var nodesKey=[];
-    var nodesKeyDic={};
-    var num=0;
-    for(var i=0;i<edges.length;i++){
-        var edgeYear=edges[i].weight;
-        for(var key in edgeYear){
-            var year=parseInt(key);
-            if(year>=min&&year<=max){
+    //    oldEdges_yearFilter=[];
+    //    var newEdges_yearFilter=[];
+    //    oldNodes_yearFilter=[];
+    //    var newNodes_yearFilter=[];
+    //    var nodesArray=[];
+    var min = yearRange.min;
+    var max = yearRange.max;
+    var newEdges = [];
+    var newNodeList = [];
+    var newNodes = [];
+    var nodesKey = [];
+    var nodesKeyDic = {};
+    var num = 0;
+    for (var i = 0; i < edges.length; i++) {
+        var edgeYear = edges[i].weight;
+        for (var key in edgeYear) {
+            var year = parseInt(key);
+            if (year >= min && year <= max) {
                 //edge and its source and target should be stored
 
-                var newEdge={};
-                var source=edges[i].source;
-                var target=edges[i].target;
-                if(!in_array(source,nodesKey)){
+                var newEdge = {};
+                var source = edges[i].source;
+                var target = edges[i].target;
+                if (!in_array(source, nodesKey)) {
                     nodesKey.push(source);
-                    nodesKeyDic[source]=num;
+                    nodesKeyDic[source] = num;
 
-                    nodes[source].id=nodesKeyDic[source]
+                    nodes[source].id = nodesKeyDic[source]
                     newNodes.push(nodes[source]);
-                    num+=1;
+                    num += 1;
                 }
-                if(!in_array(target,nodesKey)){
+                if (!in_array(target, nodesKey)) {
                     nodesKey.push(target);
-                    nodesKeyDic[target]=num;
+                    nodesKeyDic[target] = num;
 
-                    nodes[target].id=nodesKeyDic[target]
+                    nodes[target].id = nodesKeyDic[target]
                     newNodes.push(nodes[target]);
-                    num+=1;
+                    num += 1;
                 }
 
-                clone(edges[i],newEdge);
+                clone(edges[i], newEdge);
                 newEdge.source = nodesKeyDic[newEdge.source];
                 newEdge.target = nodesKeyDic[newEdge.target];
-                newEdge.nodes[0]=newEdge.source;
-                newEdge.nodes[1]=newEdge.target;
+                newEdge.nodes[0] = newEdge.source;
+                newEdge.nodes[1] = newEdge.target;
                 newEdges.push(newEdge);
                 break;
 
@@ -8664,22 +8812,21 @@ function dataFilter(yearRange){
     }
 
 
-    data.timeData[focusedID]={};
+    data.timeData[focusedID] = {};
     data.timeData[focusedID].node = newNodes;
     data.timeData[focusedID].edge = newEdges;
     data.timeData[focusedID].nodeYearData = data.postData[focusedID].nodeYearData;
     data.timeData[focusedID].subNodeYearData = data.postData[focusedID].subNodeYearData;
 
     getRelation(data.timeData[focusedID]);
-    var assistEdge=generateAssistEdge(data.timeData[focusedID]);
-    var newGraph=new Graph(data.timeData[focusedID].edge,assistEdge);
-    reCalculateLayout(newGraph,data.timeData[focusedID]);
+    var assistEdge = generateAssistEdge(data.timeData[focusedID]);
+    var newGraph = new Graph(data.timeData[focusedID].edge, assistEdge);
+    reCalculateLayout(newGraph, data.timeData[focusedID]);
     reverseXY(data.timeData[focusedID]);
     coordinateOffset(data.timeData[focusedID]);
     getYearData(data.timeData[focusedID]);
-    if(preFocusedID)
-    {
-        procrustes(data.timeData[preFocusedID],data.timeData[focusedID]);
+    if (preFocusedID) {
+        procrustes(data.timeData[preFocusedID], data.timeData[focusedID]);
         coordinateOffset(data.timeData[focusedID]);
         coordinateOffset(data.timeData[preFocusedID]);
     }
@@ -8687,37 +8834,36 @@ function dataFilter(yearRange){
     findCircleEdges(data.postData[focusedID]);
 
     getCurves(data.timeData[focusedID]);
-//    drawAuthorInfo();
-    if(focusedID&&preFocusedID){
-        var fID=parseInt(focusedID.split('_')[1]);
-        var pID=parseInt(preFocusedID.split('_')[1]);
-        if(fID>pID){
+    //    drawAuthorInfo();
+    if (focusedID && preFocusedID) {
+        var fID = parseInt(focusedID.split('_')[1]);
+        var pID = parseInt(preFocusedID.split('_')[1]);
+        if (fID > pID) {
             //incremental
-//            var chlData=data.postData[preFocusedID];
-//            var parData=data.postData[focusedID];
-            generateTransitionData(data.timeData[focusedID],data.timeData[preFocusedID]);
+            //            var chlData=data.postData[preFocusedID];
+            //            var parData=data.postData[focusedID];
+            generateTransitionData(data.timeData[focusedID], data.timeData[preFocusedID]);
 
-        }
-        else if(fID<pID){
+        } else if (fID < pID) {
             //decremental
-            generateTransitionData(data.timeData[preFocusedID],data.timeData[focusedID]);
+            generateTransitionData(data.timeData[preFocusedID], data.timeData[focusedID]);
 
         }
     }
 
-    if(focusedID&&preFocusedID){
-        layout(optionNumber,false,false,data.timeData[focusedID]);
+    if (focusedID && preFocusedID) {
+        layout(optionNumber, false, false, data.timeData[focusedID]);
+
+    } else {
+        layout(optionNumber, false, false, data.timeData[focusedID]);
 
     }
-    else{
-        layout(optionNumber,false,false,data.timeData[focusedID]);
 
-    }
-
-//    yearSlider();
-//    clusterSlider();
+    //    yearSlider();
+    //    clusterSlider();
 }
-function compareVersions (v1, v2) {
+
+function compareVersions(v1, v2) {
     if (v1 === v2) {
         return 0;
     }
@@ -8745,363 +8891,460 @@ function compareVersions (v1, v2) {
 
     return 0;
 }
-var v1='1_0.8690847534228847';
-var v2='0_0.11302401181690515_0.11302401181690623_0.11302401181690616';
-var v3='0_0.11302401181690515_0.11302401181690623';
-var r1=compareVersions(v1,v2);
-var r2=compareVersions(v2,v3);
-var r3=compareVersions(v2,v2);
+var v1 = '1_0.8690847534228847';
+var v2 = '0_0.11302401181690515_0.11302401181690623_0.11302401181690616';
+var v3 = '0_0.11302401181690515_0.11302401181690623';
+var r1 = compareVersions(v1, v2);
+var r2 = compareVersions(v2, v3);
+var r3 = compareVersions(v2, v2);
 console.log(r1)
 console.log(r2)
 console.log(r3)
-function ifPointInCircle(point,circle){
-    var x=point.x;
-    var y=point.y;
-    var cx=circle.x;
-    var cy=circle.y;
-    var r=circle.r;
-    var dis=getDistance({x:x, y:y},{x:cx, y:cy});
-    if(dis<=r)return true;
+
+function ifPointInCircle(point, circle) {
+    var x = point.x;
+    var y = point.y;
+    var cx = circle.x;
+    var cy = circle.y;
+    var r = circle.r;
+    var dis = getDistance({
+        x: x,
+        y: y
+    }, {
+        x: cx,
+        y: cy
+    });
+    if (dis <= r) return true;
     else return false;
 }
-function ifPointInRect(point,rect){
+
+function ifPointInRect(point, rect) {
 
 }
-function lawOfCosine(p1,p2,p3){
+
+function lawOfCosine(p1, p2, p3) {
     //get angel at p2
-    var a=getDistance(p1,p2);
-    var b=getDistance(p2,p3);
-    var c=getDistance(p1,p3);
-    return (a*a+b*b-c*c)/(2*a*b);
+    var a = getDistance(p1, p2);
+    var b = getDistance(p2, p3);
+    var c = getDistance(p1, p3);
+    return (a * a + b * b - c * c) / (2 * a * b);
 }
-function getDistance(p1,p2){
-    var dx=p1.x-p2.x;
-    var dy=p1.y-p2.y;
-    return Math.sqrt(dx*dx+dy*dy);
+
+function getDistance(p1, p2) {
+    var dx = p1.x - p2.x;
+    var dy = p1.y - p2.y;
+    return Math.sqrt(dx * dx + dy * dy);
 }
-function ratioPoint(p1,p2,ratio){
-    var p3={};
-    p3.x = p1.x*ratio+p2.x*(1-ratio);
-    p3.y = p1.y*ratio+p2.y*(1-ratio);
+
+function ratioPoint(p1, p2, ratio) {
+    var p3 = {};
+    p3.x = p1.x * ratio + p2.x * (1 - ratio);
+    p3.y = p1.y * ratio + p2.y * (1 - ratio);
     return p3;
 }
-function mergeRect(bounds1,bounds2){
-    var minX1=bounds1.x;
-    var minY1=bounds1.y;
-    var maxX1=bounds1.x+bounds1.width;
-    var maxY1=bounds1.y+bounds1.height;
-    var minX2=bounds2.x;
-    var minY2=bounds2.y;
-    var maxX2=bounds2.x+bounds1.width;
-    var maxY2=bounds2.y+bounds1.height;
-    var minX=d3.min([minX1,minX2]);
-    var minY=d3.min([minY1,minY2]);
-    var maxX=d3.max([maxX1,maxX2]);
-    var maxY=d3.min([maxY1,maxY2]);
+
+function mergeRect(bounds1, bounds2) {
+    var minX1 = bounds1.x;
+    var minY1 = bounds1.y;
+    var maxX1 = bounds1.x + bounds1.width;
+    var maxY1 = bounds1.y + bounds1.height;
+    var minX2 = bounds2.x;
+    var minY2 = bounds2.y;
+    var maxX2 = bounds2.x + bounds1.width;
+    var maxY2 = bounds2.y + bounds1.height;
+    var minX = d3.min([minX1, minX2]);
+    var minY = d3.min([minY1, minY2]);
+    var maxX = d3.max([maxX1, maxX2]);
+    var maxY = d3.min([maxY1, maxY2]);
     return {
-        x:minX,
-        y:minY,
-        width:maxX-minX,
-        height:maxY-minY
+        x: minX,
+        y: minY,
+        width: maxX - minX,
+        height: maxY - minY
     }
-}
-function vector3d(x,y,z){
-    return {x:x, y:y, z:z};
-}
-function vector3dCross(vec1,vec2){
-    var x=vec1.y*vec2.z-vec1.z*vec2.y;
-    var y=vec2.x*vec1.z-vec2.z*vec1.x;
-    var z=vec1.x*vec2.y-vec1.y*vec2.x;
-    return {x:x, y:y, z:z};
 }
 
-function vector(p1,p2){
+function vector3d(x, y, z) {
+    return {
+        x: x,
+        y: y,
+        z: z
+    };
+}
+
+function vector3dCross(vec1, vec2) {
+    var x = vec1.y * vec2.z - vec1.z * vec2.y;
+    var y = vec2.x * vec1.z - vec2.z * vec1.x;
+    var z = vec1.x * vec2.y - vec1.y * vec2.x;
+    return {
+        x: x,
+        y: y,
+        z: z
+    };
+}
+
+function vector(p1, p2) {
     return [p1, p2];
 }
-function getNormalized(vec){
-    var disX=vec[1].x-vec[0].x;
-    var disY=vec[1].y-vec[0].y;
-    var dist=Math.sqrt(disX*disX+disY*disY);
-    disX/=dist;
-    disY/=dist;
-    return {x:disX,y:disY};
+
+function getNormalized(vec) {
+    var disX = vec[1].x - vec[0].x;
+    var disY = vec[1].y - vec[0].y;
+    var dist = Math.sqrt(disX * disX + disY * disY);
+    disX /= dist;
+    disY /= dist;
+    return {
+        x: disX,
+        y: disY
+    };
 }
-function absAngleBetween(vector1,vector2){
-    var angleBetw=angleBetween(vector1,vector2);
-    var vector1Norm=getNormalized(vector1);
-    var vector2Norm=getNormalized(vector2);
-    var dot=-vector1Norm.y*vector2Norm.x+vector1Norm.x*vector2Norm.y;
-    if(dot>=0){
+
+function absAngleBetween(vector1, vector2) {
+    var angleBetw = angleBetween(vector1, vector2);
+    var vector1Norm = getNormalized(vector1);
+    var vector2Norm = getNormalized(vector2);
+    var dot = -vector1Norm.y * vector2Norm.x + vector1Norm.x * vector2Norm.y;
+    if (dot >= 0) {
         return angleBetw
-    }
-    else{
-        return 2*Math.PI-angleBetw;
+    } else {
+        return 2 * Math.PI - angleBetw;
     }
 }
-function angleBetween(vector1,vector2){
-    var dotValue=dotProduct(vector1,vector2);
-    if(dotValue>=1){
-        dotValue=1;
-    }
-    else if(dotValue<=-1){
-        dotValue=-1;
+
+function angleBetween(vector1, vector2) {
+    var dotValue = dotProduct(vector1, vector2);
+    if (dotValue >= 1) {
+        dotValue = 1;
+    } else if (dotValue <= -1) {
+        dotValue = -1;
     }
     return Math.acos(dotValue);
 }
-function dotProduct(vector1,vector2){
-    var vector1Norm=getNormalized(vector1);
-    var vector2Norm=getNormalized(vector2);
-    return vector1Norm.x*vector2Norm.x+vector1Norm.y*vector2Norm.y;
+
+function dotProduct(vector1, vector2) {
+    var vector1Norm = getNormalized(vector1);
+    var vector2Norm = getNormalized(vector2);
+    return vector1Norm.x * vector2Norm.x + vector1Norm.y * vector2Norm.y;
 }
-function get2PointFun(p1,p2){
-    var x1=p1.x;
-    var y1=p1.y;
-    var x2=p2.x;
-    var y2=p2.y;
-    if(x1!=x2){
-        var k=(y2-y1)/(x2-x1);
-        var b=y1-k*x1;
-//    return function(x){return k*x+b;}
-        return {k:k, b:b,vertical:false}
-    }
-    else{
-        return {x:x1, vertical:true}
+
+function get2PointFun(p1, p2) {
+    var x1 = p1.x;
+    var y1 = p1.y;
+    var x2 = p2.x;
+    var y2 = p2.y;
+    if (x1 != x2) {
+        var k = (y2 - y1) / (x2 - x1);
+        var b = y1 - k * x1;
+        //    return function(x){return k*x+b;}
+        return {
+            k: k,
+            b: b,
+            vertical: false
+        }
+    } else {
+        return {
+            x: x1,
+            vertical: true
+        }
     }
 
 }
-function getPointSlopeFun(p,k){
-    var x0=p.x;
-    var y0=p.y;
-    var b=y0-k*x0;
-    return {k:k, b:b, vertical:false}
+
+function getPointSlopeFun(p, k) {
+    var x0 = p.x;
+    var y0 = p.y;
+    var b = y0 - k * x0;
+    return {
+        k: k,
+        b: b,
+        vertical: false
+    }
 }
-function getPointToLineCrossPoint(p1,p2,p3){
+
+function getPointToLineCrossPoint(p1, p2, p3) {
     //球一点到两点线段垂点的坐标
-    var x1=p1.x;
-    var x2=p2.x;
-    var x3=p3.x;
-    var y1=p1.y;
-    var y2=p2.y;
-    var y3=p3.y;
-    var line1=get2PointFun(p1, p2);
-    if(line1.vertical){
-        return {x:x1,y:y3};
-    }
-    else{
-        var k1=line1.k;
-        var b1=line1.b;
-        if(k1!=0){
-            var k2=-1/k1;
-            var line2=getPointSlopeFun(p3, k2);
-            var b2=line2.b;
-            var x=(b2-b1)/(k1-k2);
-            var y=k1*x+b1;
-            return {x:x, y:y};
-        }
-        else{
-            return {x:x3, y:y1};
+    var x1 = p1.x;
+    var x2 = p2.x;
+    var x3 = p3.x;
+    var y1 = p1.y;
+    var y2 = p2.y;
+    var y3 = p3.y;
+    var line1 = get2PointFun(p1, p2);
+    if (line1.vertical) {
+        return {
+            x: x1,
+            y: y3
+        };
+    } else {
+        var k1 = line1.k;
+        var b1 = line1.b;
+        if (k1 != 0) {
+            var k2 = -1 / k1;
+            var line2 = getPointSlopeFun(p3, k2);
+            var b2 = line2.b;
+            var x = (b2 - b1) / (k1 - k2);
+            var y = k1 * x + b1;
+            return {
+                x: x,
+                y: y
+            };
+        } else {
+            return {
+                x: x3,
+                y: y1
+            };
         }
     }
 }
-function twoPointIntSquareDistance(p1,p2){
-    var x1=parseInt(p1.x);
-    var y1=parseInt(p1.y);
-    var x2=parseInt(p2.x);
-    var y2=parseInt(p2.y);
-    return Math.sqrt(x1-x2)*(x1-x2)+(y1-y2)*(y1-y2);
+
+function twoPointIntSquareDistance(p1, p2) {
+    var x1 = parseInt(p1.x);
+    var y1 = parseInt(p1.y);
+    var x2 = parseInt(p2.x);
+    var y2 = parseInt(p2.y);
+    return Math.sqrt(x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2);
 }
-function isPointInLine(point,line){
-    var p1=line.p1;
-    var p2=line.p2;
-    var maxX=parseInt(d3.max([p1.x, p2.x]));
-    var maxY=parseInt(d3.max([p1.y, p2.y]));
-    var minX=parseInt(d3.min([p1.x, p2.x]));
-    var minY=parseInt(d3.min([p1.y, p2.y]));
-    var x=parseInt(point.x);
-    var y=parseInt(point.y);
-//    var ptop1=twoPointIntSquareDistance(point, p1);
-//    var ptop2=twoPointIntSquareDistance(point, p2);
-//    var p1top2=twoPointIntSquareDistance(p1, p2);
-//    if((ptop1+ptop2)==p1top2){
-    if((x>=minX&&x<=maxX)&&(y>=minY&&y<=maxY)){
+
+function isPointInLine(point, line) {
+    var p1 = line.p1;
+    var p2 = line.p2;
+    var maxX = parseInt(d3.max([p1.x, p2.x]));
+    var maxY = parseInt(d3.max([p1.y, p2.y]));
+    var minX = parseInt(d3.min([p1.x, p2.x]));
+    var minY = parseInt(d3.min([p1.y, p2.y]));
+    var x = parseInt(point.x);
+    var y = parseInt(point.y);
+    //    var ptop1=twoPointIntSquareDistance(point, p1);
+    //    var ptop2=twoPointIntSquareDistance(point, p2);
+    //    var p1top2=twoPointIntSquareDistance(p1, p2);
+    //    if((ptop1+ptop2)==p1top2){
+    if ((x >= minX && x <= maxX) && (y >= minY && y <= maxY)) {
         return true;
-    }
-    else return false;
+    } else return false;
 
 }
-function get2LineCrossPoint(l1,l2){
-    var p1=l1.p1;
-    var p2=l1.p2;
-    var p3=l2.p1;
-    var p4=l2.p2;
 
-    var y1=get2PointFun(p1, p2);
-    var y2=get2PointFun(p3, p4);
-    if(!y1.vertical&&!y2.vertical){
-        var k1=y1.k;
-        var b1=y1.b;
-        var k2=y2.k;
-        var b2=y2.b;
-        var x=(b2-b1)/(k1-k2);
-        var y=k1*x+b1;
-        var point={x:x, y:y};
-        var isPointInLine1=isPointInLine(point, l1);
-        var isPointInLine2=isPointInLine(point, l2);
-        return {point:point, isPointInLine1:isPointInLine1,isPointInLine2:isPointInLine2};
-    }
+function get2LineCrossPoint(l1, l2) {
+    var p1 = l1.p1;
+    var p2 = l1.p2;
+    var p3 = l2.p1;
+    var p4 = l2.p2;
 
-    else if(y1.vertical&&!y2.vertical){
-        var x=y1.x;
-        var k=y2.k;
-        var b=y2.b;
-        var y=k*x+b;
-        var point={x:x, y:y};
-        var isPointInLine1=isPointInLine(point, l1);
-        var isPointInLine2=isPointInLine(point, l2);
-        return {point:point, isPointInLine1:isPointInLine1,isPointInLine2:isPointInLine2};
-    }
-    else if(!y1.vertical&&y2.vertical){
-        var x=y2.x;
-        var k=y1.k;
-        var b=y1.b;
-        var y=k*x+b;
-        var point={x:x, y:y};
-        var isPointInLine1=isPointInLine(point, l1);
-        var isPointInLine2=isPointInLine(point, l2);
-        return {point:point, isPointInLine1:isPointInLine1,isPointInLine2:isPointInLine2};
-    }
-    else {
+    var y1 = get2PointFun(p1, p2);
+    var y2 = get2PointFun(p3, p4);
+    if (!y1.vertical && !y2.vertical) {
+        var k1 = y1.k;
+        var b1 = y1.b;
+        var k2 = y2.k;
+        var b2 = y2.b;
+        var x = (b2 - b1) / (k1 - k2);
+        var y = k1 * x + b1;
+        var point = {
+            x: x,
+            y: y
+        };
+        var isPointInLine1 = isPointInLine(point, l1);
+        var isPointInLine2 = isPointInLine(point, l2);
+        return {
+            point: point,
+            isPointInLine1: isPointInLine1,
+            isPointInLine2: isPointInLine2
+        };
+    } else if (y1.vertical && !y2.vertical) {
+        var x = y1.x;
+        var k = y2.k;
+        var b = y2.b;
+        var y = k * x + b;
+        var point = {
+            x: x,
+            y: y
+        };
+        var isPointInLine1 = isPointInLine(point, l1);
+        var isPointInLine2 = isPointInLine(point, l2);
+        return {
+            point: point,
+            isPointInLine1: isPointInLine1,
+            isPointInLine2: isPointInLine2
+        };
+    } else if (!y1.vertical && y2.vertical) {
+        var x = y2.x;
+        var k = y1.k;
+        var b = y1.b;
+        var y = k * x + b;
+        var point = {
+            x: x,
+            y: y
+        };
+        var isPointInLine1 = isPointInLine(point, l1);
+        var isPointInLine2 = isPointInLine(point, l2);
+        return {
+            point: point,
+            isPointInLine1: isPointInLine1,
+            isPointInLine2: isPointInLine2
+        };
+    } else {
         return false;
     }
 
 
 
 }
-function getRectangleLineCrossPoint(bounds,line){
-    var x=bounds.x;
-    var y=bounds.y;
-    var width=bounds.width;
-    var height=bounds.height;
-    var p1={x:x, y:y};
-    var p2={x:x+width, y:y};
-    var p3={x:x+width, y:y+height};
-    var p4={x:x, y:y+height};
-    var line1={p1:p1, p2:p4};
-    var line2={p1:p3, p2:p4};
-    var line3={p1:p1, p2:p2};
-    var line4={p1:p2, p2:p3};
-    var lines=[line1, line2, line3, line4];
-    for(var i=0;i<lines.length;i++){
-        var crossPoint=get2LineCrossPoint(line,lines[i]);
-        if(crossPoint.isPointInLine1&&crossPoint.isPointInLine2){
+
+function getRectangleLineCrossPoint(bounds, line) {
+    var x = bounds.x;
+    var y = bounds.y;
+    var width = bounds.width;
+    var height = bounds.height;
+    var p1 = {
+        x: x,
+        y: y
+    };
+    var p2 = {
+        x: x + width,
+        y: y
+    };
+    var p3 = {
+        x: x + width,
+        y: y + height
+    };
+    var p4 = {
+        x: x,
+        y: y + height
+    };
+    var line1 = {
+        p1: p1,
+        p2: p4
+    };
+    var line2 = {
+        p1: p3,
+        p2: p4
+    };
+    var line3 = {
+        p1: p1,
+        p2: p2
+    };
+    var line4 = {
+        p1: p2,
+        p2: p3
+    };
+    var lines = [line1, line2, line3, line4];
+    for (var i = 0; i < lines.length; i++) {
+        var crossPoint = get2LineCrossPoint(line, lines[i]);
+        if (crossPoint.isPointInLine1 && crossPoint.isPointInLine2) {
             return crossPoint.point;
         }
     }
 }
 
-function moveCircleEdge(e1,e2){
-    var p1=e1.p1;
-    var p2=e1.p2;
-    var p3=e2.p1;
-    var p4=e2.p2;
-    var pi=Math.PI;
+function moveCircleEdge(e1, e2) {
+    var p1 = e1.p1;
+    var p2 = e1.p2;
+    var p3 = e2.p1;
+    var p4 = e2.p2;
+    var pi = Math.PI;
     var degree;
-    var d=5;
-    if(p1.x==p2.x)degree=pi/2;
+    var d = 5;
+    if (p1.x == p2.x) degree = pi / 2;
     else {
-        var k=(p1.y-p2.y)/(p1.x-p2.x);
-        degree=Math.atan(k);
+        var k = (p1.y - p2.y) / (p1.x - p2.x);
+        degree = Math.atan(k);
     }
-    var dx=d*Math.sin(degree);
-    var dy=d*Math.cos(degree);
+    var dx = d * Math.sin(degree);
+    var dy = d * Math.cos(degree);
     moveToLeft(p1, p2, dx, dy);
     moveToRight(p3, p4, dx, dy);
-    function moveToLeft(p1,p2,dx,dy){
-        p1.x-=dx;
-        p1.y+=dy;
-        p2.x-=dx;
-        p2.y+=dy;
+
+    function moveToLeft(p1, p2, dx, dy) {
+        p1.x -= dx;
+        p1.y += dy;
+        p2.x -= dx;
+        p2.y += dy;
     }
-    function moveToRight(p3,p4,dx,dy){
-        p3.x+=dx;
-        p3.y-=dy;
-        p4.x+=dx;
-        p4.y-=dy;
+
+    function moveToRight(p3, p4, dx, dy) {
+        p3.x += dx;
+        p3.y -= dy;
+        p4.x += dx;
+        p4.y -= dy;
 
     }
-    e1.dx=dx;
-    e1.dy=-dy;
-    e2.dx=-dx;
-    e2.dy=dy;
-    return {e1:e1,e2:e2};
+    e1.dx = dx;
+    e1.dy = -dy;
+    e2.dx = -dx;
+    e2.dy = dy;
+    return {
+        e1: e1,
+        e2: e2
+    };
 }
 //import {server,port,errorPort} from '../setting/server';
 //import {layoutPapers} from '../searchInteraction/layout';
 //import {ajax} from '../processData/request';
-function getUrlParam(name){
-    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
-    if (r!=null) return unescape(r[2]); return null; //返回参数值
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]);
+    return null; //返回参数值
 }
-var px='px';
-var usefulWidth= window.innerWidth
-    ||document.body.clientWidth
-    || document.documentElement.clientWidth;
-var usefulHeight = document.body.clientHeight
-    || document.documentElement.clientHeight
-    || window.innerHeight;
+var px = 'px';
+var usefulWidth = window.innerWidth ||
+    document.body.clientWidth ||
+    document.documentElement.clientWidth;
+var usefulHeight = document.body.clientHeight ||
+    document.documentElement.clientHeight ||
+    window.innerHeight;
 initServer();
-var body=d3.select('body');
-var bodyDiv=body.append('div').attr('class','bodyDiv')
+var body = d3.select('body');
+var bodyDiv = body.append('div').attr('class', 'bodyDiv')
     //            .attrs({
     //                onkeydown:'keyboardEvent(event.keyCode||event.which);'
     //            })
     .styles({
-//                'border':'1px solid rgb(50,70,90)',
-        width:usefulWidth+px,
-        height:usefulHeight+px
+        //                'border':'1px solid rgb(50,70,90)',
+        width: usefulWidth + px,
+        height: usefulHeight + px
     });
-body.append('span').attr('id','ruler').attr('class','ruler');
+body.append('span').attr('id', 'ruler').attr('class', 'ruler');
 
-var paperTitle=getUrlParam('title');
-var paperID=getUrlParam('id');
-var source=getUrlParam('source');
-var action=getUrlParam('action');
+var paperTitle = getUrlParam('title');
+var paperID = getUrlParam('id');
+var source = getUrlParam('source');
+var action = getUrlParam('action');
 //    var text='Paper List of '+venue;
 var texts;
-if(action=='s')texts=['Papers Directly Influenced by: ',paperTitle];
-else if(action=='all')texts=['Papers Directly and Indirectly Influenced by: ',paperTitle];
-else texts=['Citing List of: ',paperTitle];
-var titleData={
-    class:'title',
-    texts:texts,
-    size:'30',
-    family:'Arial',
-    top:'100',
-    color:'white'
+if (action == 's') texts = ['Papers Directly Influenced by: ', paperTitle];
+else if (action == 'all') texts = ['Papers Directly and Indirectly Influenced by: ', paperTitle];
+else texts = ['Citing List of: ', paperTitle];
+var titleData = {
+    class: 'title',
+    texts: texts,
+    size: '30',
+    family: 'Arial',
+    top: '100',
+    color: 'white'
 };
 
 //    titleData['left']=(usefulWidth-titleData.text.visualLength(titleData.family,titleData.size))/2
-titleData['left']=200;
+titleData['left'] = 200;
 console.log(titleData);
 bodyDiv.append('div')
     .datum(titleData)
-    .each(function(d){
+    .each(function (d) {
         d3.select(this)
             .attrs({
-                class: d.class+'Div'
+                class: d.class + 'Div'
             })
             .styles({
-                'margin-left': d.left+px,
-                'margin-top': d.top+px
+                'margin-left': d.left + px,
+                'margin-top': d.top + px
             });
         d3.select(this)
             .append('text')
             .attrs({
-                class: d.class+'Text'
+                class: d.class + 'Text'
             })
             .styles({
-                'font-size': d.size+px,
+                'font-size': d.size + px,
                 'font-family': d.family,
                 'color': d.color
             })
@@ -9109,274 +9352,318 @@ bodyDiv.append('div')
         d3.select(this)
             .append('text')
             .attrs({
-                class: d.class+'Text'
+                class: d.class + 'Text'
             })
             .styles({
-                'font-size': d.size+px,
+                'font-size': d.size + px,
                 'font-family': d.family,
                 'color': d.color
             })
             .html(d.texts[1])
-            .on('click',function(d){
-                var url='graph.html?';
-                var source='aminerV8';
-                url+=source+'_id='+ d.id+'&';
-                url+='selected='+source;
-                url+='&r='+Math.floor(Math.random()*1000000000+1);
+            .on('click', function (d) {
+                var url = 'graph.html?';
+                var source = 'aminerV8';
+                url += source + '_id=' + d.id + '&';
+                url += 'selected=' + source;
+                url += '&r=' + Math.floor(Math.random() * 1000000000 + 1);
                 window.open(url);
             })
     });
-var url='http://'+server+':'+port+'/influencedPapers';
+var url = 'http://' + server + ':' + port + '/influencedPapers';
 //    var url='http://'+'127.0.0.1'+':'+3000+'/searchPapers';
-var paperListDiv=bodyDiv.append('div')
+var paperListDiv = bodyDiv.append('div')
     .attrs({
-        'class':'paperListDiv'
+        'class': 'paperListDiv'
     })
     .styles({
-        'margin-left':titleData.left+px,
+        'margin-left': titleData.left + px,
 
-        'width':'70%',
-        'height':'auto'
+        'width': '70%',
+        'height': 'auto'
     });
-var success=function(data){
-    var list=data;
-    list=list.sort(function(a,b){return b.citation- a.citation});
+var success = function (data) {
+    var list = data;
+    list = list.sort(function (a, b) {
+        return b.citation - a.citation
+    });
     console.log(list);
     paperListDiv.selectAll('whatever')
         .data(list)
         .enter()
         .append('div')
         .styles({
-            'margin-top':'15px'
+            'margin-top': '15px'
         })
         .each(layoutPapers);
 
 };
-var data={id:paperID,source:source,action:action};
-ajax(url,success,data);
+var data = {
+    id: paperID,
+    source: source,
+    action: action
+};
+ajax(url, success, data);
 initLayout();
 
 
-function getUrlParam(name){
-    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
-    if (r!=null) return unescape(r[2]); return null; //返回参数值
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]);
+    return null; //返回参数值
 }
 //    var r=getUrlParam('r');
 //    if(!r)window.location='index.html?r='+Math.floor(Math.random()*1000000000+1);
-function Submit(e)
-{
-    if(e ==13)
-    {
+function Submit(e) {
+    if (e == 13) {
         jump();
     }
 }
-function jump(){
-    window.location='result.html?searchname='+$('input[name="Text"]').val()+'&r='+Math.floor(Math.random()*1000000000+1);
+
+function jump() {
+    window.location = 'result.html?searchname=' + $('input[name="Text"]').val() + '&r=' + Math.floor(Math.random() * 1000000000 + 1);
 }
-var px='px';
-var usefulWidth= window.innerWidth
-    ||document.body.clientWidth
-    || document.documentElement.clientWidth;
-var usefulHeight = document.body.clientHeight
-    || document.documentElement.clientHeight
-    || window.innerHeight;
+var px = 'px';
+var usefulWidth = window.innerWidth ||
+    document.body.clientWidth ||
+    document.documentElement.clientWidth;
+var usefulHeight = document.body.clientHeight ||
+    document.documentElement.clientHeight ||
+    window.innerHeight;
 initServer();
 //var scrollLength=18;
 //usefulWidth-=scrollLength;
 //console.log(usefulHeight);
-var body=d3.select('body');
-var bodyDiv=body.append('div').attr('class','bodyDiv')
+var body = d3.select('body');
+var bodyDiv = body.append('div').attr('class', 'bodyDiv')
     //        .attrs({
     //            onkeydown:'keyboardEvent(event.keyCode||event.which);'
     //        })
     .styles({
-        'border':'1px solid rgb(50,70,90)',
-        width:usefulWidth+px,
-        height:usefulHeight+px
+        'border': '1px solid rgb(50,70,90)',
+        width: usefulWidth + px,
+        height: usefulHeight + px
     });
-body.append('span').attr('id','ruler').attr('class','ruler');
+body.append('span').attr('id', 'ruler').attr('class', 'ruler');
 
-var fontSize=50;
-var fontFamily='Arial';
-var fontWeight='bold';
-var text='E I F F E L';
+var fontSize = 50;
+var fontFamily = 'Arial';
+var fontWeight = 'bold';
+var text = 'E I F F E L';
 d3.select('.ruler').styles({
-    'font-weight':fontWeight
+    'font-weight': fontWeight
 });
-var textWidth=text.visualLength(fontFamily,fontSize);
-var textHeight=text.visualHeight(fontFamily,fontSize);
-var textMarginInput=usefulHeight*0.03;
-var inputWidth=570;
-var inputHeight=40;
-var buttonWidth=60;
-var buttonHeight=40;
-var formWidth=634;
-var formHeight=inputHeight;
+var textWidth = text.visualLength(fontFamily, fontSize);
+var textHeight = text.visualHeight(fontFamily, fontSize);
+var textMarginInput = usefulHeight * 0.03;
+var inputWidth = 570;
+var inputHeight = 40;
+var buttonWidth = 60;
+var buttonHeight = 40;
+var formWidth = 634;
+var formHeight = inputHeight;
 
-var indexNameDiv=bodyDiv.append('div').attr('class','indexNameDiv')
+var indexNameDiv = bodyDiv.append('div').attr('class', 'indexNameDiv')
     .styles({
-        'width':textWidth+px,
-        'height':textHeight+px,
-        'border':'0px solid #000000',
-        'margin-left':(usefulWidth-textWidth)/2+px,
-        'margin-top':(usefulHeight-40)/2-textMarginInput-textHeight-18+px
-//            'margin-top':'100px'
+        'width': textWidth + px,
+        'height': textHeight + px,
+        'border': '0px solid #000000',
+        'margin-left': (usefulWidth - textWidth) / 2 + px,
+        'margin-top': (usefulHeight - 40) / 2 - textMarginInput - textHeight - 18 + px
+        //            'margin-top':'100px'
     })
-    .append('text').attr('class','indexName')
+    .append('text').attr('class', 'indexName')
     .html(text)
     .styles({
-        'font-size':fontSize+px,
-        'font-family':fontFamily,
-        'font-weight':fontWeight,
-        'color':'white'
+        'font-size': fontSize + px,
+        'font-family': fontFamily,
+        'font-weight': fontWeight,
+        'color': 'white'
     });
 //var indexMainDiv=bodyDiv.append('div').attr('class','indexMain');
 //console.log((usefulHeight-inputHeight)/2-textHeight-textMarginInput);
-var form=bodyDiv.append('div').attr('class','inputForm').attr('autocomplete','on')
+var form = bodyDiv.append('div').attr('class', 'inputForm').attr('autocomplete', 'on')
     .styles({
-        'width':formWidth+px,
-        'height':formHeight+px,
-        'margin-left':(usefulWidth-formWidth)/2+px,
-        'margin-top':textMarginInput+px
+        'width': formWidth + px,
+        'height': formHeight + px,
+        'margin-left': (usefulWidth - formWidth) / 2 + px,
+        'margin-top': textMarginInput + px
     });
 
-var input=form.append('div').attr('class','inputDiv')
+var input = form.append('div').attr('class', 'inputDiv')
     .styles({
-        width:inputWidth+px,
-        height:inputHeight+px,
-        background:'white'
+        width: inputWidth + px,
+        height: inputHeight + px,
+        background: 'white'
     })
     .append('input')
     .attrs({
-        class:'indexInputBox',
-        type:'text',
-//            onkeydown:'keyboardEvent(event.keyCode||event.which);',
-        id:'echoText',
-        name:'Text',
-        autocomplete:'on'
+        class: 'indexInputBox',
+        type: 'text',
+        //            onkeydown:'keyboardEvent(event.keyCode||event.which);',
+        id: 'echoText',
+        name: 'Text',
+        autocomplete: 'on'
     })
-    .on('keydown',function(d){
-        if(event.keyCode==13)jump();
-//            console.log(event)
+    .on('keydown', function (d) {
+        if (event.keyCode == 13) jump();
+        //            console.log(event)
     })
     .styles({
-        border:0+px,
-        padding:10+px,
-        width:(inputWidth-20)+px,
-        height:(inputHeight-20)+px
+        border: 0 + px,
+        padding: 10 + px,
+        width: (inputWidth - 20) + px,
+        height: (inputHeight - 20) + px
     });
-var button=form.append('div').attr('class','inputButton').append('input')
+var button = form.append('div').attr('class', 'inputButton').append('input')
     .attrs({
-//            src:'image/search.png',
-        type:'submit',
-        class:'indexSubmitButton',
-        id:'indexSubmitBtn',
-        name:'submitBtn',
-        onclick:"jump()",
-        target:"view_window",
-        value:''
+        //            src:'image/search.png',
+        type: 'submit',
+        class: 'indexSubmitButton',
+        id: 'indexSubmitBtn',
+        name: 'submitBtn',
+        onclick: "jump()",
+        target: "view_window",
+        value: ''
     })
     .styles({
-        border:0+px,
-        padding:0+px,
-        'background':'url(image/search.png)',
-        'width':buttonWidth+px,
-        'height':buttonHeight+px
-//            'margin-top':'100px'
+        border: 0 + px,
+        padding: 0 + px,
+        'background': 'url(image/search.png)',
+        'width': buttonWidth + px,
+        'height': buttonHeight + px
+        //            'margin-top':'100px'
     });
 //    var paperTypeHeight=
-var paperTypeDiv=bodyDiv.append('div')
+var paperTypeDiv = bodyDiv.append('div')
     .attrs({
-        class:'paperTypeDiv'
+        class: 'paperTypeDiv'
     })
     .styles({
-        'width':formWidth*2+px,
-        'height':formHeight+px,
-        'margin-left':(usefulWidth-formWidth*2)/2+px,
-        'margin-top':textMarginInput+px
+        'width': formWidth * 2 + px,
+        'height': formHeight + px,
+        'margin-left': (usefulWidth - formWidth * 2) / 2 + px,
+        'margin-top': textMarginInput + px
     });
-var paperField=[{text:'Visualization',field:'vis'}];
-var textFont=18;
-var textFontFamily='Arial';
+var paperField = [{
+    text: 'Visualization',
+    field: 'vis'
+}];
+var textFont = 18;
+var textFontFamily = 'Arial';
 paperTypeDiv.selectAll('whatever')
     .data(paperField)
     .enter()
     .append('div')
-    .attr('class','visualization')
+    .attr('class', 'visualization')
     .styles({
-        cursor:'pointer',
-        'margin-left':function(d){return (formWidth*2- 'Visualization Venues: TVCG, CGF, IEEE VIS, CG&A, InfoVis, ...'.visualLength(textFontFamily,textFont))/2+px;}
+        cursor: 'pointer',
+        'margin-left': function (d) {
+            return (formWidth * 2 - 'Visualization Venues: TVCG, CGF, IEEE VIS, CG&A, InfoVis, ...'.visualLength(textFontFamily, textFont)) / 2 + px;
+        }
     })
     .append('text')
     .styles({
-        float:'left',
-        color:'white',
-        'font-size':textFont+px,
-        'font-family':textFontFamily
+        float: 'left',
+        color: 'white',
+        'font-size': textFont + px,
+        'font-family': textFontFamily
     })
-    .on('click',function(d){
-        window.open('venuelist.html?field='+d.field)
+    .on('click', function (d) {
+        window.open('venuelist.html?field=' + d.field)
     })
-    .html(function(d){return d.text+' Venues:&nbsp;'});
-var venueList=[
-    {text:'TVCG',venue:'IEEE Transactions on Visualization and Computer Graphics',id:1},
-    {text:'CG&A',venue:'Computer Graphics and Applications',id:17},
-    {text:'IEEE VIS',venue:'IEEE VIS',id:9},
-    {text:'VAST',venue:'Visual Analytics Science and Technology',id:0},
-    {text:'InfoVis',venue:'InfoVis',id:11}
+    .html(function (d) {
+        return d.text + ' Venues:&nbsp;'
+    });
+var venueList = [{
+        text: 'TVCG',
+        venue: 'IEEE Transactions on Visualization and Computer Graphics',
+        id: 1
+    },
+    {
+        text: 'CG&A',
+        venue: 'Computer Graphics and Applications',
+        id: 17
+    },
+    {
+        text: 'IEEE VIS',
+        venue: 'IEEE VIS',
+        id: 9
+    },
+    {
+        text: 'VAST',
+        venue: 'Visual Analytics Science and Technology',
+        id: 0
+    },
+    {
+        text: 'InfoVis',
+        venue: 'InfoVis',
+        id: 11
+    }
 ];
-var moreVenueList=[
-    {text:'CG&A',venue:'CG&A'},
-    {text:'InfoVis',venue:'InfoVis'},
-    {text:'IEEE Visualization',venue:'IEEE Visualization'},
-    {text:'VAST',venue:'Visual Analytics Science and Technology'},
+var moreVenueList = [{
+        text: 'CG&A',
+        venue: 'CG&A'
+    },
+    {
+        text: 'InfoVis',
+        venue: 'InfoVis'
+    },
+    {
+        text: 'IEEE Visualization',
+        venue: 'IEEE Visualization'
+    },
+    {
+        text: 'VAST',
+        venue: 'Visual Analytics Science and Technology'
+    },
 ];
 paperTypeDiv.selectAll('whatever')
     .data(venueList)
     .enter()
     .append('div')
     .styles({
-        cursor:'pointer',
-//                'margin-left':function(d){return (formWidth- d.text.visualLength(textFontFamily,10))/2+px;}
+        cursor: 'pointer',
+        //                'margin-left':function(d){return (formWidth- d.text.visualLength(textFontFamily,10))/2+px;}
 
     })
-    .each(function(d,i){
+    .each(function (d, i) {
         d3.select(this).append('text')
             .styles({
-                float:'left',
-                color:'white',
-                'font-size':18+px,
-                'font-family':textFontFamily
+                float: 'left',
+                color: 'white',
+                'font-size': 18 + px,
+                'font-family': textFontFamily
             })
-            .on('click',function(d){
-                window.open('venuepapers.html?venue='+d.venue+'&id='+d.id)
+            .on('click', function (d) {
+                window.open('venuepapers.html?venue=' + d.venue + '&id=' + d.id)
             })
-            .html(function(d){return d.text});
-        if(i!=4){
+            .html(function (d) {
+                return d.text
+            });
+        if (i != 4) {
             d3.select(this).append('text')
                 .styles({
-                    float:'left',
-                    color:'white',
-                    'font-size':18+px,
-                    'font-family':textFontFamily
+                    float: 'left',
+                    color: 'white',
+                    'font-size': 18 + px,
+                    'font-family': textFontFamily
                 })
                 .html(',&nbsp;')
-        }
-        else{
+        } else {
             d3.select(this).append('text')
                 .attrs({
-                    class:'more'
+                    class: 'more'
                 })
                 .styles({
-                    cursor:'pointer',
-                    float:'left',
-                    color:'white',
-                    'font-size':18+px,
-                    'font-family':textFontFamily
+                    cursor: 'pointer',
+                    float: 'left',
+                    color: 'white',
+                    'font-size': 18 + px,
+                    'font-family': textFontFamily
                 })
                 .html(', ...')
-                .on('click',function(){
+                .on('click', function () {
                     window.open('venuelist.html?field=vis');
                 })
         }
@@ -9384,401 +9671,420 @@ paperTypeDiv.selectAll('whatever')
     });
 
 
-function jump(){
-    var inputText=$('input[name="Text"]').val();
-    inputText = inputText.replace(/[\-|\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g,"");
-    inputText=inputText.toLowerCase();
-    window.location="result.html?searchname="+inputText;
+function jump() {
+    var inputText = $('input[name="Text"]').val();
+    inputText = inputText.replace(/[\-|\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "");
+    inputText = inputText.toLowerCase();
+    window.location = "result.html?searchname=" + inputText;
 }
-function getUrlParam(name)
-{
-    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
-    if (r!=null) return unescape(r[2]); return null; //返回参数值
+
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]);
+    return null; //返回参数值
 }
-function init(){
-    px='px';
-    var usefulWidth= window.innerWidth
-        ||document.body.clientWidth
-        || document.documentElement.clientWidth;
-    var usefulHeight = document.body.clientHeight
-        || document.documentElement.clientHeight
-        || window.innerHeight;
-    var body=d3.select('body');
-    var bodyDiv=body.append('div').attr('class','bodyDiv')
+
+function init() {
+    px = 'px';
+    var usefulWidth = window.innerWidth ||
+        document.body.clientWidth ||
+        document.documentElement.clientWidth;
+    var usefulHeight = document.body.clientHeight ||
+        document.documentElement.clientHeight ||
+        window.innerHeight;
+    var body = d3.select('body');
+    var bodyDiv = body.append('div').attr('class', 'bodyDiv')
         .styles({
-            'border':'1px solid rgb(50,70,90)',
-            width:usefulWidth+px,
-            height:usefulHeight+px
+            'border': '1px solid rgb(50,70,90)',
+            width: usefulWidth + px,
+            height: usefulHeight + px
         });
-    body.append('span').attr('id','ruler').attr('class','ruler');
+    body.append('span').attr('id', 'ruler').attr('class', 'ruler');
     initServer();
-    var fontSize=50;
-    var fontFamily='Arial';
-    var fontWeight='bold';
-    var text='E I F F E L';
+    var fontSize = 50;
+    var fontFamily = 'Arial';
+    var fontWeight = 'bold';
+    var text = 'E I F F E L';
     d3.select('.ruler').styles({
-        'font-weight':fontWeight
+        'font-weight': fontWeight
     });
-    var textWidth=text.visualLength(fontFamily,fontSize);
-    var textHeight=text.visualHeight(fontFamily,fontSize);
-    var textMarginInput=usefulHeight*0.03;
-    var inputWidth=570;
-    var inputHeight=40;
-    var buttonWidth=60;
-    var buttonHeight=40;
-    var formWidth=634;
-    var formHeight=inputHeight;
-    var indexNameDiv=bodyDiv.append('div').attr('class','indexNameDiv')
+    var textWidth = text.visualLength(fontFamily, fontSize);
+    var textHeight = text.visualHeight(fontFamily, fontSize);
+    var textMarginInput = usefulHeight * 0.03;
+    var inputWidth = 570;
+    var inputHeight = 40;
+    var buttonWidth = 60;
+    var buttonHeight = 40;
+    var formWidth = 634;
+    var formHeight = inputHeight;
+    var indexNameDiv = bodyDiv.append('div').attr('class', 'indexNameDiv')
         .styles({
-            'width':textWidth+px,
-            'height':textHeight+px,
-            'border':'0px solid #000000',
-            'margin-left':(usefulWidth-textWidth)/2+px,
-            'margin-top':50+px
-//            'margin-top':'100px'
+            'width': textWidth + px,
+            'height': textHeight + px,
+            'border': '0px solid #000000',
+            'margin-left': (usefulWidth - textWidth) / 2 + px,
+            'margin-top': 50 + px
+            //            'margin-top':'100px'
         })
-        .append('text').attr('class','indexName')
+        .append('text').attr('class', 'indexName')
         .html(text)
         .styles({
-            'font-size':fontSize+px,
-            'font-family':fontFamily,
-            'font-weight':fontWeight,
-            'color':'white'
+            'font-size': fontSize + px,
+            'font-family': fontFamily,
+            'font-weight': fontWeight,
+            'color': 'white'
         });
-    var form=bodyDiv.append('div').attr('class','inputForm').attr('autocomplete','on')
+    var form = bodyDiv.append('div').attr('class', 'inputForm').attr('autocomplete', 'on')
         .styles({
-            'width':formWidth+px,
-            'height':formHeight+px,
-            'margin-left':(usefulWidth-formWidth)/2+px,
-            'margin-top':textMarginInput+px
+            'width': formWidth + px,
+            'height': formHeight + px,
+            'margin-left': (usefulWidth - formWidth) / 2 + px,
+            'margin-top': textMarginInput + px
         });
 
-    var input=form.append('div').attr('class','inputDiv')
+    var input = form.append('div').attr('class', 'inputDiv')
         .styles({
-            width:inputWidth+px,
-            height:inputHeight+px,
-            background:'white'
+            width: inputWidth + px,
+            height: inputHeight + px,
+            background: 'white'
         })
         .append('input')
         .attrs({
-            class:'indexInputBox',
-            type:'text',
-//                    onkeydown:'keyboardEvent(event.keyCode||event.which);',
-            id:'echoText',
-            name:'Text'
-//                    AUTOCOMPLETE:'on'
+            class: 'indexInputBox',
+            type: 'text',
+            //                    onkeydown:'keyboardEvent(event.keyCode||event.which);',
+            id: 'echoText',
+            name: 'Text'
+            //                    AUTOCOMPLETE:'on'
         })
         .styles({
-            border:0+px,
-            padding:10+px,
-            width:(inputWidth-20)+px,
-            height:(inputHeight-20)+px
+            border: 0 + px,
+            padding: 10 + px,
+            width: (inputWidth - 20) + px,
+            height: (inputHeight - 20) + px
         })
-        .on('keydown',function(d){
-            if(event.keyCode==13)jump();
-//            console.log(event)
+        .on('keydown', function (d) {
+            if (event.keyCode == 13) jump();
+            //            console.log(event)
         });
-    var button=form.append('div').attr('class','inputButton').append('input')
+    var button = form.append('div').attr('class', 'inputButton').append('input')
         .attrs({
-//            src:'image/search.png',
-            type:'submit',
-            class:'indexSubmitButton',
-            id:'indexSubmitBtn',
-            name:'submitBtn',
-            onclick:"jump()",
-            target:"view_window",
-            value:''
+            //            src:'image/search.png',
+            type: 'submit',
+            class: 'indexSubmitButton',
+            id: 'indexSubmitBtn',
+            name: 'submitBtn',
+            onclick: "jump()",
+            target: "view_window",
+            value: ''
         })
         .styles({
-            border:0+px,
-            padding:0+px,
-            'background':'url(image/search.png)',
-            'width':buttonWidth+px,
-            'height':buttonHeight+px
-//            'margin-top':'100px'
+            border: 0 + px,
+            padding: 0 + px,
+            'background': 'url(image/search.png)',
+            'width': buttonWidth + px,
+            'height': buttonHeight + px
+            //            'margin-top':'100px'
         });
-    var searchName=getUrlParam('searchname');
-    var input=$('input[name="Text"]');
+    var searchName = getUrlParam('searchname');
+    var input = $('input[name="Text"]');
     input.val(searchName);
-    if(searchName!=''){
-        var url='http://'+server+':'+port+'/searchWords/';
-//            var url='http://'+'127.0.0.1'+':'+3000+'/searchWords';
-        var success=function(d){
+    if (searchName != '') {
+        var url = 'http://' + server + ':' + port + '/searchWords/';
+        //            var url='http://'+'127.0.0.1'+':'+3000+'/searchWords';
+        var success = function (d) {
             console.log(d);
-//
+            //
             pageLayout(d.list);
         };
-        var searchData={searchStr:searchName,source:'aminerV8'};
+        var searchData = {
+            searchStr: searchName,
+            source: 'aminerV8'
+        };
         console.log(searchName);
         console.log(searchData);
-        ajax(url,success,searchData);
+        ajax(url, success, searchData);
     }
-    function pageLayout(list){
-        var paperList=list;
-        list.forEach(function(paper,i){
-            if(paper.id==1182989){
-                var t=list[0];
-                list[0]=list[i];
-                list[i]=list[0];
+
+    function pageLayout(list) {
+        var paperList = list;
+        list.forEach(function (paper, i) {
+            if (paper.id == 1182989) {
+                var t = list[0];
+                list[0] = list[i];
+                list[i] = list[0];
             }
         });
-        var paperListDiv=bodyDiv.append('div')
+        var paperListDiv = bodyDiv.append('div')
             .attrs({
-                class:'paperListDiv'
+                class: 'paperListDiv'
             })
             .styles({
-                height:'auto',
-                width:'50%',
-                'margin-top':20+px,
-                'margin-left':(usefulWidth-formWidth)/2+px
+                height: 'auto',
+                width: '50%',
+                'margin-top': 20 + px,
+                'margin-left': (usefulWidth - formWidth) / 2 + px
             });
         paperListDiv.selectAll('whatever')
             .data(paperList)
             .enter()
             .append('div')
             .styles({
-                'margin-top':'15px'
+                'margin-top': '15px'
             })
             .each(layoutPapers);
     }
 
 }
-function paperClick(d){
+
+function paperClick(d) {
     d3.select(this)
-        .style('color','red')
-    var id= d.id;
-    var link='graph.html?aminerV8_id='+ id+'&selected=aminerV8'+'&r='+Math.floor(Math.random()*1000000000+1);
+        .style('color', 'red')
+    var id = d.id;
+    var link = 'graph.html?aminerV8_id=' + id + '&selected=aminerV8' + '&r=' + Math.floor(Math.random() * 1000000000 + 1);
     window.open(link);
 }
 init();
 //import {server,port,errorPort} from '../setting/server';
 //import {layoutPapers} from '../searchInteraction/layout';
 //import {ajax} from '../processData/request';
-function getUrlParam(name){
-    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
-    if (r!=null) return unescape(r[2]); return null; //返回参数值
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]);
+    return null; //返回参数值
 }
-var px='px';
-var usefulWidth= window.innerWidth
-    ||document.body.clientWidth
-    || document.documentElement.clientWidth;
-var usefulHeight = document.body.clientHeight
-    || document.documentElement.clientHeight
-    || window.innerHeight;
+var px = 'px';
+var usefulWidth = window.innerWidth ||
+    document.body.clientWidth ||
+    document.documentElement.clientWidth;
+var usefulHeight = document.body.clientHeight ||
+    document.documentElement.clientHeight ||
+    window.innerHeight;
 
-var body=d3.select('body');
-var bodyDiv=body.append('div').attr('class','bodyDiv')
+var body = d3.select('body');
+var bodyDiv = body.append('div').attr('class', 'bodyDiv')
     //            .attrs({
     //                onkeydown:'keyboardEvent(event.keyCode||event.which);'
     //            })
     .styles({
-//                'border':'1px solid rgb(50,70,90)',
-        width:usefulWidth+px,
-        height:usefulHeight+px
+        //                'border':'1px solid rgb(50,70,90)',
+        width: usefulWidth + px,
+        height: usefulHeight + px
     });
-body.append('span').attr('id','ruler').attr('class','ruler');
+body.append('span').attr('id', 'ruler').attr('class', 'ruler');
 
-var field=getUrlParam('field');
-var text='the Venue List of '+field;
-var titleData={
-    class:'title',
-    text:text,
-    size:'30',
-    family:'Arial',
-    top:'100',
-    color:'white'
+var field = getUrlParam('field');
+var text = 'the Venue List of ' + field;
+var titleData = {
+    class: 'title',
+    text: text,
+    size: '30',
+    family: 'Arial',
+    top: '100',
+    color: 'white'
 };
 initServer();
-titleData['left']=(usefulWidth-titleData.text.visualLength(titleData.family,titleData.size))/2
+titleData['left'] = (usefulWidth - titleData.text.visualLength(titleData.family, titleData.size)) / 2
 console.log(titleData)
 bodyDiv.append('div')
     .datum(titleData)
-    .each(function(d){
+    .each(function (d) {
         d3.select(this)
             .attrs({
-                class: d.class+'Div'
+                class: d.class + 'Div'
             })
             .styles({
-                'margin-left': d.left+px,
-                'margin-top': d.top+px
+                'margin-left': d.left + px,
+                'margin-top': d.top + px
             })
             .append('text')
             .attrs({
-                class: d.class+'Text'
+                class: d.class + 'Text'
             })
             .styles({
-                'font-size': d.size+px,
+                'font-size': d.size + px,
                 'font-family': d.family,
                 'color': d.color
             })
             .html(d.text)
     });
 
-var url='http://'+server+':'+port+'/venueList/';
-var venueListDiv=bodyDiv.append('div')
+var url = 'http://' + server + ':' + port + '/venueList/';
+var venueListDiv = bodyDiv.append('div')
     .attrs({
-        'class':'venueListDiv'
+        'class': 'venueListDiv'
     })
     .styles({
-        'width':usefulWidth+px,
-        'height':'auto'
+        'width': usefulWidth + px,
+        'height': 'auto'
     });
-var success=function(data){
-    var list=data;
-    list=list.sort(function(a,b){return b.count- a.count});
+var success = function (data) {
+    var list = data;
+    list = list.sort(function (a, b) {
+        return b.count - a.count
+    });
     console.log(list);
-    var size='16';
-    var family='Arial';
-    var color='white';
+    var size = '16';
+    var family = 'Arial';
+    var color = 'white';
     venueListDiv.selectAll('whatever')
         .data(list)
         .enter()
         .append('div')
-        .style('cursor','pointer')
-        .each(function(d){
-            var totalText= d.venue;
-//                var totalText= d.venue+'( ';
-//                for(var i=0;i< 2;i++){
-//                    totalText+= d.source[i].source+':'+ d.source[i].count+' ';
-//                }
-//                totalText+=')';
+        .style('cursor', 'pointer')
+        .each(function (d) {
+            var totalText = d.venue;
+            //                var totalText= d.venue+'( ';
+            //                for(var i=0;i< 2;i++){
+            //                    totalText+= d.source[i].source+':'+ d.source[i].count+' ';
+            //                }
+            //                totalText+=')';
             console.log(totalText)
             d3.select(this)
                 .styles({
-                    'margin-left': (usefulWidth- totalText.visualLength(family,size))/2+px,
-                    'margin-top': 20+px
+                    'margin-left': (usefulWidth - totalText.visualLength(family, size)) / 2 + px,
+                    'margin-top': 20 + px
                 })
                 .append('text')
                 .styles({
-                    'font-size':size+px,
-                    'font-family':family,
-                    'color':color
+                    'font-size': size + px,
+                    'font-family': family,
+                    'color': color
                 })
-                .on('click',function(d){
-                    window.open('venuepapers.html?venue='+ d.venue+'&id='+ d.id+'&r='+Math.floor(Math.random()*1000000000+1))
+                .on('click', function (d) {
+                    window.open('venuepapers.html?venue=' + d.venue + '&id=' + d.id + '&r=' + Math.floor(Math.random() * 1000000000 + 1))
                 })
                 //                    .html(d.venue+'(#'+ d.count+')')
                 .html(totalText);
-//                for (var source in d.source){
-//                    console.log(source);
-//                    d3.select(this)
-//                            .selectAll('whatever')
-//                            .data(d.source)
-//                            .enter()
-//                        .append('text')
-//                        .styles({
-//                            'font-size':size+px,
-//                            'font-family':family,
-//                            'color':color
-//                        })
-//                        .on('click',function(e){
-//                            window.open('venuepapers.html?venue='+ d.venue+'&source='+ e.source)
-//                        })
-//                        .html(function(e){
-//                            return e.source+':'+ e.count+' ';
-//                        });
-////                }
-//                d3.select(this)
-//                    .append('text')
-//                    .styles({
-//                        'font-size':size+px,
-//                        'font-family':family,
-//                        'color':color
-//                    })
-//                    .html(')')
+            //                for (var source in d.source){
+            //                    console.log(source);
+            //                    d3.select(this)
+            //                            .selectAll('whatever')
+            //                            .data(d.source)
+            //                            .enter()
+            //                        .append('text')
+            //                        .styles({
+            //                            'font-size':size+px,
+            //                            'font-family':family,
+            //                            'color':color
+            //                        })
+            //                        .on('click',function(e){
+            //                            window.open('venuepapers.html?venue='+ d.venue+'&source='+ e.source)
+            //                        })
+            //                        .html(function(e){
+            //                            return e.source+':'+ e.count+' ';
+            //                        });
+            ////                }
+            //                d3.select(this)
+            //                    .append('text')
+            //                    .styles({
+            //                        'font-size':size+px,
+            //                        'font-family':family,
+            //                        'color':color
+            //                    })
+            //                    .html(')')
 
         })
 
 };
-var data={field:field,source:'aminerV8'};
-ajax(url,success,data);
+var data = {
+    field: field,
+    source: 'aminerV8'
+};
+ajax(url, success, data);
 
 //import {server,port,errorPort} from '../setting/server';
 //import {layoutPapers} from '../searchInteraction/layout';
 //import {ajax} from '../processData/request';
-function getUrlParam(name){
-    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
-    if (r!=null) return unescape(r[2]); return null; //返回参数值
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]);
+    return null; //返回参数值
 }
-var px='px';
-var usefulWidth= window.innerWidth
-    ||document.body.clientWidth
-    || document.documentElement.clientWidth;
-var usefulHeight = document.body.clientHeight
-    || document.documentElement.clientHeight
-    || window.innerHeight;
-var body=d3.select('body');
-var bodyDiv=body.append('div').attr('class','bodyDiv')
+var px = 'px';
+var usefulWidth = window.innerWidth ||
+    document.body.clientWidth ||
+    document.documentElement.clientWidth;
+var usefulHeight = document.body.clientHeight ||
+    document.documentElement.clientHeight ||
+    window.innerHeight;
+var body = d3.select('body');
+var bodyDiv = body.append('div').attr('class', 'bodyDiv')
     .styles({
-        width:usefulWidth+px,
-        height:usefulHeight+px
+        width: usefulWidth + px,
+        height: usefulHeight + px
     });
-body.append('span').attr('id','ruler').attr('class','ruler');
-var venue=getUrlParam('venue');
-var venueID=getUrlParam('id');
-var text='Paper List of '+venue;
+body.append('span').attr('id', 'ruler').attr('class', 'ruler');
+var venue = getUrlParam('venue');
+var venueID = getUrlParam('id');
+var text = 'Paper List of ' + venue;
 initServer();
-var titleData={
-    class:'title',
-    text:text,
-    size:'30',
-    family:'Arial',
-    top:'100',
-    color:'white'
+var titleData = {
+    class: 'title',
+    text: text,
+    size: '30',
+    family: 'Arial',
+    top: '100',
+    color: 'white'
 };
-titleData['left']=200
+titleData['left'] = 200
 console.log(titleData)
 bodyDiv.append('div')
     .datum(titleData)
-    .each(function(d){
+    .each(function (d) {
         d3.select(this)
             .attrs({
-                class: d.class+'Div'
+                class: d.class + 'Div'
             })
             .styles({
-                'margin-left': d.left+px,
-                'margin-top': d.top+px
+                'margin-left': d.left + px,
+                'margin-top': d.top + px
             })
             .append('text')
             .attrs({
-                class: d.class+'Text'
+                class: d.class + 'Text'
             })
             .styles({
-                'font-size': d.size+px,
+                'font-size': d.size + px,
                 'font-family': d.family,
                 'color': d.color
             })
             .html(d.text)
     });
-var url='http://'+server+':'+port+'/searchPapers/';
-var paperListDiv=bodyDiv.append('div')
+var url = 'http://' + server + ':' + port + '/searchPapers/';
+var paperListDiv = bodyDiv.append('div')
     .attrs({
-        'class':'paperListDiv'
+        'class': 'paperListDiv'
     })
     .styles({
-        'margin-left':titleData.left+px,
+        'margin-left': titleData.left + px,
 
-        'width':'70%',
-        'height':'auto'
+        'width': '70%',
+        'height': 'auto'
     });
-var success=function(data){
-    var list=data;
-    list=list.sort(function(a,b){return b.citation- a.citation});
+var success = function (data) {
+    var list = data;
+    list = list.sort(function (a, b) {
+        return b.citation - a.citation
+    });
     console.log(list);
     paperListDiv.selectAll('whatever')
         .data(list)
         .enter()
         .append('div')
         .styles({
-            'margin-top':'15px'
+            'margin-top': '15px'
         })
         .each(layoutPapers);
 };
-var data={venueID:venueID,source:'aminerV8'};
-ajax(url,success,data);
+var data = {
+    venueID: venueID,
+    source: 'aminerV8'
+};
+ajax(url, success, data);
 
 //DirectedGraph.prototype.calculateFlowMap=calculateFlowMap;
 function calculateFlowMap(d, relayout) {
@@ -9797,13 +10103,16 @@ function calculateFlowMap(d, relayout) {
     //find root
     var root;
     for (var i = 0; i < nodes.length; i++) {
-        if (nodes[i].focused == 'true')root = nodes[i];
+        if (nodes[i].focused == 'true') root = nodes[i];
     }
     //change jigsaw 210 cluster 106 cluster position
     root.y = this.svg.attr('height').toFloat() / 2;
 
-    if(getUrlParam('aminerV8_id') == 1182989 && leftLayer.clusterCount == '20') {
-        var tmp = {x: nodes[13].x, y: nodes[13].y};
+    if (getUrlParam('aminerV8_id') == 1182989 && leftLayer.clusterCount == '20') {
+        var tmp = {
+            x: nodes[13].x,
+            y: nodes[13].y
+        };
         nodes[13].x = nodes[19].x;
         nodes[13].y = nodes[19].y;
         nodes[19].x = tmp.x;
@@ -9811,18 +10120,21 @@ function calculateFlowMap(d, relayout) {
     }
     //change twitter
     function changePosition(n1, n2) {
-        var tmp = {x: n1.x, y: n1.y};
+        var tmp = {
+            x: n1.x,
+            y: n1.y
+        };
         n1.x = n2.x;
         n1.y = n2.y;
         n2.x = tmp.x;
         n2.y = tmp.y;
     }
-    if(getUrlParam('twitter') == 20 && leftLayer.clusterCount == '20') {
+    if (getUrlParam('twitter') == 20 && leftLayer.clusterCount == '20') {
         changePosition(nodes[11], nodes[16]);
         changePosition(nodes[4], nodes[15]);
         changePosition(nodes[1], nodes[17]);
         changePosition(nodes[11], nodes[1]);
-        nodes[13].y = this.svg.attr('height').toFloat() / 2-20;
+        nodes[13].y = this.svg.attr('height').toFloat() / 2 - 20;
         nodes[4].y += 20;
         root.y = nodes[11].y;
     }
@@ -9858,11 +10170,10 @@ function calculateFlowMap(d, relayout) {
     edges.forEach(function (edge) {
         if (!edge.recovered) {
             originEdges.push(edge);
-        }
-        else {
+        } else {
             recoveredEdges.push(edge);
         }
-        edge.isForegroundEdge=true;
+        edge.isForegroundEdge = true;
     });
 
     var edgeCount = 0;
@@ -9881,8 +10192,8 @@ function calculateFlowMap(d, relayout) {
             }
         }
     });
-    var foregroundSourceEdges=[];
-    clone(edges,foregroundSourceEdges);
+    var foregroundSourceEdges = [];
+    clone(edges, foregroundSourceEdges);
 
     var allEdgesSourceDic = getEdgeSourceDic(edges);
 
@@ -9890,12 +10201,12 @@ function calculateFlowMap(d, relayout) {
     var backgroundEdges = [];
     clone(originEdges, backgroundEdges);
     backgroundEdges.forEach(function (edge) {
-        var source=edge.source;
-        var target=edge.target;
-        edge.sourceFatherNode=source;
-        edge.targetFatherNode=target;
+        var source = edge.source;
+        var target = edge.target;
+        edge.sourceFatherNode = source;
+        edge.targetFatherNode = target;
         edge.isBackgroundEdge = true;
-        edge.isForegroundEdge=false;
+        edge.isForegroundEdge = false;
     });
 
     var originEdgeDic = getEdgeSourceTargetDic(originEdges);
@@ -9906,11 +10217,11 @@ function calculateFlowMap(d, relayout) {
             var target = edge.routerClusters[i + 1];
             var key = source + '_' + target;
 
-            for(var year in edge.weight){
-                if(!(year in backgroundEdgesDic[key + '_background'].weight)){
-                    backgroundEdgesDic[key + '_background'].weight[year]=0;
+            for (var year in edge.weight) {
+                if (!(year in backgroundEdgesDic[key + '_background'].weight)) {
+                    backgroundEdgesDic[key + '_background'].weight[year] = 0;
                 }
-                backgroundEdgesDic[key + '_background'].weight[year]+=edge.weight[year];
+                backgroundEdgesDic[key + '_background'].weight[year] += edge.weight[year];
             }
 
             backgroundEdgesDic[key + '_background'][edgeThickNessOption] += edge[edgeThickNessOption];
@@ -9943,6 +10254,7 @@ function calculateFlowMap(d, relayout) {
 
     setDelay(cluster);
     setEdgeDuration(edges);
+
     function sortRecoveredEdges(edges) {
         var treeLevelDic = {};
         nodes.forEach(function (node) {
@@ -9999,7 +10311,7 @@ function calculateFlowMap(d, relayout) {
             var source = cluster.originNodeID;
             var target = maxCluster.originNodeID;
             var key = source + '_' + target;
-            if (!(key in originEdgeSourceTargetDic))key += '_background';
+            if (!(key in originEdgeSourceTargetDic)) key += '_background';
             var midTargetEdge = originEdgeSourceTargetDic[key];
             nodes[source].midTargetEdgeIndex = maxIndex;
             nodes[source].midTargetEdge = midTargetEdge;
@@ -10014,7 +10326,7 @@ function calculateFlowMap(d, relayout) {
         edges.forEach(function (edge) {
             var pathNodeIds = [];
             edge.pathNodeList.forEach(function (node) {
-                pathNodeIds.push('_'+node+'_');
+                pathNodeIds.push('_' + node + '_');
             });
             var regExp = new RegExp(pathNodeIds.join('-'));
             var pathStrings = pathSet.values();
@@ -10022,8 +10334,8 @@ function calculateFlowMap(d, relayout) {
                 var res = regExp.exec(pathStrings[i]);
                 if (res) {
                     var longNodes = [];
-                    var uniquePath=pathStrings[i].split('-');
-                    var path=[];
+                    var uniquePath = pathStrings[i].split('-');
+                    var path = [];
                     uniquePath.forEach(function (p) {
                         path.push(p.split('_')[1]);
                     });
@@ -10046,8 +10358,15 @@ function calculateFlowMap(d, relayout) {
                 node.topShift += backgroundEdgesDic[edgeKey][edgeThickNessOption] / 2 * k;
                 node.bottomShift += backgroundEdgesDic[edgeKey][edgeThickNessOption] / 2 * k;
                 var targetNode = nodes[node.midTargetEdge.target];
-                if (!(edgeKey in node.edgeShiftDic))node.edgeShiftDic[edgeKey] = {shiftIn: 0, shiftOut: 0, shift: 0};
-                if (!(edgeKey in targetNode.edgeShiftDic))targetNode.edgeShiftDic[edgeKey] = {shiftIn: 0, shiftOut: 0};
+                if (!(edgeKey in node.edgeShiftDic)) node.edgeShiftDic[edgeKey] = {
+                    shiftIn: 0,
+                    shiftOut: 0,
+                    shift: 0
+                };
+                if (!(edgeKey in targetNode.edgeShiftDic)) targetNode.edgeShiftDic[edgeKey] = {
+                    shiftIn: 0,
+                    shiftOut: 0
+                };
             }
         })
     }
@@ -10064,8 +10383,16 @@ function calculateFlowMap(d, relayout) {
         //source[shiftDirection] += width * k;
         //target[shiftDirection] += width * k;
 
-        if (!(edgeKey in source.edgeShiftDic))source.edgeShiftDic[edgeKey] = {shiftIn: 0, shiftOut: 0, shift: 0};
-        if (!(edgeKey in target.edgeShiftDic))target.edgeShiftDic[edgeKey] = {shiftIn: 0, shiftOut: 0, shift: 0};
+        if (!(edgeKey in source.edgeShiftDic)) source.edgeShiftDic[edgeKey] = {
+            shiftIn: 0,
+            shiftOut: 0,
+            shift: 0
+        };
+        if (!(edgeKey in target.edgeShiftDic)) target.edgeShiftDic[edgeKey] = {
+            shiftIn: 0,
+            shiftOut: 0,
+            shift: 0
+        };
 
         source.edgeShiftDic[edgeKey].shiftOut = f * (source[shiftDirectionOut] + width / 2) * k;
         target.edgeShiftDic[edgeKey].shiftIn = f * (target[shiftDirectionIn] + width / 2) * k;
@@ -10082,95 +10409,95 @@ function calculateFlowMap(d, relayout) {
 
     }
 
-    function generateForegroundSourceEdges(edges){
-        var edgeTargetDic=getEdgeTargetDic(edges);
+    function generateForegroundSourceEdges(edges) {
+        var edgeTargetDic = getEdgeTargetDic(edges);
         edges.forEach(function (edge) {
-            edge.isForegroundSourceEdge=true;
+            edge.isForegroundSourceEdge = true;
         });
-        for(var target in edgeTargetDic){
-            var sourceEdgesDic=edgeTargetDic[target];
-            var sourceEdges=[];
-            for(var id in sourceEdgesDic){
-                var sourceEdge=sourceEdgesDic[id];
-                if(!sourceEdge.recovered){
-                    sourceEdge.routerLength=2;
-                }
-                else{
-                    sourceEdge.routerLength=sourceEdge.routerClusters.length;
+        for (var target in edgeTargetDic) {
+            var sourceEdgesDic = edgeTargetDic[target];
+            var sourceEdges = [];
+            for (var id in sourceEdgesDic) {
+                var sourceEdge = sourceEdgesDic[id];
+                if (!sourceEdge.recovered) {
+                    sourceEdge.routerLength = 2;
+                } else {
+                    sourceEdge.routerLength = sourceEdge.routerClusters.length;
                 }
                 sourceEdges.push(sourceEdge);
             }
-            sourceEdges.sort(function (a,b) {
+            sourceEdges.sort(function (a, b) {
                 return d3.descending(a.routerLength, b.routerLength);
             });
-            var sumStrokeWidth=d3.sum(sourceEdges, function (d) {
+            var sumStrokeWidth = d3.sum(sourceEdges, function (d) {
                 return d[edgeThickNessOption];
             });
-            var edgeStrokeWidthDic={};
+            var edgeStrokeWidthDic = {};
             sourceEdges.forEach(function (edge) {
                 var key;
-                if(!edge.recovered){
-                    key=edge.source+'_'+edge.target;
-                    if(!(key in edgeStrokeWidthDic)){
-                        edgeStrokeWidthDic[key]=0;
+                if (!edge.recovered) {
+                    key = edge.source + '_' + edge.target;
+                    if (!(key in edgeStrokeWidthDic)) {
+                        edgeStrokeWidthDic[key] = 0;
                     }
-                    edgeStrokeWidthDic[key]+=edge[edgeThickNessOption];
-                }
-                else{
-                    for(var i=0;i<edge.routerClusters.length-1;i++){
-                        key=edge.routerClusters[i]+'_'+edge.routerClusters[i+1];
-                        if(!(key in edgeStrokeWidthDic)){
-                            edgeStrokeWidthDic[key]=0;
+                    edgeStrokeWidthDic[key] += edge[edgeThickNessOption];
+                } else {
+                    for (var i = 0; i < edge.routerClusters.length - 1; i++) {
+                        key = edge.routerClusters[i] + '_' + edge.routerClusters[i + 1];
+                        if (!(key in edgeStrokeWidthDic)) {
+                            edgeStrokeWidthDic[key] = 0;
                         }
-                        edgeStrokeWidthDic[key]+=edge[edgeThickNessOption];
+                        edgeStrokeWidthDic[key] += edge[edgeThickNessOption];
                     }
                 }
             });
-            var edgeStrokeWidthShiftDic={};
-            for(var key in edgeStrokeWidthDic){
-                var backgroundEdgeShift=nodes[key.split('_')[0]].edgeShiftDic[key+'_background'].shift;
-                edgeStrokeWidthShiftDic[key]={source:edgeStrokeWidthDic[key]/2+backgroundEdgeShift,target:edgeStrokeWidthDic[key]/2};
+            var edgeStrokeWidthShiftDic = {};
+            for (var key in edgeStrokeWidthDic) {
+                var backgroundEdgeShift = nodes[key.split('_')[0]].edgeShiftDic[key + '_background'].shift;
+                edgeStrokeWidthShiftDic[key] = {
+                    source: edgeStrokeWidthDic[key] / 2 + backgroundEdgeShift,
+                    target: edgeStrokeWidthDic[key] / 2
+                };
             }
             sourceEdges.forEach(function (edge) {
-                edge.nodeShiftDic={};
-                edge.fatherNode=target;
+                edge.nodeShiftDic = {};
+                edge.fatherNode = target;
                 var key;
-                if(!edge.recovered){
-                    key=edge.source+'_'+edge.target;
+                if (!edge.recovered) {
+                    key = edge.source + '_' + edge.target;
                     //edge.pathNodeList=[nodes[edge.source],nodes[edge.target]];
-                    edge.pathNodeList=[edge.source,edge.target];
-                    edge.pathNodeDic={};
+                    edge.pathNodeList = [edge.source, edge.target];
+                    edge.pathNodeDic = {};
                     //edge.pathNodeDic[edge.source]=nodes[edge.source];
                     //edge.pathNodeDic[edge.target]=nodes[edge.target];
-                    edge.pathNodeDic[edge.source]=edge.source;
-                    edge.pathNodeDic[edge.target]=edge.target;
+                    edge.pathNodeDic[edge.source] = edge.source;
+                    edge.pathNodeDic[edge.target] = edge.target;
 
-                    edge.nodeShiftDic[edge.source]=edgeStrokeWidthShiftDic[key].source-edge[edgeThickNessOption]/2;
-                    edge.nodeShiftDic[edge.target]=edgeStrokeWidthShiftDic[key].target-edge[edgeThickNessOption]/2;
-                    edgeStrokeWidthShiftDic[key].source-=edge[edgeThickNessOption];
-                    edgeStrokeWidthShiftDic[key].target-=edge[edgeThickNessOption];
-                }
-                else{
-                    edge.pathNodeList=[];
-                    edge.pathNodeDic={};
-                    var len=edge.routerClusters.length;
-                    for(var i=0;i<len-1;i++){
+                    edge.nodeShiftDic[edge.source] = edgeStrokeWidthShiftDic[key].source - edge[edgeThickNessOption] / 2;
+                    edge.nodeShiftDic[edge.target] = edgeStrokeWidthShiftDic[key].target - edge[edgeThickNessOption] / 2;
+                    edgeStrokeWidthShiftDic[key].source -= edge[edgeThickNessOption];
+                    edgeStrokeWidthShiftDic[key].target -= edge[edgeThickNessOption];
+                } else {
+                    edge.pathNodeList = [];
+                    edge.pathNodeDic = {};
+                    var len = edge.routerClusters.length;
+                    for (var i = 0; i < len - 1; i++) {
                         //edge.pathNodeList.push(nodes[edge.routerClusters[i]]);
                         edge.pathNodeList.push(edge.routerClusters[i]);
                         //edge.pathNodeDic[edge.routerClusters[i]]=nodes[edge.routerClusters[i]];
-                        edge.pathNodeDic[edge.routerClusters[i]]=edge.routerClusters[i];
-                        key=edge.routerClusters[i]+'_'+edge.routerClusters[i+1];
+                        edge.pathNodeDic[edge.routerClusters[i]] = edge.routerClusters[i];
+                        key = edge.routerClusters[i] + '_' + edge.routerClusters[i + 1];
 
-                        edge.nodeShiftDic[edge.routerClusters[i]]=edgeStrokeWidthShiftDic[key].source-edge[edgeThickNessOption]/2;
-                        edge.nodeShiftDic[edge.routerClusters[i+1]]=edgeStrokeWidthShiftDic[key].target-edge[edgeThickNessOption]/2;
-                        edgeStrokeWidthShiftDic[key].source-=edge[edgeThickNessOption];
-                        edgeStrokeWidthShiftDic[key].target-=edge[edgeThickNessOption];
+                        edge.nodeShiftDic[edge.routerClusters[i]] = edgeStrokeWidthShiftDic[key].source - edge[edgeThickNessOption] / 2;
+                        edge.nodeShiftDic[edge.routerClusters[i + 1]] = edgeStrokeWidthShiftDic[key].target - edge[edgeThickNessOption] / 2;
+                        edgeStrokeWidthShiftDic[key].source -= edge[edgeThickNessOption];
+                        edgeStrokeWidthShiftDic[key].target -= edge[edgeThickNessOption];
 
                     }
                     //edge.pathNodeList.push(nodes[edge.routerClusters[len-1]]);
                     //edge.pathNodeDic[edge.routerClusters[len-1]]=nodes[edge.routerClusters[len-1]];
-                    edge.pathNodeList.push(edge.routerClusters[len-1]);
-                    edge.pathNodeDic[edge.routerClusters[len-1]]=edge.routerClusters[len-1];
+                    edge.pathNodeList.push(edge.routerClusters[len - 1]);
+                    edge.pathNodeDic[edge.routerClusters[len - 1]] = edge.routerClusters[len - 1];
                 }
             });
         }
@@ -10179,7 +10506,7 @@ function calculateFlowMap(d, relayout) {
     function generateForegroundTargetEdges(edges, originEdges) {
         var edgeSourceDic = getEdgeSourceDic(edges);
         edges.forEach(function (edge) {
-            edge.isForegroundTargetEdge=true;
+            edge.isForegroundTargetEdge = true;
         })
         var originEdgeSourceDic = getEdgeSourceDic(originEdges);
         var originEdgeTargetDic = getEdgeTargetDic(originEdges);
@@ -10196,8 +10523,7 @@ function calculateFlowMap(d, relayout) {
                     shortEdges.push(targetEdgesDic[id]);
                     subTreeNodeSet.add(targetEdgesDic[id].source);
                     subTreeNodeSet.add(targetEdgesDic[id].target);
-                }
-                else {
+                } else {
                     longEdges.push(targetEdgesDic[id]);
                     targetEdgesDic[id].routerClusters.forEach(function (clusterID) {
                         subTreeNodeSet.add(clusterID);
@@ -10236,8 +10562,7 @@ function calculateFlowMap(d, relayout) {
                     thisNode.angelToYAxis = lawOfCosine(thisNode, sourceNode, shiftNode);
                     if (thisNode.y <= nodes[sourceNode.midTargetEdge.target].y) {
                         topNodesSet.add(nodeId);
-                    }
-                    else {
+                    } else {
                         bottomNodesSet.add(nodeId);
                     }
                 }
@@ -10251,12 +10576,10 @@ function calculateFlowMap(d, relayout) {
                 if (midNodesSet.has(edge.target)) {
                     edge.routerLength = 2;
                     midEdges.push(edge);
-                }
-                else if (topNodesSet.has(edge.target)) {
+                } else if (topNodesSet.has(edge.target)) {
                     edge.sortCodeList = [nodes[edge.source].sortIndex, nodes[edge.target].angelToYAxis];
                     topEdges.push(edge);
-                }
-                else {
+                } else {
                     edge.sortCodeList = [nodes[edge.source].sortIndex, nodes[edge.target].angelToYAxis];
                     bottomEdges.push(edge);
                 }
@@ -10265,8 +10588,7 @@ function calculateFlowMap(d, relayout) {
                 if (midNodesSet.has(edge.target)) {
                     edge.routerLength = edge.routerClusters.length;
                     midEdges.push(edge);
-                }
-                else if (topNodesSet.has(edge.target)) {
+                } else if (topNodesSet.has(edge.target)) {
                     var flag = false;
                     edge.sortCodeList = [];
                     for (var i = 0; i < edge.routerClusters.length - 1; i++) {
@@ -10282,8 +10604,7 @@ function calculateFlowMap(d, relayout) {
                     }
                     topEdges.push(edge);
 
-                }
-                else {
+                } else {
                     var flag = false;
                     edge.sortCodeList = [];
                     for (var i = 0; i < edge.routerClusters.length - 1; i++) {
@@ -10316,74 +10637,78 @@ function calculateFlowMap(d, relayout) {
             var topTotalStrokeWidth = 0;
             var midTotalStrokeWidth = 0;
             var bottomTotalStrokeWidth = 0;
-            var edgeStrokeWidthDic={};
+            var edgeStrokeWidthDic = {};
             sortedEdges.forEach(function (edge) {
                 var key;
-                if(!edge.recovered){
-                    key=edge.source+'_'+edge.target;
-                    if(!(key in edgeStrokeWidthDic)){
-                        edgeStrokeWidthDic[key]=0;
+                if (!edge.recovered) {
+                    key = edge.source + '_' + edge.target;
+                    if (!(key in edgeStrokeWidthDic)) {
+                        edgeStrokeWidthDic[key] = 0;
                     }
-                    edgeStrokeWidthDic[key]+=edge[edgeThickNessOption];
-                }
-                else{
-                    for(var i=0;i<edge.routerClusters.length-1;i++){
-                        key=edge.routerClusters[i]+'_'+edge.routerClusters[i+1];
-                        if(!(key in edgeStrokeWidthDic)){
-                            edgeStrokeWidthDic[key]=0;
+                    edgeStrokeWidthDic[key] += edge[edgeThickNessOption];
+                } else {
+                    for (var i = 0; i < edge.routerClusters.length - 1; i++) {
+                        key = edge.routerClusters[i] + '_' + edge.routerClusters[i + 1];
+                        if (!(key in edgeStrokeWidthDic)) {
+                            edgeStrokeWidthDic[key] = 0;
                         }
-                        edgeStrokeWidthDic[key]+=edge[edgeThickNessOption];
+                        edgeStrokeWidthDic[key] += edge[edgeThickNessOption];
                     }
                 }
             });
             //compute shift
-            var edgeStrokeWidthShiftDic={};
-            for(var key in edgeStrokeWidthDic){
+            var edgeStrokeWidthShiftDic = {};
+            for (var key in edgeStrokeWidthDic) {
 
-                var backgroundEdgeShift=nodes[key.split('_')[0]].edgeShiftDic[key+'_background'].shift;
-                edgeStrokeWidthShiftDic[key]={source:edgeStrokeWidthDic[key]/2+backgroundEdgeShift,target:edgeStrokeWidthDic[key]/2};
+                var backgroundEdgeShift = nodes[key.split('_')[0]].edgeShiftDic[key + '_background'].shift;
+                edgeStrokeWidthShiftDic[key] = {
+                    source: edgeStrokeWidthDic[key] / 2 + backgroundEdgeShift,
+                    target: edgeStrokeWidthDic[key] / 2
+                };
             }
             sortedEdges.forEach(function (edge) {
-                edge.fatherNode=source;
-                edge.shiftDic={};
-                edge.nodeShiftDic={};
+                edge.fatherNode = source;
+                edge.shiftDic = {};
+                edge.nodeShiftDic = {};
                 var key;
-                if(!edge.recovered){
-                    key=edge.source+'_'+edge.target;
-                    edge.shiftDic[key]=edgeStrokeWidthShiftDic[key]-edge[edgeThickNessOption]/2;
-                    edge.nodeShiftDic[edge.source]=edgeStrokeWidthShiftDic[key].source-edge[edgeThickNessOption]/2;
-                    edge.nodeShiftDic[edge.target]=edgeStrokeWidthShiftDic[key].target-edge[edgeThickNessOption]/2;
-                    edgeStrokeWidthShiftDic[key].source-=edge[edgeThickNessOption];
-                    edgeStrokeWidthShiftDic[key].target-=edge[edgeThickNessOption];
+                if (!edge.recovered) {
+                    key = edge.source + '_' + edge.target;
+                    edge.shiftDic[key] = edgeStrokeWidthShiftDic[key] - edge[edgeThickNessOption] / 2;
+                    edge.nodeShiftDic[edge.source] = edgeStrokeWidthShiftDic[key].source - edge[edgeThickNessOption] / 2;
+                    edge.nodeShiftDic[edge.target] = edgeStrokeWidthShiftDic[key].target - edge[edgeThickNessOption] / 2;
+                    edgeStrokeWidthShiftDic[key].source -= edge[edgeThickNessOption];
+                    edgeStrokeWidthShiftDic[key].target -= edge[edgeThickNessOption];
                     //edge.pathNodeList=[nodes[edge.source],nodes[edge.target]];
-                    edge.pathNodeList=[edge.source,edge.target];
-                    edge.pathNodeDic={};
+                    edge.pathNodeList = [edge.source, edge.target];
+                    edge.pathNodeDic = {};
                     //edge.pathNodeDic[edge.source]=nodes[edge.source];
                     //edge.pathNodeDic[edge.target]=nodes[edge.target];
-                    edge.pathNodeDic[edge.source]=edge.source;
-                    edge.pathNodeDic[edge.target]=edge.target;
-                }
-                else{
-                    edge.pathNodeList=[];
-                    edge.pathNodeDic={};
-                    var len=edge.routerClusters.length;
-                    for(var i=0;i<len-1;i++){
+                    edge.pathNodeDic[edge.source] = edge.source;
+                    edge.pathNodeDic[edge.target] = edge.target;
+                } else {
+                    edge.pathNodeList = [];
+                    edge.pathNodeDic = {};
+                    var len = edge.routerClusters.length;
+                    for (var i = 0; i < len - 1; i++) {
                         //edge.pathNodeList.push(nodes[edge.routerClusters[i]]);
                         edge.pathNodeList.push(edge.routerClusters[i]);
                         //edge.pathNodeDic[edge.routerClusters[i]]=nodes[edge.routerClusters[i]];
-                        edge.pathNodeDic[edge.routerClusters[i]]=edge.routerClusters[i];
-                        key=edge.routerClusters[i]+'_'+edge.routerClusters[i+1];
-                        edge.shiftDic[key]={source:edgeStrokeWidthShiftDic[key].source-edge[edgeThickNessOption]/2,target:edgeStrokeWidthShiftDic[key].target-edge[edgeThickNessOption]/2};
-                        edge.nodeShiftDic[edge.routerClusters[i]]=edgeStrokeWidthShiftDic[key].source-edge[edgeThickNessOption]/2;
-                        edge.nodeShiftDic[edge.routerClusters[i+1]]=edgeStrokeWidthShiftDic[key].target-edge[edgeThickNessOption]/2;
+                        edge.pathNodeDic[edge.routerClusters[i]] = edge.routerClusters[i];
+                        key = edge.routerClusters[i] + '_' + edge.routerClusters[i + 1];
+                        edge.shiftDic[key] = {
+                            source: edgeStrokeWidthShiftDic[key].source - edge[edgeThickNessOption] / 2,
+                            target: edgeStrokeWidthShiftDic[key].target - edge[edgeThickNessOption] / 2
+                        };
+                        edge.nodeShiftDic[edge.routerClusters[i]] = edgeStrokeWidthShiftDic[key].source - edge[edgeThickNessOption] / 2;
+                        edge.nodeShiftDic[edge.routerClusters[i + 1]] = edgeStrokeWidthShiftDic[key].target - edge[edgeThickNessOption] / 2;
 
-                        edgeStrokeWidthShiftDic[key].source-=edge[edgeThickNessOption];
-                        edgeStrokeWidthShiftDic[key].target-=edge[edgeThickNessOption];
+                        edgeStrokeWidthShiftDic[key].source -= edge[edgeThickNessOption];
+                        edgeStrokeWidthShiftDic[key].target -= edge[edgeThickNessOption];
                     }
                     //edge.pathNodeList.push(nodes[edge.routerClusters[len-1]]);
                     //edge.pathNodeDic[edge.routerClusters[len-1]]=nodes[edge.routerClusters[len-1]];
-                    edge.pathNodeList.push(edge.routerClusters[len-1]);
-                    edge.pathNodeDic[edge.routerClusters[len-1]]=edge.routerClusters[len-1];
+                    edge.pathNodeList.push(edge.routerClusters[len - 1]);
+                    edge.pathNodeDic[edge.routerClusters[len - 1]] = edge.routerClusters[len - 1];
                 }
             });
 
@@ -10440,8 +10765,8 @@ function calculateFlowMap(d, relayout) {
                 bottomShiftSum += nodes[nodeId].bottomShiftIn + nodes[nodeId].bottomShiftOut;
             });
             var shiftDirection, f;
-            (topShiftSum <= bottomShiftSum) ? shiftDirection = 'topShift' : shiftDirection = 'bottomShift';
-            (topShiftSum <= bottomShiftSum) ? f = 1 : f = -1;
+            (topShiftSum <= bottomShiftSum) ? shiftDirection = 'topShift': shiftDirection = 'bottomShift';
+            (topShiftSum <= bottomShiftSum) ? f = 1: f = -1;
             for (var i = 0; i < edge.routerClusters.length - 1; i++) {
                 var nodeId = edge.routerClusters[i];
                 var nextNodeId = edge.routerClusters[i + 1];
@@ -10462,7 +10787,7 @@ function calculateFlowMap(d, relayout) {
 
     function generateFlowMapEdges(edges) {
         var keySuffix = '';
-        if (edges[0].isBackgroundEdge)keySuffix += '_background';
+        if (edges[0].isBackgroundEdge) keySuffix += '_background';
         var leafNodeSet = getLeafNodes(edges);
         var rootNodeSet = getRootNode(edges);
         var edgeDic = getEdgeSourceTargetDic(edges);
@@ -10481,9 +10806,9 @@ function calculateFlowMap(d, relayout) {
                 keySet.add(key);
                 var pathNodeDic = {};
                 var pathNodeList = [];
-                var uniquePath=[];
+                var uniquePath = [];
                 path.forEach(function (p) {
-                    uniquePath.push('_'+p+'_');
+                    uniquePath.push('_' + p + '_');
                 })
                 pathSet.add(uniquePath.join('-'));
                 path.forEach(function (nodeId) {
@@ -10525,7 +10850,7 @@ function calculateFlowMap(d, relayout) {
         var edgeSourceDic = getEdgeSourceDic(edges);
         var edgeDic = getEdgeSourceTargetDic(edges);
         var keySuffix = '';
-        if (edges[0].isBackgroundEdge)keySuffix += '_background';
+        if (edges[0].isBackgroundEdge) keySuffix += '_background';
         var paths = [];
         var rootNode = new TreeNode(source);
         var currentNodes = [rootNode];
@@ -10686,15 +11011,14 @@ function calculateFlowMap(d, relayout) {
             }
         }
 
-//        console.log(cluster);
+        //        console.log(cluster);
         if (cluster.isRoot) {
             cluster.delay = 0;
             var nodeID = parseInt(cluster.originNodeID);
             nodes[nodeID].delay = cluster.delay;
             nodes[nodeID].duration = 100;
             setEdgeDelay(cluster);
-        }
-        else {
+        } else {
             if (cluster.parentCluster) {
 
                 cluster.delay = 200 + cluster.parentCluster.delay;
@@ -10704,9 +11028,9 @@ function calculateFlowMap(d, relayout) {
                 setEdgeDelay(cluster);
             }
         }
-//        if(cluster.subClusters){
-//            for(var i=0;i<cluster.subClusters.le)
-//        }
+        //        if(cluster.subClusters){
+        //            for(var i=0;i<cluster.subClusters.le)
+        //        }
 
     }
 
@@ -10737,12 +11061,18 @@ function calculateFlowMap(d, relayout) {
             var x2 = p2.x;
             var y1 = p1.y;
             var y2 = p2.y;
-            edge.assists = [[x1, y1], [x2, y2]];
+            edge.assists = [
+                [x1, y1],
+                [x2, y2]
+            ];
         }
 
         if (cluster.subClusters) {
             var sourceID = cluster.originNodeID;
-            var p0 = {x: cluster.x, y: cluster.y};
+            var p0 = {
+                x: cluster.x,
+                y: cluster.y
+            };
             var maxWeight = 0;
             var maxCluster;
             var kNum = 0;
@@ -10756,10 +11086,15 @@ function calculateFlowMap(d, relayout) {
             var maxID = maxCluster.originNodeID;
             var p1 = {}
             if (maxCluster.nodes) {
-                p1 = {x: maxCluster.x, y: maxCluster.y};
-            }
-            else if (maxCluster.node) {
-                p1 = {x: maxCluster.oriX, y: maxCluster.oriY};
+                p1 = {
+                    x: maxCluster.x,
+                    y: maxCluster.y
+                };
+            } else if (maxCluster.node) {
+                p1 = {
+                    x: maxCluster.oriX,
+                    y: maxCluster.oriY
+                };
             }
             var maxCtrlPoint1 = {};
             var maxCtrlPoint2 = {};
@@ -10809,10 +11144,15 @@ function calculateFlowMap(d, relayout) {
                 if (i != kNum) {
                     var p2;
                     if (cluster.subClusters[i].nodes) {
-                        p2 = {x: cluster.subClusters[i].x, y: cluster.subClusters[i].y};
-                    }
-                    else if (cluster.subClusters[i].node) {
-                        p2 = {x: cluster.subClusters[i].oriX, y: cluster.subClusters[i].oriY};
+                        p2 = {
+                            x: cluster.subClusters[i].x,
+                            y: cluster.subClusters[i].y
+                        };
+                    } else if (cluster.subClusters[i].node) {
+                        p2 = {
+                            x: cluster.subClusters[i].oriX,
+                            y: cluster.subClusters[i].oriY
+                        };
                     }
                     var pt = ratioPoint(p0, p2, 1 / 3);
                     var dist = getDistance(p0, pt);
@@ -10822,7 +11162,13 @@ function calculateFlowMap(d, relayout) {
                     var k2 = lineVec2.k;
 
                     var angle = angleBetween(vec1, vec2);
-                    var vecToX = new vector({x: 0, y: 0}, {x: 1, y: 0});
+                    var vecToX = new vector({
+                        x: 0,
+                        y: 0
+                    }, {
+                        x: 1,
+                        y: 0
+                    });
                     var angleToX = angleBetween(vec2, vecToX);
                     var halfAngle = angle / 2;
 
@@ -10830,44 +11176,36 @@ function calculateFlowMap(d, relayout) {
                         if (k2 > 0) {
                             p4.x = p0.x + dist * Math.cos(halfAngle);
                             p4.y = p0.y + dist * Math.sin(halfAngle);
-                        }
-                        else if (k2 < 0) {
+                        } else if (k2 < 0) {
                             p4.x = p0.x + dist * Math.cos(halfAngle);
                             p4.y = p0.y - dist * Math.sin(halfAngle);
-                        }
-                        else {
+                        } else {
                             console.log('k1==k2 should not happen')
                         }
-                    }
-                    else if (k1 > 0) {
+                    } else if (k1 > 0) {
                         if (k2 > 0) {
                             if (k2 > k1) {
                                 p4.x = p0.x + dist * Math.cos(angleToX - halfAngle);
                                 p4.y = p0.y + dist * Math.sin(angleToX - halfAngle);
-                            }
-                            else if (k2 < k1) {
+                            } else if (k2 < k1) {
                                 p4.x = p0.x + dist * Math.cos(angleToX + halfAngle);
                                 p4.y = p0.y + dist * Math.sin(angleToX + halfAngle);
                             }
 
-                        }
-                        else if (k2 <= 0) {
+                        } else if (k2 <= 0) {
                             p4.x = p0.x + dist * Math.cos(halfAngle - angleToX);
                             p4.y = p0.y + dist * Math.sin(halfAngle - angleToX);
                         }
 
-                    }
-                    else if (k1 < 0) {
+                    } else if (k1 < 0) {
                         if (k2 >= 0) {
                             p4.x = p0.x + dist * Math.cos(halfAngle - angleToX);
                             p4.y = p0.y + dist * Math.sin(halfAngle - angleToX);
-                        }
-                        else if (k2 < 0) {
+                        } else if (k2 < 0) {
                             if (k2 < k1) {
                                 p4.x = p0.x + dist * Math.cos(angleToX - halfAngle);
                                 p4.y = p0.y - dist * Math.sin(angleToX - halfAngle);
-                            }
-                            else if (k2 > k1) {
+                            } else if (k2 > k1) {
                                 p4.x = p0.x + dist * Math.cos(angleToX - halfAngle);
                                 p4.y = p0.y - dist * Math.sin(angleToX + halfAngle);
                             }
@@ -10909,7 +11247,10 @@ function calculateFlowMap(d, relayout) {
                 }
             }
             var bounds1 = maxCluster.bounds;
-            var line1 = {p1: p0, p2: maxCluster.center};
+            var line1 = {
+                p1: p0,
+                p2: maxCluster.center
+            };
             var p1 = getRectangleLineCrossPoint(bounds1, line1);
 
             //get p2
@@ -10925,12 +11266,17 @@ function calculateFlowMap(d, relayout) {
                 y: otherNodesBound.y + otherNodesBound.height / 2
             };
             var bounds2 = otherNodesBound;
-            var line2 = {p1: p0, p2: otherNodesCenter};
+            var line2 = {
+                p1: p0,
+                p2: otherNodesCenter
+            };
             var p2 = getRectangleLineCrossPoint(bounds2, line2);
 
             var dist1 = getDistance(p0, p1);
             var dist2 = getDistance(p0, p2);
-            var JumpCount = {count: 2};
+            var JumpCount = {
+                count: 2
+            };
 
             function recurJumpCluster(cluster, count) {
                 var newCount = count;
@@ -10952,9 +11298,9 @@ function calculateFlowMap(d, relayout) {
 
             recurJumpCluster(cluster, JumpCount);
 
-            if (JumpCount.count > 2)JumpCount.count -= 1;
+            if (JumpCount.count > 2) JumpCount.count -= 1;
             var shortestDist = d3.min([dist1, dist2]) / JumpCount.count;
-//        var biggerCluster=d3.max([cluster.subCluster1,cluster.subCluster2],function(d){return d.size});
+            //        var biggerCluster=d3.max([cluster.subCluster1,cluster.subCluster2],function(d){return d.size});
 
             var p3 = maxCluster.center;
             var biggerDist = getDistance(p0, p3);
@@ -10987,14 +11333,17 @@ function calculateFlowMap(d, relayout) {
             recurSourceNode(sourceNode, targetID);
         }
 
-//        return edges;
+        //        return edges;
 
 
     }
 
     function recoverNonTreeEdges(d) {
         function getLine(sourceID, targetID) {
-            return {p1: nodes[sourceID], p2: nodes[targetID]};
+            return {
+                p1: nodes[sourceID],
+                p2: nodes[targetID]
+            };
         }
 
         var edgeSourceTargetDic = directedGraph.edgeSourceTargetDic;
@@ -11017,9 +11366,9 @@ function calculateFlowMap(d, relayout) {
                     crossCount += 1;
                 }
             }
-//            if(crossCount <=3 ){
+            //            if(crossCount <=3 ){
             nonCrossEdges.push(nonTreeEdges[i]);
-//            }
+            //            }
         }
         //console.log(nonCrossEdges);
         for (var i = 0; i < nonCrossEdges.length; i++) {
@@ -11036,18 +11385,21 @@ function calculateFlowMap(d, relayout) {
                     }
                 }
                 if (sourceEdge && targetEdge) {
-//                    if(nodes[source].x<nodes[target].x){
-//                        var newAssistNode=[sourceEdge.assists[0],targetEdge.assists[1]];
-//                        nonCrossEdges[i].assists=newAssistNode;
-//                        nonCrossEdges[i].edgeType='dash';
-//                    }
-//                    else{
+                    //                    if(nodes[source].x<nodes[target].x){
+                    //                        var newAssistNode=[sourceEdge.assists[0],targetEdge.assists[1]];
+                    //                        nonCrossEdges[i].assists=newAssistNode;
+                    //                        nonCrossEdges[i].edgeType='dash';
+                    //                    }
+                    //                    else{
                     var p1 = ratioPoint(nodes[source], nodes[target], 2 / 3);
                     var p2 = ratioPoint(nodes[source], nodes[target], 1 / 3);
-                    nonCrossEdges[i].assists = [[p1.x, p1.y], [p2.x, p2.y]];
+                    nonCrossEdges[i].assists = [
+                        [p1.x, p1.y],
+                        [p2.x, p2.y]
+                    ];
                     nonCrossEdges[i].edgeType = 'dash';
                     nonCrossEdges[i].isNontreeEdge = true;
-//                    }
+                    //                    }
                     edges.push(nonCrossEdges[i]);
                 }
             }
@@ -11088,7 +11440,7 @@ function calculateFlowMap(d, relayout) {
 
                     originKey = originSource + '_' + originTarget;
 
-//                    flag = false;
+                    //                    flag = false;
                     for (var j = 0; j < newPath.edges.length; j++) {
                         var newEdge = newPath.edges[j];
                         var newSource = newEdge.source;
@@ -11099,8 +11451,7 @@ function calculateFlowMap(d, relayout) {
                             break;
                         }
                     }
-                }
-                else {
+                } else {
                     originEdge = newDeletedEdges[i];
                     originSource = originEdge.source;
                     originTarget = originEdge.target;
@@ -11110,7 +11461,7 @@ function calculateFlowMap(d, relayout) {
 
                 if (flag == false) {
                     var dijPath;
-                    if (method == 'mst')dijPath = directedGraph.maximalSpanningTree.findMaxPathBetween(originSource, originTarget);
+                    if (method == 'mst') dijPath = directedGraph.maximalSpanningTree.findMaxPathBetween(originSource, originTarget);
                     else dijPath = directedGraph.findMaxPathBetween(originSource, originTarget);
                     if (dijPath[0]) {
                         newPath = dijPath[0];
@@ -11143,11 +11494,10 @@ function calculateFlowMap(d, relayout) {
                     originEdge.TreeEdge = true;
                     originEdge.routerClusters = routerClusters;
                     originEdge.recovered = true;
-//                    edgeSourceTargetDic[originKey]=originEdge;
+                    //                    edgeSourceTargetDic[originKey]=originEdge;
                     edges.push(originEdge);
 
-                }
-                else {
+                } else {
                     tmpEdges.push(newDeletedEdges[i]);
                 }
 
@@ -11188,8 +11538,7 @@ function calculateFlowMap(d, relayout) {
             //cluster.weight=fullWeight;
 
             return cluster.nodes;
-        }
-        else {
+        } else {
             cluster.weight = cluster.node.size;
             cluster.fullWeight = cluster.node.size;
             return [cluster.node];
@@ -11223,8 +11572,7 @@ function calculateFlowMap(d, relayout) {
             for (var i = 0; i < cluster.subClusters.length; i++) {
                 getClusterBoundAndCenter(cluster.subClusters[i]);
             }
-        }
-        else if (cluster.node) {
+        } else if (cluster.node) {
             cluster.bounds = {
                 x: cluster.node.x - sizeScale.sizeScale(cluster.node.size),
                 y: cluster.node.y - sizeScale.sizeScale(cluster.node.size),
@@ -11250,8 +11598,7 @@ function calculateFlowMap(d, relayout) {
                 cluster.subClusters.push(newCluster);
                 generateCluster(node.children[i], newCluster);
             }
-        }
-        else {
+        } else {
             cluster.node = node;
             cluster.originNodeID = node.id;
             cluster.oriX = node.x;
@@ -11280,9 +11627,18 @@ function calculateFlowMap(d, relayout) {
                             maxGrandChild = grandChildren[j];
                         }
                     }
-                    var p1 = {x: node.x, y: node.y};
-                    var p2 = {x: maxGrandChild.x, y: maxGrandChild.y};
-                    var p3 = {x: child.x, y: child.y};
+                    var p1 = {
+                        x: node.x,
+                        y: node.y
+                    };
+                    var p2 = {
+                        x: maxGrandChild.x,
+                        y: maxGrandChild.y
+                    };
+                    var p3 = {
+                        x: child.x,
+                        y: child.y
+                    };
                     var p4 = getPointToLineCrossPoint(p1, p2, p3);
                     child.x = p4.x;
                     child.y = p4.y;
@@ -11290,8 +11646,7 @@ function calculateFlowMap(d, relayout) {
                 recurTree(node.children[i]);
 
             }
-        }
-        else {
+        } else {
             return;
         }
     }
@@ -11301,24 +11656,39 @@ function calculateFlowMap(d, relayout) {
         if (!source.parentNode) {
             //this is root need to generate a grandparent
             var children = source.children;
-            var avgX = 0, avgY = 0;
+            var avgX = 0,
+                avgY = 0;
             for (var i = 0; i < children.length; i++) {
                 avgX += children[i].x;
                 avgY += children[i].y;
             }
             avgX /= children.length;
             avgY /= children.length;
-            var thisVector = vector({x: source.x, y: source.y}, {x: avgX, y: avgY});
+            var thisVector = vector({
+                x: source.x,
+                y: source.y
+            }, {
+                x: avgX,
+                y: avgY
+            });
             var normalized = getNormalized(thisVector);
-            var reverseNormalized = {x: normalized.x * -1, y: normalized.y * -1};
+            var reverseNormalized = {
+                x: normalized.x * -1,
+                y: normalized.y * -1
+            };
             var x = source.x + 10 * reverseNormalized.x;
             var y = source.y + 10 * reverseNormalized.y;
-            var grandParent = {x: x, y: y};
-        }
-        else {
+            var grandParent = {
+                x: x,
+                y: y
+            };
+        } else {
             grandParent = source.parentNode;
         }
-        var parent = {x: source.x, y: source.y};
+        var parent = {
+            x: source.x,
+            y: source.y
+        };
         var shiftPoint = false;
 
         if (source.parentNode) {
@@ -11328,7 +11698,8 @@ function calculateFlowMap(d, relayout) {
                 var sourceID = source.id;
                 var targetID = target.id;
                 if (source.children.length > 1) {
-                    var countX = 0, countY = 0;
+                    var countX = 0,
+                        countY = 0;
                     for (var i = 0; i < source.children.length; i++) {
                         if (source.children[i].id != targetID) {
                             countX += source.children[i].x;
@@ -11339,14 +11710,20 @@ function calculateFlowMap(d, relayout) {
                     countX /= source.children.length - 1;
                     countY /= source.children.length - 1;
                     var thisEdgeVec = vector(source, target);
-                    var otherEdgeVec = vector(source, {x: countX, y: countY});
+                    var otherEdgeVec = vector(source, {
+                        x: countX,
+                        y: countY
+                    });
                     var thisEdgeVec3d = vector3d(getNormalized(thisEdgeVec).x, -1 * getNormalized(thisEdgeVec).y, 0);
                     var otherEdgeVec3d = vector3d(getNormalized(otherEdgeVec).x, -1 * getNormalized(otherEdgeVec).y, 0);
                     var crossResult = vector3dCross(thisEdgeVec3d, otherEdgeVec3d);
                     var grandToParent = vector(grandParent, parent);
                     var shiftX = -1 * getNormalized(grandToParent).y;
                     var shiftY = -1 * getNormalized(grandToParent).x;
-                    var shiftDir = {x: shiftX, y: shiftY};
+                    var shiftDir = {
+                        x: shiftX,
+                        y: shiftY
+                    };
                     if (crossResult.z < 0) {
                         shiftDir.x *= -1;
                         shiftDir.y *= -1;
@@ -11359,7 +11736,10 @@ function calculateFlowMap(d, relayout) {
 
         }
 
-        var child = {x: target.x, y: target.y};
+        var child = {
+            x: target.x,
+            y: target.y
+        };
         var grandChild;
         if (target.children) {
             var grandChildEdges = target.children;
@@ -11374,10 +11754,12 @@ function calculateFlowMap(d, relayout) {
                     maxEdge = tmpEdge;
                 }
             }
-            grandChild = {x: nodes[maxEdge.target].x, y: nodes[maxEdge.target].y};
+            grandChild = {
+                x: nodes[maxEdge.target].x,
+                y: nodes[maxEdge.target].y
+            };
 
-        }
-        else {
+        } else {
             var parentToChild = vector(parent, child);
             var pToCDir = getNormalized(parentToChild);
             var grandParentToParent = vector(grandParent, parent);
@@ -11385,7 +11767,10 @@ function calculateFlowMap(d, relayout) {
             var angleBetween = absAngleBetween(parentToChild, grandParentToParent);
             var x = pToCDir.x * Math.cos(-angleBetween) - pToCDir.y * Math.sin(-angleBetween);
             var y = pToCDir.x * Math.sin(-angleBetween) - pToCDir.y * Math.cos(-angleBetween);
-            grandChild = {x: child.x + 10 * x, y: child.y + 10 * y};
+            grandChild = {
+                x: child.x + 10 * x,
+                y: child.y + 10 * y
+            };
         }
         var sourceID = source.id;
         var targetID = target.id;
@@ -11403,45 +11788,56 @@ function calculateFlowMap(d, relayout) {
         var collX = parentGrandDist * getNormalized(grandToParent).x + parent.x;
         var collY = parentGrandDist * getNormalized(grandToParent).y + parent.y;
 
-        var collinShift = {x: collX, y: collY};
-//        edge.assists[1][0]=collX;
-//        edge.assists[1][1]=collY;
-//        source.x=collX;
-//        source.y=collY;
-//        target.x = edge.assists[2][0];
-//        target.y = edge.assists[2][1];
+        var collinShift = {
+            x: collX,
+            y: collY
+        };
+        //        edge.assists[1][0]=collX;
+        //        edge.assists[1][1]=collY;
+        //        source.x=collX;
+        //        source.y=collY;
+        //        target.x = edge.assists[2][0];
+        //        target.y = edge.assists[2][1];
 
     }
 
 
 }
+
 function computeOneSpline(p0, p1, p2, p3, edge, target) {
     var ctrlX1 = -p0.x / 6 + p1.x + p2.x / 6;
     var ctrlX2 = -p1.x / 6 + p2.x + p3.x / 6;
     var ctrlY1 = -p0.y / 6 + p1.y + p2.y / 6;
     var ctrlY2 = -p1.y / 6 + p2.y + p3.y / 6;
-    edge.assists = [[p0.x, p0.y], [ctrlX1, ctrlY1], [ctrlX2, ctrlY2], [p3.x, p3.y]];
-//    edge.assists=[[p0.x,p0.y],[p1.x,p1.y],[p2.x,p2.y],[p3.x,p3.y]];
+    edge.assists = [
+        [p0.x, p0.y],
+        [ctrlX1, ctrlY1],
+        [ctrlX2, ctrlY2],
+        [p3.x, p3.y]
+    ];
+    //    edge.assists=[[p0.x,p0.y],[p1.x,p1.y],[p2.x,p2.y],[p3.x,p3.y]];
 
 
 }
+
 function getEdgeSourceTargetDic(edges) {
     var dic = {};
     for (var i = 0; i < edges.length; i++) {
         var source = edges[i].source;
         var target = edges[i].target;
         var key = String(source) + '_' + String(target);
-        if (edges[i].isBackgroundEdge)key += '_background';
+        if (edges[i].isBackgroundEdge) key += '_background';
         dic[key] = edges[i];
     }
     return dic;
 }
+
 function getEdgeSourceDic(edges) {
     var dic = {};
     for (var i = 0; i < edges.length; i++) {
         var source = edges[i].source;
         var target = edges[i].target;
-        if (dic[source])dic[source][target] = edges[i];
+        if (dic[source]) dic[source][target] = edges[i];
         else {
             dic[source] = {};
             dic[source][target] = edges[i];
@@ -11449,12 +11845,13 @@ function getEdgeSourceDic(edges) {
     }
     return dic;
 }
+
 function getEdgeTargetDic(edges) {
     var dic = {};
     for (var i = 0; i < edges.length; i++) {
         var source = edges[i].source;
         var target = edges[i].target;
-        if (dic[target])dic[target][source] = edges[i];
+        if (dic[target]) dic[target][source] = edges[i];
         else {
             dic[target] = {};
             dic[target][source] = edges[i];
@@ -11462,13 +11859,14 @@ function getEdgeTargetDic(edges) {
     }
     return dic;
 }
+
 function getNodeRelation(nodes, edges) {
     for (var i = 0; i < edges.length; i++) {
         var source = edges[i].source;
         var target = edges[i].target;
         //console.log(source+'->'+target);
         nodes[target].parentNode = nodes[source];
-        if (nodes[source].children)nodes[source].children.push(nodes[target]);
+        if (nodes[source].children) nodes[source].children.push(nodes[target]);
         else nodes[source].children = [nodes[target]];
     }
 }
@@ -11513,7 +11911,12 @@ function updateEdges(d) {
         newEdges.assists = assists;
         var source = parseInt(newEdges[i][0].id);
         var target = parseInt(newEdges[i][newEdges[i].length - 1].id);
-        var newEdge = {points: points, assists: assists, source: source, target: target};
+        var newEdge = {
+            points: points,
+            assists: assists,
+            source: source,
+            target: target
+        };
         newEdges[i] = newEdge;
     }
     var edgesDic = {};
@@ -11595,10 +11998,9 @@ function hierarchicalClustering(node) {
     root.isRoot = true;
     root.equalThis = function (cluster) {
         if (cluster.type == 'node') {
-            if (cluster.isRoot == true)return true;
+            if (cluster.isRoot == true) return true;
             else return false;
-        }
-        else return false;
+        } else return false;
     };
 
     var leafNodes = root.targets;
@@ -11631,7 +12033,11 @@ function hierarchicalClustering(node) {
                 var p1 = clusterList[i].center;
                 var p2 = clusterList[j].center;
                 var distance = getDistance(p1, p2);
-                var distancePair = {distance: distance, cluster1: clusterList[i], cluster2: clusterList[j]};
+                var distancePair = {
+                    distance: distance,
+                    cluster1: clusterList[i],
+                    cluster2: clusterList[j]
+                };
                 distanceList.push(distancePair);
             }
         }
@@ -11656,13 +12062,11 @@ function hierarchicalClustering(node) {
             var newCluster;
             if (root.equalThis(c1)) {
                 clusterCollection.push(c2)
-            }
-            else if (root.equalThis(c2)) {
+            } else if (root.equalThis(c2)) {
                 clusterCollection.push(c1)
             }
             newCluster = rootCluster;
-        }
-        else {
+        } else {
             newCluster = new Cluster(false, c1, c2);
             newCluster.id = id;
             id += 1;
@@ -11677,15 +12081,15 @@ function hierarchicalClustering(node) {
 
 function calculateFlowPoint(clusterTree) {
     var rootNode = clusterTree;
-//    console.log(clusterTree);
+    //    console.log(clusterTree);
     var clusters = clusterTree.clusterResult;
     clusterTree.edges = [];
     for (var i = 0; i < clusters.length; i++) {
         var cluster = clusters[i];
         //a cluster only contain one node
-//        if(!(cluster.cluster1||cluster.cluster2)){
+        //        if(!(cluster.cluster1||cluster.cluster2)){
         //do nothing
-//        }
+        //        }
         countClusterSize(cluster);
 
         processCluster(rootNode, cluster);
@@ -11696,26 +12100,26 @@ function calculateFlowPoint(clusterTree) {
     }
 
 }
+
 function countClusterSize(cluster) {
     if (cluster.subCluster1 && cluster.subCluster2) {
         cluster.size = countClusterSize(cluster.subCluster1) + countClusterSize(cluster.subCluster2);
         return cluster.size;
-    }
-    else {
+    } else {
         return cluster.size;
     }
 }
+
 function processCluster(parNode, cluster) {
     function getNewNode(p0, p1, p2) {
         var dist1 = getDistance(p0, p1);
         var dist2 = getDistance(p0, p2);
         var shortestDist = d3.min([dist1, dist2]) / 2;
-//        var biggerCluster=d3.max([cluster.subCluster1,cluster.subCluster2],function(d){return d.size});
+        //        var biggerCluster=d3.max([cluster.subCluster1,cluster.subCluster2],function(d){return d.size});
         var biggerCluster;
         if (cluster.subCluster1.size >= cluster.subCluster2.size) {
             biggerCluster = cluster.subCluster1;
-        }
-        else biggerCluster = cluster.subCluster2;
+        } else biggerCluster = cluster.subCluster2;
 
         var p3 = biggerCluster.center;
         var biggerDist = getDistance(p0, p3);
@@ -11723,7 +12127,12 @@ function processCluster(parNode, cluster) {
         var parentFraction = 1 - bigFraction;
         var x = p0.x * parentFraction + p3.x * bigFraction;
         var y = p0.y * parentFraction + p3.y * bigFraction;
-        var newNode = {x: x, y: y, subCluster1: cluster.subCluster1, subCluster2: cluster.subCluster2};
+        var newNode = {
+            x: x,
+            y: y,
+            subCluster1: cluster.subCluster1,
+            subCluster2: cluster.subCluster2
+        };
         return newNode;
     }
 
@@ -11733,7 +12142,10 @@ function processCluster(parNode, cluster) {
         var typeArray = [type1, type2];
         if (in_array('node', typeArray) && !in_array('cluster', typeArray)) {
             //a cluster only contains nodes
-            var p0 = {x: parNode.x, y: parNode.y};
+            var p0 = {
+                x: parNode.x,
+                y: parNode.y
+            };
             var p1 = cluster.subCluster1.center;
             var p2 = cluster.subCluster2.center;
 
@@ -11743,14 +12155,22 @@ function processCluster(parNode, cluster) {
             cluster.subCluster2 = '';
 
 
-        }
-        else if (in_array('cluster', typeArray) && !in_array('node', typeArray)) {
+        } else if (in_array('cluster', typeArray) && !in_array('node', typeArray)) {
             //a cluster only contains clusters
-            var p0 = {x: parNode.x, y: parNode.y};
+            var p0 = {
+                x: parNode.x,
+                y: parNode.y
+            };
             var bounds1 = cluster.subCluster1.bounds;
             var bounds2 = cluster.subCluster2.bounds;
-            var line1 = {p1: p0, p2: cluster.subCluster1.center};
-            var line2 = {p1: p0, p2: cluster.subCluster2.center};
+            var line1 = {
+                p1: p0,
+                p2: cluster.subCluster1.center
+            };
+            var line2 = {
+                p1: p0,
+                p2: cluster.subCluster2.center
+            };
             var p1 = getRectangleLineCrossPoint(bounds1, line1);
             var p2 = getRectangleLineCrossPoint(bounds2, line2);
             var newNode = getNewNode(p0, p1, p2);
@@ -11760,21 +12180,25 @@ function processCluster(parNode, cluster) {
             cluster.subCluster1 = '';
             cluster.subCluster2 = '';
 
-        }
-        else if (in_array('cluster', typeArray) && in_array('node', typeArray)) {
+        } else if (in_array('cluster', typeArray) && in_array('node', typeArray)) {
             //a cluster contains a node and a cluster
             if (cluster.subCluster1.type == 'cluster') {
                 var clus = cluster.subCluster1;
                 var node = cluster.subCluster2;
-            }
-            else if (cluster.subCluster1.type == 'node') {
+            } else if (cluster.subCluster1.type == 'node') {
                 var clus = cluster.subCluster2;
                 var node = cluster.subCluster1;
             }
-            var p0 = {x: parNode.x, y: parNode.y};
+            var p0 = {
+                x: parNode.x,
+                y: parNode.y
+            };
             var p1 = node.center;
             var bounds = clus.bounds;
-            var line = {p1: p0, p2: clus.center};
+            var line = {
+                p1: p0,
+                p2: clus.center
+            };
             var p2 = getRectangleLineCrossPoint(bounds, line);
             var newNode = getNewNode(p0, p1, p2);
             cluster.nextNode = newNode;
@@ -11784,19 +12208,27 @@ function processCluster(parNode, cluster) {
         }
     }
 }
+
 function collectFlowPoint(root, cluster) {
     function recurCluster(cluster) {
         if (cluster.nextNode) {
-            tmpEdge.push({x: cluster.nextNode.x, y: cluster.nextNode.y});
+            tmpEdge.push({
+                x: cluster.nextNode.x,
+                y: cluster.nextNode.y
+            });
+
             function judgeCluster(cluster) {
                 if (cluster.type == 'node') {
-                    var tmpPoint = {x: cluster.cluster.x, y: cluster.cluster.y, id: cluster.cluster.id};
+                    var tmpPoint = {
+                        x: cluster.cluster.x,
+                        y: cluster.cluster.y,
+                        id: cluster.cluster.id
+                    };
                     var edge = [];
                     clone(tmpEdge, edge);
                     edge.push(tmpPoint);
                     flowEdge.push(edge);
-                }
-                else {
+                } else {
                     recurCluster(cluster);
                 }
             }
@@ -11804,9 +12236,12 @@ function collectFlowPoint(root, cluster) {
             judgeCluster(cluster.nextNode.subCluster1);
             judgeCluster(cluster.nextNode.subCluster2);
 
-        }
-        else {
-            var tmpPoint = {x: cluster.cluster.x, y: cluster.cluster.y, id: cluster.cluster.id};
+        } else {
+            var tmpPoint = {
+                x: cluster.cluster.x,
+                y: cluster.cluster.y,
+                id: cluster.cluster.id
+            };
             var edge = [];
             clone(tmpEdge, edge);
             edge.push(tmpPoint);
@@ -11815,7 +12250,11 @@ function collectFlowPoint(root, cluster) {
     }
 
     var flowEdge = [];
-    var rootPoint = {x: root.x, y: root.y, id: root.id};
+    var rootPoint = {
+        x: root.x,
+        y: root.y,
+        id: root.id
+    };
     var tmpEdge = [];
     tmpEdge.push(rootPoint);
     recurCluster(cluster);
@@ -11823,171 +12262,177 @@ function collectFlowPoint(root, cluster) {
 
 }
 
-function Graph(edges,assistEdges){
+function Graph(edges, assistEdges) {
 
-            this.edges=edges;
-            var dotBeginning='digraph{';
-            var dotEnding='}';
-            var arrow='->';
-            var edgeEnding=';';
-            var dot='';
-            var invis='[style=invis]';
-            dot+=dotBeginning;
-            for(var i= 0,len=edges.length;i<len;i++){
-                var edge=edges[i];
-                var source=String(edge.source);
-                var target=String(edge.target);
-                var edgeString=source+arrow+target+edgeEnding;
-                dot+=edgeString;
-            }
-            if(assistEdges) {
-                for (var i = 0, len = assistEdges.length; i < len; i++) {
-                    var edge = assistEdges[i];
-                    var source = String(edge.source);
-                    var target = String(edge.target);
-                    var edgeString = source + arrow + target + invis + edgeEnding;
-                    dot += edgeString;
-                }
-            }
-            dot+=dotEnding;
-            this.dotString=dot;
-            this.svgGraph=function(){
-//        console.log(Viz(this.dotString));
-                var div=d3.select('body').append('tmpDiv').attr('class','tmpDiv');
-                div.html(Viz(this.dotString));
+    this.edges = edges;
+    var dotBeginning = 'digraph{';
+    var dotEnding = '}';
+    var arrow = '->';
+    var edgeEnding = ';';
+    var dot = '';
+    var invis = '[style=invis]';
+    dot += dotBeginning;
+    for (var i = 0, len = edges.length; i < len; i++) {
+        var edge = edges[i];
+        var source = String(edge.source);
+        var target = String(edge.target);
+        var edgeString = source + arrow + target + edgeEnding;
+        dot += edgeString;
+    }
+    if (assistEdges) {
+        for (var i = 0, len = assistEdges.length; i < len; i++) {
+            var edge = assistEdges[i];
+            var source = String(edge.source);
+            var target = String(edge.target);
+            var edgeString = source + arrow + target + invis + edgeEnding;
+            dot += edgeString;
+        }
+    }
+    dot += dotEnding;
+    this.dotString = dot;
+    this.svgGraph = function () {
+        //        console.log(Viz(this.dotString));
+        var div = d3.select('body').append('tmpDiv').attr('class', 'tmpDiv');
+        div.html(Viz(this.dotString));
 
-//            .html(Viz(this.dotString));
-//        document.body.innerHTML +=Viz(this.dotString);
+        //            .html(Viz(this.dotString));
+        //        document.body.innerHTML +=Viz(this.dotString);
     }
 }
-function reCalculateLayout(graph,graphData){
-    var nodes=graphData.node;
-    var edges=graphData.edge;
-    if(this.method=='mst'||this.method=='filterFlow'){
+
+function reCalculateLayout(graph, graphData) {
+    var nodes = graphData.node;
+    var edges = graphData.edge;
+    if (this.method == 'mst' || this.method == 'filterFlow') {
         maximalSpanningTree(graphData);
     }
-//    var newGraph=new Graph(graphData.edge, []);
+    //    var newGraph=new Graph(graphData.edge, []);
     graph.svgGraph();
-    var newSVG=d3.select('.tmpDiv').select('svg');
-    var svgData=getSVGData(newSVG);
+    var newSVG = d3.select('.tmpDiv').select('svg');
+    var svgData = getSVGData(newSVG);
     newSVG.remove();
     d3.select('.tmpDiv').remove();
-    mergeData(svgData,nodes, edges);
-//    reverseXY(nodes,edges);
+    mergeData(svgData, nodes, edges);
+    //    reverseXY(nodes,edges);
 
 }
 
-function maximalSpanningTree(d){
+function maximalSpanningTree(d) {
     //find root;
-    var nodes=d.node;
-    var edges= d.edge;
-    d.originEdge=[];
-    clone(edges,d.originEdge);
+    var nodes = d.node;
+    var edges = d.edge;
+    d.originEdge = [];
+    clone(edges, d.originEdge);
     var root;
-    var newNodes=[];
-    var newEdges=[];
+    var newNodes = [];
+    var newEdges = [];
     clone(nodes, newNodes);
-    for(var i=0;i<nodes.length;i++){
-        if(nodes[i].focused=='true'){
+    for (var i = 0; i < nodes.length; i++) {
+        if (nodes[i].focused == 'true') {
             root = nodes[i];
             break;
         }
     }
 
     //remove all the edges to the root node
-    for(var i=0;i<edges.length;i++){
-        if(edges[i].target!=parseInt(root.id))newEdges.push(edges[i]);
+    for (var i = 0; i < edges.length; i++) {
+        if (edges[i].target != parseInt(root.id)) newEdges.push(edges[i]);
     }
 
 
     //select top flow of every node
-    var tmpEdge=[];
-    for(var i=0;i<nodes.length;i++){
-        if(!(nodes[i].focused=='true')){
-            var id=parseInt(nodes[i].id);
-            var nodeEdge=[];
-            var maxEdge={flow:0};
-            for(var j=0;j<newEdges.length;j++){
-                if(newEdges[j].target==id){
-                    if(newEdges[j].flow>maxEdge.flow)maxEdge=newEdges[j];
+    var tmpEdge = [];
+    for (var i = 0; i < nodes.length; i++) {
+        if (!(nodes[i].focused == 'true')) {
+            var id = parseInt(nodes[i].id);
+            var nodeEdge = [];
+            var maxEdge = {
+                flow: 0
+            };
+            for (var j = 0; j < newEdges.length; j++) {
+                if (newEdges[j].target == id) {
+                    if (newEdges[j].flow > maxEdge.flow) maxEdge = newEdges[j];
                 }
             }
             tmpEdge.push(maxEdge);
         }
     }
     d.edge = tmpEdge;
-    var edgeDic=getEdgeSourceTargetDic(d.edge);
-    var originEdgeDic=getEdgeSourceTargetDic(d.originEdge);
-    var otherEdge=[];
-    for(var key in originEdgeDic){
-        if(!(key in edgeDic)){
+    var edgeDic = getEdgeSourceTargetDic(d.edge);
+    var originEdgeDic = getEdgeSourceTargetDic(d.originEdge);
+    var otherEdge = [];
+    for (var key in originEdgeDic) {
+        if (!(key in edgeDic)) {
             otherEdge.push(originEdgeDic[key])
         }
     }
-    d.otherEdge=otherEdge;
+    d.otherEdge = otherEdge;
 
 }
 
-function mergeData(data,nodes,edges){
-    var svgNodes=data.svgNodes;
-    var svgEdges=data.svgEdges;
-    for(var i= 0,len=svgEdges.length;i<len;i++){
-        var source=svgEdges[i].source;
-        var target=svgEdges[i].target;
-        for(var j= 0,len1=edges.length;j<len;j++){
-            if(source ==edges[j].source&&target==edges[j].target){
-                edges[j].assists=svgEdges[i].assists;
+function mergeData(data, nodes, edges) {
+    var svgNodes = data.svgNodes;
+    var svgEdges = data.svgEdges;
+    for (var i = 0, len = svgEdges.length; i < len; i++) {
+        var source = svgEdges[i].source;
+        var target = svgEdges[i].target;
+        for (var j = 0, len1 = edges.length; j < len; j++) {
+            if (source == edges[j].source && target == edges[j].target) {
+                edges[j].assists = svgEdges[i].assists;
                 break;
             }
         }
     }
-    for(var key in svgNodes){
-        if(nodes[key]){
+    for (var key in svgNodes) {
+        if (nodes[key]) {
             nodes[key].x = svgNodes[key].x;
             nodes[key].y = svgNodes[key].y;
         }
 
     }
 }
-function getSVGData(svg){
-    var svgNodes={};
-    var svgEdges=[];
+
+function getSVGData(svg) {
+    var svgNodes = {};
+    var svgEdges = [];
     svg.selectAll('g')
-        .each(function(){
-            var thisElem=d3.select(this);
-            var thisClass=thisElem.attr('class');
-            if(thisClass=='edge'){
-                var edge={};
-                var edgeValue=thisElem.select('title').text();
-                edge.source=parseInt(edgeValue.split('->')[0]);
-                edge.target=parseInt(edgeValue.split('->')[1]);
-                edge.assists=[];
-                var d=thisElem.select('path').attr('d').split('M')[1];
-                var firstPoint=d.split('C')[0];
-                var point=[];
-                point[0]=parseFloat(firstPoint.split(',')[0]);
-                point[1]=parseFloat(firstPoint.split(',')[1]);
+        .each(function () {
+            var thisElem = d3.select(this);
+            var thisClass = thisElem.attr('class');
+            if (thisClass == 'edge') {
+                var edge = {};
+                var edgeValue = thisElem.select('title').text();
+                edge.source = parseInt(edgeValue.split('->')[0]);
+                edge.target = parseInt(edgeValue.split('->')[1]);
+                edge.assists = [];
+                var d = thisElem.select('path').attr('d').split('M')[1];
+                var firstPoint = d.split('C')[0];
+                var point = [];
+                point[0] = parseFloat(firstPoint.split(',')[0]);
+                point[1] = parseFloat(firstPoint.split(',')[1]);
                 edge.assists.push(point);
-                var otherPoints=d.split('C')[1].split(' ');
-                for(var i= 0,len=otherPoints.length;i<len;i++){
-                    var tmpPoint=[];
-                    tmpPoint[0]=parseFloat(otherPoints[i].split(',')[0]);
-                    tmpPoint[1]=parseFloat(otherPoints[i].split(',')[1]);
+                var otherPoints = d.split('C')[1].split(' ');
+                for (var i = 0, len = otherPoints.length; i < len; i++) {
+                    var tmpPoint = [];
+                    tmpPoint[0] = parseFloat(otherPoints[i].split(',')[0]);
+                    tmpPoint[1] = parseFloat(otherPoints[i].split(',')[1]);
                     edge.assists.push(tmpPoint);
                 }
                 svgEdges.push(edge);
 
-            }
-            else if(thisClass=='node'){
-                var node={};
-                var nodeValue=thisElem.select('title').text();
-                node.id=nodeValue;
-                node.x=parseFloat(thisElem.select('ellipse').attr('cx'));
-                node.y=parseFloat(thisElem.select('ellipse').attr('cy'));
-                svgNodes[nodeValue]=node;
+            } else if (thisClass == 'node') {
+                var node = {};
+                var nodeValue = thisElem.select('title').text();
+                node.id = nodeValue;
+                node.x = parseFloat(thisElem.select('ellipse').attr('cx'));
+                node.y = parseFloat(thisElem.select('ellipse').attr('cy'));
+                svgNodes[nodeValue] = node;
             }
         })
-    return {svgNodes:svgNodes,svgEdges:svgEdges};
+    return {
+        svgNodes: svgNodes,
+        svgEdges: svgEdges
+    };
 }
 //function getEdgeSourceTargetDic(edges){
 //    var dic={};
@@ -12004,32 +12449,43 @@ function getSVGData(svg){
 //    }
 //    return dic;
 //}
-function getNodeDic(nodes){
-    var dic={};
-    for(var i= 0,len=nodes.length;i<len;i++){
-        var key=nodes[i].oldKey
-        dic[key]=nodes[i];
+function getNodeDic(nodes) {
+    var dic = {};
+    for (var i = 0, len = nodes.length; i < len; i++) {
+        var key = nodes[i].oldKey
+        dic[key] = nodes[i];
     }
     return dic;
 }
-function processIncrementalTree(tree){
-    var newTree={};
-    for(var i=0;i<tree.length;i++){
-        var newGroup={}
-        for(var j=0;j<tree[i].length;j++){
-            var id=tree[i][j].id;
-            var child=tree[i][j].chd;
-            var parent=tree[i][j].prt;
-            newGroup[id]={child:child, parent:parent};
+
+function processIncrementalTree(tree) {
+    var newTree = {};
+    for (var i = 0; i < tree.length; i++) {
+        var newGroup = {}
+        for (var j = 0; j < tree[i].length; j++) {
+            var id = tree[i][j].id;
+            var child = tree[i][j].chd;
+            var parent = tree[i][j].prt;
+            newGroup[id] = {
+                child: child,
+                parent: parent
+            };
         }
-        var groupID=(i+1)*5;
-        newTree[groupID]=newGroup;
+        var groupID = (i + 1) * 5;
+        newTree[groupID] = newGroup;
     }
-//    console.log(newTree);
-    data.incrementalTree=newTree;
+    //    console.log(newTree);
+    data.incrementalTree = newTree;
 }
-function getGraphInfo(nodes,edges){
-    var result={nodes:0,edges:0,citation:0,flow:0,yearFlow:0};
+
+function getGraphInfo(nodes, edges) {
+    var result = {
+        nodes: 0,
+        edges: 0,
+        citation: 0,
+        flow: 0,
+        yearFlow: 0
+    };
     result.nodes = nodes.length;
     result.edges = edges.length;
     result.citation = countCitation(edges);
@@ -12037,14 +12493,16 @@ function getGraphInfo(nodes,edges){
     result.yearFlow = countYearFlow(edges);
     return result;
 }
-function printGraphInfo(info){
+
+function printGraphInfo(info) {
     console.log('-----------------------------');
-    for(var key in info){
-        console.log(key+info[key]);
+    for (var key in info) {
+        console.log(key + info[key]);
     }
     console.log('-----------------------------');
 }
-function linkPruning(){
+
+function linkPruning() {
     /*
      let the edge with the smallest weight be (i,j).
      If remove (i,j) does not make the current graph disconnected
@@ -12054,422 +12512,428 @@ function linkPruning(){
      We update the edge weights and repeat this process. At the end of this process we have a spanning tree
     */
 
-//        1. build graph structure and functions，node,edge, node parents,node children,add edge,delete edge,graph connection
-    var data=this.data.postData[this.focusedID]
-    var removeSelfEdgeResult=removeSelfEdge(data.edge);
+    //        1. build graph structure and functions，node,edge, node parents,node children,add edge,delete edge,graph connection
+    var data = this.data.postData[this.focusedID]
+    var removeSelfEdgeResult = removeSelfEdge(data.edge);
     data.edge = removeSelfEdgeResult.edge;
     data.selfEdge = removeSelfEdgeResult.selfEdge;
-    this.directedGraph=new DirectedGraph(data);
+    this.directedGraph = new DirectedGraph(data);
     this.directedGraph.init();
-    data.originGraphInfo=getGraphInfo(this.directedGraph.nodes,this.directedGraph.edges);
-    var paperCount=0;
-    for(var i=0;i<this.directedGraph.nodes.length;i++){
-        paperCount+=this.directedGraph.nodes[i].size;
+    data.originGraphInfo = getGraphInfo(this.directedGraph.nodes, this.directedGraph.edges);
+    var paperCount = 0;
+    for (var i = 0; i < this.directedGraph.nodes.length; i++) {
+        paperCount += this.directedGraph.nodes[i].size;
     }
-    data.originGraphInfo.paperCount=paperCount;
-    if(!this.directedGraph.checkConnection())alert('original graph does not connected');    else{
-        if(this.method=='filterFlow'){
+    data.originGraphInfo.paperCount = paperCount;
+    if (!this.directedGraph.checkConnection()) alert('original graph does not connected');
+    else {
+        if (this.method == 'filterFlow') {
             this.directedGraph.filterTopFlow(1);
-            this.updateData(data,this.directedGraph);
-        }
-        else if(this.method=='recoveryWeight'){
+            this.updateData(data, this.directedGraph);
+        } else if (this.method == 'recoveryWeight') {
             this.directedGraph.generateSpanningTree();
-            this.updateData(data,this.directedGraph);
+            this.updateData(data, this.directedGraph);
 
-        }
-        else if(this.method=='mst'){
+        } else if (this.method == 'mst') {
             this.directedGraph.generateMaximalSpanningTree();
-            this.updateData(data,this.directedGraph.maximalSpanningTree);
+            this.updateData(data, this.directedGraph.maximalSpanningTree);
         }
     }
 }
-function updateData(data,graph){
-    data.node=[];
-    data.edge=[];
-    clone(graph.nodes,data.node);
-    clone(graph.edges,data.edge);
-//        data.node = graph.nodes;
-//        data.edge = graph.edges;
-    if(this.method=='mst'){
-        data.deletedTreeEdges=graph.deletedTreeEdges;
-        data.deletedNonTreeEdges=graph.deletedNonTreeEdges;
-    }
-    else{
+
+function updateData(data, graph) {
+    data.node = [];
+    data.edge = [];
+    clone(graph.nodes, data.node);
+    clone(graph.edges, data.edge);
+    //        data.node = graph.nodes;
+    //        data.edge = graph.edges;
+    if (this.method == 'mst') {
+        data.deletedTreeEdges = graph.deletedTreeEdges;
+        data.deletedNonTreeEdges = graph.deletedNonTreeEdges;
+    } else {
         data.deletedTreeEdges = graph.spanningTree.deletedTreeEdges;
-        data.deletedNonTreeEdges=graph.spanningTree.deletedNonTreeEdges;
+        data.deletedNonTreeEdges = graph.spanningTree.deletedNonTreeEdges;
     }
 
-    this.maxYear=graph.maxYear;
-    this.minYear=graph.minYear;
-    for(var i=0;i<data.node.length;i++){
-        if(data.node[i].parents){
-            data.node[i].parents[0]=null;
-//                delete(data.node[i].parents[0]);
+    this.maxYear = graph.maxYear;
+    this.minYear = graph.minYear;
+    for (var i = 0; i < data.node.length; i++) {
+        if (data.node[i].parents) {
+            data.node[i].parents[0] = null;
+            //                delete(data.node[i].parents[0]);
         }
-        if(data.node[i].children){
-            data.node[i].children=null;
-//                delete(data.node[i].children);
+        if (data.node[i].children) {
+            data.node[i].children = null;
+            //                delete(data.node[i].children);
         }
     }
 }
-function removeSelfEdge(edges){
-    var newEdges=[];
-    var selfEdges=[];
-    for(var i=0;i<edges.length;i++){
-        if(edges[i].source==edges[i].target){
+
+function removeSelfEdge(edges) {
+    var newEdges = [];
+    var selfEdges = [];
+    for (var i = 0; i < edges.length; i++) {
+        if (edges[i].source == edges[i].target) {
             selfEdges.push(edges[i]);
-        }
-        else{
+        } else {
             newEdges.push(edges[i]);
         }
     }
-    return {edge:newEdges,selfEdge:selfEdges};
+    return {
+        edge: newEdges,
+        selfEdge: selfEdges
+    };
 }
-function linkPruningOld(data){
-    var removeSelfEdgeResult=removeSelfEdge(data.edge);
+
+function linkPruningOld(data) {
+    var removeSelfEdgeResult = removeSelfEdge(data.edge);
     data.edge = removeSelfEdgeResult.edge;
     data.selfEdge = removeSelfEdgeResult.selfEdge;
-    directedGraph=new DirectedGraph(data);
+    directedGraph = new DirectedGraph(data);
     directedGraph.init();
-    if(!directedGraph.checkConnection())alert('original graph does not connected');
+    if (!directedGraph.checkConnection()) alert('original graph does not connected');
     directedGraph.filterTopFlow(1.5);
     data.node = directedGraph.nodes;
     data.edge = directedGraph.edges;
     data.deletedTreeEdges = directedGraph.spanningTree.deletedTreeEdges;
-    data.deletedNonTreeEdges=directedGraph.spanningTree.deletedNonTreeEdges;
-    maxYear=directedGraph.maxYear;
-    minYear=directedGraph.minYear;
-    for(var i=0;i<data.node.length;i++){
-        if(data.node[i].parents){
-            data.node[i].parents[0]=null;
-//            delete(data.node[i].parents[0]);
+    data.deletedNonTreeEdges = directedGraph.spanningTree.deletedNonTreeEdges;
+    maxYear = directedGraph.maxYear;
+    minYear = directedGraph.minYear;
+    for (var i = 0; i < data.node.length; i++) {
+        if (data.node[i].parents) {
+            data.node[i].parents[0] = null;
+            //            delete(data.node[i].parents[0]);
         }
-        if(data.node[i].children){
-            data.node[i].children=null;
-//            delete(data.node[i].children);
+        if (data.node[i].children) {
+            data.node[i].children = null;
+            //            delete(data.node[i].children);
         }
     }
-//    setNodeWeight(data);
-//    data['edge'].sort(function(a,b){
-//        return b.flow*b.BFSWeight-a.flow*a.BFSWeight;
-//    });
-////    console.log(data);
-//    var k;
-//    for(var key in data['cluster']){
-////        console.log('cluster key:'+key);
-//        if(key!='300'){
-//            k = parseInt(key.split('-')[0])+1;
-////            console.log('cluster length:'+k);
-//            break;
-//        }
-//    }
-//    var deleted=[];
-//    while(data['edge'].length>1.5*k){
-//        deleted.push(data['edge'][data['edge'].length-1]);
-//        data['edge'].pop();
-//    }
-////    console.log('prune over');
-//
-//    var visitedTree={};
-//    var treeNum=0;
-//    for(var key in data['cluster']){
-//        if(!visitedTree[key]){
-//            var visitedNode=getNodesByAssignRoot(data,key);
-//            for(var i=0;i<visitedNode.length;i++){
-//                if(!visitedTree[visitedNode[i]]){
-//                    visitedTree[visitedNode[i]] = {nodes:visitedNode,num:treeNum};
-//                }
-//            }
-//            treeNum+=1;
-//        }
-//    }
-//    var newTree={};
-//    for (var key in visitedTree){
-//        newTree[visitedTree[key].num]=visitedTree[key].nodes;
-//    }
-//    visitedTree=newTree;
-//    var rootTree=[];
-//    var otherTrees=[];
-//    for(var key in visitedTree){
-//        for (var i=0;i<visitedTree[key].length;i++){
-//            if(visitedTree[key][i]=='300')
-//            {
-//                rootTree=visitedTree[key];
-//                delete visitedTree[key];
-//                break;
-//            }
-//
-//        }
-//    }
-//    for (var key in visitedTree){
-//        otherTrees.push(visitedTree[key]);
-//    }
-//
-//
-//
-//    var visitedNode=getNodes(data);
-//    var reachableEdge=[];
-//    for(var i= 0,len=data['edge'].length;i<len;i++){
-//        if(!in_array(data['edge'][i].source,visitedNode)||!in_array(data['edge'][i].target,visitedNode)){
-//            deleted.push(data['edge'][i]);
-//        }
-//        else{
-//            reachableEdge.push(data['edge'][i]);
-//        }
-//    }
-////    data['edge']=reachableEdge;
-//    var nodeStep=[];
-//    visitedNode=[];
-//    for(var key in data['cluster']){
-//        var E=[];
-//        var S=[];
-//        var target=key;
-//        for(var i= 0,len=reachableEdge.length;i<len;i++){
-//            if(reachableEdge[i].target==target&&reachableEdge[i].source!=reachableEdge[i].target){
-//                S.push(reachableEdge[i]);
-//            }
-//        }
-//        for(var i= 0,len=deleted.length;i<len;i++){
-//            if(deleted[i].target==target&&deleted[i].source!=deleted[i].target){
-//                E.push(deleted[i]);
-//            }
-//        }
-//        E.sort(function(a,b){
-//            return b.flow*b.BFSWeight-a.flow*a.BFSWeight;
-//        });
-//        if(S.length==0&&E.length>=1){
-//            for(var i= 0,len=E.length;i<len;i++){
-//                if(E[i].source!=E[i].target){
-//                    visitedNode=getNodes(data);
-//                    if(in_array(E[i].source,visitedNode)){
-//                        data['edge'].push(E[i]);
-//                        visitedNode=getNodes(data);
-//                        var recovery=String(E[i].source)+'->'+String(E[i].target);
-////                        console.log('recover edge:'+recovery);
-//                        break;
-//                    }
-//                }
-//            }
-//        }
-//    }
-//
-//    var newEdge=[];
-//    for(var i= 0,len=data['edge'].length;i<len;i++){
-//        if(data['edge'][i].source!=data['edge'][i].target){
-//            var edge=Edge.newedge();
-//            for(var key in data['edge'][i]){
-//                edge[key]=data['edge'][i][key];
-//            }
-//            newEdge.push(edge);
-//        }
-//        else deleted.push(data['edge'][i]);
-//    }
-//    data['edge']=newEdge;
-//
-//    //test the top k flow in deleted
-//    deleted.sort(function(a,b){return b.flow*b.BFSWeight-a.flow*a.BFSWeight;});
-////    for(var i= 0,count=0;i<deleted.length;i++){
-////        if(count==10)break;
-////        var edge=deleted[i];
-////        var source=edge.source;
-////        var target=edge.target;
-////        if(in_array(source,visitedNode)&&target!=source){
-////            data['edge'].push(edge);
-////            count+=1;
-////        }
-////
-////    }
-//
-//    var tmpEdgeString=[];
-//    var tmpEdge=[];
-//    var tmpNode={};
-//    for(var i=0;i<data['edge'].length;i++){
-//        var edgeString=data['edge'][i].source+'->'+data['edge'][i].target;
-//        if(!in_array(edgeString,tmpEdgeString)){
-//            tmpEdge.push(data['edge'][i]);
-//            tmpEdgeString.push(edgeString);
-//            if(!tmpNode[data['edge'][i].source])tmpNode[data['edge'][i].source]=data['cluster'][data['edge'][i].source];
-//            if(!tmpNode[data['edge'][i].target])tmpNode[data['edge'][i].target]=data['cluster'][data['edge'][i].target];
-//        }
-//    }
-//    data['edge']=tmpEdge;
-//    data['cluster']=tmpNode;
-//    //    console.log('visitedNode:\n'+visitedNode);
-//    visitedNode=getNodes(data);
-//    reachableEdge=[];
-//    for(var i= 0,len=data['edge'].length;i<len;i++){
-//        if(!in_array(data['edge'][i].source,visitedNode)||!in_array(data['edge'][i].target,visitedNode)){
-//            deleted.push(data['edge'][i]);
-//        }
-//        else{
-//            reachableEdge.push(data['edge'][i]);
-//        }
-//    }
-//    data['edge']=reachableEdge
-//
-//    deleted.sort(function(a,b){return b.flow-a.flow;});
-//    for (var key in data['cluster']){
-//        for (var i=0;i<deleted.length;i++){
-//            if(deleted[i].source==key&&deleted[i].target==key){
-//                data['cluster'][key].selfEdge=deleted[i].flow;
-//            }
-//        }
-//    }
+    //    setNodeWeight(data);
+    //    data['edge'].sort(function(a,b){
+    //        return b.flow*b.BFSWeight-a.flow*a.BFSWeight;
+    //    });
+    ////    console.log(data);
+    //    var k;
+    //    for(var key in data['cluster']){
+    ////        console.log('cluster key:'+key);
+    //        if(key!='300'){
+    //            k = parseInt(key.split('-')[0])+1;
+    ////            console.log('cluster length:'+k);
+    //            break;
+    //        }
+    //    }
+    //    var deleted=[];
+    //    while(data['edge'].length>1.5*k){
+    //        deleted.push(data['edge'][data['edge'].length-1]);
+    //        data['edge'].pop();
+    //    }
+    ////    console.log('prune over');
+    //
+    //    var visitedTree={};
+    //    var treeNum=0;
+    //    for(var key in data['cluster']){
+    //        if(!visitedTree[key]){
+    //            var visitedNode=getNodesByAssignRoot(data,key);
+    //            for(var i=0;i<visitedNode.length;i++){
+    //                if(!visitedTree[visitedNode[i]]){
+    //                    visitedTree[visitedNode[i]] = {nodes:visitedNode,num:treeNum};
+    //                }
+    //            }
+    //            treeNum+=1;
+    //        }
+    //    }
+    //    var newTree={};
+    //    for (var key in visitedTree){
+    //        newTree[visitedTree[key].num]=visitedTree[key].nodes;
+    //    }
+    //    visitedTree=newTree;
+    //    var rootTree=[];
+    //    var otherTrees=[];
+    //    for(var key in visitedTree){
+    //        for (var i=0;i<visitedTree[key].length;i++){
+    //            if(visitedTree[key][i]=='300')
+    //            {
+    //                rootTree=visitedTree[key];
+    //                delete visitedTree[key];
+    //                break;
+    //            }
+    //
+    //        }
+    //    }
+    //    for (var key in visitedTree){
+    //        otherTrees.push(visitedTree[key]);
+    //    }
+    //
+    //
+    //
+    //    var visitedNode=getNodes(data);
+    //    var reachableEdge=[];
+    //    for(var i= 0,len=data['edge'].length;i<len;i++){
+    //        if(!in_array(data['edge'][i].source,visitedNode)||!in_array(data['edge'][i].target,visitedNode)){
+    //            deleted.push(data['edge'][i]);
+    //        }
+    //        else{
+    //            reachableEdge.push(data['edge'][i]);
+    //        }
+    //    }
+    ////    data['edge']=reachableEdge;
+    //    var nodeStep=[];
+    //    visitedNode=[];
+    //    for(var key in data['cluster']){
+    //        var E=[];
+    //        var S=[];
+    //        var target=key;
+    //        for(var i= 0,len=reachableEdge.length;i<len;i++){
+    //            if(reachableEdge[i].target==target&&reachableEdge[i].source!=reachableEdge[i].target){
+    //                S.push(reachableEdge[i]);
+    //            }
+    //        }
+    //        for(var i= 0,len=deleted.length;i<len;i++){
+    //            if(deleted[i].target==target&&deleted[i].source!=deleted[i].target){
+    //                E.push(deleted[i]);
+    //            }
+    //        }
+    //        E.sort(function(a,b){
+    //            return b.flow*b.BFSWeight-a.flow*a.BFSWeight;
+    //        });
+    //        if(S.length==0&&E.length>=1){
+    //            for(var i= 0,len=E.length;i<len;i++){
+    //                if(E[i].source!=E[i].target){
+    //                    visitedNode=getNodes(data);
+    //                    if(in_array(E[i].source,visitedNode)){
+    //                        data['edge'].push(E[i]);
+    //                        visitedNode=getNodes(data);
+    //                        var recovery=String(E[i].source)+'->'+String(E[i].target);
+    ////                        console.log('recover edge:'+recovery);
+    //                        break;
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
+    //
+    //    var newEdge=[];
+    //    for(var i= 0,len=data['edge'].length;i<len;i++){
+    //        if(data['edge'][i].source!=data['edge'][i].target){
+    //            var edge=Edge.newedge();
+    //            for(var key in data['edge'][i]){
+    //                edge[key]=data['edge'][i][key];
+    //            }
+    //            newEdge.push(edge);
+    //        }
+    //        else deleted.push(data['edge'][i]);
+    //    }
+    //    data['edge']=newEdge;
+    //
+    //    //test the top k flow in deleted
+    //    deleted.sort(function(a,b){return b.flow*b.BFSWeight-a.flow*a.BFSWeight;});
+    ////    for(var i= 0,count=0;i<deleted.length;i++){
+    ////        if(count==10)break;
+    ////        var edge=deleted[i];
+    ////        var source=edge.source;
+    ////        var target=edge.target;
+    ////        if(in_array(source,visitedNode)&&target!=source){
+    ////            data['edge'].push(edge);
+    ////            count+=1;
+    ////        }
+    ////
+    ////    }
+    //
+    //    var tmpEdgeString=[];
+    //    var tmpEdge=[];
+    //    var tmpNode={};
+    //    for(var i=0;i<data['edge'].length;i++){
+    //        var edgeString=data['edge'][i].source+'->'+data['edge'][i].target;
+    //        if(!in_array(edgeString,tmpEdgeString)){
+    //            tmpEdge.push(data['edge'][i]);
+    //            tmpEdgeString.push(edgeString);
+    //            if(!tmpNode[data['edge'][i].source])tmpNode[data['edge'][i].source]=data['cluster'][data['edge'][i].source];
+    //            if(!tmpNode[data['edge'][i].target])tmpNode[data['edge'][i].target]=data['cluster'][data['edge'][i].target];
+    //        }
+    //    }
+    //    data['edge']=tmpEdge;
+    //    data['cluster']=tmpNode;
+    //    //    console.log('visitedNode:\n'+visitedNode);
+    //    visitedNode=getNodes(data);
+    //    reachableEdge=[];
+    //    for(var i= 0,len=data['edge'].length;i<len;i++){
+    //        if(!in_array(data['edge'][i].source,visitedNode)||!in_array(data['edge'][i].target,visitedNode)){
+    //            deleted.push(data['edge'][i]);
+    //        }
+    //        else{
+    //            reachableEdge.push(data['edge'][i]);
+    //        }
+    //    }
+    //    data['edge']=reachableEdge
+    //
+    //    deleted.sort(function(a,b){return b.flow-a.flow;});
+    //    for (var key in data['cluster']){
+    //        for (var i=0;i<deleted.length;i++){
+    //            if(deleted[i].source==key&&deleted[i].target==key){
+    //                data['cluster'][key].selfEdge=deleted[i].flow;
+    //            }
+    //        }
+    //    }
 
 }
-function getNodesByAssignRoot(data,root){
-    data['edge'].sort(function(a,b){
-        return b.flow- a.flow;
+
+function getNodesByAssignRoot(data, root) {
+    data['edge'].sort(function (a, b) {
+        return b.flow - a.flow;
     });
-    var nodeStep=[];
-    var visitedNode=[];
+    var nodeStep = [];
+    var visitedNode = [];
     nodeStep.push(root);
-    while(nodeStep[0]){
-        var newStep=[];
-        for(var i=0;i<nodeStep.length;i++){
-            var step=nodeStep[i];
-            if(!in_array(step,visitedNode)){
+    while (nodeStep[0]) {
+        var newStep = [];
+        for (var i = 0; i < nodeStep.length; i++) {
+            var step = nodeStep[i];
+            if (!in_array(step, visitedNode)) {
                 visitedNode.push(step);
-                for(var j=0;j<data['edge'].length;j++){
-                    var edge=data['edge'][j];
-                    var source=edge.source;
-                    var target=edge.target;
-                    if(source==step&&!in_array(target,visitedNode)){
+                for (var j = 0; j < data['edge'].length; j++) {
+                    var edge = data['edge'][j];
+                    var source = edge.source;
+                    var target = edge.target;
+                    if (source == step && !in_array(target, visitedNode)) {
                         newStep.push(edge.target);
                     }
                 }
             }
         }
-        nodeStep=newStep;
+        nodeStep = newStep;
     }
     return visitedNode;
 }
-function getNodes(data){
-    data['edge'].sort(function(a,b){
-        return b.flow- a.flow;
+
+function getNodes(data) {
+    data['edge'].sort(function (a, b) {
+        return b.flow - a.flow;
     });
-    var nodeStep=[];
-    var visitedNode=[];
-    var root=300;
+    var nodeStep = [];
+    var visitedNode = [];
+    var root = 300;
     nodeStep.push(root);
-    while(nodeStep[0]){
-        var newStep=[];
-        for(var i=0;i<nodeStep.length;i++){
-            var step=nodeStep[i];
-            if(!in_array(step,visitedNode)){
+    while (nodeStep[0]) {
+        var newStep = [];
+        for (var i = 0; i < nodeStep.length; i++) {
+            var step = nodeStep[i];
+            if (!in_array(step, visitedNode)) {
                 visitedNode.push(step);
-                for(var j=0;j<data['edge'].length;j++){
-                    var edge=data['edge'][j];
-                    var source=edge.source;
-                    var target=edge.target;
-                    if(source==step&&!in_array(target,visitedNode)){
+                for (var j = 0; j < data['edge'].length; j++) {
+                    var edge = data['edge'][j];
+                    var source = edge.source;
+                    var target = edge.target;
+                    if (source == step && !in_array(target, visitedNode)) {
                         newStep.push(edge.target);
                     }
                 }
             }
         }
-        nodeStep=newStep;
+        nodeStep = newStep;
     }
     return visitedNode;
 }
-function setNodeWeight(data){
-    data['edge'].sort(function(a,b){
-        return b.flow- a.flow;
+
+function setNodeWeight(data) {
+    data['edge'].sort(function (a, b) {
+        return b.flow - a.flow;
     });
-    var nodeStep=[];
-    var visitedNode=[];
+    var nodeStep = [];
+    var visitedNode = [];
 
-    var rootWeight=1;
-    var k=0.1;
-    var level=0;
-    var root=300;
+    var rootWeight = 1;
+    var k = 0.1;
+    var level = 0;
+    var root = 300;
     nodeStep.push(root);
-    while(nodeStep[0]){
-        var newStep=[];
-        for(var i=0;i<nodeStep.length;i++){
-            var step=nodeStep[i];
-            if(!in_array(step,visitedNode)){
+    while (nodeStep[0]) {
+        var newStep = [];
+        for (var i = 0; i < nodeStep.length; i++) {
+            var step = nodeStep[i];
+            if (!in_array(step, visitedNode)) {
                 visitedNode.push(step);
-                if(!data['cluster'][step].BFSWeight)data['cluster'][step].BFSWeight=rootWeight*Math.pow(k, level);
+                if (!data['cluster'][step].BFSWeight) data['cluster'][step].BFSWeight = rootWeight * Math.pow(k, level);
 
-                for(var j=0;j<data['edge'].length;j++){
-                    if(data['edge'][j].source==step&&!data['edge'][j].BFSWeight)data['edge'][j].BFSWeight=rootWeight*Math.pow(k, level);
-                    var edge=data['edge'][j];
-                    var source=edge.source;
-                    var target=edge.target;
-                    if(source==step&&!in_array(target,visitedNode)){
+                for (var j = 0; j < data['edge'].length; j++) {
+                    if (data['edge'][j].source == step && !data['edge'][j].BFSWeight) data['edge'][j].BFSWeight = rootWeight * Math.pow(k, level);
+                    var edge = data['edge'][j];
+                    var source = edge.source;
+                    var target = edge.target;
+                    if (source == step && !in_array(target, visitedNode)) {
                         newStep.push(edge.target);
                     }
                 }
             }
         }
-        level+=1
-        nodeStep=newStep;
+        level += 1
+        nodeStep = newStep;
     }
     return visitedNode;
 }
-function linkPruning_su(data){
+
+function linkPruning_su(data) {
 
 
-//    console.log(data);
-    data['edge'].sort(function(a,b){
-        return b.flow-a.flow;
+    //    console.log(data);
+    data['edge'].sort(function (a, b) {
+        return b.flow - a.flow;
     });
-//    console.log(data);
+    //    console.log(data);
     var k;
-    for(var key in data['cluster']){
-//        console.log('cluster key:'+key);
-        if(key!='300'){
-            k = parseInt(key.split('-')[0])+1;
-//            console.log('cluster length:'+k);
+    for (var key in data['cluster']) {
+        //        console.log('cluster key:'+key);
+        if (key != '300') {
+            k = parseInt(key.split('-')[0]) + 1;
+            //            console.log('cluster length:'+k);
             break;
         }
     }
-    var deleted=[];
-    while(data['edge'].length>2*k){
-        deleted.push(data['edge'][data['edge'].length-1]);
+    var deleted = [];
+    while (data['edge'].length > 2 * k) {
+        deleted.push(data['edge'][data['edge'].length - 1]);
         data['edge'].pop();
     }
-//    console.log('prune over');
-    var visitedNode=getNodes(data);
-    var reachableEdge=[];
-    for(var i= 0,len=data['edge'].length;i<len;i++){
-        if(!in_array(data['edge'][i].source,visitedNode)||!in_array(data['edge'][i].target,visitedNode)){
+    //    console.log('prune over');
+    var visitedNode = getNodes(data);
+    var reachableEdge = [];
+    for (var i = 0, len = data['edge'].length; i < len; i++) {
+        if (!in_array(data['edge'][i].source, visitedNode) || !in_array(data['edge'][i].target, visitedNode)) {
             deleted.push(data['edge'][i]);
-        }
-        else{
+        } else {
             reachableEdge.push(data['edge'][i]);
         }
     }
-    data['edge']=reachableEdge;
-    var nodeStep=[];
-    visitedNode=[];
-    for(var key in data['cluster']){
-        var E=[];
-        var S=[];
-        var target=key;
-        for(var i= 0,len=data['edge'].length;i<len;i++){
-            if(data['edge'][i].target==target&&data['edge'][i].source!=data['edge'][i].target){
+    data['edge'] = reachableEdge;
+    var nodeStep = [];
+    visitedNode = [];
+    for (var key in data['cluster']) {
+        var E = [];
+        var S = [];
+        var target = key;
+        for (var i = 0, len = data['edge'].length; i < len; i++) {
+            if (data['edge'][i].target == target && data['edge'][i].source != data['edge'][i].target) {
                 S.push(data['edge'][i]);
             }
         }
-        for(var i= 0,len=deleted.length;i<len;i++){
-            if(deleted[i].target==target&&deleted[i].source!=deleted[i].target){
+        for (var i = 0, len = deleted.length; i < len; i++) {
+            if (deleted[i].target == target && deleted[i].source != deleted[i].target) {
                 E.push(deleted[i]);
             }
         }
-        E.sort(function(a,b){
-            return b.flow-a.flow;
+        E.sort(function (a, b) {
+            return b.flow - a.flow;
         });
-        if(S.length==0&&E.length>=1){
-            for(var i= 0,len=E.length;i<len;i++){
-                if(E[i].source!=E[i].target){
-                    visitedNode=getNodes(data);
-                    if(in_array(E[i].source,visitedNode)){
+        if (S.length == 0 && E.length >= 1) {
+            for (var i = 0, len = E.length; i < len; i++) {
+                if (E[i].source != E[i].target) {
+                    visitedNode = getNodes(data);
+                    if (in_array(E[i].source, visitedNode)) {
                         data['edge'].push(E[i]);
-                        visitedNode=getNodes(data);
-                        var recovery=String(E[i].source)+'->'+String(E[i].target);
-//                        console.log('recover edge:'+recovery);
+                        visitedNode = getNodes(data);
+                        var recovery = String(E[i].source) + '->' + String(E[i].target);
+                        //                        console.log('recover edge:'+recovery);
                         break;
                     }
                 }
@@ -12477,58 +12941,59 @@ function linkPruning_su(data){
         }
     }
 
-    var newEdge=[];
-    for(var i= 0,len=data['edge'].length;i<len;i++){
-        if(data['edge'][i].source!=data['edge'][i].target){
-            var edge=Edge.newedge();
-            for(var key in data['edge'][i]){
-                edge[key]=data['edge'][i][key];
+    var newEdge = [];
+    for (var i = 0, len = data['edge'].length; i < len; i++) {
+        if (data['edge'][i].source != data['edge'][i].target) {
+            var edge = Edge.newedge();
+            for (var key in data['edge'][i]) {
+                edge[key] = data['edge'][i][key];
             }
             newEdge.push(edge);
         }
     }
-    data['edge']=newEdge;
+    data['edge'] = newEdge;
 
     //test the top k flow in deleted
-    deleted.sort(function(a,b){return b.flow-a.flow});
-    for(var i= 0,count=0;i<deleted.length;i++){
-        if(count==10)break;
-        var edge=deleted[i];
-        var source=edge.source;
-        var target=edge.target;
-        if(in_array(source,visitedNode)&&target!=source){
+    deleted.sort(function (a, b) {
+        return b.flow - a.flow
+    });
+    for (var i = 0, count = 0; i < deleted.length; i++) {
+        if (count == 10) break;
+        var edge = deleted[i];
+        var source = edge.source;
+        var target = edge.target;
+        if (in_array(source, visitedNode) && target != source) {
             data['edge'].push(edge);
-            count+=1;
+            count += 1;
         }
 
     }
 
-    var tmpEdgeString=[];
-    var tmpEdge=[];
-    var tmpNode={};
-    for(var i=0;i<data['edge'].length;i++){
-        var edgeString=data['edge'][i].source+'->'+data['edge'][i].target;
-        if(!in_array(edgeString,tmpEdgeString)){
+    var tmpEdgeString = [];
+    var tmpEdge = [];
+    var tmpNode = {};
+    for (var i = 0; i < data['edge'].length; i++) {
+        var edgeString = data['edge'][i].source + '->' + data['edge'][i].target;
+        if (!in_array(edgeString, tmpEdgeString)) {
             tmpEdge.push(data['edge'][i]);
             tmpEdgeString.push(edgeString);
-            if(!tmpNode[data['edge'][i].source])tmpNode[data['edge'][i].source]=data['cluster'][data['edge'][i].source];
-            if(!tmpNode[data['edge'][i].target])tmpNode[data['edge'][i].target]=data['cluster'][data['edge'][i].target];
+            if (!tmpNode[data['edge'][i].source]) tmpNode[data['edge'][i].source] = data['cluster'][data['edge'][i].source];
+            if (!tmpNode[data['edge'][i].target]) tmpNode[data['edge'][i].target] = data['cluster'][data['edge'][i].target];
         }
     }
-    data['edge']=tmpEdge;
-    data['cluster']=tmpNode;
+    data['edge'] = tmpEdge;
+    data['cluster'] = tmpNode;
     //    console.log('visitedNode:\n'+visitedNode);
-    visitedNode=getNodes(data);
-    reachableEdge=[];
-    for(var i= 0,len=data['edge'].length;i<len;i++){
-        if(!in_array(data['edge'][i].source,visitedNode)||!in_array(data['edge'][i].target,visitedNode)){
+    visitedNode = getNodes(data);
+    reachableEdge = [];
+    for (var i = 0, len = data['edge'].length; i < len; i++) {
+        if (!in_array(data['edge'][i].source, visitedNode) || !in_array(data['edge'][i].target, visitedNode)) {
             deleted.push(data['edge'][i]);
-        }
-        else{
+        } else {
             reachableEdge.push(data['edge'][i]);
         }
     }
-    data['edge']=reachableEdge
+    data['edge'] = reachableEdge
 
 
 
@@ -12605,19 +13070,25 @@ function updateClusterOption(clusterList) {
                 var cluster = d3.select(this).attr('cluster');
                 old$("#cite" + id + ' a').html(txt);
                 var value = old$(this).attr("selectId");
-//                    inputselect.val(value);
+                //                    inputselect.val(value);
                 old$("#ul" + id).hide();
-                var d = {fatherID: id, selectID: value, cluster: cluster};
+                var d = {
+                    fatherID: id,
+                    selectID: value,
+                    cluster: cluster
+                };
                 changeOption(d);
             })
 
             .html(clusterList[j]);
     }
 }
+
 function updateTitle(title) {
     var titleDiv = d3.select('.titleDiv');
     titleDiv.select('text').html(title);
 }
+
 function processData(d) {
     var clusterList = d.clusterIDList;
     var title = d.cluster['300'].title;
@@ -12637,8 +13108,7 @@ function processData(d) {
 
                 }
                 cluster.nodeYearInfo = nodeYearInfo;
-            }
-            else {
+            } else {
                 var sum = 0
                 for (var day in cluster.nodeYearInfo) {
                     sum += parseInt(cluster.nodeYearInfo[day]);
@@ -12660,7 +13130,7 @@ function processData(d) {
             edge.weight = {};
             for (var key in edge.oldWeight) {
                 var years;
-                (key.split('-').length == 2) ? years = key.split('-') : years = key.split('_');
+                (key.split('-').length == 2) ? years = key.split('-'): years = key.split('_');
                 var targetYear = years[1].toInt();
                 edge.weight[targetYear] = edge.oldWeight[key];
             }
@@ -12671,7 +13141,10 @@ function processData(d) {
         .range([20, 5]);
     var json_nodes = this.dataPreProcess(d);
     var json_edges = d.edge;
-    this.data.postData[this.focusedID] = {edge: json_edges, node: json_nodes};
+    this.data.postData[this.focusedID] = {
+        edge: json_edges,
+        node: json_nodes
+    };
     if (this.method != 'origin') {
         this.linkPruning();
     }
@@ -12695,12 +13168,12 @@ function processData(d) {
         var pID = parseInt(this.preFocusedID.split('_')[1]);
         if (fID > pID) {
             generateTransitionData(this.data.postData[this.focusedID], this.data.postData[this.preFocusedID]);
-        }
-        else if (fID < pID) {
+        } else if (fID < pID) {
             generateTransitionData(this.data.postData[this.preFocusedID], this.data.postData[this.focusedID]);
         }
     }
 }
+
 function edgeAdjustment(d) {
     var edges = d.edge;
     for (var i = 0; i < edges.length; i++) {
@@ -12711,17 +13184,21 @@ function edgeAdjustment(d) {
         dis = distance(p[0].x, p[0].y, p[last].x, p[last].y);
         r1 = sizeScale.sizeScale(p[0].size);
         r2 = sizeScale.sizeScale(p[last].size);
-//        x1=getstart(p[0].x,p[last].x,r1,dis);
-//        y1=getstart(p[0].y,p[last].y,r1,dis);
+        //        x1=getstart(p[0].x,p[last].x,r1,dis);
+        //        y1=getstart(p[0].y,p[last].y,r1,dis);
         x2 = getend(p[last].x, p[0].x, r2, dis);
         y2 = getend(p[last].y, p[0].y, r2, dis);
         var adjustList = [p[last - 3], p[last - 2], p[last - 1], p[last]];
 
-        var originPoints = adjustPoints(adjustList, {x: x2, y: y2});
+        var originPoints = adjustPoints(adjustList, {
+            x: x2,
+            y: y2
+        });
         edge.originPoints = originPoints;
 
     }
 }
+
 function adjustPoints(points, point) {
     var origin = [];
     clone(points, origin);
@@ -12738,23 +13215,24 @@ function adjustPoints(points, point) {
     points[1].y = newBox.height * points[1].ratioToTop + newBox.y;
     points[2].y = newBox.height * points[2].ratioToTop + newBox.y;
     return origin;
-//    svg.selectAll('whatever')
-//        .data(points)
-//        .enter()
-//        .append('circle')
-//        .each(function(d){
-//            d3.select(this)
-//                .attrs({
-//                    cx:d.x,
-//                    cy:d.y,
-//                    r:5
-//                })
-//                .styles({
-//                    fill:'black'
-//                })
-//        })
+    //    svg.selectAll('whatever')
+    //        .data(points)
+    //        .enter()
+    //        .append('circle')
+    //        .each(function(d){
+    //            d3.select(this)
+    //                .attrs({
+    //                    cx:d.x,
+    //                    cy:d.y,
+    //                    r:5
+    //                })
+    //                .styles({
+    //                    fill:'black'
+    //                })
+    //        })
 
 }
+
 function filterSelfEdge(d) {
     var edge = d.edge
     var newEdge = []
@@ -12766,6 +13244,7 @@ function filterSelfEdge(d) {
     d.edge = newEdge;
 
 }
+
 function countFlow(edges) {
     var flow = 0;
     for (var i = 0; i < edges.length; i++) {
@@ -12773,6 +13252,7 @@ function countFlow(edges) {
     }
     return flow;
 }
+
 function countYearFlow(edges) {
     var flow = 0;
     for (var i = 0; i < edges.length; i++) {
@@ -12780,6 +13260,7 @@ function countYearFlow(edges) {
     }
     return flow;
 }
+
 function countCitation(edges) {
     var citation = 0;
     for (var i = 0; i < edges.length; i++) {
@@ -12787,6 +13268,7 @@ function countCitation(edges) {
     }
     return citation;
 }
+
 function preLayout(d) {
     var layoutData = {};
     clone(d, layoutData);
@@ -12798,6 +13280,7 @@ function preLayout(d) {
     this.ifInitLayout = false;
     this.requestTitleList(this.focusedNodeData, 300);
 }
+
 function filterDataByYear(d, yearFilter) {
     //console.log(yearFilter);
     var animateMode = this.animateMode;
@@ -12857,11 +13340,10 @@ function filterDataByYear(d, yearFilter) {
         var preStatus = minYear;
         if (animateMode == flipBook) {
             for (var key in nodes[i].nodeYearInfo) {
-                if (key.toInt() < yearFilter[0])preStatus = key.toInt();
+                if (key.toInt() < yearFilter[0]) preStatus = key.toInt();
                 else break;
             }
-        }
-        else if (animateMode == movie) {
+        } else if (animateMode == movie) {
             preStatus = yearFilter[0];
         }
         var k = 0;
@@ -12875,18 +13357,15 @@ function filterDataByYear(d, yearFilter) {
                     newNodeYearInfo[key] = nodes[i].nodeYearInfo[key];
                     newDelay.push(nodes[i].oriDelay[k]);
                     len += 1;
-                }
-                else if (year < yearFilter[0]) {
+                } else if (year < yearFilter[0]) {
                     delaySum += nodes[i].oriDelay[k];
                 }
-            }
-            else {
+            } else {
                 if (year >= preStatus && year <= yearFilter[1]) {
                     newNodeYearInfo[key] = nodes[i].nodeYearInfo[key];
                     newDelay.push(nodes[i].oriDelay[k]);
                     len += 1;
-                }
-                else if (year < preStatus) {
+                } else if (year < preStatus) {
                     delaySum += nodes[i].oriDelay[k];
                 }
             }
@@ -12895,7 +13374,7 @@ function filterDataByYear(d, yearFilter) {
             k += 1;
         }
         if (len > 0) {
-//            setNodeTransition(nodes, preYear);
+            //            setNodeTransition(nodes, preYear);
             newDelay[0] += delaySum;
             newNodes.push(nodes[i]);
             var minKey = 2100;
@@ -12903,11 +13382,11 @@ function filterDataByYear(d, yearFilter) {
             for (var key in newNodeYearInfo) {
                 size += newNodeYearInfo[key];
                 var year = key.toInt();
-                if (year < minKey)minKey = year;
+                if (year < minKey) minKey = year;
             }
             if (animateMode == flipBook) {
                 for (var key in nodes[i].nodeYearInfo) {
-                    if (!newNodeYearInfo[key])newNodeYearInfo[minKey] += nodes[i].nodeYearInfo[key];
+                    if (!newNodeYearInfo[key]) newNodeYearInfo[minKey] += nodes[i].nodeYearInfo[key];
                 }
             }
             newNodes[newNodes.length - 1].newNodeYearInfo = newNodeYearInfo;
@@ -12929,33 +13408,34 @@ function filterDataByYear(d, yearFilter) {
     newD.edge = newEdges;
     return newD;
 }
+
 function setNodeTransition(nodes, preYear) {
     var yearDelay = this.yearDelay;
     var yearFilter = this.yearFilter;
     var maxYear = this.maxYear;
     var minYear = this.minYear;
-//    var thisYear;
-//    var lastYear=minYear;
-//    for(var i=0;i<edges.length;i++){
-//        var target=edges[i].target;
-//        nodes[target].delay = [];
-//        for(var key in edges[i].weight){
-//            var year=parseInt(key);
-//            if(lastYear==minYear){
-//                nodes[target].delay.push({delay:2000*(thisYear-lastYear+1),year:thisYear,});
-//            }
-//            else{
-//                nodes[target].delay.push(2000*(thisYear-lastYear));
-//            }
-//            lastYear=thisYear;
-//        }
-//    }
+    //    var thisYear;
+    //    var lastYear=minYear;
+    //    for(var i=0;i<edges.length;i++){
+    //        var target=edges[i].target;
+    //        nodes[target].delay = [];
+    //        for(var key in edges[i].weight){
+    //            var year=parseInt(key);
+    //            if(lastYear==minYear){
+    //                nodes[target].delay.push({delay:2000*(thisYear-lastYear+1),year:thisYear,});
+    //            }
+    //            else{
+    //                nodes[target].delay.push(2000*(thisYear-lastYear));
+    //            }
+    //            lastYear=thisYear;
+    //        }
+    //    }
     var timeDic = {};
     for (var i = 0; i < nodes.length; i++) {
         if (nodes[i].parentNode) {
             nodes[i].sourceID = nodes[i].parentNode.id;
             nodes[i].parentNode = null;
-//            delete(nodes[i].parentNode);
+            //            delete(nodes[i].parentNode);
         }
         if (nodes[i].children) {
             nodes[i].targetID = []
@@ -12963,12 +13443,12 @@ function setNodeTransition(nodes, preYear) {
                 nodes[i].targetID.push(nodes[i].children[j].id);
             }
             nodes[i].children = null;
-//            delete(nodes[i].children);
+            //            delete(nodes[i].children);
         }
         var thisYear;
         var lastYear = preYear;
         var sum = 0;
-//        nodes[i].delay = [];
+        //        nodes[i].delay = [];
         nodes[i].delay[0] -= yearDelay * (yearFilter[0] - minYear);
         nodes[i].ratio = [];
         nodes[i].sizeSeries = [];
@@ -12988,9 +13468,9 @@ function setNodeTransition(nodes, preYear) {
 
         if (nodes[i].delay[0] < 0) {
 
-//            for(var j=1;j<nodes[i].delay.length;j++){
+            //            for(var j=1;j<nodes[i].delay.length;j++){
             nodes[i].delay[1] += nodes[i].delay[0];
-//            }
+            //            }
             nodes[i].delay[0] = 0;
         }
         nodes[i].sizeRatio = [];
@@ -13015,8 +13495,14 @@ function setNodeTransition(nodes, preYear) {
             var time = nodes[i].timeSeries[j];
             var nodeID = nodes[i].id;
             var deltaSize = nodes[i].sizeIncrease[j];
-            if (!(time in timeDic))timeDic[time] = {'sum': 0, 'list': []};
-            timeDic[time]['list'].push({'id': nodeID, 'size': deltaSize});
+            if (!(time in timeDic)) timeDic[time] = {
+                'sum': 0,
+                'list': []
+            };
+            timeDic[time]['list'].push({
+                'id': nodeID,
+                'size': deltaSize
+            });
             timeDic[time]['sum'] += deltaSize;
         }
 
@@ -13047,13 +13533,14 @@ function setNodeTransition(nodes, preYear) {
             var size = list[i]['size'];
             var index = nodesDic[id].timeSeries.indexOf(parseInt(time));
             var ratio = scale(size);
-            if (ratio < 0.5)ratio = 0.01;
+            if (ratio < 0.5) ratio = 0.01;
             nodesDic[id].sizeIncreaseRatio[index] = ratio;
             list[i]['ratio'] = ratio;
         }
     }
     //console.log(timeDic);
 }
+
 function setInitNodeTransition(d) {
     var nodes = d.node;
     for (var i = 0; i < nodes.length; i++) {
@@ -13065,7 +13552,7 @@ function setInitNodeTransition(d) {
         for (var key in nodes[i].nodeYearInfo) {
             var year = key.toInt();
             var delay = this.yearDelay * (year - preStep);
-            if (j == 0)delay += 1000;
+            if (j == 0) delay += 1000;
             nodes[i].delay.push(delay);
             preStep = year;
             j += 1;
@@ -13083,21 +13570,22 @@ function setInitNodeTransition(d) {
         nodes[i].oriDelay = [];
         clone(nodes[i].delay, nodes[i].oriDelay);
     }
-//    nodes[0].delay[0]-=1000;
+    //    nodes[0].delay[0]-=1000;
 }
+
 function setInitEdgeTransition(d) {
 
     var edges = d.edge;
     //var newEdges = [];
     var edgeMaxYear = this.maxYear;
     var edgeMinYear = this.minYear;
-//    for(var i=0;i<edges.length;i++){
-//        for(var key in edges[i].weight){
-//            var year=parseInt(key);
-//            if(year>edgeMaxYear)edgeMaxYear=year;
-//            if(year<edgeMinYear)edgeMinYear=year;
-//        }
-//    }
+    //    for(var i=0;i<edges.length;i++){
+    //        for(var key in edges[i].weight){
+    //            var year=parseInt(key);
+    //            if(year>edgeMaxYear)edgeMaxYear=year;
+    //            if(year<edgeMinYear)edgeMinYear=year;
+    //        }
+    //    }
     for (var i = 0; i < edges.length; i++) {
         var totalSum = 0;
         for (var key in edges[i].weight) {
@@ -13156,16 +13644,16 @@ function getYearData(d) {
     var nodeYearDic = {}
     for (var i = 0; i < d.node.length; i++) {
         for (var key in d.node[i].nodeYearInfo) {
-            if (nodeYearDic[key])nodeYearDic[key] += d.node[i].nodeYearInfo[key];
+            if (nodeYearDic[key]) nodeYearDic[key] += d.node[i].nodeYearInfo[key];
             else nodeYearDic[key] = d.node[i].nodeYearInfo[key];
         }
     }
-//    console.log(nodeYearDic);
+    //    console.log(nodeYearDic);
     var nodeYearData = []
     for (var key in nodeYearDic) {
         nodeYearData.push([parseInt(key), nodeYearDic[key]]);
     }
-//    console.log(nodeYearData);
+    //    console.log(nodeYearData);
     this.maxYear = d3.max(nodeYearData, function (d) {
         return d[0]
     });
@@ -13179,12 +13667,12 @@ function getYearData(d) {
         return d[1]
     });
     for (var i = this.minYear; i <= this.maxYear; i++) {
-        if (!nodeYearDic[i])nodeYearDic[i] = 0;
+        if (!nodeYearDic[i]) nodeYearDic[i] = 0;
     }
-//    if(!requestMethod=='local'){
+    //    if(!requestMethod=='local'){
     nodeYearDic[this.maxYear + 1] = 0;
     this.maxYear += 1;
-//    }
+    //    }
 
     var nodeYearData = []
     for (var key in nodeYearDic) {
@@ -13202,13 +13690,17 @@ function getYearData(d) {
     };
     this.yearFilter = [this.minYear, this.maxYear];
 }
+
 function generateTransitionData(chlData, parData) {
     //process nodes
     var fID = parseInt(focusedID.split('_')[1]);
     var pID = parseInt(preFocusedID.split('_')[1]);
     var chlNodeIDDic = {};
     var parNodeIDDic = {};
-    var transitionData = {node: [], edge: []};
+    var transitionData = {
+        node: [],
+        edge: []
+    };
     for (var i = 0; i < chlData.node.length; i++) {
         chlNodeIDDic[chlData.node[i].oldKey] = i;
     }
@@ -13221,8 +13713,7 @@ function generateTransitionData(chlData, parData) {
             clone(chlData.node[i], transitionData.node[i]);
             transitionData.node[i].x = parData.node[parNodeIDDic['300']].x;
             transitionData.node[i].y = parData.node[parNodeIDDic['300']].y;
-        }
-        else {
+        } else {
             var chlKey = chlData.node[i].oldKey;
             var parKey = data.incrementalTree[fID][chlKey].parent;
             transitionData.node[i] = {};
@@ -13249,12 +13740,13 @@ function generateTransitionData(chlData, parData) {
     tmpNodes = transitionData.node;
     tmpCurves = transitionData.edge;
 }
+
 function generateAssistEdge(d) {
     var clusterCount = parseInt(focusedID.split('_')[1]);
     var tmpNodeID = clusterCount + 1;
     var tmpEdges = [];
-//    console.log(d);
-//    console.log(data.incrementalTree);
+    //    console.log(d);
+    //    console.log(data.incrementalTree);
     var tree = data.incrementalTree[parseInt(clusterCount) - 5];
     //get node id oldid dic
     var idDic = {}
@@ -13266,7 +13758,10 @@ function generateAssistEdge(d) {
             var newNode = tmpNodeID;
             for (var i = 0; i < tree[key].child.length; i++) {
                 var id = idDic[tree[key].child[i]];
-                var newEdge = {source: newNode, target: id};
+                var newEdge = {
+                    source: newNode,
+                    target: id
+                };
                 tmpEdges.push(newEdge);
             }
             tmpNodeID += 1;
@@ -13274,6 +13769,7 @@ function generateAssistEdge(d) {
     }
     return tmpEdges;
 }
+
 function procrustes(graph1, graph2) {
     function getNodeKeyDic(graph) {
         var dic = {};
@@ -13286,9 +13782,9 @@ function procrustes(graph1, graph2) {
 
     var graph1NodeDic = getNodeKeyDic(graph1);
     var graph2NodeDic = getNodeKeyDic(graph2);
-//    console.log(graph1, graph2);
-//    console.log(data.incrementalTree);
-//    if(graph1.node.length<graph2.node.length){
+    //    console.log(graph1, graph2);
+    //    console.log(data.incrementalTree);
+    //    if(graph1.node.length<graph2.node.length){
     //small graph to large graph
     //translation
     var totalX = 0;
@@ -13313,12 +13809,13 @@ function procrustes(graph1, graph2) {
         graph2.node[i].y -= avgY;
     }
     //uniform scaling
-//    }
-//    else{
+    //    }
+    //    else{
     //large graph to small graph
-//    }
+    //    }
 
 }
+
 function generateNodesDic(nodes) {
     var dic = {};
     for (var i = 0, len = nodes.length; i < len; i++) {
@@ -13328,6 +13825,7 @@ function generateNodesDic(nodes) {
     }
     return dic
 }
+
 function generateTmpNodes(oldNodes, newNodes) {
     var oldNodesDic = generateNodesDic(oldNodes);
     var newNodesDic = generateNodesDic(newNodes);
@@ -13347,8 +13845,7 @@ function generateTmpNodes(oldNodes, newNodes) {
             var father = oldNodesDic[fatherKey];
             tmpNodes[t].x = father.x;
             tmpNodes[t].y = father.y;
-        }
-        else {
+        } else {
             tmpNodes[t].x = oldNodesDic[key].x;
             tmpNodes[t].y = oldNodesDic[key].y;
 
@@ -13357,6 +13854,7 @@ function generateTmpNodes(oldNodes, newNodes) {
 
     }
 }
+
 function generateTmpCurves(oldCurves, newCurves) {
     tmpCurves = [];
     for (var i = 0, len = newCurves.length; i < len; i++) {
@@ -13388,6 +13886,7 @@ function generateTmpCurves(oldCurves, newCurves) {
 
     }
 }
+
 function getRelation(d) {
     var nodes = d.node;
     var edges = d.edge;
@@ -13412,48 +13911,49 @@ function getRelation(d) {
         }
     }
 }
+
 function typeofObj(obj) {
     return Object.prototype.toString.call(obj);
 }
+
 function cloneArray(fromObj, toObj) {
     for (var j = 0; j < fromObj.length; j++) {
         var type = typeofObj(fromObj[j]);
         if (type == "[object Object]") {
             toObj[j] = {};
             cloneObj(fromObj[j], toObj[j]);
-        }
-        else if (type == "[object Array]") {
+        } else if (type == "[object Array]") {
             toObj[j] = [];
             cloneArray(fromObj[j], toObj[j])
-        }
-        else {
+        } else {
             toObj[j] = fromObj[j];
         }
     }
 }
+
 function cloneObj(fromObj, toObj) {
     for (var i in fromObj) {
         if (!in_array(i, cloneIngoreList)) {
             if (typeofObj(fromObj[i]) == "[object Object]") {
                 toObj[i] = {}
                 cloneObj(fromObj[i], toObj[i]);
-            }
-            else if (typeofObj(fromObj[i]) == "[object Array]") {
+            } else if (typeofObj(fromObj[i]) == "[object Array]") {
                 toObj[i] = [];
                 cloneArray(fromObj[i], toObj[i])
-            }
-            else {
+            } else {
                 toObj[i] = fromObj[i];
             }
         }
 
     }
 }
+
 function clone(fromObj, toObj) {
-    if (typeofObj(fromObj) == "[object Object]")cloneObj(fromObj, toObj);
-    else if (typeofObj(fromObj) == "[object Array]")cloneArray(fromObj, toObj);
+    if (typeofObj(fromObj) == "[object Object]") cloneObj(fromObj, toObj);
+    else if (typeofObj(fromObj) == "[object Array]") cloneArray(fromObj, toObj);
     else toObj = fromObj;
 }
+
 function in_array(stringToSearch, arrayToSearch) {
     for (s = 0; s < arrayToSearch.length; s++) {
         thisEntry = arrayToSearch[s].toString();
@@ -13463,9 +13963,10 @@ function in_array(stringToSearch, arrayToSearch) {
     }
     return false;
 }
+
 function dataPreProcess(d) {
-//    if(method=='mst'){
-//    }
+    //    if(method=='mst'){
+    //    }
 
     this.calculateEdgeCitation(d);
 
@@ -13484,7 +13985,7 @@ function dataPreProcess(d) {
                 year = yearKey;
                 break
             }
-            if(!d.cluster[key].summary) d.cluster[key].summary = '';
+            if (!d.cluster[key].summary) d.cluster[key].summary = '';
             var author = d.cluster[key].summary.replace(/\]/g, '');
             author = author.split('[')[0];
             d.cluster[key].keywords = [author, year];
@@ -13494,7 +13995,7 @@ function dataPreProcess(d) {
         d.cluster[key].x = parseFloat(d.cluster[key].x);
         d.cluster[key].y = parseFloat(d.cluster[key].y);
         d.cluster[key].size = d.cluster[key].nodeidlist.length;
-        if (d.cluster[key].size > this.maxSize)this.maxSize = d.cluster[key].size;
+        if (d.cluster[key].size > this.maxSize) this.maxSize = d.cluster[key].size;
         d.cluster[key].id = t;
         d.cluster[key].oldKey = key;
         json_nodes[t] = d.cluster[key];
@@ -13513,6 +14014,7 @@ function dataPreProcess(d) {
     //calculate #citation of edge
     return json_nodes;
 }
+
 function calculateEdgeCitation(data) {
     for (var i = 0; i < data['edge'].length; i++) {
         var edge = data['edge'][i];
@@ -13527,27 +14029,29 @@ function calculateEdgeCitation(data) {
         data['edge'][i].citation = citation;
     }
 }
+
 function initData(nodes, edges) {
     sortByCitations(nodes);
     getData(nodes, edges);
     getRelation();
     coordinateOffset();
     getCurves();
-//    splitLabels(nodes, edges);
+    //    splitLabels(nodes, edges);
 }
+
 function draw() {
-//    drawAuthorInfo();
+    //    drawAuthorInfo();
     layout(optionNumber, false, false, data.postData[focusedID]);
 }
 
 function sortByCitations(data) {
-//    console.log(data);
+    //    console.log(data);
     for (var i = 1; i < data.length; i++) {
         data[i].nodes.sort(function (a, b) {
             return parseInt(b.citation_count) - parseInt(a.citation_count);
         })
     }
-//    console.log(data);
+    //    console.log(data);
 }
 //function getRelation(d){
 //    var nodes=d.node;
@@ -13573,6 +14077,7 @@ function coordinate(sx, sy, tx, ty) {
     var y = mid_y - ((2 * Math.sqrt(3) - 3) / 4) * d;
     return [x, y];
 }
+
 function distance(x1, y1, x2, y2) {
     return Math.sqrt(Math.pow((y1 - y2), 2) + Math.pow((x1 - x2), 2));
 }
@@ -13614,8 +14119,8 @@ function coordinateOffset(d) {
     }
     for (var i = 0; i < edges.length; i++) {
         for (var j = 0; j < edges[i].assists.length; j++) {
-//            console.log(edges[i].assists[j]);
-//            console.log(edges[i].assists[j][1]);
+            //            console.log(edges[i].assists[j]);
+            //            console.log(edges[i].assists[j][1]);
             edges[i].assists[j][0] = parseInt(edges[i].assists[j][0]);
             edges[i].assists[j][1] = parseInt(edges[i].assists[j][1]);
             edges[i].assists[j][0] += x_offset;
@@ -13643,6 +14148,7 @@ function coordinateOffset(d) {
     d.node = nodes;
     d.edge = edges;
 }
+
 function findCircleEdges(d) {
     var nodes = d.node;
     var edges = d.edge;
@@ -13651,32 +14157,52 @@ function findCircleEdges(d) {
     for (var i = 0, len = edges.length; i < len; i++) {
         var source = edges[i].source;
         var target = edges[i].target;
-        if (edgeSourceTargetDic[target])if (edgeSourceTargetDic[target][source]) {
-            var edge1 = edges[i];
-            var edge2 = edgeSourceTargetDic[target][source];
-            var p1 = {x: nodeDic[nodes[source].oldKey].x, y: nodeDic[nodes[source].oldKey].y};
-            var p2 = {x: nodeDic[nodes[target].oldKey].x, y: nodeDic[nodes[target].oldKey].y};
-            var p3 = {x: nodeDic[nodes[source].oldKey].x, y: nodeDic[nodes[source].oldKey].y};
-            var p4 = {x: nodeDic[nodes[target].oldKey].x, y: nodeDic[nodes[target].oldKey].y};
-            var e1 = {p1: p1, p2: p2};
-            var e2 = {p1: p3, p2: p4};
-            var newEdge = moveCircleEdge(e1, e2);
-            edges[i].dx = e1.dx;
-            edges[i].dy = e1.dy;
-            edgeSourceTargetDic[target][source].dx = e2.dx;
-            edgeSourceTargetDic[target][source].dy = e2.dy;
+        if (edgeSourceTargetDic[target])
+            if (edgeSourceTargetDic[target][source]) {
+                var edge1 = edges[i];
+                var edge2 = edgeSourceTargetDic[target][source];
+                var p1 = {
+                    x: nodeDic[nodes[source].oldKey].x,
+                    y: nodeDic[nodes[source].oldKey].y
+                };
+                var p2 = {
+                    x: nodeDic[nodes[target].oldKey].x,
+                    y: nodeDic[nodes[target].oldKey].y
+                };
+                var p3 = {
+                    x: nodeDic[nodes[source].oldKey].x,
+                    y: nodeDic[nodes[source].oldKey].y
+                };
+                var p4 = {
+                    x: nodeDic[nodes[target].oldKey].x,
+                    y: nodeDic[nodes[target].oldKey].y
+                };
+                var e1 = {
+                    p1: p1,
+                    p2: p2
+                };
+                var e2 = {
+                    p1: p3,
+                    p2: p4
+                };
+                var newEdge = moveCircleEdge(e1, e2);
+                edges[i].dx = e1.dx;
+                edges[i].dy = e1.dy;
+                edgeSourceTargetDic[target][source].dx = e2.dx;
+                edgeSourceTargetDic[target][source].dy = e2.dy;
 
-        }
+            }
     }
 }
+
 function getCurves(d) {
     var nodes = d.node;
     var edges = d.edge;
     for (var i = 0; i < edges.length; i++) {
         var dx = 0;
         var dy = 0;
-        if (edges[i].dx)dx = edges[i].dx;
-        if (edges[i].dy)dy = edges[i].dy;
+        if (edges[i].dx) dx = edges[i].dx;
+        if (edges[i].dy) dy = edges[i].dy;
         var source_x = parseInt(nodes[edges[i].source].x) + dx;
         var source_y = parseInt(nodes[edges[i].source].y) + dy;
         var target_x = parseInt(nodes[edges[i].target].x) + dx;
@@ -13697,8 +14223,8 @@ function getCurves(d) {
         var year = edges[i].year;
         var structureType;
         var routerClusters = edges[i].routerClusters;
-        if (edges[i].TreeEdge)structureType = 'treeEdge';
-        else if (edges[i].isNontreeEdge)structureType = 'nontreeEdge';
+        if (edges[i].TreeEdge) structureType = 'treeEdge';
+        else if (edges[i].isNontreeEdge) structureType = 'nontreeEdge';
         else structureType = 'originEdge';
         edges[i] = {
             source: edges[i].source,
@@ -13747,25 +14273,44 @@ function getCurves(d) {
 
         };
         var source_text, target_text;
-        edges[i].points.push({x: source_x, y: source_y, size: source_size, text: source_label, id: edges[i].source});
+        edges[i].points.push({
+            x: source_x,
+            y: source_y,
+            size: source_size,
+            text: source_label,
+            id: edges[i].source
+        });
         if (drawFlowMap) {
             for (var j = 0; j < edges[i].assists.length; j++) {
-                edges[i].points.push({x: edges[i].assists[j][0], y: edges[i].assists[j][1], size: 1, text: "", id: -1});
+                edges[i].points.push({
+                    x: edges[i].assists[j][0],
+                    y: edges[i].assists[j][1],
+                    size: 1,
+                    text: "",
+                    id: -1
+                });
             }
         }
-        edges[i].points.push({x: target_x, y: target_y, size: target_size, text: target_label, id: edges[i].target});
+        edges[i].points.push({
+            x: target_x,
+            y: target_y,
+            size: target_size,
+            text: target_label,
+            id: edges[i].target
+        });
     }
 }
+
 function calculateAssistPoint(x1, y1, x2, y2, x3, y3) {
-    var x0, y0;//p1p2中点
-    var k1, b1;//p1p2直线的斜率与常数项
-    var k2, b2;// 过p1p2直线中点垂线的斜率与常数项
-    var a0, b0, c0;//圆与直线相交的二次方程系数
-    var d;//所需距离
-    var x4, y4, x5, y5;//解出来的两个点坐标，分列直线左右两侧
+    var x0, y0; //p1p2中点
+    var k1, b1; //p1p2直线的斜率与常数项
+    var k2, b2; // 过p1p2直线中点垂线的斜率与常数项
+    var a0, b0, c0; //圆与直线相交的二次方程系数
+    var d; //所需距离
+    var x4, y4, x5, y5; //解出来的两个点坐标，分列直线左右两侧
     var pi = Math.PI;
-    var angle = pi / 6;//角度
-    var delta;//判别式
+    var angle = pi / 6; //角度
+    var delta; //判别式
     x0 = (x1 + x2) / 2;
     y0 = (y1 + y2) / 2;
     k1 = (y2 - y1) / (x2 - x1);
@@ -13781,20 +14326,19 @@ function calculateAssistPoint(x1, y1, x2, y2, x3, y3) {
     y4 = k2 * x4 + b2;
     x5 = (-b0 - delta) / (2 * a0);
     y5 = k2 * x5 + b2;
-    var value3, value4, value5;//判断左右
+    var value3, value4, value5; //判断左右
     value3 = k1 * x3 + b1 - y3;
     value4 = k1 * x4 + b1 - y4;
     value5 = k1 * x5 + b1 - y5;
     var right, left;
     right = left = {};
-    var p = {}//所需结果
+    var p = {} //所需结果
     if (value4 > value5) {
         right.x = x4;
         right.y = y4;
         left.x = x5;
         left.y = y5;
-    }
-    else {
+    } else {
         left.x = x4;
         left.y = y4;
         right.x = x5;
@@ -13803,255 +14347,17 @@ function calculateAssistPoint(x1, y1, x2, y2, x3, y3) {
     if (value3 > 0) {
         return right;
         //p3点在直线右侧
-    }
-    else if (value3 < 0) {
+    } else if (value3 < 0) {
         return left;
         //p3点在直线左侧
-    }
-    else {
+    } else {
         if (k1 >= 0) {
             return left;
-        }
-        else {
+        } else {
             return right;
         }
     }
 }
-function ajax(url,success,data) {
-    console.log(url);
-    console.log(data);
-    $.ajax({
-        url: url,
-        data: data,
-        async: false,
-        success: success
-    })
-}
-function requestData(){
-    ids=[];
-    var layers=[];
-    if('left' in sourceCheckedStatus)layers.push(leftLayer);
-    if('right' in sourceCheckedStatus)layers.push(rightLayer);
-    layers.forEach(function(layer){
-        var source=layer.source;
-        var clusterCount=layer.clusterCount;
-        layer.focusedID=source+'_'+clusterCount;
-        //if(!(layer.focusedID in layer.data.sourceData)){
-        if(source in dataID&&layer.ifLayout){
-            ids.push({
-                id:dataID[source],
-                source:source,
-                layer:layer,
-                clusterCount:clusterCount
-            })
-        }
-        //}
-    });
-    search(ids);
-}
-function search(ids){
-    var requests=[];
-    ids.forEach(function(item){
-        var id=item.layer.focusedID;
-        var data=item.layer.data;
-        if(!(id in data.sourceData)||!data.sourceData[id]){
-            requests.push(item);
-        }
-    });
-    if(requests.length==0){
-        //data all exist, call layout function
-        ids.forEach(function(item){
-            if(item.layer.ifLayout) {
-                var source = item.source;
-                var tmpData = {};
-                clone(item.layer.data.sourceData[item.layer.focusedID], tmpData);
-                item.layer.processData(tmpData);
-                if (item.layer.focusedID && item.layer.preFocusedID) {
-                    item.layer.layout(optionNumber, true, 'incremental', item.layer.data.postData[item.layer.focusedID]);
-                }
-                else {
-                    item.layer.preLayout(item.layer.data.postData[item.layer.focusedID]);
-                }
-            }
-        });
-    }
-    else{
-        var url='http://'+server+':'+port+'/InfluenceGraph';
-        var reqData=[];
-        requests.forEach(function(item){
-            reqData.push({
-                source:item.source,
-                id:item.id,
-                clusterCount:item.clusterCount
-            });
-            item.layer.focusedID=item.source+'_'+item.clusterCount;
-        });
-        var success=function(d){
-            if(d['error']){
-                var newUrl='http://'+server+':'+errorPort+'/error';
-                var errorData={
-                    errorCode:1,
-                    source:source,
-                    errorID:searchID
-                };
-                var success=function(){
-                    alert('The influence graph is computing in the backend');
-                };
-                ajax(newUrl,success,errorData);
-            }
-            else{
-                console.log(d);
-                function clearCiteseerx(graph){
-                    var clusters=graph.cluster;
-                    var edges=graph.edge;
-                    var newClusters={};
-                    var newEdges=[];
-                    var yearList=[];
-                    var cluster300IDList=clusters['300'].nodeidlist;
-                    var mYear=1980;
-
-                    for(var y in cluster300IDList){
-                        if(y&&parseInt(y)>mYear)mYear=parseInt(y);
-                    }
-                    for(var key in clusters){
-                        var idYearDic=clusters[key].nodeidlist;
-                        var newDic={};
-                        for(var year in idYearDic){
-                            if(year&&parseInt(year)>=mYear){
-                                yearList.push(parseInt(year));
-                                newDic[year]=idYearDic[year];
-                            }
-                        }
-                        var flag=false;
-                        for(var k in newDic){
-                            flag=true;
-                            break;
-                        }
-                        if(flag){
-                            newClusters[key]=clusters[key];
-                            newClusters[key].nodeidlist=newDic;
-                        }
-                        else{
-                            console.log('cluster '+key+' year is error');
-                        }
-
-                    }
-                    //console.log(yearList)
-                    if(!('300' in newClusters)){
-                        var cluster300=clusters[300];
-                        var minYear=d3.min(yearList);
-                        var id=cluster300.nodeidlist[''][0];
-                        var yearKey=String(minYear-1);
-                        cluster300.nodeidlist={};
-                        cluster300.nodeidlist[yearKey]=[id];
-                        newClusters['300']=cluster300;
-                    }
-                    edges.forEach(function(edge){
-                        var source=edge.source;
-                        var target=edge.target;
-                        if((source in newClusters)&&(target in newClusters)){
-                            newEdges.push(edge);
-                        }
-                    });
-
-                    //fix year data
-                    //citeseerx year should <=2014
-                    for(var clusterID in graph.cluster){
-                        var newIDList={};
-                        for(var year in graph.cluster[clusterID].nodeidlist){
-                            if(parseInt(year)>2014){
-                                //console.log(year);
-                                if(!('2014' in newIDList))newIDList[String(2014)]=[];
-                                newIDList[String(2014)]=newIDList[String(2014)].concat(graph.cluster[clusterID].nodeidlist[year]);
-                            }
-                            else{
-                                newIDList[year]=graph.cluster[clusterID].nodeidlist[year];
-                            }
-                        }
-                        graph.cluster[clusterID].nodeidlist=newIDList;
-                    }
-                    graph.edge.forEach(function(edge){
-                        var newWeight={};
-                        for(var key in edge.weight){
-                            var sourceYear=key.split('_')[0];
-                            var targetYear=key.split('_')[1];
-                            if(parseInt(sourceYear)>=2014)sourceYear=2014;
-                            if(parseInt(targetYear)>=2014)targetYear=2014;
-                            var newKey=sourceYear+'_'+targetYear;
-                            if(!(newKey in newWeight))newWeight[newKey]=0;
-                            newWeight[newKey]+=edge.weight[key];
-                        }
-                        edge.weight=newWeight;
-                    });
-
-                    graph.cluster=newClusters;
-                    graph.edge=newEdges;
-                }
-                function addFrequencyKeywords(graph){
-                    var clusters=graph.cluster;
-                    for(var key in clusters){
-                        if(!('frequencyKeywords' in clusters[key])){
-                            clusters[key].frequencyKeywords=['none','none','none'];
-                        }
-                    }
-                }
-                //console.log(d.citeseerx);
-                for(var key in d){
-                    if(key.split('_')[0]=='citeseerx'){
-                        clearCiteseerx(d[key]);
-                    }
-                    addFrequencyKeywords(d[key]);
-                }
-                //if(d.citeseerx){
-                //    clearCiteseerx(d.citeseerx);
-                //
-                //}
-                //console.log(d.citeseerx);
-                ids.forEach(function(item,i){
-                    //if(i==1)return;
-                    var source=item.source;
-                    if(source=='aminerV8')item.layer.sourceText='AMiner';
-                    else if(source=='citeseerx')item.layer.sourceText='CiteseerX';
-                    var tmpData={};
-                    item.layer.source=item.source;
-                    var focused=item.source+'_'+item.clusterCount;
-                    item.layer.focusedID=focused;
-                    var data=item.layer.data;
-                    if(data.sourceData[focused]){
-                        clone(data.sourceData[focused],tmpData);
-                    }
-                    else{
-                        clone(d[source+'_'+item.clusterCount],tmpData);
-                        item.layer.data.sourceData[item.layer.focusedID]= d[source+'_'+item.clusterCount];
-                    }
-                    if(item.layer.ifLayout){
-                        item.layer.processData(tmpData);
-                        if(item.layer.focusedID&&item.layer.preFocusedID){
-                            item.layer.layout(optionNumber,true, 'incremental',item.layer.data.postData[item.layer.focusedID]);
-                        }
-                        else{
-                            item.layer.preLayout(item.layer.data.postData[item.layer.focusedID]);
-                        }
-                    }
-
-
-                });
-            }
-        };
-        ajax(url,success,{data:reqData});
-    }
-}
-function FSubmit(e){
-    if(e ==13){
-        search();
-    }
-}
-function getUrlParam(name){
-    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
-    if (r!=null) return unescape(r[2]); return null; //返回参数值
-}
-
 
 function ajax(url, success, data) {
     console.log(url);
@@ -14063,117 +14369,30 @@ function ajax(url, success, data) {
         success: success
     })
 }
+
 function requestData() {
-    var twitterClusterCount = getUrlParam('twitter');
-    if (twitterClusterCount) {
-        d3.json('localData/twitter'+twitterClusterCount+'.json', function (data) {
-            console.log(data);
-            var nodeCount = 0;
-            var edgeCount = 0;
-            var flowCount = 0;
-            var selfEdgeCount = 0;
-            var selfFlowCount = 0;
-            for (var key in data.cluster) {
-                var clusterNodeCount = 0;
-                for (var year in data.cluster[key].nodeYearInfo) {
-                    nodeCount += +data.cluster[key].nodeYearInfo[year];
-                    clusterNodeCount += +data.cluster[key].nodeYearInfo[year];
-                }
-                data.cluster[key].citation *= clusterNodeCount;
-            }
-            data.edge.forEach(function (edge) {
-                flowCount += edge.flow;
-                for (var k in edge.weight) {
-                    edgeCount += edge.weight[k];
-                }
-                if (edge.source === edge.target) {
-                    selfFlowCount += edge.flow;
-                    for (var k in edge.weight) {
-                        selfEdgeCount += edge.weight[k];
-                    }
-                }
-            });
-
-            data.clusterIDList = [5,10,20];
-            for (var key in data.cluster) {
-                var nodeYearInfo = data.cluster[key].nodeYearInfo;
-                var nodeidlist = {};
-                for (var year in nodeYearInfo) {
-                    nodeidlist[year] = new Array(parseInt(nodeYearInfo[year]));
-                }
-                data.cluster[key].nodeidlist = nodeidlist;
-                data.cluster[key].keywords = ['','',''];
-                data.cluster[key].bigrams = ['','',''];
-                data.cluster[key].onegram = ['','',''];
-            }
-
-            var k ='twitter_'+twitterClusterCount;
-            var d={};
-            d[k] = data;
-            ids = [{
-                source: 'twitter',
-                layer: leftLayer,
-                clusterCount: twitterClusterCount
-            }];
-            ids.forEach(function (item, i) {
-                //if(i==1)return;
-                var source = item.source;
-                var tmpData = {};
-                item.layer.source = item.source;
-                var focused = item.source + '_' + item.clusterCount;
-                item.layer.focusedID = focused;
-                var data = item.layer.data;
-
-                if (data.sourceData[focused]) {
-                    clone(data.sourceData[focused], tmpData);
-                }
-                else {
-                    var newCluster = {};
-                    for (var key in d[source + '_' + item.clusterCount]['cluster']) {
-                        var node = new Node(d[source + '_' + item.clusterCount]['cluster'][key]);
-                        newCluster[key] = node;
-                    }
-                    d[source + '_' + item.clusterCount]['cluster'] = newCluster;
-                    clone(d[source + '_' + item.clusterCount], tmpData);
-                    item.layer.data.sourceData[item.layer.focusedID] = d[source + '_' + item.clusterCount];
-                }
-                if (item.layer.ifLayout) {
-                    item.layer.processData(tmpData);
-                    if (item.layer.focusedID && item.layer.preFocusedID) {
-                        item.layer.layout(optionNumber, true, 'incremental', item.layer.data.postData[item.layer.focusedID]);
-                    }
-                    else {
-                        item.layer.preLayout(item.layer.data.postData[item.layer.focusedID]);
-                    }
-                }
-
-
-            });
-        })
-    }
-    else {
-        ids = [];
-        var layers = [];
-        if ('left' in sourceCheckedStatus)layers.push(leftLayer);
-        if ('right' in sourceCheckedStatus)layers.push(rightLayer);
-        layers.forEach(function (layer) {
-            var source = layer.source;
-            var clusterCount = layer.clusterCount;
-            layer.focusedID = source + '_' + clusterCount;
-            //if(!(layer.focusedID in layer.data.sourceData)){
-            if (source in dataID && layer.ifLayout) {
-                ids.push({
-                    id: dataID[source],
-                    source: source,
-                    layer: layer,
-                    clusterCount: clusterCount
-                })
-            }
-        });
-        search(ids);
-    }
-
+    ids = [];
+    var layers = [];
+    if ('left' in sourceCheckedStatus) layers.push(leftLayer);
+    if ('right' in sourceCheckedStatus) layers.push(rightLayer);
+    layers.forEach(function (layer) {
+        var source = layer.source;
+        var clusterCount = layer.clusterCount;
+        layer.focusedID = source + '_' + clusterCount;
+        //if(!(layer.focusedID in layer.data.sourceData)){
+        if (source in dataID && layer.ifLayout) {
+            ids.push({
+                id: dataID[source],
+                source: source,
+                layer: layer,
+                clusterCount: clusterCount
+            })
+        }
+        //}
+    });
+    search(ids);
 }
+
 function search(ids) {
     var requests = [];
     ids.forEach(function (item) {
@@ -14183,12 +14402,9 @@ function search(ids) {
             requests.push(item);
         }
     });
-
     if (requests.length == 0) {
-
         //data all exist, call layout function
         ids.forEach(function (item) {
-
             if (item.layer.ifLayout) {
                 var source = item.source;
                 var tmpData = {};
@@ -14196,14 +14412,12 @@ function search(ids) {
                 item.layer.processData(tmpData);
                 if (item.layer.focusedID && item.layer.preFocusedID) {
                     item.layer.layout(optionNumber, true, 'incremental', item.layer.data.postData[item.layer.focusedID]);
-                }
-                else {
+                } else {
                     item.layer.preLayout(item.layer.data.postData[item.layer.focusedID]);
                 }
             }
         });
-    }
-    else {
+    } else {
         var url = 'http://' + server + ':' + port + '/InfluenceGraph';
         var reqData = [];
         requests.forEach(function (item) {
@@ -14226,9 +14440,9 @@ function search(ids) {
                     alert('The influence graph is computing in the backend');
                 };
                 ajax(newUrl, success, errorData);
-            }
-            else {
+            } else {
                 console.log(d);
+
                 function clearCiteseerx(graph) {
                     var clusters = graph.cluster;
                     var edges = graph.edge;
@@ -14239,7 +14453,7 @@ function search(ids) {
                     var mYear = 1980;
 
                     for (var y in cluster300IDList) {
-                        if (y && parseInt(y) > mYear)mYear = parseInt(y);
+                        if (y && parseInt(y) > mYear) mYear = parseInt(y);
                     }
                     for (var key in clusters) {
                         var idYearDic = clusters[key].nodeidlist;
@@ -14258,8 +14472,7 @@ function search(ids) {
                         if (flag) {
                             newClusters[key] = clusters[key];
                             newClusters[key].nodeidlist = newDic;
-                        }
-                        else {
+                        } else {
                             console.log('cluster ' + key + ' year is error');
                         }
 
@@ -14289,10 +14502,9 @@ function search(ids) {
                         for (var year in graph.cluster[clusterID].nodeidlist) {
                             if (parseInt(year) > 2014) {
                                 //console.log(year);
-                                if (!('2014' in newIDList))newIDList[String(2014)] = [];
+                                if (!('2014' in newIDList)) newIDList[String(2014)] = [];
                                 newIDList[String(2014)] = newIDList[String(2014)].concat(graph.cluster[clusterID].nodeidlist[year]);
-                            }
-                            else {
+                            } else {
                                 newIDList[year] = graph.cluster[clusterID].nodeidlist[year];
                             }
                         }
@@ -14303,10 +14515,337 @@ function search(ids) {
                         for (var key in edge.weight) {
                             var sourceYear = key.split('_')[0];
                             var targetYear = key.split('_')[1];
-                            if (parseInt(sourceYear) >= 2014)sourceYear = 2014;
-                            if (parseInt(targetYear) >= 2014)targetYear = 2014;
+                            if (parseInt(sourceYear) >= 2014) sourceYear = 2014;
+                            if (parseInt(targetYear) >= 2014) targetYear = 2014;
                             var newKey = sourceYear + '_' + targetYear;
-                            if (!(newKey in newWeight))newWeight[newKey] = 0;
+                            if (!(newKey in newWeight)) newWeight[newKey] = 0;
+                            newWeight[newKey] += edge.weight[key];
+                        }
+                        edge.weight = newWeight;
+                    });
+
+                    graph.cluster = newClusters;
+                    graph.edge = newEdges;
+                }
+
+                function addFrequencyKeywords(graph) {
+                    var clusters = graph.cluster;
+                    for (var key in clusters) {
+                        if (!('frequencyKeywords' in clusters[key])) {
+                            clusters[key].frequencyKeywords = ['none', 'none', 'none'];
+                        }
+                    }
+                }
+                //console.log(d.citeseerx);
+                for (var key in d) {
+                    if (key.split('_')[0] == 'citeseerx') {
+                        clearCiteseerx(d[key]);
+                    }
+                    addFrequencyKeywords(d[key]);
+                }
+                //if(d.citeseerx){
+                //    clearCiteseerx(d.citeseerx);
+                //
+                //}
+                //console.log(d.citeseerx);
+                ids.forEach(function (item, i) {
+                    //if(i==1)return;
+                    var source = item.source;
+                    if (source == 'aminerV8') item.layer.sourceText = 'AMiner';
+                    else if (source == 'citeseerx') item.layer.sourceText = 'CiteseerX';
+                    var tmpData = {};
+                    item.layer.source = item.source;
+                    var focused = item.source + '_' + item.clusterCount;
+                    item.layer.focusedID = focused;
+                    var data = item.layer.data;
+                    if (data.sourceData[focused]) {
+                        clone(data.sourceData[focused], tmpData);
+                    } else {
+                        clone(d[source + '_' + item.clusterCount], tmpData);
+                        item.layer.data.sourceData[item.layer.focusedID] = d[source + '_' + item.clusterCount];
+                    }
+                    if (item.layer.ifLayout) {
+                        item.layer.processData(tmpData);
+                        if (item.layer.focusedID && item.layer.preFocusedID) {
+                            item.layer.layout(optionNumber, true, 'incremental', item.layer.data.postData[item.layer.focusedID]);
+                        } else {
+                            item.layer.preLayout(item.layer.data.postData[item.layer.focusedID]);
+                        }
+                    }
+
+
+                });
+            }
+        };
+        ajax(url, success, {
+            data: reqData
+        });
+    }
+}
+
+function FSubmit(e) {
+    if (e == 13) {
+        search();
+    }
+}
+
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
+    if (r != null) return unescape(r[2]);
+    return null; //返回参数值
+}
+
+
+function ajax(url, success, data) {
+    console.log(url);
+    console.log(data);
+    $.ajax({
+        url: url,
+        data: data,
+        async: false,
+        success: success
+    })
+}
+
+function requestData() {
+    var twitterClusterCount = getUrlParam('twitter');
+    if (twitterClusterCount) {
+        d3.json('localData/twitter' + twitterClusterCount + '.json', function (data) {
+            console.log(data);
+            var nodeCount = 0;
+            var edgeCount = 0;
+            var flowCount = 0;
+            var selfEdgeCount = 0;
+            var selfFlowCount = 0;
+            for (var key in data.cluster) {
+                var clusterNodeCount = 0;
+                for (var year in data.cluster[key].nodeYearInfo) {
+                    nodeCount += +data.cluster[key].nodeYearInfo[year];
+                    clusterNodeCount += +data.cluster[key].nodeYearInfo[year];
+                }
+                data.cluster[key].citation *= clusterNodeCount;
+            }
+            data.edge.forEach(function (edge) {
+                flowCount += edge.flow;
+                for (var k in edge.weight) {
+                    edgeCount += edge.weight[k];
+                }
+                if (edge.source === edge.target) {
+                    selfFlowCount += edge.flow;
+                    for (var k in edge.weight) {
+                        selfEdgeCount += edge.weight[k];
+                    }
+                }
+            });
+
+            data.clusterIDList = [5, 10, 20];
+            for (var key in data.cluster) {
+                var nodeYearInfo = data.cluster[key].nodeYearInfo;
+                var nodeidlist = {};
+                for (var year in nodeYearInfo) {
+                    nodeidlist[year] = new Array(parseInt(nodeYearInfo[year]));
+                }
+                data.cluster[key].nodeidlist = nodeidlist;
+                data.cluster[key].keywords = ['', '', ''];
+                data.cluster[key].bigrams = ['', '', ''];
+                data.cluster[key].onegram = ['', '', ''];
+            }
+
+            var k = 'twitter_' + twitterClusterCount;
+            var d = {};
+            d[k] = data;
+            ids = [{
+                source: 'twitter',
+                layer: leftLayer,
+                clusterCount: twitterClusterCount
+            }];
+            ids.forEach(function (item, i) {
+                //if(i==1)return;
+                var source = item.source;
+                var tmpData = {};
+                item.layer.source = item.source;
+                var focused = item.source + '_' + item.clusterCount;
+                item.layer.focusedID = focused;
+                var data = item.layer.data;
+
+                if (data.sourceData[focused]) {
+                    clone(data.sourceData[focused], tmpData);
+                } else {
+                    var newCluster = {};
+                    for (var key in d[source + '_' + item.clusterCount]['cluster']) {
+                        var node = new Node(d[source + '_' + item.clusterCount]['cluster'][key]);
+                        newCluster[key] = node;
+                    }
+                    d[source + '_' + item.clusterCount]['cluster'] = newCluster;
+                    clone(d[source + '_' + item.clusterCount], tmpData);
+                    item.layer.data.sourceData[item.layer.focusedID] = d[source + '_' + item.clusterCount];
+                }
+                if (item.layer.ifLayout) {
+                    item.layer.processData(tmpData);
+                    if (item.layer.focusedID && item.layer.preFocusedID) {
+                        item.layer.layout(optionNumber, true, 'incremental', item.layer.data.postData[item.layer.focusedID]);
+                    } else {
+                        item.layer.preLayout(item.layer.data.postData[item.layer.focusedID]);
+                    }
+                }
+
+
+            });
+        })
+    } else {
+        ids = [];
+        var layers = [];
+        if ('left' in sourceCheckedStatus) layers.push(leftLayer);
+        if ('right' in sourceCheckedStatus) layers.push(rightLayer);
+        layers.forEach(function (layer) {
+            var source = layer.source;
+            var clusterCount = layer.clusterCount;
+            layer.focusedID = source + '_' + clusterCount;
+            //if(!(layer.focusedID in layer.data.sourceData)){
+            if (source in dataID && layer.ifLayout) {
+                ids.push({
+                    id: dataID[source],
+                    source: source,
+                    layer: layer,
+                    clusterCount: clusterCount
+                })
+            }
+        });
+        search(ids);
+    }
+
+}
+
+function search(ids) {
+    var requests = [];
+    ids.forEach(function (item) {
+        var id = item.layer.focusedID;
+        var data = item.layer.data;
+        if (!(id in data.sourceData) || !data.sourceData[id]) {
+            requests.push(item);
+        }
+    });
+
+    if (requests.length == 0) {
+
+        //data all exist, call layout function
+        ids.forEach(function (item) {
+
+            if (item.layer.ifLayout) {
+                var source = item.source;
+                var tmpData = {};
+                clone(item.layer.data.sourceData[item.layer.focusedID], tmpData);
+                item.layer.processData(tmpData);
+                if (item.layer.focusedID && item.layer.preFocusedID) {
+                    item.layer.layout(optionNumber, true, 'incremental', item.layer.data.postData[item.layer.focusedID]);
+                } else {
+                    item.layer.preLayout(item.layer.data.postData[item.layer.focusedID]);
+                }
+            }
+        });
+    } else {
+        var url = 'http://' + server + ':' + port + '/InfluenceGraph';
+        var reqData = [];
+        requests.forEach(function (item) {
+            reqData.push({
+                source: item.source,
+                id: item.id,
+                clusterCount: item.clusterCount
+            });
+            item.layer.focusedID = item.source + '_' + item.clusterCount;
+        });
+        var success = function (d) {
+            if (d['error']) {
+                var newUrl = 'http://' + server + ':' + errorPort + '/error';
+                var errorData = {
+                    errorCode: 1,
+                    source: source,
+                    errorID: searchID
+                };
+                var success = function () {
+                    alert('The influence graph is computing in the backend');
+                };
+                ajax(newUrl, success, errorData);
+            } else {
+                console.log(d);
+
+                function clearCiteseerx(graph) {
+                    var clusters = graph.cluster;
+                    var edges = graph.edge;
+                    var newClusters = {};
+                    var newEdges = [];
+                    var yearList = [];
+                    var cluster300IDList = clusters['300'].nodeidlist;
+                    var mYear = 1980;
+
+                    for (var y in cluster300IDList) {
+                        if (y && parseInt(y) > mYear) mYear = parseInt(y);
+                    }
+                    for (var key in clusters) {
+                        var idYearDic = clusters[key].nodeidlist;
+                        var newDic = {};
+                        for (var year in idYearDic) {
+                            if (year && parseInt(year) >= mYear) {
+                                yearList.push(parseInt(year));
+                                newDic[year] = idYearDic[year];
+                            }
+                        }
+                        var flag = false;
+                        for (var k in newDic) {
+                            flag = true;
+                            break;
+                        }
+                        if (flag) {
+                            newClusters[key] = clusters[key];
+                            newClusters[key].nodeidlist = newDic;
+                        } else {
+                            console.log('cluster ' + key + ' year is error');
+                        }
+
+                    }
+                    //console.log(yearList)
+                    if (!('300' in newClusters)) {
+                        var cluster300 = clusters[300];
+                        var minYear = d3.min(yearList);
+                        var id = cluster300.nodeidlist[''][0];
+                        var yearKey = String(minYear - 1);
+                        cluster300.nodeidlist = {};
+                        cluster300.nodeidlist[yearKey] = [id];
+                        newClusters['300'] = cluster300;
+                    }
+                    edges.forEach(function (edge) {
+                        var source = edge.source;
+                        var target = edge.target;
+                        if ((source in newClusters) && (target in newClusters)) {
+                            newEdges.push(edge);
+                        }
+                    });
+
+                    //fix year data
+                    //citeseerx year should <=2014
+                    for (var clusterID in graph.cluster) {
+                        var newIDList = {};
+                        for (var year in graph.cluster[clusterID].nodeidlist) {
+                            if (parseInt(year) > 2014) {
+                                //console.log(year);
+                                if (!('2014' in newIDList)) newIDList[String(2014)] = [];
+                                newIDList[String(2014)] = newIDList[String(2014)].concat(graph.cluster[clusterID].nodeidlist[year]);
+                            } else {
+                                newIDList[year] = graph.cluster[clusterID].nodeidlist[year];
+                            }
+                        }
+                        graph.cluster[clusterID].nodeidlist = newIDList;
+                    }
+                    graph.edge.forEach(function (edge) {
+                        var newWeight = {};
+                        for (var key in edge.weight) {
+                            var sourceYear = key.split('_')[0];
+                            var targetYear = key.split('_')[1];
+                            if (parseInt(sourceYear) >= 2014) sourceYear = 2014;
+                            if (parseInt(targetYear) >= 2014) targetYear = 2014;
+                            var newKey = sourceYear + '_' + targetYear;
+                            if (!(newKey in newWeight)) newWeight[newKey] = 0;
                             newWeight[newKey] += edge.weight[key];
                         }
                         edge.weight = newWeight;
@@ -14334,8 +14873,8 @@ function search(ids) {
                     }
                     addFrequencyKeywords(d[key]);
                 }
-                var clusterCount=leftLayer.clusterCount;
-                var key = 'aminerV8_'+clusterCount;
+                var clusterCount = leftLayer.clusterCount;
+                var key = 'aminerV8_' + clusterCount;
                 if (d[key]) {
                     var sum = 0;
                     for (var clusterId in d[key].cluster) {
@@ -14344,26 +14883,25 @@ function search(ids) {
                             sum += cluster.nodeidlist[year].length;
                         }
                     }
-                    if(sum<500&&isFirstRequest){
+                    if (sum < 500 && isFirstRequest) {
                         console.log('hi');
-                        isFirstRequest=false;
-                        if(clusterCount=='20'){
-                            leftLayer.clusterCount=10;
-                            rightLayer.clusterCount=10;
+                        isFirstRequest = false;
+                        if (clusterCount == '20') {
+                            leftLayer.clusterCount = 10;
+                            rightLayer.clusterCount = 10;
                             d3.selectAll('.dbOption')
                                 .each(function (d) {
                                     d3.select(this)
                                         .select('cite')
-                                        .html(d.name+'-'+ d.layer.clusterCount);
+                                        .html(d.name + '-' + d.layer.clusterCount);
                                 });
                             requestData();
-                        }
-                        else{
+                        } else {
                             ids.forEach(function (item, i) {
                                 //if(i==1)return;
                                 var source = item.source;
-                                if (source == 'aminerV8')item.layer.sourceText = 'AMiner';
-                                else if (source == 'citeseerx')item.layer.sourceText = 'CiteseerX';
+                                if (source == 'aminerV8') item.layer.sourceText = 'AMiner';
+                                else if (source == 'citeseerx') item.layer.sourceText = 'CiteseerX';
                                 var tmpData = {};
                                 item.layer.source = item.source;
                                 var focused = item.source + '_' + item.clusterCount;
@@ -14372,8 +14910,7 @@ function search(ids) {
 
                                 if (data.sourceData[focused]) {
                                     clone(data.sourceData[focused], tmpData);
-                                }
-                                else {
+                                } else {
                                     var newCluster = {};
                                     for (var key in d[source + '_' + item.clusterCount]['cluster']) {
                                         var node = new Node(d[source + '_' + item.clusterCount]['cluster'][key]);
@@ -14387,8 +14924,7 @@ function search(ids) {
                                     item.layer.processData(tmpData);
                                     if (item.layer.focusedID && item.layer.preFocusedID) {
                                         item.layer.layout(optionNumber, true, 'incremental', item.layer.data.postData[item.layer.focusedID]);
-                                    }
-                                    else {
+                                    } else {
                                         item.layer.preLayout(item.layer.data.postData[item.layer.focusedID]);
                                     }
                                 }
@@ -14396,14 +14932,13 @@ function search(ids) {
 
                             });
                         }
-                    }
-                    else{
+                    } else {
 
                         ids.forEach(function (item, i) {
                             //if(i==1)return;
                             var source = item.source;
-                            if (source == 'aminerV8')item.layer.sourceText = 'AMiner';
-                            else if (source == 'citeseerx')item.layer.sourceText = 'CiteseerX';
+                            if (source == 'aminerV8') item.layer.sourceText = 'AMiner';
+                            else if (source == 'citeseerx') item.layer.sourceText = 'CiteseerX';
                             var tmpData = {};
                             item.layer.source = item.source;
                             var focused = item.source + '_' + item.clusterCount;
@@ -14412,8 +14947,7 @@ function search(ids) {
 
                             if (data.sourceData[focused]) {
                                 clone(data.sourceData[focused], tmpData);
-                            }
-                            else {
+                            } else {
                                 var newCluster = {};
                                 for (var key in d[source + '_' + item.clusterCount]['cluster']) {
                                     var node = new Node(d[source + '_' + item.clusterCount]['cluster'][key]);
@@ -14427,8 +14961,7 @@ function search(ids) {
                                 item.layer.processData(tmpData);
                                 if (item.layer.focusedID && item.layer.preFocusedID) {
                                     item.layer.layout(optionNumber, true, 'incremental', item.layer.data.postData[item.layer.focusedID]);
-                                }
-                                else {
+                                } else {
                                     item.layer.preLayout(item.layer.data.postData[item.layer.focusedID]);
                                 }
                             }
@@ -14441,73 +14974,76 @@ function search(ids) {
                 }
             }
         };
-        ajax(url, success, {data: reqData});
+        ajax(url, success, {
+            data: reqData
+        });
     }
 }
+
 function FSubmit(e) {
     if (e == 13) {
         search();
     }
 }
+
 function getUrlParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+    var r = window.location.search.substr(1).match(reg); //匹配目标参数
     if (r != null) return unescape(r[2]);
     return null; //返回参数值
 }
 
 
-function Temporal(data){
-    this.temporalDic=data;
-    this.temporalList=[];
-    this.division={};
-    this.init=function(){
-        for(var year in this.temporalDic){
-            var tmp={
-                year:year,
-                flow:this.temporalDic[year]
+function Temporal(data) {
+    this.temporalDic = data;
+    this.temporalList = [];
+    this.division = {};
+    this.init = function () {
+        for (var year in this.temporalDic) {
+            var tmp = {
+                year: year,
+                flow: this.temporalDic[year]
             };
             this.temporalList.push(tmp)
         }
-        this.division[1]=[this.temporalList]
+        this.division[1] = [this.temporalList]
     };
-    this.divideYear=function(num){
-        if(this.division[num]){
+    this.divideYear = function (num) {
+        if (this.division[num]) {
             return this.division[num];
-        }
-        else{
-            var preDivision=this.divideYear(num-1);
-            var newDivision=this.cut(preDivision);
-            this.division[num]=newDivision;
+        } else {
+            var preDivision = this.divideYear(num - 1);
+            var newDivision = this.cut(preDivision);
+            this.division[num] = newDivision;
             return newDivision;
         }
     };
-    this.cut=function(divsion){
-        var newDivisionList=[];
-        for(var i=0;i<divsion.length;i++){
-            var currentPart=divsion[i];
-            var otherParts=[];
-            for(var j=0;j<divsion.length;j++){
-                if(j!=i)otherParts.push(divsion[j]);
+    this.cut = function (divsion) {
+        var newDivisionList = [];
+        for (var i = 0; i < divsion.length; i++) {
+            var currentPart = divsion[i];
+            var otherParts = [];
+            for (var j = 0; j < divsion.length; j++) {
+                if (j != i) otherParts.push(divsion[j]);
             }
-            var len=currentPart.length;
-            if(len>=4){
-                for(var j=2;j<len-1;j++){
-                    var part1=[];
-                    var part2=[];
-                    for(var k=0;k<j;k++){
+            var len = currentPart.length;
+            if (len >= 4) {
+                for (var j = 2; j < len - 1; j++) {
+                    var part1 = [];
+                    var part2 = [];
+                    for (var k = 0; k < j; k++) {
                         part1.push(currentPart[k]);
                     }
-                    for(var k=j;k<len;k++){
+                    for (var k = j; k < len; k++) {
                         part2.push(currentPart[k]);
                     }
                     part1 = this.denseFlow(part1);
                     part2 = this.denseFlow(part2);
-                    if(part1.length>1&&part2.length>1){
-                        var newDivision=[];
+                    if (part1.length > 1 && part2.length > 1) {
+                        var newDivision = [];
                         newDivision.push(part1);
                         newDivision.push(part2);
-                        for(var k=0;k<otherParts.length;k++){
+                        for (var k = 0; k < otherParts.length; k++) {
                             newDivision.push(otherParts[k]);
                         }
                         newDivisionList.push(newDivision)
@@ -14515,165 +15051,178 @@ function Temporal(data){
                 }
             }
         }
-        var maxFlow=0;
+        var maxFlow = 0;
         var maxDivision;
-        if(newDivisionList.length>0){
-            for(var i=0;i<newDivisionList.length;i++){
-                var division=newDivisionList[i];
-                var divisionFlow=this.countDivisionFlow(division);
-                if(divisionFlow>maxFlow){
-                    maxDivision=division;
-                    maxFlow=divisionFlow;
+        if (newDivisionList.length > 0) {
+            for (var i = 0; i < newDivisionList.length; i++) {
+                var division = newDivisionList[i];
+                var divisionFlow = this.countDivisionFlow(division);
+                if (divisionFlow > maxFlow) {
+                    maxDivision = division;
+                    maxFlow = divisionFlow;
                 }
             }
             return division;
-        }
-        else{
+        } else {
             return [];
         }
 
     };
-    this.sortDivision=function(division){
-        division.sort(function(a,b){return d3.ascending(a[0].year, b[0].year)});
+    this.sortDivision = function (division) {
+        division.sort(function (a, b) {
+            return d3.ascending(a[0].year, b[0].year)
+        });
     };
-    this.countDivisionFlow=function(division){
-        var sum=0;
-        for(var i=0;i<division.length;i++){
-            var part=division[i];
-            var partFlow=this.countPartFlow(part);
-            sum+=partFlow;
+    this.countDivisionFlow = function (division) {
+        var sum = 0;
+        for (var i = 0; i < division.length; i++) {
+            var part = division[i];
+            var partFlow = this.countPartFlow(part);
+            sum += partFlow;
         }
-        division.smoothFlowCount=sum;
+        division.smoothFlowCount = sum;
         return sum;
     };
-    this.countPartFlow=function(part){
-        var sum=0;
-        for(var i=0;i<part.length;i++){
-            sum+=part[i].flow;
+    this.countPartFlow = function (part) {
+        var sum = 0;
+        for (var i = 0; i < part.length; i++) {
+            sum += part[i].flow;
         }
         sum = this.smoothFlow(sum, part.length);
         return sum;
     };
-    this.denseFlow=function(part){
-        while(part[0]&&part[0].flow==0){
-            part = part.slice(1,part.length);
+    this.denseFlow = function (part) {
+        while (part[0] && part[0].flow == 0) {
+            part = part.slice(1, part.length);
         }
-        while(part[part.length-1]&&part[part.length-1].flow==0){
-            part = part.slice(0,part.length-1);
+        while (part[part.length - 1] && part[part.length - 1].flow == 0) {
+            part = part.slice(0, part.length - 1);
         }
         return part;
     };
-    this.smoothFlow=function(flow,duration){
-        var k=0.5;
-        return flow/Math.pow(duration,k)
+    this.smoothFlow = function (flow, duration) {
+        var k = 0.5;
+        return flow / Math.pow(duration, k)
     };
-    this.selectMaxDivision=function(){
-        var max=0;
+    this.selectMaxDivision = function () {
+        var max = 0;
         var maxDivision;
-        for(var key in this.division){
-            if(key!=1){
-                if(this.division[key].smoothFlowCount){
-                    if(this.division[key].smoothFlowCount>max){
+        for (var key in this.division) {
+            if (key != 1) {
+                if (this.division[key].smoothFlowCount) {
+                    if (this.division[key].smoothFlowCount > max) {
                         max = this.division[key].smoothFlowCount;
-                        maxDivision=this.division[key];
+                        maxDivision = this.division[key];
                     }
                 }
             }
         }
-        this.maxDivision=maxDivision;
+        this.maxDivision = maxDivision;
     }
 }
 
-function temporalSummarization(d){
-    var temporalData=this.getTemporalData(d);
-    this.temporal=new Temporal(temporalData);
+function temporalSummarization(d) {
+    var temporalData = this.getTemporalData(d);
+    this.temporal = new Temporal(temporalData);
     this.temporal.init();
     this.temporal.divideYear(12);
     this.temporal.selectMaxDivision();
 }
 
 
-function getTemporalData(d){
-    var edges=d.edge;
-    var temporal={};
-    for(var year=this.minYear;year<=this.maxYear;year++){
-        temporal[year]=0;
+function getTemporalData(d) {
+    var edges = d.edge;
+    var temporal = {};
+    for (var year = this.minYear; year <= this.maxYear; year++) {
+        temporal[year] = 0;
     }
-    var edgeSumFlow=0
-    var temporFlow=0;
-    for(var i=0;i<edges.length;i++){
+    var edgeSumFlow = 0
+    var temporFlow = 0;
+    for (var i = 0; i < edges.length; i++) {
 
-        var edge=edges[i];
-        var flow=edge.flow;
-        edgeSumFlow+=flow;
-        var weight=edge.weight;
-        var totalCitation=edge.citation;
-        for(var year in weight){
-            var subFlow=(weight[year]/totalCitation)*flow;
-            temporal[year.toInt()]+=subFlow;
+        var edge = edges[i];
+        var flow = edge.flow;
+        edgeSumFlow += flow;
+        var weight = edge.weight;
+        var totalCitation = edge.citation;
+        for (var year in weight) {
+            var subFlow = (weight[year] / totalCitation) * flow;
+            temporal[year.toInt()] += subFlow;
         }
     }
-    for(var year in temporal){
-        temporFlow+=temporal[year];
+    for (var year in temporal) {
+        temporFlow += temporal[year];
     }
-//    console.log(temporFlow,edgeSumFlow);
-//    console.log(temporal);
+    //    console.log(temporFlow,edgeSumFlow);
+    //    console.log(temporal);
     return temporal
 }
-var str='M41.08164179104483,302.4C43.678231395542014,307.7846857291704,46.27482100003919,313.1693714583408,48.87141060453637,313.1693714583408C49.20474393786971,313.1693714583408,49.538077271203036,313.1693714583408,49.87141060453637,313.1693714583408C58.23100768625882,313.1693714583408,66.59060476798126,337.43976747453956,74.95020184970372,349.2233541666991C83.02517284222147,360.6057353744069,91.1001438347392,382.71434634472195,99.17511482725695,382.71434634472195C99.50844816059028,382.71434634472195,99.84178149392362,382.71434634472195,100.17511482725695,382.71434634472195C109.27542867925101,382.71434634472195,118.37574253124507,342.360373892397,127.47605638323913,340.5042414171221C144.98467456108426,336.9331211980139,162.4932927389294,337.07257695634183,180.00191091677453,335.14756108845984C197.51052909461967,333.22254522057784,215.01914727246478,330.8198318600074,232.52776545030991,328.95414620983C253.8895177126435,326.67787778854984,275.2512699749771,325.0115953216645,296.6130222373107,323.0130629844527C303.86170497201624,322.3349010682581,311.1103877067217,320.97230025533116,318.35907044142726,320.97230025533116C318.6924037747606,320.97230025533116,319.02573710809395,320.97230025533116,319.35907044142726,320.97230025533116C365.7941962146828,320.97230025533116,412.2293219879384,259.4534228549383,458.66444776119397,197.93454545454546';
-var reg=new RegExp('127.47605638323913,343.2110302810014(.*)296.6130222373107,325.172287336565')
+var str = 'M41.08164179104483,302.4C43.678231395542014,307.7846857291704,46.27482100003919,313.1693714583408,48.87141060453637,313.1693714583408C49.20474393786971,313.1693714583408,49.538077271203036,313.1693714583408,49.87141060453637,313.1693714583408C58.23100768625882,313.1693714583408,66.59060476798126,337.43976747453956,74.95020184970372,349.2233541666991C83.02517284222147,360.6057353744069,91.1001438347392,382.71434634472195,99.17511482725695,382.71434634472195C99.50844816059028,382.71434634472195,99.84178149392362,382.71434634472195,100.17511482725695,382.71434634472195C109.27542867925101,382.71434634472195,118.37574253124507,342.360373892397,127.47605638323913,340.5042414171221C144.98467456108426,336.9331211980139,162.4932927389294,337.07257695634183,180.00191091677453,335.14756108845984C197.51052909461967,333.22254522057784,215.01914727246478,330.8198318600074,232.52776545030991,328.95414620983C253.8895177126435,326.67787778854984,275.2512699749771,325.0115953216645,296.6130222373107,323.0130629844527C303.86170497201624,322.3349010682581,311.1103877067217,320.97230025533116,318.35907044142726,320.97230025533116C318.6924037747606,320.97230025533116,319.02573710809395,320.97230025533116,319.35907044142726,320.97230025533116C365.7941962146828,320.97230025533116,412.2293219879384,259.4534228549383,458.66444776119397,197.93454545454546';
+var reg = new RegExp('127.47605638323913,343.2110302810014(.*)296.6130222373107,325.172287336565')
 console.log(reg.exec(str))
-function layoutPapers(d){
+
+function layoutPapers(d) {
     //pingbi chongfu lunwen
-    if(d.id!=2253750){
+    if (d.id != 2253750) {
         //console.log(d3.select(this));
-        var textColor='rgb(223,209,32)';
-        var abstractColor='rgb(221, 226, 164)';
-        var title=d3.select(this).append('div');
+        var textColor = 'rgb(223,209,32)';
+        var abstractColor = 'rgb(221, 226, 164)';
+        var title = d3.select(this).append('div');
         title
             .append('text')
             .styles({
-                cursor:'pointer',
-                color:'white',
-                'font-size':18+px,
-                'font-family':'Microsoft YaHei'
+                cursor: 'pointer',
+                color: 'white',
+                'font-size': 18 + px,
+                'font-family': 'Microsoft YaHei'
 
             })
-            .on('mouseover',function(d){
+            .on('mouseover', function (d) {
                 d3.select(this)
                     .styles({
-                        'text-decoration':'underline'
+                        'text-decoration': 'underline'
                     })
             })
-            .on('mouseout',function(d){
+            .on('mouseout', function (d) {
                 d3.select(this)
                     .styles({
-                        'text-decoration':''
+                        'text-decoration': ''
                     })
             })
-            .on('click',function(d){
-                var url='graph.html?';
-                var sourceStr='';
-                d.ids.forEach(function(item){
-                    var source=item.source;
-                    sourceStr+=source+'_';
-                    url+=source+'_id='+item.id+'&';
+            .on('click', function (d) {
+                var url = 'graph.html?';
+                var sourceStr = '';
+                d.ids.forEach(function (item) {
+                    var source = item.source;
+                    sourceStr += source + '_';
+                    url += source + '_id=' + item.id + '&';
                 });
-                var source='aminerV8';
+                var source = 'aminerV8';
                 //url+=source+'_id='+ d.id+'&';
-                url+='selected='+source;
-                url+='&source='+sourceStr;
-                url+='&r='+Math.floor(Math.random()*1000000000+1);
+                url += 'selected=' + source;
+                url += '&source=' + sourceStr;
+                url += '&r=' + Math.floor(Math.random() * 1000000000 + 1);
                 window.open(url);
             })
             .html(d.title);
 
-        if(d.graphSize){
-            var graphSizeDatas=[
-                {text:' [',color:'white'},
-                {text: d.graphSize,color:'white'},
-                {text:' papers influenced',color:textColor},
-                {text:']<br>',color:'white'}
+        if (d.graphSize) {
+            var graphSizeDatas = [{
+                    text: ' [',
+                    color: 'white'
+                },
+                {
+                    text: d.graphSize,
+                    color: 'white'
+                },
+                {
+                    text: ' papers influenced',
+                    color: textColor
+                },
+                {
+                    text: ']<br>',
+                    color: 'white'
+                }
             ];
             title
                 .selectAll('whatever')
@@ -14681,192 +15230,194 @@ function layoutPapers(d){
                 .enter()
                 .append('text')
                 .styles({
-                    color:function(d){return d.color},
-                    'font-size':14+px,
-                    'font-family':'Microsoft YaHei'
+                    color: function (d) {
+                        return d.color
+                    },
+                    'font-size': 14 + px,
+                    'font-family': 'Microsoft YaHei'
                 })
-                .each(function(e,i){
-                    if(i==1){
+                .each(function (e, i) {
+                    if (i == 1) {
                         d3.select(this)
                             .styles({
-                                color:'white',
-                                cursor:'pointer'
+                                color: 'white',
+                                cursor: 'pointer'
                             })
-                            .on('mouseover',function(e){
+                            .on('mouseover', function (e) {
                                 d3.select(this)
                                     .styles({
-                                        'text-decoration':'underline'
+                                        'text-decoration': 'underline'
                                     })
                             })
-                            .on('mouseout',function(e){
+                            .on('mouseout', function (e) {
                                 d3.select(this)
                                     .styles({
-                                        'text-decoration':''
+                                        'text-decoration': ''
                                     })
                             })
-                            .on('click',function(e){
-                                var url='citation.html?id='+ d.id+'&action=all&'+'source=aminerV8'+'&title='+ d.title+'&r='+Math.floor(Math.random()*1000000000+1);
+                            .on('click', function (e) {
+                                var url = 'citation.html?id=' + d.id + '&action=all&' + 'source=aminerV8' + '&title=' + d.title + '&r=' + Math.floor(Math.random() * 1000000000 + 1);
                                 window.open(url);
                             })
                     }
                 })
-                .html(function(e){
+                .html(function (e) {
                     return e.text;
                 });
         }
 
-        var summary=d3.select(this).append('div');
+        var summary = d3.select(this).append('div');
         summary
             .append('text')
             .styles({
-                color:textColor,
-                'font-size':14+px,
-                'font-family':'Microsoft YaHei'
+                color: textColor,
+                'font-size': 14 + px,
+                'font-family': 'Microsoft YaHei'
             })
-            .html(d.authors+' - '+d.year+' - ');
+            .html(d.authors + ' - ' + d.year + ' - ');
         summary
             .append('text')
             .styles({
-                color:textColor,
-                'font-size':14+px,
-                'font-family':'Microsoft YaHei'
+                color: textColor,
+                'font-size': 14 + px,
+                'font-family': 'Microsoft YaHei'
             })
 
-            .html(d.venue+'<br>')
-            .each(function(){
-                if(d.venueID){
+            .html(d.venue + '<br>')
+            .each(function () {
+                if (d.venueID) {
                     d3.select(this)
                         .styles({
-                            color:'white',
-                            cursor:'pointer'
+                            color: 'white',
+                            cursor: 'pointer'
                         })
-                        .on('mouseover',function(){
+                        .on('mouseover', function () {
                             d3.select(this)
                                 .styles({
-                                    'text-decoration':'underline'
+                                    'text-decoration': 'underline'
                                 })
                         })
-                        .on('mouseout',function(){
+                        .on('mouseout', function () {
                             d3.select(this)
                                 .styles({
-                                    'text-decoration':''
+                                    'text-decoration': ''
                                 })
                         })
-                        .on('click',function(){
-                            var url='venuepapers.html?venue='+d.venue+'&id='+d.venueID+'&r='+Math.floor(Math.random()*1000000000+1);
+                        .on('click', function () {
+                            var url = 'venuepapers.html?venue=' + d.venue + '&id=' + d.venueID + '&r=' + Math.floor(Math.random() * 1000000000 + 1);
                             window.open(url);
                         })
                 }
             });
-        if(d.abstract){
-            var abstract=d3.select(this).append('div')
+        if (d.abstract) {
+            var abstract = d3.select(this).append('div')
                 .styles({
-                    height:55+px,
-                    'overflow-y':'hidden'
+                    height: 55 + px,
+                    'overflow-y': 'hidden'
                 });
             abstract.append('text')
                 .styles({
-                    color:abstractColor,
-                    'font-size':10+px,
-                    'font-family':'Microsoft YaHei',
+                    color: abstractColor,
+                    'font-size': 10 + px,
+                    'font-family': 'Microsoft YaHei',
 
                 })
                 .html(d.abstract);
         }
-        var citation=d3.select(this).append('div');
+        var citation = d3.select(this).append('div');
         citation
             .append('text')
             .styles({
-                color:textColor,
-                'font-size':14+px,
-                'font-family':'Microsoft YaHei'
+                color: textColor,
+                'font-size': 14 + px,
+                'font-family': 'Microsoft YaHei'
             })
             .html('Citing ');
         citation
             .append('text')
             .styles({
-                cursor:'pointer',
-                color:'white',
-                'font-size':14+px,
-                'font-family':'Microsoft YaHei',
+                cursor: 'pointer',
+                color: 'white',
+                'font-size': 14 + px,
+                'font-family': 'Microsoft YaHei',
             })
-            .on('mouseover',function(d){
+            .on('mouseover', function (d) {
                 d3.select(this)
                     .styles({
-                        'text-decoration':'underline'
+                        'text-decoration': 'underline'
                     })
             })
-            .on('mouseout',function(d){
+            .on('mouseout', function (d) {
                 d3.select(this)
                     .styles({
-                        'text-decoration':''
+                        'text-decoration': ''
                     })
             })
-            .on('click',function(d){
-                var url='citation.html?';
-                var source='aminerV8';
-                url+='id='+ d.id+'&';
-                url+='source='+source;
-                url+='&title='+ d.title;
-                url+='&action=t';
-                url+='&r='+Math.floor(Math.random()*1000000000+1);
+            .on('click', function (d) {
+                var url = 'citation.html?';
+                var source = 'aminerV8';
+                url += 'id=' + d.id + '&';
+                url += 'source=' + source;
+                url += '&title=' + d.title;
+                url += '&action=t';
+                url += '&r=' + Math.floor(Math.random() * 1000000000 + 1);
                 window.open(url);
             })
             .html(d.citing);
         citation
             .append('text')
             .styles({
-                color:textColor,
-                'font-size':14+px,
-                'font-family':'Microsoft YaHei'
+                color: textColor,
+                'font-size': 14 + px,
+                'font-family': 'Microsoft YaHei'
             })
             .html(' papers');
         citation
             .append('text')
             .styles({
-                color:textColor,
-                'font-size':14+px,
-                'font-family':'Microsoft YaHei',
-                'margin-left':50+px
+                color: textColor,
+                'font-size': 14 + px,
+                'font-family': 'Microsoft YaHei',
+                'margin-left': 50 + px
             })
             .html('Cited by ');
         citation
             .append('text')
             .styles({
-                cursor:'pointer',
-                color:'white',
-                'font-size':14+px,
-                'font-family':'Microsoft YaHei'
+                cursor: 'pointer',
+                color: 'white',
+                'font-size': 14 + px,
+                'font-family': 'Microsoft YaHei'
             })
-            .on('mouseover',function(d){
+            .on('mouseover', function (d) {
                 d3.select(this)
                     .styles({
-                        'text-decoration':'underline'
+                        'text-decoration': 'underline'
                     })
             })
-            .on('mouseout',function(d){
+            .on('mouseout', function (d) {
                 d3.select(this)
                     .styles({
-                        'text-decoration':''
+                        'text-decoration': ''
                     })
             })
-            .on('click',function(d){
-                var url='citation.html?';
-                var source='aminerV8';
-                url+='id='+ d.id+'&';
-                url+='source='+source;
-                url+='&title='+ d.title;
-                url+='&action=s';
-                url+='&r='+Math.floor(Math.random()*1000000000+1);
+            .on('click', function (d) {
+                var url = 'citation.html?';
+                var source = 'aminerV8';
+                url += 'id=' + d.id + '&';
+                url += 'source=' + source;
+                url += '&title=' + d.title;
+                url += '&action=s';
+                url += '&r=' + Math.floor(Math.random() * 1000000000 + 1);
                 window.open(url);
             })
             .html(d.citation);
         citation
             .append('text')
             .styles({
-                color:textColor,
-                'font-size':14+px,
-                'font-family':'Microsoft YaHei'
+                color: textColor,
+                'font-size': 14 + px,
+                'font-family': 'Microsoft YaHei'
             })
             .html(' papers');
 
@@ -14875,10 +15426,10 @@ function layoutPapers(d){
         citation
             .append('text')
             .styles({
-                color:textColor,
-                'font-size':14+px,
-                'font-family':'Microsoft YaHei',
-                'margin-left':50+px
+                color: textColor,
+                'font-size': 14 + px,
+                'font-family': 'Microsoft YaHei',
+                'margin-left': 50 + px
             })
             .html('Source: ');
         citation
@@ -14887,54 +15438,56 @@ function layoutPapers(d){
             .enter()
             .append('text')
             .styles({
-                cursor:'pointer',
-                color:'white',
-                'font-size':14+px,
-                'font-family':'Microsoft YaHei'
+                cursor: 'pointer',
+                color: 'white',
+                'font-size': 14 + px,
+                'font-family': 'Microsoft YaHei'
             })
-            .html(function(e,i){
-                if(i==0)return 'AMiner';
+            .html(function (e, i) {
+                if (i == 0) return 'AMiner';
                 else return ', CiteseerX';
             })
-            .on('mouseover',function(d){
+            .on('mouseover', function (d) {
                 d3.select(this)
                     .styles({
-                        'text-decoration':'underline'
+                        'text-decoration': 'underline'
                     })
             })
-            .on('mouseout',function(d){
+            .on('mouseout', function (d) {
                 d3.select(this)
                     .styles({
-                        'text-decoration':''
+                        'text-decoration': ''
                     })
             })
-            .on('click',function(e,i){
-                var url='graph.html?';
-                d.ids.forEach(function(item){
-                    var source=item.source;
-                    url+=source+'_id='+item.id+'&';
+            .on('click', function (e, i) {
+                var url = 'graph.html?';
+                d.ids.forEach(function (item) {
+                    var source = item.source;
+                    url += source + '_id=' + item.id + '&';
                 });
-                var source= e.source;
+                var source = e.source;
                 //url+=source+'_id='+ e.id+'&';
-                url+='selected='+source;
-                url+='&r='+Math.floor(Math.random()*1000000000+1);
+                url += 'selected=' + source;
+                url += '&r=' + Math.floor(Math.random() * 1000000000 + 1);
                 window.open(url);
             });
     }
 
 }
-function layoutSetting(){
-    drawFlowMap=true;
-}
-function initServer(){
 
-    SDCloud='211.147.15.14';
-    server40='192.168.1.40';
-    localServer='127.0.0.1';
-    server42='192.168.1.42';
-    ali='118.190.210.193';
-    server=ali;
-    port='5002';
-    errorPort='5003';
+function layoutSetting() {
+    drawFlowMap = true;
+}
+
+function initServer() {
+
+    SDCloud = '211.147.15.14';
+    server40 = '192.168.1.40';
+    localServer = '127.0.0.1';
+    server42 = '192.168.1.42';
+    ali = '118.190.210.193';
+    server = ali;
+    port = '5002';
+    errorPort = '5003';
 
 }
