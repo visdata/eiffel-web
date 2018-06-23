@@ -169,8 +169,7 @@ function preLayout(d) {
 2. 根据 cluster 个数过滤节点
 3. 右栏详情页调整（指用户点击左边layer具体节点后，在右栏显示的内容）
 
-注意：由于论文修改后重新投稿时，截图或者视频录制实际使用页面为 <http://IP/eiffel/graph.html?aminerV8_id=1182989&citeseerx_id=9629297&s
-elected=aminerV8&source=aminerV8_citeseerx_&r=111847291>，所以实际实现效果与开发也以这个页面为主。现行服务器 IP 为 <118.190.210.193>，此处根据实际情况替换本地或云服务器 IP 信息。
+注意：由于论文修改后重新投稿时，截图或者视频录制实际使用页面为 `<http://IP/eiffel/graph.html?aminerV8_id=1182989&citeseerx_id=9629297&selected=aminerV8&source=aminerV8_citeseerx_&r=111847291>`，所以实际实现效果与开发也以这个页面为主。现行服务器 IP 为 <118.190.210.193>，此处根据实际情况替换本地或云服务器 IP 信息。
 
 ### 详细描述
 
